@@ -43,10 +43,21 @@ export function Header() {
           {/* Logo */}
           <Link
             href="/"
-            className="text-[#1C1814] font-semibold tracking-tight text-lg hover:text-[#1C1814]/80 transition-colors"
-            style={{ fontFamily: 'var(--font-epilogue), sans-serif' }}
+            className="flex items-center gap-2 hover:opacity-80 transition-opacity"
           >
-            Jacko
+            <img
+              src="/images/Jacko_logo_V1.png"
+              alt="Jacko logo"
+              width={32}
+              height={32}
+              className="w-8 h-8 object-contain"
+            />
+            <span
+              className="text-[#1C1814] font-semibold tracking-tight text-lg"
+              style={{ fontFamily: 'var(--font-epilogue), sans-serif' }}
+            >
+              Jacko WU
+            </span>
           </Link>
 
           {/* Desktop nav */}
