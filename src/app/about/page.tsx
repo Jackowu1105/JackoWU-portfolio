@@ -99,7 +99,7 @@ export default function AboutPage() {
               <div className="flex flex-col sm:flex-row sm:items-start justify-between gap-1 mb-3">
                 <div>
                   <h3 className="font-bold text-[#1C1814]">{item.role}</h3>
-                  <p className="text-sm text-[#C4A882] font-medium">{item.company}</p>
+                  <p className="text-sm text-[#37848a] font-medium">{item.company}</p>
                 </div>
                 <span className="text-sm text-[#B8B2AE] whitespace-nowrap shrink-0">
                   {item.period}
@@ -108,7 +108,7 @@ export default function AboutPage() {
               <ul className="space-y-1.5">
                 {item.highlights.map((h, j) => (
                   <li key={j} className="text-sm text-[#8A8480] leading-relaxed pl-4 relative">
-                    <span className="absolute left-0 top-[0.6em] w-1.5 h-1.5 rounded-full bg-[#C4A882]/40" />
+                    <span className="absolute left-0 top-[0.6em] w-1.5 h-1.5 rounded-full bg-[#37848a]/40" />
                     {h}
                   </li>
                 ))}
@@ -156,7 +156,7 @@ export default function AboutPage() {
                   height="18"
                   viewBox="0 0 24 24"
                   fill="none"
-                  stroke="#C4A882"
+                  stroke="#37848a"
                   strokeWidth="2"
                   className="shrink-0 mt-0.5"
                 >

@@ -73,7 +73,10 @@ export const skillCategories: Record<string, string[]> = {
     'Design Systems',
     'Prototyping',
     'Brand Identity',
+    'Graphic Design',
     'Motion Graphics',
+    'Exhibition Design',
+    'Video Production',
   ],
   'Design-Engineer': [
     'AI + Vibe Coding',
