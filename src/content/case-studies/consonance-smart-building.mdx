@@ -1,0 +1,225 @@
+export const metadata = {
+  client: 'Henderson Land',
+  role: 'Lead UI/UX Designer',
+  timeline: '6 months (2021)',
+  tools: ['Figma', 'Sketch', 'InVision', 'Miro'],
+}
+
+## The Consonance Smart Building Plus — Mobile App
+
+### Project Overview
+
+The Consonance is a luxury residential development by Henderson Land in Hong Kong. As smart home technology becomes standard in high-end properties, residents expect seamless digital experiences that enhance daily convenience and security.
+
+**My Role & Team:**
+- Lead UI/UX Designer responsible for end-to-end design from research to final handoff
+- Collaborated with 1 Product Manager, 2 Backend Engineers, and Henderson Land's property management team
+
+---
+
+## The Problem
+
+### User Pain Points
+- 🔑 Residents had to carry multiple physical keys/cards for entrance, mailbox, and clubhouse access
+- 📞 Clubhouse booking required calling the management office during limited business hours
+- ⏱️ No way to pre-register visitors, causing delays and frustration at security checkpoints
+
+### Business Challenges
+- High volume of resident inquiries to management office (~50+ calls/day)
+- Security concerns with lost or duplicated physical access cards
+- Competitive pressure from neighboring developments offering smart building features
+
+### Success Metrics
+- Increase app adoption to 70%+ within 3 months post-launch
+- Reduce management office calls by 40%
+- Achieve 4.5+ star rating on App Store
+
+---
+
+## Research & Discovery
+
+### Research Methods
+
+1. **Stakeholder Interviews:** 5 sessions with Henderson Land property managers to understand operational workflows and security requirements
+2. **User Interviews:** 12 in-depth interviews with residents (ages 28-65) to identify pain points with current building access systems
+3. **Competitor Analysis:** Audited 6 smart building apps from similar luxury developments in Hong Kong
+
+### Key Findings
+- 📊 78% of users said "opening the app must be faster than using a physical key"
+- 🔒 65% expressed security concerns about unauthorized access if they lost their phone
+- 🎯 Users strongly preferred a clean interface with 5-6 core features over 15+ rarely-used functions
+
+### User Personas
+
+**Primary: Busy Professionals (30-45)**
+- Works long hours, frequently travels
+- Values speed and efficiency above all
+- Uses app primarily during morning/evening rush hours
+> "I need to get in the building quickly when I'm carrying groceries."
+
+**Secondary: Elderly Residents (60+)**
+- Less tech-savvy, needs intuitive interfaces
+- Concerned about security and privacy
+- Requires larger tap targets and clear labels
+> "I don't want too many complicated features."
+
+---
+
+## Design Process
+
+### Information Architecture
+
+I organized features into 3 main categories based on frequency of use:
+
+1. **Access Control** (Smart Door, Mailbox, Lift) — 85% of daily app usage
+2. **Reservations** (Clubhouse, Facilities) — 12% of usage
+3. **Visitor Management** (Kiosk Registration) — 3% of usage
+
+This data-driven prioritization ensured the most-used features were immediately accessible on the home screen.
+
+### Wireframing & Iteration
+
+**V1: Problem Identified**
+Initial design placed all features on a single scrolling home screen. Usability testing revealed users complained about having to scroll to find commonly-used functions like "Open Main Door."
+
+**V2: Solution Implemented**
+- Redesigned with bottom tab navigation
+- Set "Access Control" as default landing tab
+- Added quick-access widgets for entrance and lift controls
+- **Result:** Task completion time reduced from 8 seconds to 3 seconds
+
+**V3: Accessibility Refinement**
+- Increased minimum tap target size to 44x44pt (from 36x36pt)
+- Added haptic feedback for all button interactions
+- Implemented VoiceOver support for visually impaired residents
+
+### Key Design Decisions
+
+**Why QR Code for Locker Access?**
+
+❌ Bluetooth: Requires pairing, has connection delays
+❌ NFC: Not all Android phones support it
+✅ QR Code:
+- Faster response time (1-2 seconds)
+- Works offline (QR generated locally on device)
+- Familiar pattern for Hong Kong users (widely used with Octopus card integration)
+
+**Why Combine Multiple Features in One App?**
+
+User research showed 90% of residents preferred a single unified app over installing 3-4 separate facility apps. This approach:
+- Reduced cognitive load with consistent navigation patterns
+- Minimized home screen clutter
+- Provided a cohesive brand experience
+
+### Usability Testing
+
+**Round 1: 8 participants (4 residents, 4 external testers)**
+- **Issue Found:** 60% couldn't locate the "Call Lift" feature
+- **Solution:** Moved "Smart Lift" from buried Settings menu to main Access tab
+- **Validation:** 100% task success rate in follow-up testing
+
+**Round 2: 6 participants (including 2 elderly residents)**
+- **Issue Found:** Elderly users struggled with small QR code scanning area
+- **Solution:** Increased scanning viewfinder size by 40%, added real-time visual feedback
+- **Validation:** Task completion improved from 40% to 95% for senior users
+
+---
+
+## Visual Design
+
+### Design System
+
+**Color Palette**
+- Primary: Deep Blue (#1A3A52) — Conveys trust and security
+- Accent: Gold (#C9A961) — Aligns with Henderson Land's luxury branding
+- Neutral: Cool Gray (#F5F7FA) — Modern, clean background
+
+**Typography**
+- System Fonts: SF Pro (iOS) / Roboto (Android) for native feel
+- Body Text: Minimum 16px for readability
+- Headlines: Semi-bold weight for clear hierarchy
+
+**Component Library**
+Built a reusable library with 25+ UI components to ensure consistency across 15+ app screens, including:
+- Buttons (primary, secondary, ghost)
+- Cards (feature cards, quick-access widgets)
+- Form inputs (optimized for Chinese/English input)
+- Status indicators (connection, loading states)
+
+### Accessibility Considerations
+- WCAG AA compliance (4.5:1 contrast ratios)
+- Large tap targets (minimum 44x44pt)
+- VoiceOver/TalkBack support for screen readers
+- Bilingual support (Traditional Chinese / English) with proper dynamic text scaling
+- High-contrast mode for low-vision users
+
+---
+
+## Key Features
+
+**1. Smart Access Control**
+- Remote unlock for main entrance without physical keys
+- One-tap access during morning rush hours
+- Biometric authentication (Face ID / Fingerprint) for security
+
+**2. Smart Mailbox**
+- Remote mailbox unlock from anywhere
+- Push notifications when mail arrives
+- Secure access history log
+
+**3. Smart Lift Control**
+- Pre-call lift to desired floor before arriving at building
+- Saves 30-45 seconds of waiting time during peak hours
+- Reduces touchpoint contact (important post-pandemic consideration)
+
+**4. Clubhouse Reservation**
+- 24/7 online booking (vs. calling during business hours)
+- Integrated Octopus card payment
+- Calendar view showing availability at a glance
+
+**5. Visitor Registration**
+- Pre-register visitors via app
+- Visitors self-check-in at kiosk using QR code
+- Reduces security checkpoint wait time from 5 min to 30 sec
+
+---
+
+## Impact & Outcomes
+
+### Quantitative Results
+- 📈 **72% app adoption rate** within 2 months (exceeded 70% target)
+- 📱 **5.2 average daily app opens** per user
+- 📞 **45% reduction** in management office calls (from ~50 to ~27 calls/day)
+- ⭐ **4.6/5 App Store rating** (120+ reviews)
+
+### Qualitative Feedback
+
+> "Finally don't need to carry so many keys! This app saves me at least 5 minutes every morning."
+> — Resident review
+
+> "We've seen a dramatic decrease in calls about lost access cards and clubhouse bookings. The app has made our operations much smoother."
+> — Property Management Team
+
+### Lessons Learned
+
+**1. Early testing with elderly users is crucial**
+Initial designs failed accessibility requirements. Involving senior residents from the wireframe stage prevented costly late-stage revisions.
+
+**2. Offline functionality matters more than expected**
+QR code generation needed to work without internet in parking garages with poor signal. Always consider real-world edge cases.
+
+**3. Stakeholder alignment takes time but prevents rework**
+Property management had valid security concerns that required multiple design iterations. Investing time in stakeholder workshops upfront saved weeks of revisions later.
+
+---
+
+## Next Steps
+- Phase 2 planning: Package delivery tracking integration
+- Exploring Apple Wallet / Google Pay integration for hands-free access
+- Expanding to other Henderson Land properties
+
+---
+
+## Reflection
+
+This project reinforced the importance of designing for diverse user groups. Balancing the needs of tech-savvy professionals who wanted speed with elderly residents who needed simplicity required careful prioritization and extensive usability testing. The result was an app that achieved high adoption across all age groups while significantly improving building operations.

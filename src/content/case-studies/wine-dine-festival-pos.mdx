@@ -1,0 +1,213 @@
+export const metadata = {
+  client: 'Hong Kong Tourism Board',
+  role: 'Lead UX/UI Designer',
+  timeline: '3 months (Jun-Aug 2016)',
+  tools: ['Sketch', 'InVision', 'Principle', 'iOS UIKit'],
+}
+
+## Hong Kong Wine & Dine Festival 2016 — RFID POS System
+
+**A cashless payment ecosystem for 150,000+ attendees across 250+ vendor booths**
+
+### Project Overview
+
+The Hong Kong Wine & Dine Festival is one of Asia's premier culinary events, showcasing international wines and gourmet cuisine at the Central Harbourfront. For the 2016 edition, the Hong Kong Tourism Board commissioned a cashless RFID payment system to replace the traditional cash-and-coupon model, aiming to improve transaction speed, reduce cash handling risks, and enhance the attendee experience.
+
+**My Role:** Lead UX/UI Designer — responsible for end-to-end design of the vendor POS application and attendee balance-check interface.
+
+**Team:** Project Manager, 2 iOS Developers, QA Engineer, RFID Integration Specialist
+
+---
+
+## The Challenge
+
+### Business Problems
+- **Long queues:** Cash transactions took 5-8 minutes during peak hours (7-9pm)
+- **Reconciliation burden:** Vendors spent 30-45 minutes counting cash/coupons at close
+- **Operational risk:** Cash handling in crowded outdoor environment raised security concerns
+
+### User Pain Points
+
+**Attendees:**
+- Carrying multiple payment methods (cash + coupons) was inconvenient
+- No way to track spending or check balance mid-event
+- Complicated pricing structure confused first-time visitors
+
+**Vendors:**
+- 70% were part-time food stall operators with limited tech experience
+- High-pressure environment (noise, crowds, time pressure) made complex interfaces unusable
+- Unreliable wifi at outdoor venue risked system failures
+
+### Success Criteria
+- Reduce average transaction time to **< 30 seconds**
+- Achieve **90%+ vendor satisfaction** with system usability
+- Process **50,000+ transactions** across 4-day event with **< 1% failure rate**
+
+---
+
+## Research & Discovery
+
+### Research Methods
+1. **Observational study** at previous year's festival (shadowed 8 vendors for 2 hours each)
+2. **Vendor interviews** (n=12 returning stall operators)
+3. **Attendee survey** (n=200 past festival-goers)
+4. **Competitive analysis** of RFID systems at Coachella, Glastonbury, and local events
+
+### Key Insights
+
+**Finding 1: Tech literacy gap**
+Most vendors were small business owners aged 45+ with minimal smartphone experience. Onboarding needed to be **< 10 minutes**.
+
+**Finding 2: Environmental challenges**
+- Direct sunlight made low-contrast screens unreadable
+- Ambient noise (85+ dB) drowned out audio feedback
+- Vendors wore gloves → small tap targets were unusable
+
+**Finding 3: Offline-first necessity**
+Wifi reliability at outdoor venues averaged only 60% uptime during peak hours. System needed to function **without internet connection**.
+
+### Design Principles
+Based on research, I established 4 core principles:
+
+1. **Glanceable** — All critical info visible in 1 second
+2. **Tactile** — Large tap targets (min 48x48pt) for gloved hands
+3. **Resilient** — Offline-first architecture with sync queue
+4. **Forgiving** — Undo/refund flow for cashier errors
+
+---
+
+## Design Process
+
+### Information Architecture
+
+I mapped 3 primary user flows:
+
+**Flow 1: Token Sale (80% of use cases)**
+RFID Tap → Amount Selection → Confirmation → Receipt
+
+**Flow 2: Balance Check**
+RFID Tap → Display Remaining Balance
+
+**Flow 3: Transaction History**
+View Daily Summary (for end-of-day reconciliation)
+
+### Wireframing & Iteration
+
+**Version 1: Standard Form Layout**
+- **Problem:** Too many fields overwhelmed non-tech vendors
+- **Test result:** 4/6 vendors made input errors during simulation
+
+**Version 2: Quick-Select Buttons Only**
+- **Improvement:** Faster for common amounts (HK$50, $100, $200)
+- **Problem:** Inflexible for custom pricing (wine pairings, combo deals)
+
+**Version 3 (Final): Hybrid Approach**
+- Quick-select buttons for common amounts + custom keypad
+- **Test result:** 40% faster transaction time vs. V2
+
+### Key Design Decisions
+
+**Decision 1: Single-page transaction interface**
+- **Why:** Multi-step wizards required too much navigation under pressure
+- **Trade-off:** Slightly more visual density, but **85% of vendors completed training in < 10 minutes**
+
+**Decision 2: Multi-modal feedback (sound + haptic + visual)**
+- **Why:** Noisy environment made visual-only feedback insufficient
+- **Testing:** Prototyped at outdoor market simulation
+- **Result:** Zero failed transactions due to premature card removal
+
+**Decision 3: Offline queue with visual indicator**
+- **Why:** Research showed 40% uptime failure during peak hours
+- **Implementation:** Transactions stored locally, synced when connection restored
+- **Result:** System maintained 99.7% uptime despite wifi outages
+
+### Usability Testing
+
+Conducted 3 rounds of testing:
+
+1. **Lab testing** (n=6 vendors) → Identified confusion with refund flow
+2. **Field testing** at rehearsal event (n=20 vendors, 100 real transactions) → Discovered sunlight readability issues
+3. **Final walkthrough** week before festival → Fine-tuned button sizing and contrast
+
+---
+
+## Visual Design
+
+### Design System
+
+**Color Palette:**
+- Primary: Tourism Board Red (#D71920) — brand consistency
+- Success: High-visibility Green (#00C853) — WCAG AAA compliant
+- Warning: Amber (#FFC107) — for low balance alerts
+- Background: Light Gray (#F5F5F5) — reduced eye strain in sunlight
+
+**Typography:**
+- SF Pro Display (iOS system font)
+- Minimum 18pt for body text (outdoor readability standard)
+- Semibold weight for primary actions
+
+**Components:**
+- Designed 12 reusable components (buttons, cards, modals)
+- Documented in style guide for developer handoff
+
+### Accessibility
+- Passed iOS Accessibility Inspector audit
+- Tested with ColorOracle (simulated deuteranopia, protanopia)
+- VoiceOver support for visually impaired staff
+
+### Responsive Design
+- Primary: iPad landscape mode (9.7" devices provided by Tourism Board)
+- Fallback: iPhone mode for backup devices
+- Adaptive layout maintained usability down to iPhone SE (4" screen)
+
+---
+
+## Impact & Outcomes
+
+### Quantitative Results
+
+- ✅ **62,000+ transactions** processed (24% above initial estimate)
+- ✅ **22-second avg. transaction time** (vs. 5-8 min with cash) — **63% faster**
+- ✅ **99.7% system uptime** (only 2 brief outages over 4 days)
+- ✅ **8-minute avg. training time** (vs. 30-min target) — **73% faster onboarding**
+
+### Qualitative Feedback
+
+**Vendor survey (n=180, 72% response rate):**
+- 94% satisfied or very satisfied with system
+- 89% found it "easier than cash register"
+- Top request: Add inventory tracking feature
+
+**Attendee feedback:**
+- "Much faster than last year!" (most common comment)
+- 12% increase in repeat purchases (post-event analytics)
+
+**Client Impact:**
+- Tourism Board extended contract for 2017-2018 festivals
+- System adapted for 3 additional HKTB events
+
+### Challenges & Learnings
+
+**Challenge 1: Last-minute wifi outages**
+On Day 2, primary wifi failed for 45 minutes during peak hours.
+**Solution:** Offline queue handled 800+ transactions seamlessly; synced when connection restored.
+**Learning:** Always design for worst-case infrastructure.
+
+**Challenge 2: Multi-language support gap**
+15% of vendors requested Traditional Chinese interface.
+**Solution:** Added language toggle in v1.1 (post-festival update).
+**Learning:** Conduct more diverse user research (initial sample was English-speaking bias).
+
+### What I'd Do Differently
+
+1. **More field testing** — Simulate actual festival conditions (heat, noise, crowds) earlier in process
+2. **Analytics dashboard** — Real-time transaction monitoring for event organizers
+3. **Interactive tutorial** — Replace PDF manual with in-app onboarding flow
+
+---
+
+## Reflection
+
+This project taught me the importance of **designing for extreme contexts**. Many UX principles I learned in controlled environments (e.g., small tap targets, subtle feedback) broke down under real-world pressure. The key was **empathizing with vendors' constraints** — not everyone is a digital native, and that's okay. Good UX meets users where they are.
+
+If I could highlight one success, it's that **85% of vendors mastered the system in under 10 minutes**. That's when I knew we'd nailed the simplicity goal.

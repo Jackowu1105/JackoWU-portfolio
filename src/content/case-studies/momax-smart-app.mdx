@@ -1,0 +1,322 @@
+export const metadata = {
+  client: 'MOMAX (Smart Home Products)',
+  role: 'Lead UI/UX Designer',
+  timeline: '4 months (Jan-Apr 2022)',
+  tools: ['Figma', 'Maze', 'Miro', 'Google Analytics'],
+}
+
+## 📱 Project Overview
+
+MOMAX, a leading smart home product manufacturer in Asia with 50+ IoT devices, faced low mobile app adoption despite strong hardware sales. Their legacy app suffered from poor usability and high churn rates.
+
+**The Challenge:** Redesign the MOMAX Smart App to improve device control experience, reduce setup friction, and increase user retention across iOS and Android platforms.
+
+**My Role:** Led end-to-end UX design from research to final visual design, including:
+- User research and problem definition
+- Information architecture and interaction design
+- High-fidelity UI design and design system
+- Usability testing and iteration
+- Collaboration with PM and developers for implementation
+
+**Team:** 1 Product Manager, 2 Developers, 1 UX Designer (me)
+
+---
+
+## 🎯 Problem Definition
+
+### User Pain Points
+Through user interviews and usability testing of the legacy app, I identified critical issues:
+
+1. **Complex device setup** — 78% of users failed to complete device pairing on first attempt
+2. **Slow control response** — Average 4.2 seconds to control a device (perceived as "laggy")
+3. **Poor information architecture** — Users couldn't find scene/schedule features (buried 3 levels deep)
+4. **Inconsistent cross-platform experience** — iOS and Android versions felt like different products
+
+### Business Problems
+- **Low retention:** Only 32% of users remained active after 30 days
+- **High support costs:** 400+ monthly tickets related to app setup issues
+- **Missed opportunities:** Voice control and automation features were underutilized
+
+### Success Metrics
+- Reduce device setup time by 50%
+- Increase 30-day retention rate from 32% to 55%+
+- Improve NPS score from 32 to 60+
+- Reduce setup-related support tickets by 30%
+
+---
+
+## 🔍 Research & Insights
+
+### Research Methods
+
+1. **User Interviews (n=12)** — Conducted in-depth interviews with existing MOMAX customers to understand their smart home routines and pain points
+
+2. **Usability Testing** — Observed 8 users attempting common tasks with the legacy app, revealing critical friction points
+
+3. **Competitive Analysis** — Evaluated 5 leading smart home apps (Google Home, Apple Home, SmartThings, Philips Hue, TP-Link Kasa) for interaction patterns and feature benchmarks
+
+4. **Analytics Review** — Analyzed 6 months of user behavior data to identify drop-off points and feature usage
+
+### Key Insights
+
+**Insight #1: Mental model mismatch**
+Users think about their devices by physical location ("bedroom lights") but the old app organized by device type ("all lights"). This caused cognitive friction.
+
+**Insight #2: Speed is critical**
+For IoT control, users expect instant feedback. Delays over 2 seconds felt "broken" even when technically functional.
+
+**Insight #3: Setup is the make-or-break moment**
+67% of users who failed initial setup never returned to the app. First impressions matter significantly.
+
+**Insight #4: Power users want automation, casual users want simplicity**
+Advanced features (scenes, schedules) must be accessible but not overwhelming for first-time users.
+
+### User Persona: "Busy Ben"
+
+**Demographics:** 32, works from home, tech-comfortable but not tech-expert
+
+**Context:** Owns 8+ MOMAX smart devices (plugs, lights, air purifier). Uses app primarily in morning and evening routines.
+
+**Goals:**
+- Control devices quickly without thinking
+- Set up new devices in under 2 minutes
+- Create simple automations (e.g., "turn off everything at 11pm")
+
+**Pain Points:**
+- Current app is slow and confusing
+- Frustrated by multi-step processes for simple actions
+- Doesn't understand difference between "scenes" and "schedules"
+
+---
+
+## 🎨 Design Process
+
+### Information Architecture Redesign
+
+**Problem:** The old app had a flat structure with 15 menu items, causing decision paralysis.
+
+**Solution:** Restructured around user mental models with 4 primary sections:
+
+1. **Home** — Quick access dashboard with favorite devices and one-tap controls
+2. **Rooms** — Spatial organization aligning with how users think about their devices
+3. **Automation** — Combined scenes and schedules with clearer labeling
+4. **Settings** — Consolidated account, device management, and preferences
+
+**Validation:** Card sorting exercise with 10 users showed 85% agreement with new IA.
+
+### Key Design Decisions
+
+**Decision #1: Navigation Pattern**
+
+*Options considered:*
+- Hamburger menu (old app pattern)
+- Tab bar navigation
+- Hybrid approach
+
+*Decision:* Switched to bottom tab bar navigation
+
+*Rationale:*
+- Usability testing showed 2.5x faster task completion vs. hamburger menu
+- iOS and Android users both familiar with tab bars
+- Reduces navigation depth from 3+ levels to maximum 2 levels
+
+**Decision #2: Device Control Interface**
+
+*Options considered:*
+- List view (old app)
+- Grid with small cards
+- Large cards with status indicators
+
+*Decision:* Large cards with prominent status and controls
+
+*Rationale:*
+- IoT devices need clear "on/off/connected" status at a glance
+- Larger touch targets (48x48dp) reduce misclicks
+- Visual hierarchy helps quick scanning
+
+**Decision #3: Device Setup Flow**
+
+*Old flow:* 7 steps (scan → pair → name → assign room → set icon → add to scene → done)
+
+*New flow:* 3 steps (scan & auto-pair → name & location → done)
+
+*Rationale:*
+- Combined pairing and scanning with smart auto-detection
+- Made room assignment and naming a single step
+- Moved advanced options (icon, scenes) to optional post-setup
+
+### Wireframes & Iterations
+
+**Lo-fi Wireframes:** Started with paper sketches to explore multiple layout options quickly. Created 12 different concepts for the home screen before narrowing to 3 finalists.
+
+**Mid-fi Prototypes:** Built clickable prototypes in Figma to test core flows:
+- Device pairing
+- Room management
+- Creating an automation
+
+**High-fi Mockups:** Developed full visual design with actual device states, real content, and motion design specifications.
+
+### Usability Testing & Iteration
+
+**Round 1: Wireframe Testing (n=6)**
+
+*Task:* Add a new smart plug and turn it on
+
+*Findings:*
+- ✅ 100% task completion (vs. 22% with old app!)
+- ⚠️ Users confused by "Scenes" terminology
+- ⚠️ 3 users tried to swipe between rooms (we only had tabs)
+
+*Changes:*
+- Renamed "Scenes" → "Automation" with clearer icons and descriptions
+- Added swipe gestures between room views
+
+**Round 2: High-fidelity Prototype (n=8)**
+
+*Tasks:* Setup device, control device, create schedule
+
+*Findings:*
+- ✅ 87% average task success rate (vs. 45% old app)
+- ✅ Users loved the quick-access widget on home screen
+- ⚠️ Android users expected Material Design patterns
+
+*Changes:*
+- Refined platform-specific UI patterns
+- Added customizable quick-access widget
+- Improved visual feedback for device state changes
+
+---
+
+## 🎨 Visual Design
+
+### Design System
+
+**Goals:**
+- Create consistent, scalable component library
+- Support both iOS and Android with platform-appropriate patterns
+- Ensure accessibility compliance
+
+**Color Palette**
+- **Primary:** MOMAX Blue (#0066FF) — Brand color for primary actions and key UI elements
+- **Semantic Colors:**
+  - Green (#00C853) — Device "on" state
+  - Gray (#9E9E9E) — Device "off" state
+  - Red (#FF3B30) — Alerts and errors
+  - Orange (#FF9500) — Device "connecting" state
+- **Neutrals:** 8-step gray scale for text and backgrounds
+
+**Typography**
+- **iOS:** SF Pro (system font) for native feel
+- **Android:** Roboto for Material Design compliance
+- **Hierarchy:** 5 text styles (Hero, H1, H2, Body, Caption)
+
+**Component Library**
+Created 42 reusable components in Figma including:
+- Device cards (8 variants for different device types)
+- Control widgets (sliders, toggles, buttons)
+- Status indicators
+- Navigation elements
+- Form inputs
+- Modals and bottom sheets
+
+### Platform Considerations
+
+**iOS Design**
+- Followed Apple Human Interface Guidelines
+- Used native navigation patterns (tab bar, navigation bar)
+- Implemented iOS-specific gestures (swipe back, long-press)
+- Designed for Dynamic Type and Dark Mode
+
+**Android Design**
+- Followed Material Design 3 principles
+- Used bottom navigation and floating action buttons
+- Implemented Material motion and elevation
+- Designed for adaptive layouts across screen sizes
+
+**Shared Core UX**
+- Same information architecture across platforms
+- Identical task flows and logic
+- Adapted visual language to feel native on each platform
+
+### Accessibility
+
+**WCAG AA Compliance**
+- Color contrast: Minimum 4.5:1 for all text
+- Non-color indicators: Status shown via icon + color
+- Touch targets: Minimum 44x44pt (iOS) / 48x48dp (Android)
+
+**Voice Control Integration**
+- Full support for Siri, Google Assistant, Alexa
+- Voice-first shortcuts for common actions
+- Screen reader optimization for VoiceOver and TalkBack
+
+**Additional Considerations**
+- Large text support up to 200% scale
+- Haptic feedback for important actions
+- Reduced motion option for animations
+
+---
+
+## 📊 Impact & Outcomes
+
+### Quantitative Results
+
+**User Experience Metrics**
+- ⚡ **Device setup time:** 4.5 min → 1.8 min (60% reduction)
+- ✅ **Setup success rate:** 22% → 94% on first attempt
+- 🚀 **Control response time:** 4.2s → 1.1s (perceived as "instant")
+
+**Business Metrics**
+- 📈 **30-day retention:** 32% → 61% (90% improvement)
+- 😊 **NPS score:** 32 → 68 (+36 points)
+- 🎫 **Support tickets:** -45% reduction in app-related issues
+- 💰 **Contributed to 23% increase in smart product sales** (Q2 2022, per MOMAX internal data)
+
+### Qualitative Feedback
+
+**User Testimonials**
+
+> "The new app is so much faster! I can finally control my lights without waiting forever."
+> — iOS user review (App Store, April 2022)
+
+> "Setup used to take me 20 minutes. Now it's literally 2 minutes. Game changer."
+> — Beta tester feedback
+
+**Business Recognition**
+- Featured in MOMAX's 2022 product launch keynote as flagship app redesign
+- App Store "Editor's Choice" nomination (pending review at project end)
+
+### Lessons Learned
+
+**What Worked Well**
+
+1. **Early and frequent testing saved time** — Testing lo-fi prototypes caught major navigation issues that would have required significant rework if discovered during development.
+
+2. **Design system investment paid off** — Building a comprehensive component library upfront made high-fidelity design and developer handoff much smoother. Both platforms shared 80% of components.
+
+3. **Quantitative + qualitative research was essential** — Analytics showed *where* users struggled, but only interviews revealed *why*. Both were necessary for effective solutions.
+
+**Challenges Overcome**
+
+1. **Cross-platform consistency vs. native feel** — Balancing "same experience" with "feels native" required careful decisions about when to unify and when to adapt. Solution: shared IA and flows, adapted visual language.
+
+2. **Technical constraints with IoT latency** — Device response time was partly hardware-limited. Solution: improved perceived performance through optimistic UI updates and clear loading states.
+
+**What I'd Do Differently**
+
+- **Involve developers earlier:** Some design ideas required complex backend changes. Earlier collaboration would have identified constraints sooner.
+- **Plan for onboarding:** We designed the app for existing users. First-time user onboarding was added later as a "nice-to-have" but should have been core from the start.
+
+---
+
+## 🔮 Next Steps & Future Enhancements
+
+**Near-term Roadmap (based on user feedback)**
+1. **Family sharing** — Requested by 42% of users in post-launch survey
+2. **Expanded voice control** — Cover all device types and automation features
+3. **Energy monitoring dashboard** — Visualize usage patterns and costs
+
+**Future Exploration**
+- Apple Watch companion app for ultra-quick controls
+- Widget customization for iOS 16 Lock Screen
+- AI-powered automation suggestions based on usage patterns

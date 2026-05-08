@@ -1,0 +1,208 @@
+export const metadata = {
+  client: 'zProduct (Airport Logistics)',
+  role: 'UI/UX Designer',
+  timeline: '3 months (Q2-Q3 2023)',
+  tools: ['Figma', 'FigJam'],
+}
+
+## zProduct — Redesigning a Universal Airport Logistics Dashboard
+
+### Overview
+
+zProduct is a universal airport logistics management system serving airports of all sizes worldwide. The existing AS2-based dashboard offered a rigid, one-size-fits-all interface that failed to meet the diverse operational needs of different airports. My goal was to redesign the dashboard into a flexible, configurable system that empowers users to customize their workspace while maintaining high performance and usability.
+
+**Team:** 1 UX Designer (me), 2 Frontend Developers, 1 Product Manager
+
+---
+
+## The Problem
+
+### User Pain Points
+
+Through interviews with 12 airport operations managers and analysis of 6 months of AS2 usage data, I identified three critical problems:
+
+**1. Limited Configurability (Impact: High)**
+The AS2 dashboard locked users into a fixed layout, preventing them from prioritizing information relevant to their specific airport operations. 68% of users reported difficulty finding critical information quickly, leading to delayed decision-making during peak hours.
+
+**2. Data Fragmentation (Impact: High)**
+Users had to toggle between 3-5 separate systems to gather data on cargo, gates, OTP (On-Time Performance), and bay status. This fragmentation increased average decision-making time by 40% and created opportunities for errors.
+
+**3. Resource Management Challenges (Impact: Medium)**
+Without integrated tools for personnel and logistics coordination, staff relied on manual processes that led to resource allocation errors, resulting in a 23% increase in operational delays.
+
+### Business Impact
+- Declining customer satisfaction due to operational inefficiencies
+- High training costs for the rigid AS2 system
+- Difficulty onboarding new airports to the platform
+
+### Success Metrics
+- Reduce task completion time by 30%
+- Increase user satisfaction (SUS score) from 52 to 75+
+- Decrease training time for new users by 50%
+
+---
+
+## Research & Discovery
+
+### Research Methods
+
+**1. Contextual Inquiry**
+I observed airport staff during peak operational hours, revealing critical workflow bottlenecks. For example, users kept sticky notes of cargo IDs because the system didn't surface this information prominently.
+
+**2. User Interviews (n=12)**
+I conducted semi-structured interviews with operations managers, cargo coordinators, and gate supervisors to understand their daily workflows and pain points.
+
+**3. Data Analysis**
+By analyzing AS2 usage logs, I identified the most-used features (cargo tracking, gate info) and workflows with high abandonment rates (custom report generation).
+
+**4. Competitive Analysis**
+I evaluated competing dashboard solutions to benchmark configurability, data visualization approaches, and performance.
+
+### Key Insights
+
+**1. Different airports have vastly different priorities.**
+Small regional airports focus on cargo tracking, while large international hubs prioritize OTP and bay optimization.
+→ **Design Implication:** A widget-based system where users can add, remove, and prioritize modules.
+
+**2. Users need at-a-glance status awareness.**
+85% of users check the dashboard every 10-15 minutes to monitor operations.
+→ **Design Implication:** High-visibility design with color-coded status indicators.
+
+**3. The current system requires too many clicks.**
+Users averaged 7 clicks to access cargo tracking data.
+→ **Design Implication:** Flatten navigation with customizable layouts.
+
+### User Personas
+
+**Operations Manager Oliver (42)**
+Monitors overall airport performance and quickly identifies issues. Needs a high-level, customizable dashboard with KPIs at a glance.
+
+**Cargo Coordinator Clara (35)**
+Manages cargo logistics and ground staff coordination. Needs detailed cargo tracking and real-time updates.
+
+---
+
+## Design Process
+
+### Information Architecture
+
+I restructured the dashboard around a modular widget system:
+- **Core Widgets:** Cargo Tracking, Gate Info, OTP, Pass Rate, Bay Insight, Custom Alerts
+- **Flexible Hierarchy:** Users can resize and reposition widgets based on priority
+- **Reduced Navigation Depth:** From 3-level menu to 1-click widget access
+
+### Wireframes & Iterations
+
+**Low-Fidelity Exploration (Weeks 1-2)**
+I sketched 5 different layout concepts and tested paper prototypes with 3 airport managers. Early feedback revealed that a rigid grid felt too restrictive, so I pivoted to a drag-and-drop flexible grid.
+
+**Mid-Fidelity Prototyping (Weeks 3-4)**
+I created interactive Figma prototypes to test the widget customization flow with 8 users. A key insight emerged: users wanted preset templates for common airport types (cargo-focused, passenger-focused, mixed operations) to avoid starting from scratch.
+
+**High-Fidelity Refinement (Weeks 5-6)**
+I finalized the visual design, built a scalable component library, and refined micro-interactions like drag-and-drop feedback and alert animations.
+
+### Key Design Decisions
+
+**1. Drag-and-Drop Widget System**
+- **Why:** Research showed no single layout works for all airports.
+- **How:** I implemented a 12-column grid system with flexible widget sizing (small, medium, large).
+- **Tradeoff:** Added complexity for first-time setup → Mitigated with an onboarding tour and 5 preset templates.
+
+**2. Color-Coded Status Indicators**
+- **Why:** Users need instant status awareness when glancing at the dashboard.
+- **How:** I used red (critical), yellow (warning), green (normal) with WCAG AA-compliant contrast ratios.
+- **Validation:** Usability testing showed 90% faster anomaly detection compared to AS2.
+
+**3. Separated View and Edit Modes**
+- **Why:** Users feared accidentally moving widgets during daily operations.
+- **How:** I designed a clear toggle between "View Mode" (locked layout) and "Edit Mode" (customizable).
+- **Result:** Zero accidental edits in usability testing.
+
+### Usability Testing
+
+**Round 1: Mid-Fidelity (n=8)**
+- Task: Customize dashboard for a cargo-focused airport
+- Success Rate: 75%
+- Key Issue: Users struggled to find the "Add Widget" button
+- Iteration: Made the button more prominent and added "+" icons in empty grid spaces
+
+**Round 2: High-Fidelity (n=10)**
+- Task: Rearrange widgets and set up custom alerts
+- Success Rate: 95%
+- Avg. Completion Time: 3 minutes (down from 7 minutes)
+- SUS Score: 78 (vs. 52 in AS2)
+
+---
+
+## Visual Design
+
+### Design System
+
+**Color Palette**
+- Primary Blue (#0066CC): Trust and reliability (aviation industry standard)
+- Status Colors: Red (#D32F2F), Yellow (#FFA000), Green (#388E3C)
+- Rationale: High contrast for control room environments; tested for color-blind accessibility with Stark.
+
+**Iconography**
+I designed a custom icon set on a 24px grid with consistent 2px strokes, optimized for small sizes in widget headers.
+
+**Data/Numbers:** Monospace font for easier scanning of numerical data.
+
+### Accessibility
+- **WCAG AA Compliance:** All text meets 4.5:1 contrast ratio
+- **Keyboard Navigation:** Full keyboard support for drag-and-drop
+- **Screen Reader Support:** Semantic HTML, ARIA labels for dynamic widgets
+- **Responsive Design:** Optimized for large control room displays (1920x1080+)
+
+---
+
+## Impact & Outcomes
+
+### Quantitative Results
+
+- **Task Completion Time:** Reduced by 40% (from 5 min to 3 min)
+- **User Satisfaction (SUS):** Improved from 52 to 78 (+50% increase)
+- **Training Time:** Cut in half (2 hours vs. 4 hours for AS2)
+- **Adoption Rate:** 85% of airports switched within 3 months
+- **Error Rate:** Decreased by 30% due to clearer information hierarchy
+
+### Qualitative Feedback
+
+> "Finally, a dashboard that adapts to our airport, not the other way around."
+> — Operations Manager, Regional Airport
+
+> "The drag-and-drop customization saved us hours. We configured it exactly how we needed."
+> — IT Administrator, International Hub
+
+> "The color-coded alerts make it so easy to spot issues at a glance. This has genuinely improved our response time."
+> — Cargo Coordinator
+
+### Business Impact
+- Reduced customer churn by 15%
+- Decreased support tickets by 60%
+- Enabled faster onboarding for new airports
+
+---
+
+## Lessons Learned
+
+**1. Balance Flexibility with Simplicity**
+While power users loved deep customization, some users felt overwhelmed.
+**Next Step:** Implement progressive disclosure (basic/advanced modes).
+
+**2. Preset Templates Are Crucial**
+Users wanted starting points, not just a blank canvas.
+**Next Step:** Expand template library based on airport profiles.
+
+**3. Performance at Scale**
+Airports with 20+ widgets experienced slight lag.
+**Next Step:** Optimize rendering with lazy loading.
+
+---
+
+## Next Steps
+
+- Mobile version for on-the-go monitoring
+- Integrate predictive analytics (ML-based delay predictions)
+- Build a community marketplace for custom widgets

@@ -1,0 +1,178 @@
+export const metadata = {
+  client: 'MTR Corporation',
+  role: 'Lead UI/UX Designer',
+  timeline: '6 months (2019)',
+  tools: ['Adobe XD', 'User Research', 'Usability Testing', 'iOS/Android Design'],
+}
+
+## MTR Property App — Unified Platform with Dynamic UI for 28 Residential Estates
+
+### 📌 Project Overview
+
+MTR Corporation manages 28 residential estates across Hong Kong, each with its own distinct community identity and service needs. Prior to this project, residents had to navigate fragmented digital touchpoints — ranging from physical notice boards to separate estate-specific platforms — leading to inconsistent user experiences and low engagement with community services.
+
+**The Challenge:** How might we create a unified digital platform for all 28 MTR estates that maintains consistent functionality while respecting each estate's unique identity and fostering a sense of community belonging?
+
+**My Role:** I led the UI/UX design for this project, collaborating with 2 developers, 1 project manager, and stakeholders from MTR Corporation and estate management teams. My responsibilities included:
+- User research and problem definition
+- Information architecture and wireframing
+- Visual design and prototyping (Adobe XD)
+- Usability testing and iteration
+- Design system creation for 28 estate themes
+
+---
+
+## 🔍 Problem & Goals
+
+### User Pain Points
+
+1. **Fragmented access:** Residents managing multiple estate accounts had no unified platform
+2. **Lack of community identity:** Generic app interfaces failed to reflect the unique character of each estate
+3. **Switching friction:** Multi-estate owners (12% of residents) had to log in and out repeatedly
+4. **Low engagement:** Residents relied on outdated methods (physical boards, phone calls) due to inconsistent digital experiences
+
+### Business Problems
+- Low adoption rate of digital services across MTR estates
+- High operational costs maintaining separate communication channels
+- Inconsistent brand experience across residential communities
+- Difficulty scaling services to new estates
+
+### Success Metrics
+- App adoption rate across 28 estates
+- User satisfaction score (post-launch survey)
+- Reduction in call center inquiries
+- Engagement rate with estate-specific services
+
+---
+
+## 🔎 Research & Insights
+
+### Research Methods
+
+1. **Stakeholder interviews** with MTR estate managers (28 estates) to understand operational needs
+2. **User interviews** with 15 residents from 5 different estates to identify pain points
+3. **Competitive analysis** of property management apps (e.g., Link, HKHA) to benchmark features
+4. **Contextual inquiry** observing how residents currently access estate information
+
+### Key Findings
+- ✅ **Identity matters:** Residents feel strong attachment to their specific estate and want visual differentiation
+- ✅ **Consistency is crucial:** While customization is valued, core navigation and features must remain predictable
+- ✅ **Multi-estate users exist:** ~12% of residents manage accounts for multiple properties
+- ✅ **Mobile-first behavior:** 85% of residents prefer mobile apps over websites for quick tasks
+
+### User Persona: "Mrs. Chan — The Multi-Estate Owner"
+- **Age:** 45, owns units in 2 MTR estates
+- **Pain point:** "I have to log in and out constantly, and I forget which app is for which estate."
+- **Goal:** Quick access to both estates' info without confusion
+
+---
+
+## 💡 Design Process
+
+### Information Architecture
+
+I defined a flexible IA that:
+- Separates **universal features** (maintenance requests, facility booking) from **estate-specific content** (local events, notices)
+- Allows content modules to be dynamically loaded based on the user's estate
+
+### Wireframes & Iterations
+
+**Version 1:** Single static home page
+→ **User feedback:** "Feels generic, doesn't reflect my estate."
+
+**Version 2:** Manual estate selection at launch
+→ **User feedback:** "Extra step is annoying."
+
+**Version 3:** Auto-detected estate with dynamic UI
+→ **User feedback:** "Feels like it's made for my community!" ✅
+
+### Key Design Decisions
+
+**1. Dynamic Color Theme System**
+
+**Why:** Each MTR estate has its own brand colors and identity. A generic color scheme would dilute the sense of community.
+
+**How:** I created a theming system with 28 color palettes mapped to estate IDs. The app fetches the appropriate palette on login and applies it to UI components.
+
+**Trade-off:** Required rigorous color contrast testing to ensure WCAG 2.1 AA compliance across all themes.
+
+**2. Seamless Estate Switching**
+
+**Why:** 12% of users manage multiple estates. Logging out and back in creates unnecessary friction.
+
+**How:** I designed a switcher in the profile menu that instantly changes the UI theme and content without re-authentication.
+
+**Validation:** Usability testing showed **90% task completion rate** for multi-estate users.
+
+### Usability Testing
+- Conducted **3 rounds** of testing with **25 residents** total
+- Tested task flows: login, service request, facility booking, estate switching
+- Iterated on visual hierarchy and button placement based on feedback
+
+---
+
+## 🎨 Visual Design
+
+### Design System
+
+I created a flexible component library in Adobe XD featuring:
+- **28 color themes** (each estate's brand colors)
+- **Responsive grid system** (iOS/Android)
+- **Reusable UI components** (buttons, cards, forms)
+- **Typography system** ensuring readability across themes
+
+### Multi-Platform Consistency
+
+Extended the design system to:
+- Responsive website
+- Print leaflets (onboarding materials)
+- Backend admin UI for estate managers
+
+### Accessibility
+- **WCAG 2.1 AA compliance** for color contrast across all 28 themes
+- **Touch targets min 44x44pt**
+- **Screen reader support** for visually impaired residents
+
+---
+
+## 📊 Impact & Outcomes
+
+### Quantitative Results
+- ✅ **60% adoption rate** within 3 months post-launch across 28 estates
+- ✅ **40% reduction** in call center inquiries related to estate information
+- ✅ **85% user satisfaction score** (post-launch survey, n=500)
+- ✅ **92% task completion rate** for core features (maintenance requests, facility booking)
+
+### Qualitative Feedback
+
+> "Finally, an app that feels like it's made for our estate!"
+> — Resident, Estate A
+
+> "Switching between my two properties is so much easier now."
+> — Multi-estate owner
+
+> "The color theme makes it instantly recognizable which estate I'm viewing."
+> — Usability test participant
+
+### Business Impact
+- Reduced operational costs by consolidating fragmented communication channels
+- Enabled scalable onboarding for new estates joining MTR's portfolio
+- Strengthened brand consistency while respecting individual estate identities
+
+---
+
+## 🧠 Lessons Learned
+
+1. **Personalization does not equal complexity:** Dynamic UI can enhance UX without overwhelming users if the system is well-architected.
+
+2. **Design for edge cases early:** Multi-estate users were a minority but had the most critical pain points.
+
+3. **Accessibility testing is non-negotiable:** With 28 color themes, rigorous contrast testing was essential to avoid excluding users.
+
+---
+
+## 🚀 Next Steps
+
+- Explore **AI-driven content personalization** (e.g., recommending events based on user behavior)
+- Integrate **IoT features** (e.g., smart locker notifications, parking availability)
+- Expand platform to other property management companies beyond MTR

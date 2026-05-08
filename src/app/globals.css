@@ -1,26 +1,131 @@
-@import "tailwindcss";
+@import 'tailwindcss';
 
+/* Premium Warm Neutral Color System — Light Mode */
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --bg-base: #faf7f5;
+  --bg-elevated: #f5f1ec;
+  --glass-surface: rgba(255, 255, 255, 0.75);
+  --glass-border: rgba(0, 0, 0, 0.05);
+  --glass-border-hover: rgba(0, 0, 0, 0.1);
+  --text-primary: #1c1814;
+  --text-secondary: #8a8480;
+  --text-tertiary: #b8b2ae;
+  --accent-gold: #c4a882;
+  --accent-warm: #a89880;
+  --acgent-deep: #6b5c4c;
+  --accent-glow: rgba(196, 168, 130, 0.15);
 }
 
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --color-bg-base: var(--bg-base);
+  --color-bg-elevated: var(--bg-elevated);
+  --color-glass-surface: var(--glass-surface);
+  --color-glass-border: var(--glass-border);
+  --color-glass-border-hover: var(--glass-border-hover);
+  --color-text-primary: var(--text-primary);
+  --color-text-secondary: var(--text-secondary);
+  --color-text-tertiary: var(--text-tertiary);
+  --color-accent-gold: var(--accent-gold);
+  --color-accent-warm: var(--accent-warm);
+  --color-accent-deep: var(--acgent-deep);
+  --color-accent-glow: var(--accent-glow);
+  --font-sans: var(--font-inter);
+  --font-heading: var(--font-epilogue);
+  --font-mono: var(--font-jetbrains-mono);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+/* Smooth scrolling & base styles */
+html {
+  scroll-behavior: smooth;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background: var(--bg-base);
+  color: var(--text-primary);
+  font-family: var(--font-sans), system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Glass card utility — liquid glass */
+.glass-card {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  background: var(--glass-surface);
+  border: 1px solid var(--glass-border);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-radius: 16px;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.glass-card:hover {
+  border-color: var(--glass-border-hover);
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.04);
+}
+
+/* Liquid glass sheen — subtle rotating light across the surface */
+.glass-card::before {
+  content: '';
+  position: absolute;
+  inset: -100%;
+  background: conic-gradient(
+    from 0deg at 50% 50%,
+    transparent 0deg,
+    rgba(255, 255, 255, 0.08) 120deg,
+    transparent 240deg,
+    rgba(255, 255, 255, 0.04) 300deg,
+    transparent 360deg
+  );
+  animation: liquidSpin 15s linear infinite;
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* Ensure card content stays above the sheen layer */
+.glass-card > * {
+  position: relative;
+  z-index: 1;
+}
+
+@keyframes liquidSpin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+/* Selection color */
+::selection {
+  background: rgba(196, 168, 130, 0.2);
+  color: var(--text-primary);
+}
+
+/* Scrollbar styling */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bg-base);
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(0, 0, 0, 0.08);
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(0, 0, 0, 0.15);
+}
+
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
 }
