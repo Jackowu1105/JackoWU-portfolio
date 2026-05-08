@@ -47,21 +47,21 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-/* Glass card utility — liquid glass */
+/* Glass card utility — premium frosted glass */
 .glass-card {
   position: relative;
   isolation: isolate;
   overflow: hidden;
-  background: var(--glass-surface);
-  border: 1px solid var(--glass-border);
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
+  background: linear-gradient(134deg, rgba(255, 255, 255, 0.45) 0%, rgba(255, 255, 255, 0.08) 100%);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
   border-radius: 16px;
   transition: border-color 0.3s ease, box-shadow 0.3s ease;
 }
 
 .glass-card:hover {
-  border-color: var(--glass-border-hover);
+  border-color: rgba(255, 255, 255, 0.5);
   box-shadow: 0 4px 24px rgba(0, 0, 0, 0.04);
 }
 

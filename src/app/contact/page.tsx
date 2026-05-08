@@ -1,12 +1,16 @@
+import { GlassCard } from '@/components/shared/GlassCard'
 import { Button } from '@/components/shared/Button'
 
 export default function ContactPage() {
   return (
-    <div className="mx-auto max-w-4xl px-6 py-16">
+    <div className="mx-auto max-w-6xl px-6 md:px-12 py-16">
       {/* Header */}
       <div className="mb-16">
-        <h1 className="text-4xl md:text-5xl font-bold tracking-tight text-[#1C1814] mb-4">
+        <p className="text-[#B8B2AE] text-sm font-medium tracking-widest uppercase mb-3">
           Contact
+        </p>
+        <h1 className="text-4xl md:text-5xl font-bold tracking-tight text-[#1C1814] mb-4">
+          Let&apos;s work together
         </h1>
         <p className="text-[#8A8480] max-w-lg leading-relaxed text-lg">
           Got a project, opportunity, or just want to say hi? I&apos;d love to hear from you.
@@ -15,7 +19,7 @@ export default function ContactPage() {
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
         {/* Form */}
-        <div className="glass-card p-8">
+        <GlassCard hover={false} className="p-8">
           <form
             action="https://formspree.io/f/your-form-id"
             method="POST"
@@ -67,11 +71,11 @@ export default function ContactPage() {
               Send message
             </button>
           </form>
-        </div>
+        </GlassCard>
 
         {/* Contact info */}
         <div className="space-y-6">
-          <div className="glass-card p-8">
+          <GlassCard className="p-8">
             <h3 className="font-semibold text-[#1C1814] mb-2">Email</h3>
             <a
               href="mailto:hello@jacko.design"
@@ -79,9 +83,9 @@ export default function ContactPage() {
             >
               hello@jacko.design
             </a>
-          </div>
+          </GlassCard>
 
-          <div className="glass-card p-8">
+          <GlassCard className="p-8">
             <h3 className="font-semibold text-[#1C1814] mb-2">LinkedIn</h3>
             <a
               href="https://linkedin.com"
@@ -91,14 +95,14 @@ export default function ContactPage() {
             >
               linkedin.com/in/jacko
             </a>
-          </div>
+          </GlassCard>
 
-          <div className="glass-card p-8">
+          <GlassCard className="p-8">
             <h3 className="font-semibold text-[#1C1814] mb-2">Location</h3>
             <p className="text-[#8A8480]">Hong Kong</p>
-          </div>
+          </GlassCard>
 
-          <div className="glass-card p-8">
+          <GlassCard className="p-8">
             <h3 className="font-semibold text-[#1C1814] mb-3">Quick links</h3>
             <div className="flex flex-wrap gap-3">
               <Button href="/resume" variant="secondary">
@@ -108,7 +112,7 @@ export default function ContactPage() {
                 Work
               </Button>
             </div>
-          </div>
+          </GlassCard>
         </div>
       </div>
     </div>

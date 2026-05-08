@@ -1,0 +1,110 @@
+Jacko Wu
+UX/UI Designer
+
+Professional Summary
+
+A UX/UI Designer with over 8 years of experience spanning system design, product design, and branding across fintech, IoT, and logistics industries. In recent years, I have undergone a transformative shift — evolving from a pure designer into a design-engineer hybrid — by embracing AI-assisted development and vibe coding workflows. This evolution enables me to independently translate design concepts into fully functional front-end applications, bridging the gap between design vision and technical delivery with remarkable efficiency. I am passionate about leveraging AI tools to augment creativity, accelerate prototyping, and deliver end-to-end product experiences that are both visually compelling and technically sound.
+
+Experience
+
+UX/UI Designer
+Laboratory for AI-Powered Financial Technologies Limited (AIFT)
+10 / 2024 — Present
+
+AIFT is the only fintech research lab recognised by InnoHK, the HKSAR Government's flagship innovation initiative, co-founded by City University of Hong Kong and Columbia University. As a UX/UI Designer within this fast-paced research and commercialisation environment, I am responsible for the full spectrum of design deliverables across multiple high-impact fintech products and corporate branding.
+
+Product Design — FinTech Platforms
+
+  • Supply Chain Finance (TOLO Analysis): Designed the end-to-end UI/UX for an AI-powered SaaS platform that leverages four-dimensional data analysis, machine learning algorithms, and blockchain technology to assess credit risk and facilitate cross-border supply chain financing for SMEs and financial institutions.
+  • FinSights: Crafted the user interface and interaction design for an AI-driven financial research assistant featuring the proprietary DeepSights reasoning engine — a Mixture-of-Experts model that delivers multi-modal financial analysis including sentiment analysis, fundamental research, and macroeconomic insights.
+  • Fundel (Tolo Digitech Spin-off): Contributed to the UI/UX design of an AI-enabled trade finance platform that utilises trusted logistics data from Hong Kong's Port Community System to streamline invoice financing and trade verification for SMEs.
+
+Visual & Brand Design
+
+  • Designed and produced a wide range of exhibition materials, including large-scale backdrops, leaflets, banners, and presentation decks for industry events such as InnoEX.
+  • Developed and maintained a cohesive visual identity across the company's digital presence and print collateral, ensuring brand consistency across all touchpoints.
+
+Multimedia & Motion Content
+
+  • Spearheaded AI-generated video production workflows — utilising generative AI tools for scriptwriting, voiceover synthesis, video generation, and post-production editing to create promotional and explanatory content.
+  • Produced motion graphics and animated assets for product demos, investor presentations, and exhibition displays.
+
+Front-End Development via AI & Vibe Coding
+
+  • Independently delivered front-end web interfaces by leveraging AI-assisted coding tools (vibe coding), effectively bridging the gap between design and development without a dedicated engineering team.
+  • This capability has dramatically shortened the design-to-delivery cycle, allowing rapid prototyping and iterative refinement directly in code.
+
+UI/UX Designer
+UbiZense Ltd.
+08 / 2022 — 10 / 2024
+
+Led the UI/UX design of a comprehensive airport logistics dashboard as part of a collaborative aviation logistics system developed with The Chinese University of Hong Kong (CUHK). The system integrates IoT devices and Ground Support Equipment (GSE) to streamline airport ground operations.
+
+  • Designed a real-time operational dashboard providing airport personnel with actionable insights and controls over logistics workflows.
+  • Established branding and design language to ensure visual consistency across the platform.
+  • Collaborated closely with CUHK's engineering team to align design with system architecture and operational requirements.
+
+UI/UX Designer
+MOMAX Technology (Hong Kong) Limited
+01 / 2021 — 08 / 2022
+
+Designed and shipped smart home ecosystems integrating IoT hardware, cloud infrastructure, and mobile applications. Led "Smart-D," a co-branded project in collaboration with HKBN.
+
+  • Created UI/UX designs and wireframes for seamless IoT device-to-app interactions across multiple platforms.
+  • Identified and resolved usability issues in IoT product interfaces through iterative testing and design innovation.
+  • Managed IoT platform and mobile app versioning to ensure optimal performance and cross-device compatibility.
+
+UI/UX Designer
+Hong Kong CardApp Limited
+04 / 2019 — 01 / 2021
+
+Specialised in digital solutions for property development and management, focusing on integrating IoT, cloud, and mobile technologies to streamline operations and enhance user experiences.
+
+  • Designed custom theme pages for property estate applications tailored to individual client preferences and branding requirements.
+  • Analysed business requirements and delivered comprehensive solutions for property management apps and lobby kiosks.
+  • Led end-to-end design for in-house projects including property apps, food ordering systems, loyalty programmes, and property inspection systems.
+
+Designer
+Cypress Green Co. Limited
+06 / 2017 — 03 / 2019
+
+Focused on graphic design and digital design across various client projects, building a strong foundation in visual communication and brand identity.
+
+UI/UX Designer
+Rentech Service Limited
+05 / 2016 — 05 / 2017
+
+Designed theme pages for POS and e-Registration systems tailored to client specifications. Analysed requirements and devised effective system solutions that balanced usability with business goals.
+
+Education
+
+BSc (Hons) Digital Media
+University of the West of England, Bristol
+2014 — 2015
+
+Higher Diploma in IT for Design (Interactive Visualization)
+Hong Kong Institute of Vocational Education (Sha Tin)
+2011 — 2014
+
+Foundation Diploma (Computing Stream)
+Hong Kong Institute of Vocational Education (Kwun Tong)
+2010 — 2011
+
+Certifications
+
+User Interface Design — University of Minnesota (2023)
+Responsive Web Design Certification — freeCodeCamp (2023)
+Start the UX Design Process: Empathize, Define, and Ideate — Google (2023)
+Foundations of User Experience (UX) Design — Google (2021)
+From Beginner to Industry Practice: UI/UX Front-End Web Design — Hahow (2020)
+
+Core Competencies
+
+  • UI/UX Design & Interaction Design
+  • Design-Engineer Hybrid Workflows (AI + Vibe Coding)
+  • Figma, Prototyping & Design Systems
+  • Front-End Development (React, Next.js, Tailwind CSS, TypeScript)
+  • AI-Generated Video Production & Motion Graphics
+  • Brand Identity & Exhibition Graphic Design
+  • IoT, Fintech & Data-Driven Product Design
+  • Cross-Functional Collaboration & Rapid Prototyping

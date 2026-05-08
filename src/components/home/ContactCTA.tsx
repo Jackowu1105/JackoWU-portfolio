@@ -5,7 +5,7 @@ import { motion } from 'framer-motion'
 
 export function ContactCTA() {
   return (
-    <section className="mx-auto max-w-6xl px-6 py-24">
+    <section className="mx-auto max-w-6xl px-6 md:px-12 py-24">
       <motion.div
         initial={{ opacity: 0, y: 24 }}
         whileInView={{ opacity: 1, y: 0 }}

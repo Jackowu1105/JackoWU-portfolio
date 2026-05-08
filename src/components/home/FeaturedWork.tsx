@@ -7,7 +7,7 @@ import { StackingProjectCard } from './StackingProjectCard'
 
 export function FeaturedWork() {
   return (
-    <section className="mx-auto max-w-6xl px-6 py-24">
+    <section className="mx-auto max-w-6xl px-6 md:px-12 py-24">
       {/* Section header */}
       <motion.div
         initial={{ opacity: 0, y: 12, filter: 'blur(4px)' }}

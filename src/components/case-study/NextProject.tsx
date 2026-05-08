@@ -8,7 +8,7 @@ export function NextProject({ project }: { project: Project | null }) {
   if (!project) return null
 
   return (
-    <section className="mx-auto max-w-3xl px-6 py-24 border-t border-black/5">
+    <section className="mx-auto max-w-6xl px-6 md:px-12 py-24 border-t border-black/5">
       <motion.p
         initial={{ opacity: 0, y: 8, filter: 'blur(3px)' }}
         whileInView={{ opacity: 1, y: 0, filter: 'blur(0px)' }}

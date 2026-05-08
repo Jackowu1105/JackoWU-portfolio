@@ -36,7 +36,7 @@ export function TestimonialSection() {
         }}
       />
 
-      <div className="mx-auto max-w-6xl px-6">
+      <div className="mx-auto max-w-6xl px-6 md:px-12">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           {testimonials.map((t, i) => (
             <motion.div

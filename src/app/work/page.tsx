@@ -5,7 +5,7 @@ export default function WorkPage() {
   const sorted = [...projects].sort((a, b) => a.order - b.order)
 
   return (
-    <div className="mx-auto max-w-6xl px-6 py-16">
+    <div className="mx-auto max-w-6xl px-6 md:px-12 py-16">
       {/* Header */}
       <div className="mb-16">
         <h1 className="text-4xl md:text-5xl font-bold tracking-tight text-[#1C1814] mb-4">

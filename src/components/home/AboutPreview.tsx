@@ -34,7 +34,7 @@ const skillTags = [
 
 export function AboutPreview() {
   return (
-    <section className="mx-auto max-w-6xl px-6 py-24 flex flex-col gap-20">
+    <section className="mx-auto max-w-6xl px-6 md:px-12 py-24 flex flex-col gap-20">
       {/* What I Do */}
       <motion.div
         initial={{ opacity: 0, y: 20 }}

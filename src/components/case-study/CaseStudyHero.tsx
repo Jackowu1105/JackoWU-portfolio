@@ -12,7 +12,7 @@ export function CaseStudyHero({ project }: { project: Project }) {
         <div className="absolute top-0 right-1/4 w-[400px] h-[400px] rounded-full bg-[#C4A882]/25 blur-[100px]" />
       </div>
 
-      <div className="mx-auto max-w-4xl px-6 pt-8 pb-16">
+      <div className="mx-auto max-w-6xl px-6 md:px-12 pt-8 pb-16">
         {/* Breadcrumb */}
         <motion.div
           initial={{ opacity: 0, y: 8, filter: 'blur(3px)' }}
@@ -79,7 +79,7 @@ export function CaseStudyHero({ project }: { project: Project }) {
         animate={{ opacity: 1, y: 0, rotateX: 0, filter: 'blur(0px)' }}
         transition={{ delay: 0.3, duration: 0.6, ease: [0.25, 0.1, 0.25, 1] }}
         style={{ perspective: '1200px' }}
-        className="mx-auto max-w-5xl px-6"
+        className="mx-auto max-w-6xl px-6 md:px-12"
       >
         <div className="glass-card overflow-hidden p-0 rounded-2xl">
           {project.heroImage ? (

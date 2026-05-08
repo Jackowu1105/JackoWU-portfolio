@@ -57,7 +57,7 @@ export function HeroSection() {
   }, [])
   return (
     <section className="relative overflow-hidden min-h-0 flex flex-col justify-center w-full">
-      <div className="mx-auto max-w-5xl px-6 py-0 w-full">
+      <div className="mx-auto max-w-6xl px-6 md:px-12 py-0 w-full">
         <div className="flex flex-col items-center gap-0 md:gap-2 lg:gap-4 text-center">
 
           {/* Layer 1 — badge + description */}

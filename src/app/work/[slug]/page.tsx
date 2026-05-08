@@ -5,6 +5,7 @@ import { CaseStudyHero } from '@/components/case-study/CaseStudyHero'
 import { ReadingProgress } from '@/components/case-study/ReadingProgress'
 import { MetricCard } from '@/components/case-study/MetricCard'
 import { NextProject } from '@/components/case-study/NextProject'
+import { GlassCard } from '@/components/shared/GlassCard'
 
 interface Props {
   params: Promise<{ slug: string }>
@@ -47,7 +48,7 @@ export default async function CaseStudyPage({ params }: Props) {
       <ReadingProgress />
       <CaseStudyHero project={project} />
 
-      <article className="mx-auto max-w-3xl px-6 py-16">
+      <article className="mx-auto max-w-6xl px-6 md:px-12 py-16">
         {/* MDX content if available */}
         {MDXContent ? (
           <MDXContent />
@@ -56,21 +57,21 @@ export default async function CaseStudyPage({ params }: Props) {
             {/* Fallback: summary-based content */}
             <section className="mb-20">
               <h2 className="text-2xl font-bold text-[#1C1814] mb-6">Overview</h2>
-              <div className="glass-card p-8">
+              <GlassCard hover={false} className="p-8">
                 <p className="text-[#8A8480] leading-relaxed text-lg">
                   {project.summary}
                 </p>
-              </div>
+              </GlassCard>
             </section>
 
             <section className="mb-20">
-              <div className="glass-card p-8 text-center">
+              <GlassCard hover={false} className="p-8 text-center">
                 <p className="text-[#B8B2AE] text-sm">
                   Full case study coming soon. The detailed UX process — problem
                   definition, research methods, design iterations, and final
                   solutions — will appear here.
                 </p>
-              </div>
+              </GlassCard>
             </section>
           </>
         )}
