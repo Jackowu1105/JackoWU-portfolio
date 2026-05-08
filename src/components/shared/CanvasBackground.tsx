@@ -44,12 +44,19 @@ const BLOBS: Blob[] = [
   { baseX: 0.5, baseY: 0.25, baseRadius: 240, color: [180, 150, 85], speed: 0.32, driftX: 0.19, driftY: 0.16, phaseX: 2.8, phaseY: 3.9, phaseR: 0.3, opacityBase: 0.22, opacityOsc: 0.07, mouseAttraction: 0.4, mouseBoost: 0.4, mouseRadius: 0.4, colorWarmShift: 0.3 },
 ]
 
+interface PosEntry {
+  x: number
+  y: number
+  time: number
+}
+
 export function CanvasBackground() {
   const canvasRef = useRef<HTMLCanvasElement>(null)
   const mouseRef = useRef({ x: 0.5, y: 0.5 })
   const smoothMouseRef = useRef({ x: 0.5, y: 0.5 })
   const timeRef = useRef(0)
   const rafRef = useRef<number>(0)
+  const posHistoryRef = useRef<PosEntry[]>([])
 
   useEffect(() => {
     const canvas = canvasRef.current
@@ -81,10 +88,31 @@ export function CanvasBackground() {
 
       ctx.clearRect(0, 0, w, h)
 
-      // 游標平滑追蹤 — 產生延遲感，色塊不會瞬間跟上
-      const lerpFactor = 0.04
-      smoothMouseRef.current.x += (mouseRef.current.x - smoothMouseRef.current.x) * lerpFactor
-      smoothMouseRef.current.y += (mouseRef.current.y - smoothMouseRef.current.y) * lerpFactor
+      // 記錄當前滑鼠位置到歷史佇列
+      const history = posHistoryRef.current
+      history.push({ ...mouseRef.current, time: performance.now() })
+
+      // 移除超過 1.5 秒的舊資料
+      const cutoff = performance.now() - 1500
+      while (history.length > 0 && history[0].time < cutoff) {
+        history.shift()
+      }
+
+      // 找出 500 毫秒前（約 0.5 秒延遲）的滑鼠位置作為跟隨目標
+      const delayMs = 300
+      const delayedCutoff = performance.now() - delayMs
+      let delayedTarget = mouseRef.current
+      for (let i = history.length - 1; i >= 0; i--) {
+        if (history[i].time <= delayedCutoff) {
+          delayedTarget = history[i]
+          break
+        }
+      }
+
+      // 慢速平滑趨近延遲目標
+      const slowLerp = 0.04
+      smoothMouseRef.current.x += (delayedTarget.x - smoothMouseRef.current.x) * slowLerp
+      smoothMouseRef.current.y += (delayedTarget.y - smoothMouseRef.current.y) * slowLerp
       const mx = smoothMouseRef.current.x
       const my = smoothMouseRef.current.y
 

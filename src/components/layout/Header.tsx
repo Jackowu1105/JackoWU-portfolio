@@ -8,6 +8,7 @@ import { cn } from '@/lib/utils'
 import { RippleEffect } from '@/components/shared/RippleEffect'
 
 const links = [
+  { href: '/', label: 'Home' },
   { href: '/work', label: 'Work' },
   { href: '/about', label: 'About' },
   { href: '/contact', label: 'Contact' },
