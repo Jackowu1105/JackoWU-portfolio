@@ -2,6 +2,7 @@
 
 import Link from 'next/link'
 import { motion } from 'framer-motion'
+import { RippleEffect } from '@/components/shared/RippleEffect'
 
 export function ContactCTA() {
   return (
@@ -35,13 +36,14 @@ export function ContactCTA() {
         <div className="pt-6">
           <Link
             href="/contact"
-            className="inline-flex items-center gap-3 bg-[#1d1b20] text-white rounded-2xl px-10 font-medium hover:bg-[#2d2b30] transition-colors"
+            className="inline-flex items-center gap-3 bg-[#1d1b20] text-white rounded-2xl px-10 font-medium hover:opacity-80 transition-opacity relative overflow-hidden"
             style={{
               fontFamily: 'Epilogue, sans-serif',
               fontSize: '18px',
               height: '64px',
             }}
           >
+            <RippleEffect />
             Start a Conversation
             {/* Envelope icon */}
             <svg

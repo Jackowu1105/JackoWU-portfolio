@@ -1,5 +1,6 @@
 import { GlassCard } from '@/components/shared/GlassCard'
 import { Button } from '@/components/shared/Button'
+import { RippleEffect } from '@/components/shared/RippleEffect'
 
 export default function ContactPage() {
   return (
@@ -66,8 +67,9 @@ export default function ContactPage() {
             </div>
             <button
               type="submit"
-              className="w-full px-6 py-3 rounded-xl font-medium text-sm bg-[#1C1814] text-white hover:bg-[#2C2622] transition-colors shadow-lg shadow-black/5"
+              className="w-full px-6 py-3 rounded-xl font-medium text-sm bg-[#1C1814] text-white hover:opacity-80 transition-opacity shadow-lg shadow-black/5 relative overflow-hidden"
             >
+              <RippleEffect />
               Send message
             </button>
           </form>

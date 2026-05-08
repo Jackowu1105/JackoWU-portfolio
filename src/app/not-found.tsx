@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import { RippleEffect } from '@/components/shared/RippleEffect'
 
 export default function NotFound() {
   return (
@@ -11,8 +12,9 @@ export default function NotFound() {
         </p>
         <Link
           href="/"
-          className="inline-flex items-center gap-2 px-6 py-3 rounded-xl font-medium text-sm bg-[#1C1814] text-white hover:bg-[#2C2622] transition-colors"
+          className="inline-flex items-center gap-2 px-6 py-3 rounded-xl font-medium text-sm bg-[#1C1814] text-white hover:opacity-80 transition-opacity relative overflow-hidden"
         >
+          <RippleEffect />
           Back to home
         </Link>
       </div>

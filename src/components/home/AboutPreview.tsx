@@ -2,35 +2,7 @@
 
 import { motion } from 'framer-motion'
 
-const whatIDo = [
-  {
-    category: 'Research',
-    skills: ['User Interviews', 'Market Analysis', 'Usability Testing'],
-  },
-  {
-    category: 'UX/UI Design',
-    skills: ['Wireframing', 'Prototyping', 'Design Systems'],
-  },
-  {
-    category: 'Development',
-    skills: ['HTML/CSS', 'React', 'Framer'],
-  },
-]
-
-const skillTags = [
-  'UX Design',
-  'UI Design',
-  'Graphic Design',
-  'Video Editing',
-  'Motion Graphic',
-  'Product Design',
-  'Wireframing',
-  'Prototyping',
-  'Design Systems',
-  'User Research',
-  'Branding',
-  'Figma',
-]
+import { skillCategories, homeSkills } from '@/data/about'
 
 export function AboutPreview() {
   return (
@@ -65,9 +37,9 @@ export function AboutPreview() {
 
         {/* Skill rows */}
         <div className="flex flex-col">
-          {whatIDo.map((row, i) => (
+          {Object.entries(skillCategories).map(([category, skills], i) => (
             <motion.div
-              key={row.category}
+              key={category}
               initial={{ opacity: 0, y: 12 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
@@ -78,10 +50,10 @@ export function AboutPreview() {
                 className="text-[#1d1b20] text-2xl font-semibold w-48 shrink-0"
                 style={{ fontFamily: 'Epilogue, sans-serif' }}
               >
-                {row.category}
+                {category}
               </span>
               <div className="flex items-center gap-9 flex-wrap">
-                {row.skills.map((skill) => (
+                {skills.map((skill) => (
                   <span
                     key={skill}
                     className="text-[#494551] text-base font-medium"
@@ -117,7 +89,7 @@ export function AboutPreview() {
 
         {/* Tag pills */}
         <div className="flex flex-wrap gap-3">
-          {skillTags.map((tag, i) => (
+          {homeSkills.map((tag, i) => (
             <motion.span
               key={tag}
               initial={{ opacity: 0, scale: 0.9 }}

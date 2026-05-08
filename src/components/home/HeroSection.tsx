@@ -3,6 +3,7 @@
 import Link from 'next/link'
 import { motion } from 'framer-motion'
 import { useEffect, useRef } from 'react'
+import { RippleEffect } from '@/components/shared/RippleEffect'
 
 export function HeroSection() {
   const sectionRef = useRef<HTMLElement>(null)
@@ -153,9 +154,10 @@ export function HeroSection() {
               {/* Explore Works — dark */}
               <Link
                 href="/work"
-                className="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-[#1d1b20] text-[#fdf7ff] text-sm font-medium hover:bg-[#2d2b30] transition-colors"
+                className="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-[#1d1b20] text-[#fdf7ff] text-sm font-medium hover:opacity-80 transition-opacity relative overflow-hidden"
                 style={{ fontFamily: 'Epilogue, sans-serif' }}
               >
+                <RippleEffect />
                 Explore Works
                 <svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" strokeWidth="2">
                   <path d="M2 7h10M8 3l4 4-4 4" />
@@ -165,12 +167,13 @@ export function HeroSection() {
               {/* Download Resume — glass */}
               <a
                 href="/resume"
-                className="inline-flex items-center gap-2 px-4 py-2 rounded-lg border border-white/30 text-[#1d1b20] text-sm font-medium backdrop-blur-[10px] hover:bg-white/20 transition-colors"
+                className="inline-flex items-center gap-2 px-4 py-2 rounded-lg border border-white/30 text-[#1d1b20] text-sm font-medium backdrop-blur-[10px] hover:opacity-80 transition-opacity relative overflow-hidden"
                 style={{
                   fontFamily: 'Epilogue, sans-serif',
                   background: 'linear-gradient(133deg, rgba(255,255,255,0.4) 0%, rgba(255,255,255,0.05) 100%)',
                 }}
               >
+                <RippleEffect color="rgba(255,255,255,0.5)" />
                 <svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" strokeWidth="2">
                   <path d="M7 2v8M3 8l4 4 4-4" />
                   <path d="M1 12h12" />

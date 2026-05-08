@@ -3,6 +3,7 @@
 import Link from 'next/link'
 import { useEffect, useRef, useState } from 'react'
 import { ProjectPlaceholder } from '@/components/shared/ProjectPlaceholder'
+import { RippleEffect } from '@/components/shared/RippleEffect'
 import type { Project } from '@/data/projects'
 
 interface StackingProjectCardProps {
@@ -95,9 +96,10 @@ export function StackingProjectCard({ project, index }: StackingProjectCardProps
               {/* Desktop CTA button */}
               <Link
                 href={`/work/${project.slug}`}
-                className="hidden lg:inline-flex items-center gap-1.5 px-[15px] py-[12px] rounded-xl bg-[#1c1814] text-white text-sm font-medium w-fit shadow-sm hover:bg-[#2c2820] transition-colors"
+                className="hidden lg:inline-flex items-center gap-1.5 px-[15px] py-[12px] rounded-xl bg-[#1c1814] text-white text-sm font-medium w-fit shadow-sm hover:opacity-80 transition-opacity relative overflow-hidden"
                 style={{ fontFamily: 'Epilogue, sans-serif' }}
               >
+                <RippleEffect />
                 View Case Study
                 <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth="2">
                   <path d="M3 8h10M9 4l4 4-4 4" />
@@ -144,9 +146,10 @@ export function StackingProjectCard({ project, index }: StackingProjectCardProps
               {/* Mobile CTA */}
               <Link
                 href={`/work/${project.slug}`}
-                className="lg:hidden inline-flex items-center justify-center gap-1.5 px-[15px] py-[12px] rounded-xl bg-[#1c1814] text-white text-sm font-medium shadow-sm hover:bg-[#2c2820] transition-colors"
+                className="lg:hidden inline-flex items-center justify-center gap-1.5 px-[15px] py-[12px] rounded-xl bg-[#1c1814] text-white text-sm font-medium shadow-sm hover:opacity-80 transition-opacity relative overflow-hidden"
                 style={{ fontFamily: 'Epilogue, sans-serif' }}
               >
+                <RippleEffect />
                 View Case Study
                 <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth="2">
                   <path d="M3 8h10M9 4l4 4-4 4" />

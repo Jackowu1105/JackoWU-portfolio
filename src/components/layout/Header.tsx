@@ -5,6 +5,7 @@ import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import { motion, AnimatePresence } from 'framer-motion'
 import { cn } from '@/lib/utils'
+import { RippleEffect } from '@/components/shared/RippleEffect'
 
 const links = [
   { href: '/work', label: 'Work' },
@@ -80,8 +81,9 @@ export function Header() {
             <Link
               href="/resume"
               style={{ fontFamily: 'var(--font-epilogue), sans-serif' }}
-              className="ml-3 px-4 py-2 rounded-lg text-sm font-medium bg-[#1C1814] text-white hover:bg-[#2C2622] transition-colors"
+              className="ml-3 px-4 py-2 rounded-lg text-sm font-medium bg-[#1C1814] text-white hover:opacity-80 transition-opacity relative overflow-hidden"
             >
+              <RippleEffect />
               Resume
             </Link>
           </div>

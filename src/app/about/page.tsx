@@ -1,65 +1,6 @@
 import { GlassCard } from '@/components/shared/GlassCard'
 import { Button } from '@/components/shared/Button'
-
-const experience = [
-  {
-    role: 'UX/UI Designer',
-    company: 'Laboratory for AI-Powered Financial Technologies Limited (AIFT)',
-    period: '10 / 2024 — Present',
-    highlights: [
-      'Designed end-to-end UI/UX for AI-powered fintech platforms including supply chain finance (TOLO Analysis), AI-driven financial research assistant (FinSights), and trade finance platform (Fundel)',
-      'Produced exhibition materials, brand identity, and AI-generated video content for industry events',
-      'Delivered front-end web interfaces via AI-assisted coding, bridging design and development',
-    ],
-  },
-  {
-    role: 'UI/UX Designer',
-    company: 'UbiZense Ltd.',
-    period: '08 / 2022 — 10 / 2024',
-    highlights: [
-      'Led UI/UX design of a comprehensive airport logistics dashboard integrating IoT devices and Ground Support Equipment',
-      'Designed real-time operational dashboards for airport ground operations',
-      'Established branding and design language in collaboration with CUHK engineering team',
-    ],
-  },
-  {
-    role: 'UI/UX Designer',
-    company: 'MOMAX Technology (Hong Kong) Limited',
-    period: '01 / 2021 — 08 / 2022',
-    highlights: [
-      'Designed smart home ecosystems integrating IoT hardware, cloud infrastructure, and mobile applications',
-      'Led "Smart-D," a co-branded project in collaboration with HKBN',
-      'Managed IoT platform and mobile app versioning for cross-device compatibility',
-    ],
-  },
-  {
-    role: 'UI/UX Designer',
-    company: 'Hong Kong CardApp Limited',
-    period: '04 / 2019 — 01 / 2021',
-    highlights: [
-      'Designed digital solutions for property development and management, integrating IoT, cloud, and mobile technologies',
-      'Led end-to-end design for property apps, food ordering systems, loyalty programmes, and property inspection systems',
-    ],
-  },
-  {
-    role: 'Designer',
-    company: 'Cypress Green Co. Limited',
-    period: '06 / 2017 — 03 / 2019',
-    highlights: [
-      'Focused on graphic design and digital design across various client projects',
-      'Built a strong foundation in visual communication and brand identity',
-    ],
-  },
-  {
-    role: 'UI/UX Designer',
-    company: 'Rentech Service Limited',
-    period: '05 / 2016 — 05 / 2017',
-    highlights: [
-      'Designed theme pages for POS and e-Registration systems',
-      'Analysed business requirements and devised system solutions balancing usability with business goals',
-    ],
-  },
-]
+import { experience, skillCategories } from '@/data/about'
 
 const education = [
   {
@@ -86,37 +27,6 @@ const certifications = [
   'Foundations of User Experience (UX) Design — Google (2021)',
   'From Beginner to Industry Practice: UI/UX Front-End Web Design — Hahow (2020)',
 ]
-
-const skills = {
-  Design: [
-    'UI/UX Design',
-    'Interaction Design',
-    'Design Systems',
-    'Prototyping',
-    'Brand Identity',
-  ],
-  'Design-Engineer': [
-    'AI + Vibe Coding',
-    'Front-End Development',
-    'React, Next.js',
-    'Tailwind CSS',
-    'TypeScript',
-  ],
-  Tools: [
-    'Figma',
-    'Adobe Creative Suite',
-    'Motion Graphics',
-    'AI Video Production',
-    'Rapid Prototyping',
-  ],
-  Domain: [
-    'Fintech',
-    'IoT',
-    'Data-Driven Product Design',
-    'Cross-Functional Collaboration',
-    'Exhibition Graphic Design',
-  ],
-}
 
 export default function AboutPage() {
   return (
@@ -268,7 +178,7 @@ export default function AboutPage() {
           <h2 className="text-3xl font-bold text-[#1C1814]">Skills &amp; Tools</h2>
         </div>
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
-          {Object.entries(skills).map(([category, items]) => (
+          {Object.entries(skillCategories).map(([category, items]) => (
             <GlassCard key={category} className="p-6">
               <h3 className="font-semibold text-[#1C1814] mb-4 text-sm tracking-widest uppercase">
                 {category}

@@ -3,6 +3,7 @@
 import Link from 'next/link'
 import { cn } from '@/lib/utils'
 import { MagneticWrapper } from './MagneticWrapper'
+import { RippleEffect } from './RippleEffect'
 
 interface ButtonProps {
   href: string
@@ -15,11 +16,17 @@ interface ButtonProps {
 
 const variants = {
   primary:
-    'bg-[#1C1814] text-white hover:bg-[#2C2622] shadow-lg shadow-black/5',
+    'bg-[#1C1814] text-white hover:opacity-80 shadow-lg shadow-black/5',
   secondary:
     'glass-card text-[#1C1814]',
   ghost:
     'text-[#8A8480] hover:text-[#1C1814]',
+}
+
+const rippleColors = {
+  primary: 'rgba(255,255,255,0.5)',
+  secondary: 'rgba(55,132,138,0.4)',
+  ghost: 'rgba(55,132,138,0.35)',
 }
 
 export function Button({
@@ -31,14 +38,21 @@ export function Button({
   magnetic,
 }: ButtonProps) {
   const classes = cn(
-    'inline-flex items-center gap-2 px-6 py-3 rounded-xl font-medium text-sm transition-all duration-250',
+    'inline-flex items-center gap-2 px-6 py-3 rounded-xl font-medium text-sm transition-all duration-250 relative overflow-hidden',
     variants[variant],
     className
   )
 
+  const content = (
+    <>
+      <RippleEffect color={rippleColors[variant]} />
+      {children}
+    </>
+  )
+
   const link = external
-    ? (<a href={href} target="_blank" rel="noopener noreferrer" className={classes}>{children}</a>)
-    : (<Link href={href} className={classes}>{children}</Link>)
+    ? (<a href={href} target="_blank" rel="noopener noreferrer" className={classes}>{content}</a>)
+    : (<Link href={href} className={classes}>{content}</Link>)
 
   if (magnetic) {
     return (

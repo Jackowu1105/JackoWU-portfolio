@@ -1,25 +1,7 @@
 'use client'
 
 import { motion } from 'framer-motion'
-
-// TODO: Replace with Jacko's actual experience data
-const experiences = [
-  {
-    title: 'Senior UX/UI Designer',
-    company: 'Freelance',
-    period: '2023 – Present',
-  },
-  {
-    title: 'UX/UI Designer',
-    company: 'Geonode',
-    period: 'Jan 2020 – Jan 2023',
-  },
-  {
-    title: 'UI Designer',
-    company: 'Creative Studio',
-    period: '2018 – 2020',
-  },
-]
+import { experience } from '@/data/about'
 
 export function ExperienceSection() {
   return (
@@ -44,7 +26,7 @@ export function ExperienceSection() {
 
         {/* Experience rows */}
         <div className="flex flex-col">
-          {experiences.map((exp, i) => (
+          {experience.map((exp, i) => (
             <motion.div
               key={i}
               initial={{ opacity: 0, y: 12 }}
@@ -59,7 +41,7 @@ export function ExperienceSection() {
                   className="text-[#1d1b20] text-2xl font-semibold"
                   style={{ fontFamily: 'Epilogue, sans-serif' }}
                 >
-                  {exp.title}
+                  {exp.role}
                 </span>
               </div>
 
