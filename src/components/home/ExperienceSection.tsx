@@ -33,12 +33,12 @@ export function ExperienceSection() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: i * 0.1 }}
-              className="flex items-center gap-6 py-2 border-b border-black/5"
+              className="flex flex-col sm:flex-row items-start sm:items-center gap-1 sm:gap-6 py-3 sm:py-2 border-b border-black/5"
             >
               {/* Job title */}
               <div className="flex-1 min-w-0">
                 <span
-                  className="text-[#1d1b20] text-2xl font-semibold"
+                  className="text-[#1d1b20] text-xl sm:text-2xl font-semibold"
                   style={{ fontFamily: 'Epilogue, sans-serif' }}
                 >
                   {exp.role}
@@ -47,11 +47,11 @@ export function ExperienceSection() {
 
               {/* Company + Date (aligned right) */}
               <div
-                className="flex flex-col items-end gap-2 shrink-0"
+                className="flex flex-col items-start sm:items-end gap-1 sm:gap-2 shrink-0"
                 style={{ fontFamily: 'Inter, sans-serif' }}
               >
-                <span className="text-[#494551] text-base font-medium">{exp.company}</span>
-                <span className="text-[#494551] text-base font-medium">{exp.period}</span>
+                <span className="text-[#494551] text-sm sm:text-base font-medium">{exp.company}</span>
+                <span className="text-[#494551] text-sm sm:text-base font-medium">{exp.period}</span>
               </div>
             </motion.div>
           ))}

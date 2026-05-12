@@ -59,7 +59,7 @@ export function HeroSection() {
   return (
     <section className="relative overflow-hidden min-h-0 flex flex-col justify-center w-full">
       <div className="mx-auto max-w-6xl px-6 md:px-12 py-0 w-full">
-        <div className="flex flex-col items-center gap-0 md:gap-2 lg:gap-4 text-center">
+        <div className="flex flex-col items-center gap-2 md:gap-3 lg:gap-4 text-center">
 
           {/* Layer 1 — badge + description */}
           <div data-depth={1} className="will-change-transform" style={{ transition: 'transform 0.15s ease-out' }}>
@@ -84,7 +84,7 @@ export function HeroSection() {
               initial={{ opacity: 0, y: 24, filter: 'blur(6px)' }}
               animate={{ opacity: 1, y: 0, filter: 'blur(0px)' }}
               transition={{ delay: 0.15, duration: 0.7, ease: [0.25, 0.1, 0.25, 1] }}
-              className="text-[0.7rem] sm:text-lg md:text-2xl lg:text-[48px] font-bold tracking-[-0.8px] leading-[1.2] text-[#1d1b20]"
+              className="text-2xl sm:text-3xl md:text-4xl lg:text-[48px] font-bold tracking-[-0.8px] leading-[1.2] text-[#1d1b20]"
               style={{ fontFamily: 'Epilogue, sans-serif' }}
             >
               Jacko Wu — Crafting
@@ -103,7 +103,7 @@ export function HeroSection() {
             >
               <span className="relative inline-block">
                 <span
-                  className="text-[0.7rem] sm:text-lg md:text-2xl lg:text-[48px] font-bold tracking-[-0.8px] leading-[1.2] text-[#37848a]"
+                  className="text-2xl sm:text-3xl md:text-4xl lg:text-[48px] font-bold tracking-[-0.8px] leading-[1.2] text-[#37848a]"
                   style={{ fontFamily: 'Epilogue, sans-serif' }}
                 >
                   Precision
@@ -112,7 +112,7 @@ export function HeroSection() {
               </span>
 
               <span
-                className="text-[0.7rem] sm:text-lg md:text-2xl lg:text-[48px] font-bold tracking-[-0.8px] leading-[1.2] text-[#1d1b20]"
+                className="text-2xl sm:text-3xl md:text-4xl lg:text-[48px] font-bold tracking-[-0.8px] leading-[1.2] text-[#1d1b20]"
                 style={{ fontFamily: 'Epilogue, sans-serif' }}
               >
                 &amp;
@@ -120,7 +120,7 @@ export function HeroSection() {
 
               <span className="relative inline-block">
                 <span
-                  className="text-[0.7rem] sm:text-lg md:text-2xl lg:text-[48px] font-bold tracking-[-0.8px] leading-[1.2] text-[#c9a74d]"
+                  className="text-2xl sm:text-3xl md:text-4xl lg:text-[48px] font-bold tracking-[-0.8px] leading-[1.2] text-[#c9a74d]"
                   style={{ fontFamily: 'Epilogue, sans-serif' }}
                 >
                   Soul
@@ -135,7 +135,7 @@ export function HeroSection() {
             initial={{ opacity: 0, y: 16, filter: 'blur(3px)' }}
             animate={{ opacity: 1, y: 0, filter: 'blur(0px)' }}
             transition={{ delay: 0.35, duration: 0.5, ease: [0.25, 0.1, 0.25, 1] }}
-            className="text-xs sm:text-sm md:text-base lg:text-lg text-[#494551] max-w-[672px] mx-auto leading-relaxed mt-4"
+            className="text-sm sm:text-base md:text-lg text-[#494551] max-w-[672px] mx-auto leading-relaxed mt-4"
             style={{ fontFamily: 'Inter, sans-serif' }}
           >
             I&apos;m a UX/UI Designer focused on creating human-centric digital products. By

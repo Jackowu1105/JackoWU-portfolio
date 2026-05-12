@@ -1,4 +1,7 @@
 import type { MDXComponents } from 'mdx/types'
+import { CaseStudyImage } from '@/components/case-study/CaseStudyImage'
+import { ImageComparison } from '@/components/case-study/ImageComparison'
+import { ProjectHeader } from '@/components/case-study/ProjectHeader'
 
 const components: MDXComponents = {
   h1: ({ children }) => (
@@ -39,6 +42,9 @@ const components: MDXComponents = {
     </blockquote>
   ),
   hr: () => <hr className="border-black/10 my-12" />,
+  CaseStudyImage,
+  ImageComparison,
+  ProjectHeader,
 }
 
 export function useMDXComponents(): MDXComponents {

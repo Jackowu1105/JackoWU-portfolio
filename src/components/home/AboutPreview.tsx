@@ -44,10 +44,10 @@ export function AboutPreview() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: i * 0.1 }}
-              className="flex items-center gap-6 py-2 border-b border-black/5"
+              className="flex flex-col sm:flex-row items-start sm:items-center gap-1 sm:gap-6 py-3 sm:py-2 border-b border-black/5"
             >
               <span
-                className="text-[#1d1b20] text-2xl font-semibold w-48 shrink-0"
+                className="text-[#1d1b20] text-xl sm:text-2xl font-semibold sm:w-48 shrink-0"
                 style={{ fontFamily: 'Epilogue, sans-serif' }}
               >
                 {category}

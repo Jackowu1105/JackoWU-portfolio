@@ -45,7 +45,7 @@ export function TestimonialSection() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: i * 0.15, ease: [0.25, 0.1, 0.25, 1] }}
-              className="flex flex-col gap-6 rounded-[32px] p-10"
+              className="flex flex-col gap-5 sm:gap-6 rounded-[32px] p-6 sm:p-10"
               style={{
                 background:
                   'linear-gradient(134deg, rgba(255,255,255,0.4) 0%, rgba(255,255,255,0.05) 100%)',

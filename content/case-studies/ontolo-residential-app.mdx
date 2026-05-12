@@ -1,0 +1,129 @@
+<ProjectHeader
+  overview="Great Eagle Holdings wanted to launch a unified resident app to improve community engagement and streamline property services. However, initial research revealed a critical problem: one-size-fits-all interfaces failed to serve their diverse resident demographics spanning elderly residents (60+), children (8-12), and adult residents."
+  challenge="Elderly residents found typical apps overwhelming — average tap accuracy was only 55% due to small touch targets, and they experienced anxiety about making mistakes. Children needed supervision-friendly features with limited access. Adults expected modern, feature-rich experiences. Existing property management apps had <40% adoption rates with high support costs."
+  role="Lead UI/UX Designer — led end-to-end UX research and design, conducted 20+ user interviews, designed and validated a dual-interface system through iterative usability testing, and created 42+ adaptive components for the design system."
+  team="1 Product Manager, 2 Developers, 1 UX Researcher"
+  duration="6 months (Q1–Q2 2019)"
+  tools={["Adobe XD", "Sketch", "InVision", "UsabilityHub"]}
+/>
+
+## The Challenge
+
+Great Eagle Holdings wanted to launch a unified resident app, but research revealed that **one-size-fits-all interfaces failed to serve diverse resident demographics**.
+
+### User Pain Points
+
+- **Elderly residents (60+):** Found typical apps overwhelming with too many options, struggled with small touch targets (average accuracy: 55%), experienced anxiety about making mistakes, and often abandoned tasks due to complex navigation
+- **Children (8-12):** Needed supervision-friendly features with limited access to sensitive functions, preferred visual icon-based navigation over text
+- **Adult residents:** Required full access to all community services and account management, expected a modern feature-rich experience
+
+### Business Problems
+
+- Low adoption rates for existing property management apps in the market (under 40%)
+- High support costs due to usability issues (~$250K annually)
+- Risk of excluding elderly residents from digital community engagement
+- Competitive disadvantage in luxury property market
+
+### Success Metrics
+
+Achieve 70%+ adoption rate across all age groups within 6 months, reduce support calls by 50%, maintain 4.5+ star rating, simplified mode usage rate >30% among target demographics.
+
+## Research & Discovery
+
+To deeply understand diverse user needs, I conducted comprehensive research:
+
+**Contextual Inquiries (15 sessions):** Observed elderly residents in their homes attempting to use competitor apps. 80% abandoned tasks due to accidental taps and navigation confusion. Discovered users relied heavily on family members for basic app functions.
+
+**User Interviews (20 participants):** Ages 8-75, balanced across demographics and digital literacy levels. Elderly users wanted independence but feared making irreversible mistakes. Children preferred visual, icon-based navigation over text.
+
+**Competitive Analysis:** Analyzed 8 property management and senior-friendly apps. No existing solution offered true adaptive complexity — apps were either over-simplified (patronizing) or over-complex (overwhelming).
+
+**Usability Testing (Existing Solutions):** Tested 2 competing apps with target users. Average task success rate was only 45% for elderly users, with task completion time 3x longer than adult users.
+
+### Key Insights
+
+**Cognitive Load vs. Capability** — Elderly users aren't "bad with technology": they're overwhelmed by unnecessary complexity. When we stripped interfaces to core functions in early prototypes, task completion jumped from 45% to 92%.
+
+**Control & Dignity** — Users strongly resisted apps marketed as "elderly-friendly" that felt patronizing or limited. The ability to switch between complexity levels empowered users to choose based on comfort, not age.
+
+**Pareto Principle in Features** — Across all user groups, 5 functions accounted for 85% of app usage: emergency contacts, facility booking, community announcements, visitor access, and service requests.
+
+These insights formed our core design principle: **"Simplify by default, expand on demand."**
+
+## Design Process
+
+### Adaptive Interface System
+
+Rather than creating separate apps (which would stigmatize users and increase costs), I designed a **single app with two adaptive modes** users can switch between:
+
+**Simplified Mode:**
+- 5 core functions prominently displayed
+- 60x60pt minimum touch targets (36% larger than iOS standard)
+- WCAG AAA color contrast (7:1 ratio) for all interactive elements
+- Maximum 2-level navigation depth
+- Reduced cognitive load through progressive disclosure
+
+**Full Mode:**
+- Complete feature set (15+ functions)
+- Standard iOS/Android UI patterns
+- Advanced account management
+- Multi-step workflows for power users
+
+### Iterations
+
+**Iteration 1: Concept Validation** — Users didn't understand the mode-switching concept during onboarding. Designed adaptive onboarding flow that suggests appropriate mode based on stated needs and comfort level. Mode comprehension improved from 54% to 89%.
+
+**Iteration 2: Information Architecture** — Simplified mode still felt cluttered with 8 visible functions. Reduced to 5 core functions on home screen, moved secondary features to a clearly labeled "More" section. Task completion time reduced by 38%, user confidence scores increased by 42%.
+
+**Iteration 3: Mode Switching Safety** — 15% of users accidentally switched modes mid-task, causing confusion. Added confirmation dialog and moved mode toggle from home screen to settings with clear explanation. Accidental switches dropped from 15% to under 2%.
+
+### Key Design Decisions
+
+**Unified App vs. Separate Apps:** Unified approach prevents stigmatization of elderly users, reduces development/maintenance costs by 40%, allows families to support across modes, and enables a single codebase for faster iteration.
+
+**Touch Target Sizing (60x60pt vs. 44pt standard):** Motor control research shows 68% accuracy improvement for users with reduced dexterity. Collaborated with developers to implement dynamic spacing algorithms that prevent button overlap.
+
+**Color & Contrast Standards:** Simplified mode uses WCAG AAA (7:1 contrast), Full mode uses WCAG AA (4.5:1). ColorOracle simulations + testing with 5 colorblind users showed 25% faster element recognition in simplified mode.
+
+**Navigation Depth Reduction:** Reduced hierarchy from 3 levels (Full mode) to max 2 levels (Simplified mode). Result: 53% reduction in navigation errors, 38% faster task completion.
+
+## Visual Design
+
+### Design System
+
+Created a scalable, mode-aware design system with 42 components that intelligently adapt across both modes.
+
+**Typography Scale:** Simplified mode uses 18pt minimum body text (WCAG AAA), Full mode uses 14pt minimum body text (WCAG AA). Dynamic Type support for user preferences.
+
+**Color Palette:** Primary deep blue (#0A2F5A) for trust and stability, warm orange accent (#FF7B3D) for approachable energy. High-contrast variants automatically applied in simplified mode. Passed Deuteranopia, Protanopia, and Tritanopia simulations.
+
+**Accessibility Features:** VoiceOver/TalkBack optimization with custom hints, Dynamic Type up to 200% scale, reduced motion options, haptic feedback for critical actions, and bilingual support (繁體中文 / English).
+
+## Impact
+
+### Quantitative Results (6 months post-launch)
+
+- **78% adoption rate** across all demographics (Target: 70%) ✅
+- **Simplified mode usage: 34%** of active users (Target: 30%) ✅
+- **Task success rate (Elderly users):** 45% → 92% (+104% improvement)
+- **Task completion time:** 38% faster in simplified mode
+- **Navigation errors:** Reduced by 53%
+- **Support tickets:** 47% decrease in usability-related calls
+- **App Store rating: 4.6★** (Target: 4.5+) ✅
+- **Cost savings:** Estimated $120K/year in reduced support overhead
+
+### Qualitative Feedback
+
+> *"I was afraid of technology, but this app makes me feel confident. The big buttons and simple steps mean I don't need to ask my son for help anymore. I even helped my neighbor set it up!"* — Mrs. Chen, 72-year-old resident
+
+> *"The dual-mode system solved our biggest challenge: serving everyone without compromising functionality. Support calls dropped dramatically, and residents genuinely love the app."* — David Liu, Property Manager
+
+> *"My daughter can book the pool independently now, but I have peace of mind knowing she can't access payment or lease info."* — Parent of 10-year-old user
+
+## Reflections
+
+This project fundamentally shaped my philosophy as a designer: **good design isn't about making things beautiful — it's about making things work for real people with real constraints.**
+
+The ONTOLO app taught me that the most elegant solution isn't always the most technically sophisticated one. Sometimes, it's the one that gives users the power to choose their own path. Designing for elderly users isn't about "dumbing down" interfaces — it's about respecting their intelligence while removing unnecessary friction. When we got this balance right, we didn't just create an accessible app; we created an empowering one.
+
+**Key takeaway:** Inclusive design doesn't mean simplified design. All users benefit from clarity, but power users still need depth. True accessibility means choice, not reduction.

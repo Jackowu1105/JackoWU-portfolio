@@ -11,7 +11,7 @@ export default function WorkPage() {
         <h1 className="text-4xl md:text-5xl font-bold tracking-tight text-[#1C1814] mb-4">
           Work
         </h1>
-        <p className="text-[#8A8480] max-w-lg leading-relaxed">
+        <p className="text-[#8A8480] leading-relaxed whitespace-nowrap">
           A collection of projects across IoT, property tech, enterprise, and
           events &mdash; each with a deep dive into the design process.
         </p>

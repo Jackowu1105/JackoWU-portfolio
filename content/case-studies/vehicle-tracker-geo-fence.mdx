@@ -1,0 +1,49 @@
+<ProjectHeader
+  overview="The GEO Fence Monitoring Platform is a real-time vehicle tracking system designed for airport apron operations. Ground crews and dispatchers need to monitor dozens of vehicles simultaneously across a large operational area, where unauthorized access or vehicle delays can cause safety hazards and flight disruptions."
+  challenge="Airport ground operation teams relied on traditional radio communication and manual tracking methods with no real-time visibility of vehicle locations across the apron. Difficulty coordinating multiple vehicles during peak operations and delayed response to unauthorized access were critical safety concerns."
+  role="UI/UX Designer (Solo Designer) — end-to-end design from user research through visual design and usability testing."
+  team="Solo Designer"
+  duration="3 months (2023)"
+  tools={["Figma"]}
+/>
+
+## Research & Insights
+
+I conducted user interviews with 8 apron dispatchers and 5 ground supervisors, and observed control room operations during peak hours to understand workflow patterns.
+
+### Key Findings
+
+- **Information Overload:** Dispatchers need to focus on specific zones during critical operations, not all vehicles at once
+- **Mobile vs. Desktop Usage:** Supervisors need mobile access on-site, while dispatchers prefer large screen monitors
+- **Customization is Critical:** Different shifts monitor different zones — pre-defined zones don't match real operational needs
+- **Alert Fatigue:** Too many notifications reduce effectiveness — needed smart filtering and priority-based alerts
+
+## Design Process
+
+### Information Architecture
+
+Structured the interface into three core layers: **Map View** (primary workspace for vehicle tracking), **Filter Panel** (contextual control to reduce visual clutter), and **Alert System** (exception handling for urgent situations).
+
+### Key Design Decisions
+
+**Custom GEO Fences:** Enabled users to draw and save their own GEO fences directly on the map, empowering dispatchers to adapt to changing operations without IT support dependency.
+
+**Filter-First Approach:** Implemented persistent filter panel allowing users to quickly toggle visibility by vehicle type, status, or custom zones — reducing cognitive load and speeding up decision-making.
+
+**Platform-Specific Design:** Web Dashboard for multi-vehicle monitoring with analytics; Mobile App focused on single-vehicle tracking, quick status updates, and on-site notifications.
+
+### Wireframe Iterations
+
+- **V1:** Traditional list + map split view — too much scrolling on mobile
+- **V2:** Full-screen map with overlay panel — filter controls hard to reach on mobile
+- **V3 (Final):** Collapsible filter drawer + floating action buttons — balanced quick access with screen real estate
+
+## Visual Design
+
+**Design System:** Color-coded status indicators (Active, Idle, Offline, Alert), map interaction patterns (zoom, pan, polygon drawing tools), filter controls (multi-select chips, quick toggle buttons), and priority-based alert banners.
+
+**Accessibility:** High contrast colors for outdoor mobile use in sunlight, 44x44pt minimum touch targets for gloved use, status indicators use both color and icons for color-blind users, dark mode for night shift dispatchers.
+
+## Reflections
+
+Context matters deeply in B2B tools — spending time observing users in their actual work environment revealed pain points that interviews alone wouldn't uncover. Customization doesn't have to mean complexity if the interface is designed thoughtfully. Platform-specific design is crucial — don't just shrink the desktop UI for mobile; rethink the use case entirely.

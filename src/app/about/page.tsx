@@ -40,7 +40,7 @@ export default function AboutPage() {
           Designer,<br />
           <span className="text-[#C4A882]">code enthusiast.</span>
         </h1>
-        <p className="text-[#8A8480] max-w-xl leading-relaxed text-lg">
+        <p className="text-[#8A8480] leading-relaxed text-lg whitespace-nowrap">
           A UX/UI Designer evolving into a design-engineer hybrid — turning ideas into
           real products with AI-assisted workflows.
         </p>
