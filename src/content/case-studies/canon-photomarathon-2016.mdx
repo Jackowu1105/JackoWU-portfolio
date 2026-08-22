@@ -1,8 +1,8 @@
 <ProjectHeader
-  overview="Canon PhotoMarathon Hong Kong is an annual timed photography competition attracting hundreds of participants who must capture, submit, and have their work judged within a single day. The 2016 event required a complete redesign of the photo submission and review system to handle thousands of images uploaded within a tight window while maintaining a seamless experience for both participants and judges."
-  challenge="Long submission queues with unclear upload steps led to errors and support requests. Participants primarily used smartphones with inconsistent connectivity. Judges needed to review hundreds of images within hours but lacked efficient browsing tools. The existing workflow created significant operational bottlenecks for event organizers."
-  role="UI/UX Designer — responsible for user flow architecture and UI design for the dual-sided photo upload and judging platform."
-  team="Event Organizers, Canon Stakeholders"
+  overview="Canon PhotoMarathon Hong Kong is an annual timed photography competition where participants must capture, submit, and have their work judged within a single day. The 2016 event required a complete redesign of the photo submission and review system to handle a large volume of images uploaded within a tight window, while keeping the experience smooth for both participants and judges."
+  challenge="Long submission queues with unclear upload steps led to errors and support requests. Participants primarily used smartphones with inconsistent connectivity. Judges needed to review a large volume of images within hours but lacked efficient browsing tools. The existing workflow created significant operational bottlenecks."
+  role="UI/UX Designer (solo) — responsible for the user-flow architecture and UI design for the dual-sided photo-upload and judging platform."
+  team="1 UX Designer (me, solo) + developers"
   duration="2016"
   tools={["Adobe XD"]}
 />
@@ -11,34 +11,51 @@
 
 ### User Pain Points
 
-**For Participants:** Long submission queues, unclear upload steps leading to errors, anxiety about missing deadlines, confusion about technical requirements (file format, resolution).
+**For participants:** long submission queues, unclear upload steps leading to errors, anxiety about missing deadlines, and confusion about technical requirements (file format, resolution).
 
-**For Judges:** Inefficient image browsing, lack of filtering and sorting capabilities, visual fatigue from reviewing hundreds of images, need to compare similar entries.
+**For judges:** inefficient image browsing, lack of filtering and sorting, visual fatigue from reviewing many images, and the need to compare similar entries.
 
-**Business Impact:** Delayed event schedule, increased staffing costs for on-site support, risk of participant frustration affecting Canon's brand perception.
+**Business impact:** delayed event schedule, increased staffing costs for on-site support, and risk of participant frustration affecting Canon's brand perception.
 
 ## Design Process
 
 ### Information Architecture
 
-I mapped the end-to-end workflow for both user groups, identifying critical touchpoints where friction occurred:
+I mapped the end-to-end workflow for both user groups, identifying the critical touchpoints where friction occurred:
 
-**Participant Journey:** Registration → Photo Capture → Upload Initiation → File Selection → Submission Confirmation
+**Participant journey:** Registration → Photo Capture → Upload Initiation → File Selection → Submission Confirmation
 
-**Judge Journey:** Login → Image Queue → Review Interface → Scoring/Filtering → Selection Finalization
+**Judge journey:** Login → Image Queue → Review Interface → Scoring/Filtering → Selection Finalisation
 
 ### Key Design Decisions
 
-**Simplified, Guided Upload Flow:** Redesigned the submission process into clear, sequential steps with real-time validation (file size, format, resolution checks), progress indicators to reduce anxiety, and inline help text for technical requirements.
+**Simplified, guided upload flow** — Redesigned the submission process into clear, sequential steps with real-time validation (file size, format, resolution checks), progress indicators to reduce anxiety, and inline help text for technical requirements.
 
-**Batch-Enabled Judging Interface:** Grid view with thumbnail previews for quick scanning, filtering and sorting by category or timestamp, and side-by-side comparison mode for similar entries.
+**Batch-enabled judging interface** — Grid view with thumbnail previews for quick scanning, filtering and sorting by category or timestamp, and a side-by-side comparison mode for similar entries.
 
-**Mobile-First Design:** Participants primarily used smartphones for submission. Designed for one-handed operation with responsive adaptation to desktop for judges.
+**Mobile-first design** — Participants primarily used smartphones for submission, so I designed for one-handed operation with responsive adaptation to desktop for judges.
 
 ## Visual Design
 
-Created a lightweight design system ensuring consistency and speeding up development. WCAG AA color contrast for outdoor visibility, minimum 44px touch targets for ease of use under pressure, clear error messages for submission validation.
+### Design System
+
+A lightweight, clean system on a white base (`#FFFFFF` / `#F3F1F1`) with neutral grey tones (`#767679` / `#A5A6A8`) — keeping the focus on participants' photography rather than the interface chrome, in line with Canon's minimalist brand.
+
+<ColorPalette
+  colors={["#FFFFFF", "#767679", "#A5A6A8", "#F3F1F1"]}
+  labels={["Base", "Grey", "Grey Light", "Surface"]}
+/>
+
+**Typography:** A system sans-serif with a clear hierarchy — large preview thumbnails for judges, generous tap targets for participants.
+
+### Accessibility
+
+WCAG AA color contrast for outdoor visibility, generous touch targets for ease of use under pressure, and clear error messages for submission validation.
+
+## Outcomes & Feedback
+
+The redesigned flow cleared submission queues and cut support requests, and the judging tools let reviewers get through a large volume of images efficiently. The system was reused for later Canon events.
 
 ## Reflections
 
-This project taught me the importance of designing for operational efficiency, not just user delight. In high-pressure event contexts, clarity and speed trump visual polish. By deeply understanding both participant and judge workflows, I was able to create a system that served multiple stakeholders without compromising either experience. Even under tight deadlines, accessibility considerations like outdoor visibility and touch target sizing proved essential.
+This project taught me the importance of designing for operational efficiency, not just user delight. In high-pressure event contexts, clarity and speed trump visual polish. By deeply understanding both participant and judge workflows, I could create a system that served multiple stakeholders without compromising either experience. Even under tight deadlines, accessibility considerations like outdoor visibility and touch-target sizing proved essential.

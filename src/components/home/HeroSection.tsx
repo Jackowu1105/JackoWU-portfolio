@@ -68,10 +68,10 @@ export function HeroSection() {
               initial={{ opacity: 0, y: 12, filter: 'blur(4px)' }}
               animate={{ opacity: 1, y: 0, filter: 'blur(0px)' }}
               transition={{ delay: 0.05, duration: 0.5, ease: [0.25, 0.1, 0.25, 1] }}
-              className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[rgba(255,223,147,0.3)] border border-white/20 backdrop-blur-sm"
+              className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-badge-bg border border-white/20 backdrop-blur-sm"
             >
-              <span className="w-2 h-2 rounded-full bg-[#765b00] inline-block" />
-              <span className="text-xs font-semibold text-[#594400] tracking-[1.2px] uppercase">
+              <span className="w-2 h-2 rounded-full bg-badge-dot inline-block" />
+              <span className="text-xs font-semibold text-badge-text tracking-[1.2px] uppercase">
                 Available for new opportunities
               </span>
             </motion.div>
@@ -84,8 +84,8 @@ export function HeroSection() {
               initial={{ opacity: 0, y: 24, filter: 'blur(6px)' }}
               animate={{ opacity: 1, y: 0, filter: 'blur(0px)' }}
               transition={{ delay: 0.15, duration: 0.7, ease: [0.25, 0.1, 0.25, 1] }}
-              className="text-2xl sm:text-3xl md:text-4xl lg:text-[48px] font-bold tracking-[-0.8px] leading-[1.2] text-[#1d1b20]"
-              style={{ fontFamily: 'Epilogue, sans-serif' }}
+              className="text-2xl sm:text-3xl md:text-4xl lg:text-[48px] font-bold tracking-[-0.8px] leading-[1.2] text-heading"
+              style={{ fontFamily: 'var(--font-heading)' }}
             >
               Jacko Wu — Crafting
               <br />
@@ -103,29 +103,29 @@ export function HeroSection() {
             >
               <span className="relative inline-block">
                 <span
-                  className="text-2xl sm:text-3xl md:text-4xl lg:text-[48px] font-bold tracking-[-0.8px] leading-[1.2] text-[#37848a]"
-                  style={{ fontFamily: 'Epilogue, sans-serif' }}
+                  className="text-2xl sm:text-3xl md:text-4xl lg:text-[48px] font-bold tracking-[-0.8px] leading-[1.2] text-teal"
+                  style={{ fontFamily: 'var(--font-heading)' }}
                 >
                   Precision
                 </span>
-                <span className="absolute -bottom-2 left-0 right-0 h-1 rounded-full bg-[rgba(55,132,138,0.2)]" />
+                <span className="absolute -bottom-2 left-0 right-0 h-1 rounded-full bg-teal-underline" />
               </span>
 
               <span
-                className="text-2xl sm:text-3xl md:text-4xl lg:text-[48px] font-bold tracking-[-0.8px] leading-[1.2] text-[#1d1b20]"
-                style={{ fontFamily: 'Epilogue, sans-serif' }}
+                className="text-2xl sm:text-3xl md:text-4xl lg:text-[48px] font-bold tracking-[-0.8px] leading-[1.2] text-heading"
+                style={{ fontFamily: 'var(--font-heading)' }}
               >
                 &amp;
               </span>
 
               <span className="relative inline-block">
                 <span
-                  className="text-2xl sm:text-3xl md:text-4xl lg:text-[48px] font-bold tracking-[-0.8px] leading-[1.2] text-[#c9a74d]"
-                  style={{ fontFamily: 'Epilogue, sans-serif' }}
+                  className="text-2xl sm:text-3xl md:text-4xl lg:text-[48px] font-bold tracking-[-0.8px] leading-[1.2] text-gold"
+                  style={{ fontFamily: 'var(--font-heading)' }}
                 >
                   Soul
                 </span>
-                <span className="absolute -bottom-2 left-0 right-0 h-1 rounded-full bg-[rgba(201,167,77,0.2)]" />
+                <span className="absolute -bottom-2 left-0 right-0 h-1 rounded-full bg-gold-underline" />
               </span>
             </motion.div>
           </div>
@@ -135,8 +135,8 @@ export function HeroSection() {
             initial={{ opacity: 0, y: 16, filter: 'blur(3px)' }}
             animate={{ opacity: 1, y: 0, filter: 'blur(0px)' }}
             transition={{ delay: 0.35, duration: 0.5, ease: [0.25, 0.1, 0.25, 1] }}
-            className="text-sm sm:text-base md:text-lg text-[#494551] max-w-[672px] mx-auto leading-relaxed mt-4"
-            style={{ fontFamily: 'Inter, sans-serif' }}
+            className="text-sm sm:text-base md:text-lg text-body max-w-[672px] mx-auto leading-relaxed mt-4"
+            style={{ fontFamily: 'var(--font-sans)' }}
           >
             I&apos;m a UX/UI Designer focused on creating human-centric digital products. By
             blending minimalist aesthetics with advanced functionality, I build intuitive
@@ -154,8 +154,8 @@ export function HeroSection() {
               {/* Explore Works — dark */}
               <Link
                 href="/work"
-                className="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-[#1d1b20] text-[#fdf7ff] text-sm font-medium hover:opacity-80 transition-opacity relative overflow-hidden"
-                style={{ fontFamily: 'Epilogue, sans-serif' }}
+                className="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-heading text-dark-text text-sm font-medium hover:opacity-80 transition-opacity relative overflow-hidden"
+                style={{ fontFamily: 'var(--font-heading)' }}
               >
                 <RippleEffect />
                 Explore Works
@@ -167,10 +167,10 @@ export function HeroSection() {
               {/* Download Resume — glass */}
               <a
                 href="/resume"
-                className="inline-flex items-center gap-2 px-4 py-2 rounded-lg border border-white/30 text-[#1d1b20] text-sm font-medium backdrop-blur-[10px] hover:opacity-80 transition-opacity relative overflow-hidden"
+                className="inline-flex items-center gap-2 px-4 py-2 rounded-lg border border-white/30 text-heading text-sm font-medium backdrop-blur-[10px] hover:opacity-80 transition-opacity relative overflow-hidden"
                 style={{
                   fontFamily: 'Epilogue, sans-serif',
-                  background: 'linear-gradient(133deg, rgba(255,255,255,0.4) 0%, rgba(255,255,255,0.05) 100%)',
+                  background: 'var(--glass-gradient-light)',
                 }}
               >
                 <RippleEffect color="rgba(255,255,255,0.5)" />

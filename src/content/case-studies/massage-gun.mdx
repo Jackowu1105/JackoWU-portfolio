@@ -1,0 +1,94 @@
+<ProjectHeader
+  overview="The Smart Massage Gun is an IoT device paired with a mobile app that gives users precise usage guidance and a range of personalised therapy options. I designed the companion app — guiding safe usage, offering tailored therapy programs, and tracking progress so users get effective, customised treatment."
+  challenge="A massage gun used incorrectly can cause injury, so users need clear guidance on how and where to use it. At the same time, every user's body and recovery needs differ, so the app had to offer enough flexibility to personalise each session without overwhelming first-time users."
+  role="UI/UX Designer — responsible for the app's user flow, interface design, and interaction experience."
+  team="1 UX Designer (me, solo) + developers"
+  duration="2021"
+  tools={["Figma"]}
+/>
+
+## Problem Definition
+
+A smart massage gun is only as good as the guidance around it. Without instruction, users apply it incorrectly — wrong intensity, wrong muscle group, too long — which limits the benefit and risks injury. The companion app needed to solve three things at once:
+
+- **Safe usage** — clear, step-by-step guidance so first-time users don't hurt themselves
+- **Personalisation** — therapy programs adaptable to different bodies, goals, and recovery states
+- **Progress visibility** — a way to see what's been done and what's improving over time
+
+### Design Goals
+
+- Make correct usage feel guided, not gated — instructions should help, not slow users down
+- Let casual users start quickly while giving advanced users room to customise
+- Keep the interface calm and wellness-oriented, not clinical
+
+## Design Process
+
+### Information Architecture
+
+I structured the app around four primary sections:
+
+1. **Home** — quick-start with recent programs and recommended sessions
+2. **Programs** — a library of therapy programs (recovery, pain relief, relaxation) with customisable intensity, mode, and target area
+3. **Guide** — step-by-step usage tutorials with safety precautions
+4. **Progress** — session history and improvement tracking
+
+### Key Design Decisions
+
+**Guided usage instructions.** The app provides comprehensive tutorials on how to use the massage gun correctly — step-by-step guidance with safety precautions, so users build confidence before they start.
+
+**Personalised therapy programs.** A library of programs addresses different needs (muscle recovery, pain relief, relaxation). Users can customise intensity levels, massage modes, and target areas to suit their preferences and requirements.
+
+**Customisation without clutter.** Advanced settings (intensity, mode, target area) live one tap away from the main control, so first-time users see a simple surface while power users can dial in their session.
+
+**Progress tracking.** Users can track their therapy sessions and monitor progress over time, enabling them to adjust settings and see improvements — turning a one-off device into a habit.
+
+### Iteration
+
+An early concept put all customisation on the home screen, which felt cluttered for first-time users. I moved the quick-start to the foreground and tucked customisation behind a "Customise" action — testing showed users found the calm home view less intimidating and still reached the advanced controls comfortably.
+
+## Visual Design
+
+### Design System
+
+A clean, calm wellness aesthetic.
+
+**Color:** A light base (`#FFFFFF` / `#F4F5F6`) with a confident blue primary (`#187CDA` / `#0778D7`) for actions and active states, softened by a pale blue (`#C3D4F1` / `#DBE9EF`) for secondary surfaces. The palette feels trustworthy and wellness-oriented without being clinical.
+
+<ColorPalette
+  colors={["#FFFFFF", "#187CDA", "#0778D7", "#C3D4F1"]}
+  labels={["Base", "Blue", "Blue Deep", "Pale Blue"]}
+/>
+
+**Typography:** A system sans-serif with a clear hierarchy — large, legible controls for in-session use (users may be mid-massage and glancing at the screen).
+
+### Accessibility
+
+Generous touch targets for mid-session use, high-contrast controls, and clear status indicators for device connection and intensity.
+
+## Outcomes & Feedback
+
+The Smart Massage Gun paired with its app gave users a comprehensive, personalised massage therapy experience — accurate usage instructions reduced misuse anxiety, and customisable programs meant the device served a wide range of recovery needs rather than a single fixed routine.
+
+## Design Gallery
+
+<CaseStudyImage
+  src="/images/projects/massage-gun/g01.png"
+  label="UI Design"
+  caption="Smart Massage Gun app — main interface"
+/>
+
+<CaseStudyImage
+  src="/images/projects/massage-gun/g02.png"
+  label="UI Design"
+  caption="Program selection and custom settings"
+/>
+
+<CaseStudyImage
+  src="/images/projects/massage-gun/g03.png"
+  label="UI Design"
+  caption="Guided usage instructions and session progress tracking"
+/>
+
+## Reflections
+
+Designing for a physical IoT device means the interface has to account for the moment of use — users glance at the screen mid-session, so controls need to be large, legible, and reachable. Personalisation only works when the default path is already good; the customisation is there for users who want it, not a burden on those who don't.

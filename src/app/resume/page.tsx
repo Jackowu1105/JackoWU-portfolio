@@ -6,23 +6,23 @@ export default function ResumePage() {
     <div className="mx-auto max-w-6xl px-6 md:px-12 py-16">
       {/* Header */}
       <div className="mb-16">
-        <p className="text-[#B8B2AE] text-sm font-medium tracking-widest uppercase mb-3">
+        <p className="text-text-tertiary text-sm font-medium tracking-widest uppercase mb-3">
           Resume
         </p>
-        <h1 className="text-4xl md:text-5xl font-bold tracking-tight text-[#1C1814] mb-4">
+        <h1 className="text-4xl md:text-5xl font-bold tracking-tight text-text-primary mb-4">
           Download my resume
         </h1>
-        <p className="text-[#8A8480] max-w-lg leading-relaxed text-lg">
+        <p className="text-text-secondary max-w-lg leading-relaxed text-lg">
           A concise overview of my experience, skills, and background.
         </p>
       </div>
 
       {/* Download card */}
       <GlassCard hover={false} className="p-12 text-center mb-12">
-        <h2 className="text-2xl font-bold text-[#1C1814] mb-3">
+        <h2 className="text-2xl font-bold text-text-primary mb-3">
           Ready to dive deeper?
         </h2>
-        <p className="text-[#8A8480] mb-8 max-w-md mx-auto">
+        <p className="text-text-secondary mb-8 max-w-md mx-auto">
           Available as a PDF. Feel free to download and share with your team.
         </p>
         <Button href="/resume.pdf" variant="primary" external>
@@ -35,9 +35,9 @@ export default function ResumePage() {
 
       {/* Preview note */}
       <GlassCard hover={false} className="p-8 text-center">
-        <p className="text-[#B8B2AE] text-sm">
+        <p className="text-text-tertiary text-sm">
           A PDF resume will be added here. For now, visit the{' '}
-          <a href="/about" className="text-[#8A8480] hover:text-[#1C1814] underline transition-colors">
+          <a href="/about" className="text-text-secondary hover:text-text-primary underline transition-colors">
             About page
           </a>{' '}
           for a complete overview of my experience and skills.

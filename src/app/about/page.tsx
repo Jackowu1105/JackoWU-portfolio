@@ -33,14 +33,14 @@ export default function AboutPage() {
     <div className="mx-auto max-w-6xl px-6 md:px-12 py-16">
       {/* Header */}
       <div className="mb-16">
-        <p className="text-[#B8B2AE] text-sm font-medium tracking-widest uppercase mb-3">
+        <p className="text-text-tertiary text-sm font-medium tracking-widest uppercase mb-3">
           About
         </p>
-        <h1 className="text-4xl md:text-5xl font-bold tracking-tight text-[#1C1814] mb-4">
+        <h1 className="text-4xl md:text-5xl font-bold tracking-tight text-text-primary mb-4">
           Designer,<br />
-          <span className="text-[#C4A882]">code enthusiast.</span>
+          <span className="text-accent-gold">code enthusiast.</span>
         </h1>
-        <p className="text-[#8A8480] leading-relaxed text-lg whitespace-nowrap">
+        <p className="text-text-secondary leading-relaxed text-lg whitespace-nowrap">
           A UX/UI Designer evolving into a design-engineer hybrid — turning ideas into
           real products with AI-assisted workflows.
         </p>
@@ -51,14 +51,14 @@ export default function AboutPage() {
         <GlassCard hover={false} className="p-8 md:p-10">
           <div className="flex flex-col md:flex-row gap-8 items-start">
             {/* Portrait placeholder */}
-            <div className="shrink-0 w-32 h-32 rounded-2xl bg-black/5 flex items-center justify-center text-[#B8B2AE] text-xs">
+            <div className="shrink-0 w-32 h-32 rounded-2xl bg-black/5 flex items-center justify-center text-text-tertiary text-xs">
               Photo
             </div>
             <div>
-              <h2 className="text-2xl font-bold text-[#1C1814] mb-4">
+              <h2 className="text-2xl font-bold text-text-primary mb-4">
                 Hi, I&apos;m Jacko Wu
               </h2>
-              <div className="space-y-3 text-[#8A8480] leading-relaxed">
+              <div className="space-y-3 text-text-secondary leading-relaxed">
                 <p>
                   A UX/UI Designer with over 8 years of experience spanning system design,
                   product design, and branding across fintech, IoT, and logistics industries.
@@ -67,7 +67,7 @@ export default function AboutPage() {
                 </p>
                 <p>
                   In recent years, I&apos;ve undergone a transformative shift — evolving from a
-                  pure designer into a <strong className="text-[#1C1814]">design-engineer hybrid</strong> —
+                  pure designer into a <strong className="text-text-primary">design-engineer hybrid</strong> —
                   by embracing AI-assisted development and vibe coding workflows. This evolution
                   lets me independently translate design concepts into fully functional front-end
                   applications, bridging the gap between vision and delivery with remarkable efficiency.
@@ -88,27 +88,27 @@ export default function AboutPage() {
       {/* Experience */}
       <section className="mb-20">
         <div className="mb-8">
-          <p className="text-[#B8B2AE] text-sm font-medium tracking-widest uppercase mb-2">
+          <p className="text-text-tertiary text-sm font-medium tracking-widest uppercase mb-2">
             Career
           </p>
-          <h2 className="text-3xl font-bold text-[#1C1814]">Experience</h2>
+          <h2 className="text-3xl font-bold text-text-primary">Experience</h2>
         </div>
         <div className="space-y-5">
           {experience.map((item, i) => (
             <GlassCard key={i} className="p-6 md:p-8">
               <div className="flex flex-col sm:flex-row sm:items-start justify-between gap-1 mb-3">
                 <div>
-                  <h3 className="font-bold text-[#1C1814]">{item.role}</h3>
-                  <p className="text-sm text-[#37848a] font-medium">{item.company}</p>
+                  <h3 className="font-bold text-text-primary">{item.role}</h3>
+                  <p className="text-sm text-teal font-medium">{item.company}</p>
                 </div>
-                <span className="text-sm text-[#B8B2AE] whitespace-nowrap shrink-0">
+                <span className="text-sm text-text-tertiary whitespace-nowrap shrink-0">
                   {item.period}
                 </span>
               </div>
               <ul className="space-y-1.5">
                 {item.highlights.map((h, j) => (
-                  <li key={j} className="text-sm text-[#8A8480] leading-relaxed pl-4 relative">
-                    <span className="absolute left-0 top-[0.6em] w-1.5 h-1.5 rounded-full bg-[#37848a]/40" />
+                  <li key={j} className="text-sm text-text-secondary leading-relaxed pl-4 relative">
+                    <span className="absolute left-0 top-[0.6em] w-1.5 h-1.5 rounded-full bg-teal/40" />
                     {h}
                   </li>
                 ))}
@@ -121,19 +121,19 @@ export default function AboutPage() {
       {/* Education */}
       <section className="mb-20">
         <div className="mb-8">
-          <p className="text-[#B8B2AE] text-sm font-medium tracking-widest uppercase mb-2">
+          <p className="text-text-tertiary text-sm font-medium tracking-widest uppercase mb-2">
             Background
           </p>
-          <h2 className="text-3xl font-bold text-[#1C1814]">Education</h2>
+          <h2 className="text-3xl font-bold text-text-primary">Education</h2>
         </div>
         <div className="space-y-4">
           {education.map((item, i) => (
             <GlassCard key={i} hover={false} className="p-6 flex flex-col sm:flex-row sm:items-center justify-between gap-2">
               <div>
-                <h3 className="font-semibold text-[#1C1814]">{item.degree}</h3>
-                <p className="text-sm text-[#8A8480]">{item.school}</p>
+                <h3 className="font-semibold text-text-primary">{item.degree}</h3>
+                <p className="text-sm text-text-secondary">{item.school}</p>
               </div>
-              <span className="text-sm text-[#B8B2AE] whitespace-nowrap">{item.period}</span>
+              <span className="text-sm text-text-tertiary whitespace-nowrap">{item.period}</span>
             </GlassCard>
           ))}
         </div>
@@ -142,21 +142,21 @@ export default function AboutPage() {
       {/* Certifications */}
       <section className="mb-20">
         <div className="mb-8">
-          <p className="text-[#B8B2AE] text-sm font-medium tracking-widest uppercase mb-2">
+          <p className="text-text-tertiary text-sm font-medium tracking-widest uppercase mb-2">
             Credentials
           </p>
-          <h2 className="text-3xl font-bold text-[#1C1814]">Certifications</h2>
+          <h2 className="text-3xl font-bold text-text-primary">Certifications</h2>
         </div>
         <GlassCard hover={false} className="p-6 md:p-8">
           <ul className="space-y-3">
             {certifications.map((cert, i) => (
-              <li key={i} className="flex items-start gap-3 text-[#8A8480]">
+              <li key={i} className="flex items-start gap-3 text-text-secondary">
                 <svg
                   width="18"
                   height="18"
                   viewBox="0 0 24 24"
                   fill="none"
-                  stroke="#37848a"
+                  stroke="currentColor"
                   strokeWidth="2"
                   className="shrink-0 mt-0.5"
                 >
@@ -172,22 +172,22 @@ export default function AboutPage() {
       {/* Skills */}
       <section className="mb-20">
         <div className="mb-8">
-          <p className="text-[#B8B2AE] text-sm font-medium tracking-widest uppercase mb-2">
+          <p className="text-text-tertiary text-sm font-medium tracking-widest uppercase mb-2">
             Expertise
           </p>
-          <h2 className="text-3xl font-bold text-[#1C1814]">Skills &amp; Tools</h2>
+          <h2 className="text-3xl font-bold text-text-primary">Skills &amp; Tools</h2>
         </div>
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
           {Object.entries(skillCategories).map(([category, items]) => (
             <GlassCard key={category} className="p-6">
-              <h3 className="font-semibold text-[#1C1814] mb-4 text-sm tracking-widest uppercase">
+              <h3 className="font-semibold text-text-primary mb-4 text-sm tracking-widest uppercase">
                 {category}
               </h3>
               <div className="flex flex-wrap gap-2">
                 {items.map((skill) => (
                   <span
                     key={skill}
-                    className="px-3 py-1.5 text-xs rounded-lg bg-white/50 text-[#8A8480] border border-[#C4A882]/20"
+                    className="px-3 py-1.5 text-xs rounded-lg bg-white/50 text-text-secondary border border-[#C4A882]/20"
                   >
                     {skill}
                   </span>
@@ -201,8 +201,8 @@ export default function AboutPage() {
       {/* Resume CTA */}
       <section className="text-center">
         <GlassCard hover={false} className="p-10">
-          <h2 className="text-2xl font-bold text-[#1C1814] mb-3">Want the full story?</h2>
-          <p className="text-[#8A8480] mb-6 max-w-md mx-auto">
+          <h2 className="text-2xl font-bold text-text-primary mb-3">Want the full story?</h2>
+          <p className="text-text-secondary mb-6 max-w-md mx-auto">
             Download my resume for a complete overview of my experience and skills.
           </p>
           <Button href="/resume" variant="primary">

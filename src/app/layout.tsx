@@ -48,7 +48,7 @@ export default function RootLayout({
       className={`${epilogue.variable} ${inter.variable} ${jetbrainsMono.variable} h-full antialiased`}
     >
       <script src="https://mcp.figma.com/mcp/html-to-design/capture.js" async></script>
-      <body className="min-h-full bg-[#FAF7F5] text-[#1C1814] flex flex-col">
+      <body className="min-h-full bg-bg-base text-text-primary flex flex-col">
         <Layout>{children}</Layout>
       </body>
     </html>

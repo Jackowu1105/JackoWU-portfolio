@@ -45,18 +45,18 @@ export function FeaturedProjectCard({ project, index }: FeaturedProjectCardProps
           {/* Content */}
           <div className="p-6">
             <div className="flex items-center gap-3 mb-3">
-              <span className="text-xs font-medium text-[#B8B2AE] uppercase tracking-wide">
+              <span className="text-xs font-medium text-text-tertiary uppercase tracking-wide">
                 {project.client}
               </span>
               <span className="w-1 h-1 rounded-full bg-black/10" />
-              <span className="text-xs text-[#B8B2AE]">{project.timeline}</span>
+              <span className="text-xs text-text-tertiary">{project.timeline}</span>
             </div>
 
-            <h3 className="text-xl font-semibold text-[#1C1814] mb-2 group-hover:text-[#2C2622] transition-colors">
+            <h3 className="text-xl font-semibold text-text-primary mb-2 group-hover:text-[#2C2622] transition-colors">
               {project.title}
             </h3>
 
-            <p className="text-sm text-[#8A8480] line-clamp-2 leading-relaxed">
+            <p className="text-sm text-text-secondary line-clamp-2 leading-relaxed">
               {project.summary}
             </p>
 
@@ -65,7 +65,7 @@ export function FeaturedProjectCard({ project, index }: FeaturedProjectCardProps
               {project.tags.slice(0, 3).map((tag) => (
                 <span
                   key={tag}
-                  className="px-2.5 py-0.5 text-xs rounded-full bg-black/5 text-[#8A8480] border border-black/5"
+                  className="px-2.5 py-0.5 text-xs rounded-full bg-black/5 text-text-secondary border border-black/5"
                 >
                   {tag}
                 </span>

@@ -9,11 +9,11 @@ export function Footer() {
           <div className="flex items-center gap-6">
             <Link
               href="/"
-              className="text-[#1C1814] font-semibold tracking-tight"
+              className="text-text-primary font-semibold tracking-tight"
             >
               Jacko
             </Link>
-            <span className="text-[#B8B2AE] text-sm">
+            <span className="text-text-tertiary text-sm">
               UX/UI Designer
             </span>
           </div>
@@ -22,19 +22,19 @@ export function Footer() {
           <div className="flex items-center gap-6 text-sm">
             <Link
               href="/work"
-              className="text-[#8A8480] hover:text-[#1C1814] transition-colors"
+              className="text-text-secondary hover:text-text-primary transition-colors"
             >
               Work
             </Link>
             <Link
               href="/about"
-              className="text-[#8A8480] hover:text-[#1C1814] transition-colors"
+              className="text-text-secondary hover:text-text-primary transition-colors"
             >
               About
             </Link>
             <Link
               href="/contact"
-              className="text-[#8A8480] hover:text-[#1C1814] transition-colors"
+              className="text-text-secondary hover:text-text-primary transition-colors"
             >
               Contact
             </Link>
@@ -46,20 +46,20 @@ export function Footer() {
               href="https://linkedin.com"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-[#B8B2AE] hover:text-[#1C1814] transition-colors text-sm"
+              className="text-text-tertiary hover:text-text-primary transition-colors text-sm"
             >
               LinkedIn
             </a>
             <a
               href="mailto:hello@jacko.design"
-              className="text-[#B8B2AE] hover:text-[#1C1814] transition-colors text-sm"
+              className="text-text-tertiary hover:text-text-primary transition-colors text-sm"
             >
               Email
             </a>
           </div>
         </div>
 
-        <p className="text-center text-[#B8B2AE] text-xs mt-8">
+        <p className="text-center text-text-tertiary text-xs mt-8">
           &copy; {new Date().getFullYear()} Jacko. All rights reserved.
         </p>
       </div>

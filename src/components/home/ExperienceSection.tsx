@@ -15,10 +15,10 @@ export function ExperienceSection() {
       >
         {/* Heading */}
         <div className="flex items-center gap-3">
-          <div className="w-3 h-3 rounded-full bg-[#37848a] shrink-0" />
+          <div className="w-3 h-3 rounded-full bg-teal shrink-0" />
           <h2
-            className="text-[#1d1b20] text-3xl font-bold"
-            style={{ fontFamily: 'Epilogue, sans-serif' }}
+            className="text-heading text-3xl font-bold"
+            style={{ fontFamily: 'var(--font-heading)' }}
           >
             Experience
           </h2>
@@ -38,8 +38,8 @@ export function ExperienceSection() {
               {/* Job title */}
               <div className="flex-1 min-w-0">
                 <span
-                  className="text-[#1d1b20] text-xl sm:text-2xl font-semibold"
-                  style={{ fontFamily: 'Epilogue, sans-serif' }}
+                  className="text-heading text-xl sm:text-2xl font-semibold"
+                  style={{ fontFamily: 'var(--font-heading)' }}
                 >
                   {exp.role}
                 </span>
@@ -48,10 +48,10 @@ export function ExperienceSection() {
               {/* Company + Date (aligned right) */}
               <div
                 className="flex flex-col items-start sm:items-end gap-1 sm:gap-2 shrink-0"
-                style={{ fontFamily: 'Inter, sans-serif' }}
+                style={{ fontFamily: 'var(--font-sans)' }}
               >
-                <span className="text-[#494551] text-sm sm:text-base font-medium">{exp.company}</span>
-                <span className="text-[#494551] text-sm sm:text-base font-medium">{exp.period}</span>
+                <span className="text-body text-sm sm:text-base font-medium">{exp.company}</span>
+                <span className="text-body text-sm sm:text-base font-medium">{exp.period}</span>
               </div>
             </motion.div>
           ))}

@@ -9,7 +9,7 @@ export function ScrollIndicator() {
         {/* "SCROLL" label */}
         <span
           className="text-[#494551] text-[12px] font-semibold tracking-[1.2px] uppercase"
-          style={{ fontFamily: 'Epilogue, sans-serif' }}
+          style={{ fontFamily: 'var(--font-heading)' }}
         >
           SCROLL
         </span>

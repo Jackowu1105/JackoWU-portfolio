@@ -3,7 +3,6 @@ import type { Metadata } from 'next'
 import { getProject, getAdjacentProjects } from '@/data/projects'
 import { CaseStudyHero } from '@/components/case-study/CaseStudyHero'
 import { ReadingProgress } from '@/components/case-study/ReadingProgress'
-import { MetricCard } from '@/components/case-study/MetricCard'
 import { NextProject } from '@/components/case-study/NextProject'
 import { GlassCard } from '@/components/shared/GlassCard'
 
@@ -51,7 +50,9 @@ export default async function CaseStudyPage({ params }: Props) {
       <article className="mx-auto max-w-6xl px-6 md:px-12 py-16">
         {/* MDX content if available */}
         {MDXContent ? (
-          <MDXContent />
+          <div className="case-study-body">
+            <MDXContent />
+          </div>
         ) : (
           <>
             {/* Fallback: summary-based content */}
@@ -76,19 +77,22 @@ export default async function CaseStudyPage({ params }: Props) {
           </>
         )}
 
-        {/* Impact / Metrics — always shown */}
+        {/* Highlights — 誠實質化重點（取代假量化 metrics） */}
         <section className="mb-20">
-          <h2 className="text-2xl font-bold text-[#1C1814] mb-6">Impact</h2>
-          <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
-            {project.metrics.map((metric, i) => (
-              <MetricCard
-                key={metric.label}
-                label={metric.label}
-                value={metric.value}
-                delay={i * 0.1}
-              />
-            ))}
-          </div>
+          <h2 className="text-2xl font-bold text-[#1C1814] mb-6">Highlights</h2>
+          <GlassCard hover={false} className="p-8">
+            <ul className="flex flex-col gap-5">
+              {project.highlights.map((highlight) => (
+                <li key={highlight} className="flex items-start gap-3">
+                  <span
+                    aria-hidden="true"
+                    className="mt-2 w-2 h-2 rounded-full bg-[#c9a74d] flex-shrink-0"
+                  />
+                  <p className="text-[#494551] leading-relaxed text-lg">{highlight}</p>
+                </li>
+              ))}
+            </ul>
+          </GlassCard>
         </section>
       </article>
 

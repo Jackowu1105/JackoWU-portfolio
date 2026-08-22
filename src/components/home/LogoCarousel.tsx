@@ -36,8 +36,8 @@ export function LogoCarousel() {
     <section className="w-full pb-0 overflow-hidden">
       {/* 左右漸層遮罩 */}
       <div className="relative">
-        <div className="pointer-events-none absolute left-0 top-0 bottom-0 w-24 z-10 bg-gradient-to-r from-[#f5f0eb] to-transparent" />
-        <div className="pointer-events-none absolute right-0 top-0 bottom-0 w-24 z-10 bg-gradient-to-l from-[#f5f0eb] to-transparent" />
+        <div className="pointer-events-none absolute left-0 top-0 bottom-0 w-24 z-10 bg-gradient-to-r from-bg-elevated to-transparent" />
+        <div className="pointer-events-none absolute right-0 top-0 bottom-0 w-24 z-10 bg-gradient-to-l from-bg-elevated to-transparent" />
 
         {/* 滾動 track */}
         <motion.div
@@ -56,7 +56,7 @@ export function LogoCarousel() {
               className="rounded-xl flex items-center justify-center"
               style={{
                 background:
-                  'linear-gradient(134deg, rgba(255,255,255,0.4) 0%, rgba(255,255,255,0.05) 100%)',
+                  'var(--glass-gradient-light)',
                 backdropFilter: 'blur(10px)',
                 WebkitBackdropFilter: 'blur(10px)',
                 border: '1px solid rgba(255,255,255,0.3)',

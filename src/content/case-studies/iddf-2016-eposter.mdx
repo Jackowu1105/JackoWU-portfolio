@@ -1,8 +1,8 @@
 <ProjectHeader
-  overview="The International Digestive Disease Forum (IDDF) 2016 faced a classic conference dilemma: how to help 500+ attendees navigate 200+ medical research posters in a time-constrained environment, while simultaneously increasing exhibitor booth engagement. I designed a digital ePoster system and gamified lucky draw feature to solve both problems."
-  challenge="Traditional poster sessions suffered from poor discoverability — attendees wandered aimlessly, missing relevant research. Exhibitor booths struggled to attract visitors and collect meaningful data. Research papers were unavailable after the conference. Attendees had only 2-hour windows to view 200+ posters, creating decision paralysis."
-  role="UI/UX Designer — designed the ePoster browsing system for kiosks and the lucky draw interface for tablets."
-  team="Event Organizers, CUHK Faculty of Medicine Stakeholders"
+  overview="The International Digestive Disease Forum (IDDF) 2016 faced a classic conference dilemma: how to help attendees navigate a large number of medical research posters in a time-constrained environment, while simultaneously increasing exhibitor booth engagement. I designed a digital ePoster system and a gamified lucky-draw feature to solve both."
+  challenge="Traditional poster sessions suffered from poor discoverability — attendees wandered aimlessly, missing relevant research. Exhibitor booths struggled to attract visitors and collect meaningful data. Research papers were unavailable after the conference, and attendees had only short windows to view many posters, creating decision paralysis."
+  role="UI/UX Designer (solo) — designed the ePoster browsing system for kiosks and the lucky-draw interface for tablets."
+  team="1 UX Designer (me, solo) + developers"
   duration="2016"
   tools={["Sketch"]}
 />
@@ -11,44 +11,69 @@
 
 ### Key Challenges
 
-- **Time Scarcity:** Attendees had only 2-hour windows to view 200+ posters
-- **Lack of Filtering:** No way to filter by research topic, institution, or author
-- **Exhibitor Engagement:** Booths needed a reason to attract visitors beyond passive browsing
+- **Time scarcity** — attendees had only short windows to view many posters
+- **Lack of filtering** — no way to filter by research topic, institution, or author
+- **Exhibitor engagement** — booths needed a reason to attract visitors beyond passive browsing
 
 ## Design Process
 
 ### Information Architecture
 
-**ePoster Browsing (Kiosk):**
-Home → Browse by Topic / Search / My Bookmarks / Trending Posters
+**ePoster browsing (kiosk):** Home → Browse by Topic / Search / My Bookmarks / Trending Posters
 
-**Lucky Draw (Tablet at Booths):**
-Scan Badge QR → Auto-fill Info → 3-Question Survey → Submit → Confirmation + Entry #
+**Lucky draw (tablet at booths):** Scan Badge QR → Auto-fill Info → 3-Question Survey → Submit → Confirmation + Entry #
 
 ### Key Design Decisions
 
-**Kiosk Instead of Mobile App:** Eliminates download barrier. Attendees could walk up and start browsing immediately. Less personalized experience but significantly higher adoption rate.
+**Kiosk instead of mobile app** — Eliminates the download barrier. Attendees could walk up and start browsing immediately. Less personalised, but a far higher adoption rate.
 
-**Questionnaire + Lucky Draw Combination:** Gamification increases survey completion rates. Attendees motivated by prize incentives to engage with exhibitors. Mitigated risk of insincere responses by keeping questions short (3 multiple-choice) and relevant.
+**Questionnaire + lucky draw combination** — Gamification increases survey completion. Attendees are motivated by prize incentives to engage with exhibitors. I mitigated the risk of insincere responses by keeping the questions short (3 multiple-choice) and relevant.
 
-**Large Touch Targets (44x44pt minimum):** Accommodates users with limited dexterity and crowded venue conditions.
+**Large touch targets** — Accommodates users with limited dexterity and crowded-venue conditions.
 
 ### Design Iteration
 
-Initial grid layout showing 20 posters per screen felt overwhelming. Switched to list view with large preview images and clear categorization by medical specialty.
+An initial grid layout showing many posters per screen felt overwhelming. I switched to a list view with large preview images and clear categorisation by medical specialty.
 
-Manual form entry for lucky draw was too slow during peak hours. Implemented QR code scanning of attendee badges with auto-populated fields and 3 quick multiple-choice questions.
+Manual form entry for the lucky draw was too slow during peak hours. I implemented QR-code scanning of attendee badges with auto-populated fields and 3 quick multiple-choice questions.
 
 ## Visual Design
 
-Aligned with CUHK Medical Faculty branding with professional color palette. Minimum 16pt body text and 24pt headings optimized for kiosk viewing distance of 1-2 feet. Universal icons (search, bookmark, back) to overcome language barriers.
+### Color
 
-**Accessibility:** WCAG AA compliance with 4.5:1 contrast ratio, large touch targets (44x44pt minimum), fonts optimized for kiosk viewing distance.
+A light, professional base (`#F0F0F1` / `#FEFFFF`) aligned with CUHK Medical Faculty branding, with warm gold accents (`#FDD676` / `#A77C30`) for the lucky-draw energy and call-to-action highlights. The palette stays academic and calm for poster browsing while letting the lucky-draw moments feel festive.
 
-## Impact
+<ColorPalette
+  colors={["#F0F0F1", "#FDD676", "#8E622E", "#A77C30"]}
+  labels={["Surface", "Gold", "Brown", "Gold Deep"]}
+/>
 
-The low-friction kiosk approach removed barriers to entry. The lucky draw gamification successfully drove survey completion and booth traffic. The client requested to expand the system to other CUHK conferences. Multiple exhibitors requested to replicate the lucky draw feature for IDDF 2017.
+### Typography & Icons
+
+Generous body and heading text optimised for kiosk viewing distance, and universal icons (search, bookmark, back) to overcome language barriers.
+
+### Accessibility
+
+WCAG AA compliance with 4.5:1 contrast ratio, large touch targets, and fonts optimised for kiosk viewing distance.
+
+## Outcomes & Feedback
+
+The low-friction kiosk approach removed barriers to entry, and the lucky-draw gamification successfully drove survey completion and booth traffic. The client requested to expand the system to other CUHK conferences, and several exhibitors asked to replicate the lucky-draw feature.
+
+## Design Gallery
+
+<CaseStudyImage
+  src="/images/projects/iddf-2016-eposter/g01.png"
+  label="Lucky Draw UI Design"
+  caption="Lucky draw interface — questionnaire + draw gamification"
+/>
+
+<CaseStudyImage
+  src="/images/projects/iddf-2016-eposter/g02.jpg"
+  label="ePoster"
+  caption="ePoster browsing interface — kiosk layout"
+/>
 
 ## Reflections
 
-This project taught me to design for context — conference environments demand low-friction, high-visibility solutions. A mobile app would have failed due to download barriers. Balancing needs of three groups (attendees, exhibitors, organizers) required finding the "win-win-win" feature — the lucky draw was exactly that.
+This project taught me to design for context — conference environments demand low-friction, high-visibility solutions. A mobile app would have failed due to download barriers. Balancing the needs of three groups (attendees, exhibitors, organisers) required finding the "win-win-win" feature — the lucky draw was exactly that.

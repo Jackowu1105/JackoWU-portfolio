@@ -2,18 +2,51 @@
 
 /* Premium Warm Neutral Color System — Light Mode */
 :root {
+  /* Backgrounds */
   --bg-base: #faf7f5;
   --bg-elevated: #f5f1ec;
   --glass-surface: rgba(255, 255, 255, 0.75);
   --glass-border: rgba(0, 0, 0, 0.05);
   --glass-border-hover: rgba(0, 0, 0, 0.1);
+
+  /* Text */
   --text-primary: #1c1814;
   --text-secondary: #8a8480;
   --text-tertiary: #b8b2ae;
+
+  /* Brand accents */
   --accent-gold: #c4a882;
   --accent-warm: #a89880;
-  --acgent-deep: #6b5c4c;
+  --accent-deep: #6b5c4c;
   --accent-glow: rgba(196, 168, 130, 0.15);
+  --color-teal: #37848a;
+  --color-gold: #c9a74d;
+
+  /* Semantic text */
+  --color-heading: #1d1b20;
+  --color-body: #494551;
+
+  /* Interactive */
+  --color-dark-bg: #1c1814;
+  --color-dark-text: #fdf7ff;
+
+  /* Tags */
+  --color-tag-bg: rgba(205, 193, 160, 0.2);
+  --color-tag-border: #cecece;
+  --color-tag-text: #b2b1ae;
+
+  /* Badge */
+  --color-badge-bg: rgba(255, 223, 147, 0.3);
+  --color-badge-text: #594400;
+  --color-badge-dot: #765b00;
+
+  /* Underlines */
+  --color-teal-underline: rgba(55, 132, 138, 0.2);
+  --color-gold-underline: rgba(201, 167, 77, 0.2);
+
+  /* Glass gradients (used inline across components) */
+  --glass-gradient-light: linear-gradient(134deg, rgba(255,255,255,0.4) 0%, rgba(255,255,255,0.05) 100%);
+  --glass-gradient-overlap: linear-gradient(134deg, rgba(255,255,255,0.7) 0%, rgba(255,255,255,0.15) 100%);
 }
 
 @theme inline {
@@ -27,8 +60,22 @@
   --color-text-tertiary: var(--text-tertiary);
   --color-accent-gold: var(--accent-gold);
   --color-accent-warm: var(--accent-warm);
-  --color-accent-deep: var(--acgent-deep);
+  --color-accent-deep: var(--accent-deep);
   --color-accent-glow: var(--accent-glow);
+  --color-teal: var(--color-teal);
+  --color-gold: var(--color-gold);
+  --color-heading: var(--color-heading);
+  --color-body: var(--color-body);
+  --color-dark-bg: var(--color-dark-bg);
+  --color-dark-text: var(--color-dark-text);
+  --color-tag-bg: var(--color-tag-bg);
+  --color-tag-border: var(--color-tag-border);
+  --color-tag-text: var(--color-tag-text);
+  --color-badge-bg: var(--color-badge-bg);
+  --color-badge-text: var(--color-badge-text);
+  --color-badge-dot: var(--color-badge-dot);
+  --color-teal-underline: var(--color-teal-underline);
+  --color-gold-underline: var(--color-gold-underline);
   --font-sans: var(--font-inter);
   --font-heading: var(--font-epilogue);
   --font-mono: var(--font-jetbrains-mono);
@@ -128,4 +175,39 @@ body {
     transition-duration: 0.01ms !important;
     scroll-behavior: auto !important;
   }
+}
+
+/* Case study body — auto-numbered sections + richer prose styling.
+   Wraps the MDX content so headings read as a designed editorial layout
+   instead of a flat wall of text. */
+.case-study-body {
+  counter-reset: cs-h2;
+}
+
+.case-study-body h2 {
+  counter-increment: cs-h2;
+  position: relative;
+  padding-top: 1.25rem;
+}
+
+.case-study-body h2::before {
+  content: counter(cs-h2, decimal-leading-zero);
+  display: block;
+  font-family: var(--font-mono, ui-monospace, monospace);
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  color: var(--accent-gold);
+  margin-bottom: 0.5rem;
+}
+
+.case-study-body h2::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 2rem;
+  height: 2px;
+  background: var(--accent-gold);
+  border-radius: 2px;
 }

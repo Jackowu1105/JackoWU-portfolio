@@ -16,11 +16,11 @@ interface ButtonProps {
 
 const variants = {
   primary:
-    'bg-[#1C1814] text-white hover:opacity-80 shadow-lg shadow-black/5',
+    'bg-dark-bg text-dark-text hover:opacity-80 shadow-lg shadow-black/5',
   secondary:
-    'glass-card text-[#1C1814]',
+    'glass-card text-dark-bg',
   ghost:
-    'text-[#8A8480] hover:text-[#1C1814]',
+    'text-text-secondary hover:text-dark-bg',
 }
 
 const rippleColors = {

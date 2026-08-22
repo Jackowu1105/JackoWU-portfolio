@@ -24,11 +24,11 @@ export function MetricCard({ label, value, delay = 0 }: MetricCardProps) {
         whileInView={{ opacity: 1, scale: 1 }}
         viewport={{ once: true }}
         transition={{ duration: 0.5, delay: delay + 0.2 }}
-        className="text-3xl md:text-4xl font-bold text-[#1C1814] mb-1"
+        className="text-3xl md:text-4xl font-bold text-text-primary mb-1"
       >
         {value}
       </motion.p>
-      <p className="text-sm text-[#8A8480]">{label}</p>
+      <p className="text-sm text-text-secondary">{label}</p>
     </motion.div>
   )
 }

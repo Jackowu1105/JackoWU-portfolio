@@ -1,22 +1,22 @@
 <ProjectHeader
-  overview="Road To Ultra 2016 was one of Hong Kong's largest electronic music festivals, attracting over 20,000 attendees across 2 days. I led the end-to-end UX/UI design for a mobile POS system that enabled cashless token transactions using RFID cards at 50+ vendor booths — designing for extreme outdoor, high-pressure environments."
-  challenge="Cash transactions took 5-8 minutes during peak hours. Attendees carried large amounts of cash in crowded spaces. Vendors were temporary staff with limited tech experience needing under 10-minute training. Direct sunlight, 85+ dB noise, and unreliable wifi created extreme usability constraints."
-  role="Lead UI/UX Designer — end-to-end design from user research through visual design, prototyping, and usability testing."
-  team="2 iOS Developers, 1 Project Manager, Event Organizers"
-  duration="3 months (2016)"
+  overview="Road To Ultra 2016 was a large electronic music festival in Hong Kong. I led the end-to-end UX/UI design for a mobile POS system that enabled cashless token transactions using RFID cards at the vendor booths — designing for an extreme outdoor, high-pressure environment."
+  challenge="Cash transactions were slow during peak hours. Attendees carried large amounts of cash in crowded spaces. Vendors were temporary staff with limited tech experience needing fast onboarding. Direct sunlight, high noise, and unreliable wifi created extreme usability constraints."
+  role="UI/UX Designer (solo) — end-to-end design from user research through visual design, prototyping, and usability testing."
+  team="1 UX Designer (me, solo) + developers"
+  duration="2016"
   tools={["Sketch", "InVision", "Adobe Illustrator"]}
 />
 
 ## Research & Discovery
 
-I conducted **stakeholder interviews** with event organizers, **vendor interviews** at previous music festivals (5 vendors), **observational research** at similar events, and **competitive analysis** of 3 festival payment systems (Coachella, Tomorrowland, Clockenflap).
+I conducted **stakeholder interviews** with event organisers, **vendor interviews** drawing on previous music-festival experience, **observational research** at similar events, and **competitive analysis** of festival payment systems (Coachella, Tomorrowland, Clockenflap).
 
 ### Key Insights
 
-- **Speed is everything:** Attendees tolerate max 2 minutes of waiting. Every second counts.
-- **Minimal training required:** Vendors are temporary staff with limited tech experience
-- **Harsh environment:** Direct sunlight makes screens hard to read, 85+ dB noise, vendors work 8-hour shifts
-- **Two mental models:** Attendees think "How much do I have left?"; Vendors think "Did the payment go through?"
+- **Speed is everything** — attendees tolerate only a short wait; every second counts
+- **Minimal training required** — vendors are temporary staff with limited tech experience
+- **Harsh environment** — direct sunlight makes screens hard to read, noise is high, and vendors work long shifts
+- **Two mental models** — attendees think "How much do I have left?"; vendors think "Did the payment go through?"
 
 ## Design Process
 
@@ -24,35 +24,58 @@ I conducted **stakeholder interviews** with event organizers, **vendor interview
 
 Mapped 2 primary user flows:
 
-**Flow 1: Vendor Transaction** — Idle → RFID Scan → Enter Amount → Confirmation → Success/Error
+**Flow 1: Vendor transaction** — Idle → RFID Scan → Enter Amount → Confirmation → Success/Error
 
-**Flow 2: Balance Check** — RFID Scan → Display Balance
+**Flow 2: Balance check** — RFID Scan → Display Balance
 
 ### Wireframing & Iteration
 
-**Round 1 (Paper sketches):** Initial design required 3 taps per transaction — too slow. Removed unnecessary confirmation step.
+**Round 1 (paper sketches):** Initial design required too many taps per transaction — too slow. Removed an unnecessary confirmation step.
 
-**Round 2 (Digital prototypes):** Numeric keypad caused input errors in rushed environment. Simplified to preset amount buttons + custom amount option.
+**Round 2 (digital prototypes):** A numeric keypad caused input errors in a rushed environment. Simplified to preset amount buttons plus a custom-amount option.
 
-**Round 3 (High-fidelity):** Default color scheme barely visible in direct sunlight. Increased contrast to WCAG AAA standards.
+**Round 3 (high-fidelity):** The default color scheme was barely visible in direct sunlight. Increased contrast to WCAG AAA standards.
 
 ### Key Design Decisions
 
-**Single-Tap Transaction Confirmation:** Vendors processed 12 transactions/minute with 1-tap vs. 8 with 2-tap. Risk of accidental taps mitigated by visible "Cancel" button during processing, haptic feedback, and undo function.
+**Single-tap transaction confirmation** — One-tap confirmation sped up transactions meaningfully versus a two-tap flow. The risk of accidental taps was mitigated by a visible "Cancel" button during processing, haptic feedback, and an undo function.
 
-**Extra-Large Touch Targets (60x60pt):** Standard 44pt showed 18% error rate during outdoor testing due to wristbands, rushed interactions, and fatigue. Error rate dropped to 3% with 60pt targets.
+**Extra-large touch targets** — Standard-size targets showed a high error rate during outdoor testing (wristbands, rushed interactions, fatigue). Enlarging the targets cut the error rate sharply.
 
-**Persistent Balance Display:** Balance always visible in top-right corner of vendor screen to address attendee anxiety about running out of tokens.
+**Persistent balance display** — Balance is always visible in the top-right corner of the vendor screen to address attendee anxiety about running out of tokens.
 
 ## Visual Design
 
-**Color Palette:** Road To Ultra brand orange (#FF6B00) for primary action, high-contrast green (#00D084) for success, 21:1 contrast ratio (AAA) for all primary UI. 48pt bold for token amounts optimized for quick scanning in bright outdoor light.
+### Color
 
-**Components:** 60x60pt minimum touch targets, pulsing RFID scan indicator, multi-modal feedback (visual + haptic), bilingual English/Traditional Chinese support.
+A deep, dark base (`#1B112C` / `#130E1F`) — a festival-night purple that doubles as a high-contrast surface for outdoor screens — with a high-visibility green for success states and AAA-level contrast on primary UI. The dark backdrop lets the brand accent and token amounts read clearly even in direct sunlight.
 
-## Impact
+<ColorPalette
+  colors={["#1B112C", "#291733", "#2D1D44", "#442C48"]}
+  labels={["Base", "Purple", "Purple Deep", "Muted"]}
+/>
 
-The system processed **15,247 transactions** over 2 days with **8.2-second average transaction time** (82% faster than cash), **99.3% system uptime**, and **91% vendor satisfaction**. Reconciliation time reduced by 76% (45min to 11min per booth). System was reused for Road To Ultra 2017, 2018, and 2019 events, and expanded to 3 other music festivals in Asia.
+### Typography & Components
+
+Bold typography for token amounts, optimised for quick scanning in bright outdoor light. Extra-large touch targets, a pulsing RFID scan indicator, multi-modal feedback (visual + haptic), and bilingual English/Traditional Chinese support.
+
+## Outcomes & Feedback
+
+The cashless system kept queues moving through peak hours, vendors picked it up with minimal training, and reconciliation at close became far faster than counting cash. The system was reused for later Road To Ultra events and expanded to other music festivals.
+
+## Design Gallery
+
+<CaseStudyImage
+  src="/images/projects/road-to-ultra-pos/g01.png"
+  label="POS System"
+  caption="RFID cashless POS system design"
+/>
+
+<CaseStudyImage
+  src="/images/projects/road-to-ultra-pos/g02.png"
+  label="POS System"
+  caption="Single-tap confirmation flow — built to clear peak queues"
+/>
 
 ## Reflections
 

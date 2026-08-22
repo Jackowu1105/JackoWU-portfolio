@@ -1,46 +1,113 @@
 <ProjectHeader
   overview="Hong Kong International Airport is one of the world's busiest airports. Airport controllers use the AS2 system to manage apron operations, coordinating aircraft parking stands and ground handling services. Phase 3 of the dashboard revamp focused on a critical usability gap: helping controllers quickly identify aircraft body type (Wide-body vs. Narrow-body) and bay type (Remote Stand vs. Frontal Stand)."
   challenge="Controllers needed to scan the dashboard every 2-3 minutes but had to expand individual flights to see critical details. Body type determined PTS events required, and bay type affected ground handling logistics — yet this information required multiple clicks to access. No visual distinction in collapsed view led to cognitive overload during peak hours."
-  role="UI/UX Designer — responsible for user research, visual design, and interaction design for the controller dashboard revamp."
-  team="1 Project Manager, 2 Developers"
+  role="UI/UX Designer (solo) — responsible for user research, visual design, and interaction design for the controller dashboard revamp."
+  team="1 UX Designer (me, solo) + 2 Frontend, 1 Backend, 2 Data Analysts"
   duration="2024"
   tools={["Figma"]}
 />
 
 ## Problem Definition
 
-Controllers mentally categorize flights by aircraft size first, as it determines resource allocation. However, the existing interface required multiple clicks to access this information, slowing down decision-making during peak hours.
+Controllers mentally categorize flights by aircraft size first, as it determines resource allocation — how many PTS (Passenger Transport Services) events a flight needs, and what ground crew and equipment to mobilise. Bay type (Remote Stand vs. Frontal Stand) then determines the logistics: remote stands need bus services, frontal stands have jet bridges.
 
-### Success Metrics
+The existing interface required controllers to expand individual flights to reach this information. During peak hours — when every second counts and the board is scanned every 2-3 minutes — that extra click broke the scanning rhythm and piled cognitive load onto a high-frequency task.
 
-- Reduce clicks required to access flight details
-- Improve task completion time for identifying flight configurations
-- Decrease error rate in stand assignment
+### Design Goals
+
+- **Reduce clicks to reach critical flight details** — body and bay type should be visible without expanding
+- **Speed up flight identification at a glance** — controllers scan, not read
+- **Cut stand-assignment errors** — ambiguity between remote and frontal should be impossible to miss
+
+## Research & Discovery
+
+There was no formal user-research programme on this phase. My understanding of controller workflow came from **direct observation and learning the operational mental model**: how controllers actually scan the board, what they look for first, and when they expand a flight versus when they just need to glance.
+
+Two insights shaped the whole redesign:
+
+1. **Body type comes first in a controller's mind.** It drives resource allocation, so controllers categorise flights by aircraft size before anything else. The interface should match that mental order.
+2. **Scanning beats diving.** Controllers prefer to take in the whole board at a glance and only expand a flight when they're about to act — not to find out *what* a flight is.
+
+From this, I distilled a single design principle:
+
+> *Progressive disclosure aligned with controller workflow: show body type at a glance, reveal bay type on expansion.*
 
 ## Design Process
 
 ### Information Architecture
 
-I explored three approaches for organizing flight information:
+I explored three ways to organise flight information:
 
-- **Bay Type → Body Type:** Matches physical layout but conflicts with controllers' mental model
-- **Flat view (all info visible):** No clicking needed but creates visual clutter
-- **Body Type → Bay Type:** Aligns with controller workflow, requires one click for bay details ✅
+| Approach | Logic | Verdict |
+|---|---|---|
+| **Bay → Body** | Matches the physical apron layout | ✗ Conflicts with the controller's mental model — they think size-first, not location-first |
+| **Flat view** (all info visible) | No clicking needed | ✗ Visual clutter defeats the whole point of scanning |
+| **Body → Bay** | Aligns with how controllers think | ✓ One click for bay details, body type always visible |
+
+Approach C won because it mirrors the controller's own thinking order — body type at a glance, bay type on demand.
 
 ### Key Design Decisions
 
-**Icon System for Body Types (Collapsed View):** Wide-body and Narrow-body icons allow instant recognition without reading text. Controllers can process the entire dashboard in seconds.
+**Icon system for body types (collapsed view).** Wide-body and Narrow-body get distinct icons, so a controller can recognise aircraft size *without reading text*. This leverages pre-attentive visual processing — the whole board becomes scannable in seconds rather than read row by row.
 
-**Color-Coded Bay Type Indicators:** Color dots differentiate Remote vs. Frontal stands. Applied pre-attentive processing principles for rapid recognition.
+**Color-coded bay type indicators.** Remote and Frontal stands are marked with distinct color dots. To avoid relying on color alone — which fails for color-blind users — I paired each color with an **icon and label**, so the distinction survives even without color perception.
 
-**Tab Separation in Baseline Settings:** Separate tabs for Wide-body and Narrow-body baselines in the settings page, reducing cognitive load when configuring default PTS events.
+**Tab separation in baseline settings.** The settings page splits Wide-body and Narrow-body baselines into separate tabs, reducing cognitive load when configuring default PTS events per aircraft type, with Remote/Frontal events keeping the same color system as the dashboard for consistency.
 
-### Visual Highlights
+## Visual Design
 
-- **Collapsed state:** Body Type icons visible for all flights — controllers scan the entire board without scrolling or clicking
-- **Expanded state:** Flight details reveal Bay Type (Remote/Frontal) with color indicators
-- **Settings:** Tabbed interface separates Wide-body and Narrow-body configurations with consistent color system
+Controllers stare at the board for long stretches, so the interface takes a **light enterprise-dashboard** direction — no decorative color, relying on information hierarchy and iconography to do the distinguishing.
+
+### Color
+
+- **Background:** light grey-white (`#F1F1F1` / `#DBDBDC` / `#FFFFFF`) — easy on the eyes over long shifts and lets colored status indicators stand out
+- **Primary / headings:** deep navy (`#304666` / `#172333`) — used for titles, body-type icons, and expanded flight details
+- **Bay-type status:** Remote and Frontal use contrasting color dots paired with an icon + label, so the distinction holds even for color-blind users
+
+<ColorPalette
+  colors={["#F1F1F1", "#304666", "#172333", "#A2ADBE"]}
+  labels={["Surface", "Primary", "Deep Navy", "Muted"]}
+/>
+
+### Icon System
+
+Wide-body and Narrow-body each get a distinct icon, so controllers recognise aircraft size without reading — leveraging pre-attentive visual processing to make the whole board scannable in seconds.
+
+### Layout & Density
+
+A high-density information board with row spacing kept tight but a scannable rhythm preserved. Collapsed view shows only the body-type icon and essential fields; expanded view reveals bay type and PTS details.
+
+## Final Design
+
+### Before / After — Phase 2 vs Phase 3
+
+<ImageComparison
+  beforeSrc="/images/projects/as2-aahk-controller-dashboard/g01.png"
+  afterSrc="/images/projects/as2-aahk-controller-dashboard/g02.png"
+  beforeLabel="Phase 2 — Existing"
+  afterLabel="Phase 3 — Revamp"
+  aspectRatio="16/9"
+  alt="AS2 Controller Dashboard revamp"
+/>
+
+<CaseStudyImage
+  src="/images/projects/as2-aahk-controller-dashboard/g03.png"
+  label="Phase 3 Revamp Design"
+  caption="Revamped dashboard interface"
+/>
+
+### Controller Dashboard
+- **Collapsed state** — body type icons are visible for every flight; controllers scan the entire board without scrolling or clicking
+- **Expanded state** — flight details reveal bay type (Remote/Frontal) with the color + icon indicators
+
+### Settings Page
+- **Flight configuration** — bay type display added to flight settings data
+- **Baseline management** — tabbed interface separates Wide-body and Narrow-body configurations; Remote/Frontal events color-coded consistently with the main dashboard
+
+## Outcomes & Feedback
+
+Controllers fed back that the redesign let them **see the information they needed more intuitively** — body type and bay type became visible at a glance instead of buried behind a click, which matched how they already scanned the board during peak hours.
 
 ## Reflections
 
-Aligning the design hierarchy with controllers' mental model (body type first) was the key to success. Using visual indicators (icons + color) for high-frequency scanning tasks dramatically improved efficiency. This project reinforced the importance of understanding user mental models before designing any information architecture.
+Aligning the design hierarchy with the controller's mental model — body type first, bay type on demand — was the key. Using visual indicators (icons + color) for a high-frequency scanning task is what made the board readable at a glance. The biggest lesson: **understand the user's mental model before designing any information architecture**. The interface should follow how people already think, not force them to learn a new model.

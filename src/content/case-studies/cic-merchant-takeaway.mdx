@@ -1,19 +1,19 @@
 <ProjectHeader
-  overview="CardApp, a residential community app, identified an opportunity to enhance their service by enabling residents to order food directly from local restaurants through the app. The goal was to create a seamless ordering experience for users while providing restaurants with an efficient tool to manage orders — all within a 3-month timeline."
-  challenge="Residents had to call restaurants during busy hours with no way to browse menus or track order status. Phone orders interrupted kitchen workflow and were prone to errors. Missed calls during peak hours meant lost revenue for restaurants. No standardized way to notify users when orders were ready."
-  role="Lead UI/UX Designer — end-to-end design for both user and merchant apps, plus registration website."
-  team="1 PM, 3 Developers, Stakeholder (CardApp)"
-  duration="3 months (Jan–Mar 2021)"
+  overview="CardApp, a residential community app, identified an opportunity to enhance their service by enabling residents to order food directly from local restaurants through the app. The goal was to create a seamless ordering experience for users while providing restaurants with an efficient tool to manage orders."
+  challenge="Residents had to call restaurants during busy hours with no way to browse menus or track order status. Phone orders interrupted kitchen workflow and were prone to errors. Missed calls during peak hours meant lost revenue for restaurants, and there was no standardised way to notify users when orders were ready."
+  role="UI/UX Designer (solo) — end-to-end design for both the user and merchant apps, plus the registration website."
+  team="1 UX Designer (me, solo) + developers"
+  duration="2021"
   tools={["Figma", "Miro"]}
 />
 
 ## Research & Discovery
 
-Due to a tight timeline, research focused on **stakeholder interviews** to understand business goals, **competitive analysis** of 3 major food delivery apps (Uber Eats, Deliveroo, foodpanda), and proto-personas based on stakeholder insights.
+Due to a tight timeline, research focused on **stakeholder interviews** to understand business goals, **competitive analysis** of major food-delivery apps (Uber Eats, Deliveroo, foodpanda), and proto-personas based on stakeholder insights.
 
 ### Key Insights
 
-- Users prioritize speed and transparency — they want to browse menus quickly and know exactly when to pick up orders
+- Users prioritise speed and transparency — they want to browse menus quickly and know exactly when to pick up orders
 - Restaurants need simplicity — owners want a straightforward interface without technical complexity
 - Real-time communication is critical for both sides
 
@@ -23,30 +23,63 @@ Due to a tight timeline, research focused on **stakeholder interviews** to under
 
 Mapped dual-sided user flows:
 
-**User App:** Browse Restaurants → View Menu → Customize Order → Place Order → Receive Notification → Pick Up
+**User app:** Browse Restaurants → View Menu → Customise Order → Place Order → Receive Notification → Pick Up
 
-**Merchant App:** Receive Order → Update Status (Preparing → Ready) → Notify User
+**Merchant app:** Receive Order → Update Status (Preparing → Ready) → Notify User
 
 ### Key Design Decisions
 
-**Real-time Status Updates:** Designed a 3-stage progress indicator ("Order Received" → "Preparing" → "Ready for Pickup") with push notifications at each stage — borrowed from package tracking UX to set clear expectations.
+**Real-time status updates** — A 3-stage progress indicator ("Order Received" → "Preparing" → "Ready for Pickup") with push notifications at each stage, borrowing from package-tracking UX to set clear expectations.
 
-**Merchant-friendly Interface:** Large, tappable buttons ("Mark as Preparing", "Mark as Ready") with single-tap status update. Owners can update orders in under 3 seconds.
+**Merchant-friendly interface** — Large, tappable buttons ("Mark as Preparing", "Mark as Ready") with single-tap status updates, so owners can update orders in seconds.
 
-**Simplified Checkout:** Kept registration lightweight with minimal fields to reduce friction and encourage signups.
+**Simplified checkout** — Kept registration lightweight with minimal fields to reduce friction and encourage sign-ups.
 
 ## Visual Design
 
-**Color Palette:** Warm orange (#FF6B35) for food and friendliness, dark grey (#333333) for professional readability, green (#4CAF50) for success states.
+### Design System
+
+**Color:** A clean white base (`#FFFFFF`) with a vivid teal primary (`#02B3B9`) for actions and brand accent, paired with warm orange (`#EBAD7E` / `#F8B64B`) for food-related highlights and success states. The teal keeps the app feeling fresh and modern, while warm tones carry the food/friendliness cue.
+
+<ColorPalette
+  colors={["#FFFFFF", "#02B3B9", "#EBAD7E", "#F8B64B"]}
+  labels={["Base", "Teal", "Orange", "Amber"]}
+/>
 
 **Typography:** Poppins for headings (friendly, modern), Inter for body (highly readable on mobile).
 
-Created a shared Figma component library ensuring consistency across user app, merchant app, and registration website.
+A shared Figma component library ensured consistency across the user app, merchant app, and registration website.
 
-## Impact
+## Outcomes & Feedback
 
-**15 restaurants onboarded** within 2 months of launch. Order placement time reduced from ~5 minutes (phone) to ~2 minutes (app). **85% task success rate** in usability testing — 8/10 users completed orders independently.
+Several restaurants were onboarded within the first couple of months. Ordering moved from a phone call to a quick in-app flow, and in usability testing most users completed orders independently.
+
+## Design Gallery
+
+<CaseStudyImage
+  src="/images/projects/cic-merchant-takeaway/g01.png"
+  label="Process"
+  caption="User ordering flow"
+/>
+
+<CaseStudyImage
+  src="/images/projects/cic-merchant-takeaway/g02.png"
+  label="Process"
+  caption="3-stage real-time progress (Received → Preparing → Ready)"
+/>
+
+<CaseStudyImage
+  src="/images/projects/cic-merchant-takeaway/g03.png"
+  label="Process"
+  caption="Merchant app — large single-tap status buttons for non-tech owners"
+/>
+
+<CaseStudyImage
+  src="/images/projects/cic-merchant-takeaway/g04.png"
+  label="Process"
+  caption="Registration website"
+/>
 
 ## Reflections
 
-This project taught me how to design for two distinct user groups while maintaining a cohesive experience. Balancing simplicity for consumers with sufficient control for merchants required prioritizing core features first and planning for power-user features later. Real-time communication proved critical for user trust.
+This project taught me how to design for two distinct user groups while maintaining a cohesive experience. Balancing simplicity for consumers with sufficient control for merchants required prioritising core features first and planning for power-user features later. Real-time communication proved critical for user trust.

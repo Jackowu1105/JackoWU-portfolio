@@ -17,10 +17,10 @@ export function AboutPreview() {
       >
         {/* Heading */}
         <div className="flex items-center gap-3">
-          <div className="w-3 h-3 rounded-full bg-[#37848a] shrink-0" />
+          <div className="w-3 h-3 rounded-full bg-teal shrink-0" />
           <h2
-            className="text-[#1d1b20] text-3xl font-bold"
-            style={{ fontFamily: 'Epilogue, sans-serif' }}
+            className="text-heading text-3xl font-bold"
+            style={{ fontFamily: 'var(--font-heading)' }}
           >
             What I Do
           </h2>
@@ -28,8 +28,8 @@ export function AboutPreview() {
 
         {/* Description */}
         <p
-          className="text-[#494551] text-base leading-relaxed max-w-2xl"
-          style={{ fontFamily: 'Inter, sans-serif' }}
+          className="text-body text-base leading-relaxed max-w-2xl"
+          style={{ fontFamily: 'var(--font-sans)' }}
         >
           Full-stack designer crafting digital experiences that will make your product or service
           stand out in awesome ways. Seamlessly bridging the gap between design and development.
@@ -47,8 +47,8 @@ export function AboutPreview() {
               className="flex flex-col sm:flex-row items-start sm:items-center gap-1 sm:gap-6 py-3 sm:py-2 border-b border-black/5"
             >
               <span
-                className="text-[#1d1b20] text-xl sm:text-2xl font-semibold sm:w-48 shrink-0"
-                style={{ fontFamily: 'Epilogue, sans-serif' }}
+                className="text-heading text-xl sm:text-2xl font-semibold sm:w-48 shrink-0"
+                style={{ fontFamily: 'var(--font-heading)' }}
               >
                 {category}
               </span>
@@ -56,8 +56,8 @@ export function AboutPreview() {
                 {skills.map((skill) => (
                   <span
                     key={skill}
-                    className="text-[#494551] text-base font-medium"
-                    style={{ fontFamily: 'Inter, sans-serif' }}
+                    className="text-body text-base font-medium"
+                    style={{ fontFamily: 'var(--font-sans)' }}
                   >
                     {skill}
                   </span>
@@ -78,10 +78,10 @@ export function AboutPreview() {
       >
         {/* Heading */}
         <div className="flex items-center gap-3">
-          <div className="w-3 h-3 rounded-full bg-[#c9a74d] shrink-0" />
+          <div className="w-3 h-3 rounded-full bg-gold shrink-0" />
           <h2
-            className="text-[#1d1b20] text-3xl font-bold"
-            style={{ fontFamily: 'Epilogue, sans-serif' }}
+            className="text-heading text-3xl font-bold"
+            style={{ fontFamily: 'var(--font-heading)' }}
           >
             Skills
           </h2>
@@ -96,11 +96,11 @@ export function AboutPreview() {
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
               transition={{ duration: 0.4, delay: i * 0.04 }}
-              className="px-4 py-2 rounded-lg text-base border border-[#cecece] text-[#6e6e6e]"
+              className="px-4 py-2 rounded-lg text-base border border-tag-border text-text-tertiary"
               style={{
                 backdropFilter: 'blur(7.5px)',
-                background: 'rgba(205,193,160,0.2)',
-                fontFamily: 'Inter, sans-serif',
+                background: 'var(--color-tag-bg)',
+                fontFamily: 'var(--font-sans)',
               }}
             >
               {tag}

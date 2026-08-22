@@ -1,15 +1,15 @@
 <ProjectHeader
-  overview="c!ty'super, a premium lifestyle supermarket chain in Hong Kong, wanted to increase online customer engagement and grow their email marketing database during their summer promotion period. Traditional in-store lucky draws had limited reach and provided no digital touchpoints for future marketing. I designed an end-to-end interactive online lucky draw campaign."
-  challenge="Existing offline processes required customers to physically visit stores and fill out paper forms. Users were skeptical about the fairness of lucky draws. Long forms caused high abandonment rates (55% industry average). The design needed to build trust while encouraging product discovery across 50+ product options."
-  role="Lead UX/UI Designer — end-to-end experience design from research through visual design and prototyping."
-  team="1 Product Manager, 2 Developers"
-  duration="8 weeks (Jun–Aug 2016)"
+  overview="c!ty'super, a premium lifestyle supermarket chain in Hong Kong, wanted to increase online customer engagement and grow their email marketing database during a summer promotion. Traditional in-store lucky draws had limited reach and provided no digital touchpoints for future marketing. I designed an end-to-end interactive online lucky-draw campaign."
+  challenge="Existing offline processes required customers to physically visit stores and fill out paper forms. Users were skeptical about the fairness of lucky draws. Long forms caused high abandonment. The design needed to build trust while encouraging product discovery across many product options."
+  role="UI/UX Designer (solo) — end-to-end experience design from research through visual design and prototyping."
+  team="1 UX Designer (me, solo) + developers"
+  duration="2016"
   tools={["Sketch", "InVision", "Adobe Illustrator"]}
 />
 
 ## Research & Discovery
 
-I analyzed 5 competitor campaigns identifying common patterns and pain points. Average form abandonment rate was 55%, and most sites asked for too much information upfront. Mobile traffic accounted for 65-75% of visits. I also conducted 8 user interviews with c!ty'super customers.
+I analysed competitor campaigns to identify common patterns and pain points — most asked for too much information upfront and suffered high form abandonment, and mobile accounted for most of the traffic. I also conducted user interviews with c!ty'super customers.
 
 ### User Needs
 
@@ -21,11 +21,11 @@ I analyzed 5 competitor campaigns identifying common patterns and pain points. A
 
 ### Key Design Decisions
 
-**Progressive Disclosure:** Split the experience into 3 steps — Browse products first (engages users before asking for info), then provide basic info (name + email only), then receive instant confirmation. Research shows users are 3x more likely to complete forms after engaging with content.
+**Progressive disclosure** — Split the experience into 3 steps: browse products first (engages users before asking for info), then provide basic info (name + email only), then receive instant confirmation. Engaging users with content before the form markedly improves completion.
 
-**Visual Product Gallery with Smart Filters:** Card-based gallery with high-quality product images, category filters, and multi-select with visual "selected" state. Limited selection to 3 products to prevent decision paralysis.
+**Visual product gallery with smart filters** — A card-based gallery with high-quality product images, category filters, and multi-select with a visual "selected" state. Selection was limited to a few products to prevent decision paralysis.
 
-**Trust-Building Elements:** Live participant counter on landing page, clear T&Cs with draw date, confirmation email with unique entry ID, and "Your entry #XXXX has been recorded" message.
+**Trust-building elements** — A live participant counter on the landing page, clear T&Cs with the draw date, a confirmation email with a unique entry ID, and a "Your entry #XXXX has been recorded" message.
 
 ### Wireframe Iterations
 
@@ -35,12 +35,35 @@ I analyzed 5 competitor campaigns identifying common patterns and pain points. A
 
 ### Visual Design
 
-Maintained c!ty'super's premium brand aesthetic with brand green (#00A650) for primary actions and festive yellow (#FFD700) for promotional energy. Mobile-first approach designed for 375px viewport with touch-friendly targets (min 48×48px).
+A dark, premium backdrop (`#1C1710` / `#32291C`) to make product photography and prize visuals pop, with warm neutral accents (`#494E5C` / `#777C8F`) for secondary surfaces — matching c!ty'super's premium supermarket aesthetic. Mobile-first, designed for a small viewport with touch-friendly targets and high-contrast CTAs.
 
-## Impact
+<ColorPalette
+  colors={["#1C1710", "#494E5C", "#777C8F", "#8B94A4"]}
+  labels={["Base", "Slate", "Slate Light", "Accent"]}
+/>
 
-Campaign achieved **12,500 participants** (25% above 10,000 target), **89% form completion rate** (vs. 55% industry average), **72% mobile conversion rate**, and collected **12,500 email addresses** for marketing database. Website traffic increased 35% during the campaign period. The design system was reused for 3 subsequent promotional campaigns.
+## Usability & Iteration
+
+I tested the flow with a small group of c!ty'super customers, focusing on the entry form and product-selection step. The hybrid sticky selector (Concept C) tested best — users could browse and pick without losing their place, and the minimal-field form kept completion smooth.
+
+## Outcomes & Feedback
+
+The campaign drove strong participation and built a sizable email marketing database, with most entries completed on mobile. The design system was reused for several subsequent promotional campaigns.
+
+## Design Gallery
+
+<CaseStudyImage
+  src="/images/projects/citysuper-lucky-draw/g01.png"
+  label="Requirement Gathering"
+  caption="Lucky draw campaign flow design"
+/>
+
+<CaseStudyImage
+  src="/images/projects/citysuper-lucky-draw/g02.png"
+  label="Requirement Gathering"
+  caption="Progressive disclosure — browse products → minimal info → instant confirmation"
+/>
 
 ## Reflections
 
-Progressive disclosure reduces friction dramatically. Trust signals matter — the live participant counter and unique entry IDs significantly improved user confidence. Reducing form fields from 8 to 2 had the biggest single impact on conversion.
+Progressive disclosure reduces friction dramatically. Trust signals matter — the live participant counter and unique entry IDs significantly improved user confidence. Reducing form fields to the essentials had the biggest single impact on completion.

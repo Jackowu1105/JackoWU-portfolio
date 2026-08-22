@@ -56,8 +56,8 @@ export function ProcessTeaser() {
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
         transition={{ duration: 0.5 }}
-        className="text-center text-[#37848a] text-sm font-semibold tracking-[0.2em] uppercase mb-4"
-        style={{ fontFamily: 'Inter, sans-serif' }}
+        className="text-center text-teal text-sm font-semibold tracking-[0.2em] uppercase mb-4"
+        style={{ fontFamily: 'var(--font-sans)' }}
       >
         EXPERTISE
       </motion.p>
@@ -68,8 +68,8 @@ export function ProcessTeaser() {
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
         transition={{ duration: 0.5, delay: 0.1 }}
-        className="text-center text-[#1d1b20] text-4xl md:text-5xl font-bold tracking-tight mb-16"
-        style={{ fontFamily: 'Epilogue, sans-serif' }}
+        className="text-center text-heading text-4xl md:text-5xl font-bold tracking-tight mb-16"
+        style={{ fontFamily: 'var(--font-heading)' }}
       >
         Capabilities &amp; Services
       </motion.h2>
@@ -86,7 +86,7 @@ export function ProcessTeaser() {
             className="flex flex-col gap-5 sm:gap-6 rounded-[32px] p-6 sm:p-10"
             style={{
               background:
-                'linear-gradient(134deg, rgba(255,255,255,0.4) 0%, rgba(255,255,255,0.05) 100%)',
+                'var(--glass-gradient-light)',
               backdropFilter: 'blur(10px)',
               border: '1px solid rgba(255,255,255,0.3)',
             }}
@@ -101,16 +101,16 @@ export function ProcessTeaser() {
 
             {/* Title */}
             <h3
-              className="text-[#1d1b20] text-xl font-semibold"
-              style={{ fontFamily: 'Epilogue, sans-serif' }}
+              className="text-heading text-xl font-semibold"
+              style={{ fontFamily: 'var(--font-heading)' }}
             >
               {service.title}
             </h3>
 
             {/* Description */}
             <p
-              className="text-[#494551] text-base leading-relaxed"
-              style={{ fontFamily: 'Inter, sans-serif' }}
+              className="text-body text-base leading-relaxed"
+              style={{ fontFamily: 'var(--font-sans)' }}
             >
               {service.description}
             </p>

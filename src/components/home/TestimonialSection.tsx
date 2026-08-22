@@ -48,16 +48,16 @@ export function TestimonialSection() {
               className="flex flex-col gap-5 sm:gap-6 rounded-[32px] p-6 sm:p-10"
               style={{
                 background:
-                  'linear-gradient(134deg, rgba(255,255,255,0.4) 0%, rgba(255,255,255,0.05) 100%)',
+                  'var(--glass-gradient-light)',
                 backdropFilter: 'blur(10px)',
                 border: '1px solid rgba(255,255,255,0.3)',
               }}
             >
               {/* Gold opening quote */}
               <span
-                className="text-[#c9a74d] font-bold select-none leading-none"
+                className="text-gold font-bold select-none leading-none"
                 style={{
-                  fontFamily: 'Epilogue, sans-serif',
+                  fontFamily: 'var(--font-heading)',
                   fontSize: '72px',
                   lineHeight: '0.75',
                 }}
@@ -68,8 +68,8 @@ export function TestimonialSection() {
 
               {/* Quote text */}
               <p
-                className="text-[#1d1b20] text-lg leading-relaxed flex-1"
-                style={{ fontFamily: 'Inter, sans-serif' }}
+                className="text-heading text-lg leading-relaxed flex-1"
+                style={{ fontFamily: 'var(--font-sans)' }}
               >
                 {t.quote}
               </p>
@@ -85,14 +85,14 @@ export function TestimonialSection() {
                 />
                 <div>
                   <p
-                    className="text-[#1d1b20] font-semibold text-sm"
-                    style={{ fontFamily: 'Epilogue, sans-serif' }}
+                    className="text-heading font-semibold text-sm"
+                    style={{ fontFamily: 'var(--font-heading)' }}
                   >
                     {t.author}
                   </p>
                   <p
-                    className="text-[#494551] text-sm"
-                    style={{ fontFamily: 'Inter, sans-serif' }}
+                    className="text-body text-sm"
+                    style={{ fontFamily: 'var(--font-sans)' }}
                   >
                     {t.role}, {t.company}
                   </p>

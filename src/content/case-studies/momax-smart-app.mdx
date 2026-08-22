@@ -1,78 +1,130 @@
 <ProjectHeader
-  overview="MOMAX, a leading smart home product manufacturer in Asia with 50+ IoT devices, faced low mobile app adoption despite strong hardware sales. Their legacy app suffered from poor usability and high churn rates. I led the end-to-end redesign to improve device control experience, reduce setup friction, and increase user retention across iOS and Android platforms."
-  challenge="The legacy app had a 78% device pairing failure rate on first attempt, 4.2-second average control response time (perceived as 'laggy'), and features buried 3 levels deep. Only 32% of users remained active after 30 days, while support received 400+ monthly tickets related to app setup issues."
-  role="Lead UI/UX Designer — end-to-end UX design from research to final visual design, including user research, IA, interaction design, high-fidelity UI, design system, usability testing, and developer collaboration."
-  team="1 Product Manager, 2 Developers, 1 UX Designer (me)"
-  duration="4 months (Jan–Apr 2022)"
+  overview="MOMAX is a leading smart home product manufacturer in Asia with 50+ IoT devices. Despite strong hardware sales, the legacy Smart App suffered from low adoption and high churn. I led the end-to-end redesign of the MOMAX Smart App to improve the device control experience, reduce setup friction, and increase retention across iOS and Android."
+  challenge="The legacy app buried features three levels deep, organised devices in a way that didn't match how users actually thought about them, and felt slow enough that users perceived basic controls as broken. Setup was the make-or-break moment — users who failed first-time pairing often never came back."
+  role="UI/UX Designer (solo) — end-to-end UX design from research to final visual design, including user research, information architecture, interaction design, high-fidelity UI, a design system, usability testing, and developer collaboration."
+  team="1 UX Designer (me, solo) + 1 PM + outsourced 3rd-party developers"
+  duration="2021"
   tools={["Figma", "Maze", "Miro", "Google Analytics"]}
 />
 
 ## Problem Definition
 
-### User Pain Points
+Through user research and testing of the legacy app, I identified the core friction:
 
-Through user interviews and usability testing of the legacy app, I identified critical issues:
-
-- **Complex device setup** — 78% of users failed to complete device pairing on first attempt
-- **Slow control response** — Average 4.2 seconds to control a device
-- **Poor information architecture** — Users couldn't find scene/schedule features buried 3 levels deep
+- **Complex device setup** — first-time pairing was a common failure point, and users who failed setup often didn't return
+- **Slow control response** — delays long enough that users perceived the app as "laggy" or broken, even when technically functional
+- **Poor information architecture** — scene and schedule features were buried three levels deep, so users couldn't find them
 - **Inconsistent cross-platform experience** — iOS and Android felt like different products
 
-### Business Problems
+### Design Goals
 
-- **Low retention:** Only 32% of users remained active after 30 days
-- **High support costs:** 400+ monthly tickets related to app setup issues
-- **Missed opportunities:** Voice control and automation features were underutilized
+Rather than chase vanity metrics, I framed the redesign around three honest goals:
+
+- **Halve the effort of device setup** — fewer steps, less room to fail
+- **Make the app feel instant** — control should feel responsive, not laggy
+- **Lift retention** — the redesign should give users a reason to come back
 
 ## Research & Insights
 
-### Research Methods
+I conducted user research with **MOMAX customers** — roughly **10 user interviews** to understand smart home routines and pain points, plus **usability testing with about 5 users** attempting common tasks on the legacy app. I also reviewed competing smart home apps (Google Home, Apple Home, SmartThings) for interaction patterns, and looked at analytics to find where users dropped off.
 
-I conducted **user interviews (n=12)** with existing MOMAX customers, **usability testing** observing 8 users attempting common tasks, **competitive analysis** of 5 leading smart home apps, and **analytics review** of 6 months of user behavior data.
+Four insights shaped the redesign:
 
-### Key Insights
+1. **Mental model mismatch** — users think about devices by *location* ("bedroom lights"), but the old app organised by *device type* ("all lights"). That mismatch caused constant cognitive friction.
+2. **Speed is critical** — for IoT control, delays over ~2 seconds felt "broken" even when the system worked.
+3. **Setup is the make-or-break moment** — users who failed first-time setup rarely returned. First impressions mattered enormously.
+4. **Power users want automation, casual users want simplicity** — advanced features (scenes, schedules) had to be reachable but not in the way of first-time users.
 
-**Mental model mismatch** — Users think about devices by physical location ("bedroom lights"), but the old app organized by device type ("all lights"), causing cognitive friction.
+### User Persona: "Busy Ben"
 
-**Speed is critical** — For IoT control, delays over 2 seconds felt "broken" even when technically functional.
-
-**Setup is the make-or-break moment** — 67% of users who failed initial setup never returned to the app.
+A composite persona drawn from the interviews — a 30-something working from home with 8+ MOMAX devices, who wants to control things quickly without thinking and set up new devices in under two minutes. He's frustrated by multi-step processes for simple actions and doesn't intuit the difference between "scenes" and "schedules."
 
 ## Design Process
 
 ### Information Architecture Redesign
 
-Restructured around user mental models with 4 primary sections:
+The old app had a flat structure with ~15 menu items, causing decision paralysis. I restructured around the user's mental model into four primary sections:
 
-1. **Home** — Quick access dashboard with favorite devices and one-tap controls
-2. **Rooms** — Spatial organization aligning with how users think about their devices
-3. **Automation** — Combined scenes and schedules with clearer labeling
-4. **Settings** — Consolidated account, device management, and preferences
+1. **Home** — quick-access dashboard with favourite devices and one-tap controls
+2. **Rooms** — spatial organisation matching how users actually think about their devices
+3. **Automation** — scenes and schedules combined, with clearer labelling
+4. **Settings** — consolidated account, device management, and preferences
 
-**Validation:** Card sorting exercise with 10 users showed 85% agreement with new IA.
+A card-sorting exercise with ~10 users showed strong agreement with the new IA.
 
 ### Key Design Decisions
 
-**Navigation Pattern:** Switched from hamburger menu to bottom tab bar navigation. Usability testing showed 2.5x faster task completion vs. the old pattern, and reduced navigation depth from 3+ levels to maximum 2.
+**Decision 1 — Navigation pattern.** I considered a hamburger menu (the old pattern), a tab bar, and a hybrid. I went with a **bottom tab bar**: testing showed meaningfully faster task completion than the hamburger menu, both iOS and Android users are familiar with tab bars, and it capped navigation depth at two levels.
 
-**Device Setup Flow:** Reduced from 7 steps to 3 steps by combining pairing and scanning with smart auto-detection, and moving advanced options to optional post-setup.
+**Decision 2 — Device control interface.** I considered a list view (old), a grid of small cards, and large cards with status indicators. I chose **large cards with prominent status and controls**: IoT devices need clear on/off/connected status at a glance, larger touch targets (48x48dp) reduce misclicks, and the visual hierarchy speeds scanning.
+
+**Decision 3 — Device setup flow.** The old flow had 7 steps (scan -> pair -> name -> assign room -> set icon -> add to scene -> done). I cut it to **3 steps** (scan & auto-pair -> name & location -> done) by combining pairing with smart auto-detection, merging room assignment and naming into one step, and moving advanced options (icon, scenes) to optional post-setup.
+
+### Wireframes & Iteration
+
+I started with paper sketches — about 12 home-screen concepts narrowed to 3 finalists — then built clickable mid-fi prototypes in Figma to test pairing, room management, and automation creation, before developing the full high-fidelity visual design with real device states and motion specs.
 
 ### Usability Testing & Iteration
 
-**Round 1** — Wireframe testing (n=6): 100% task completion for adding a new smart plug (vs. 22% with the old app). Renamed "Scenes" to "Automation" and added swipe gestures between room views.
+**Round 1 — wireframe testing (~6 users).** Task: add a new smart plug and turn it on. Everyone completed it (a stark contrast with the old app), but users were confused by the "Scenes" label, and several tried to swipe between rooms. I renamed "Scenes" -> "Automation" with clearer icons, and added swipe gestures between room views.
 
-**Round 2** — High-fidelity prototype (n=8): 87% average task success rate (vs. 45% old app). Refined platform-specific UI patterns and added customizable quick-access widget.
+**Round 2 — high-fidelity prototype (~8 users).** Tasks: setup, control, create a schedule. Task success rose sharply versus the old app, the quick-access home widget was a hit, and Android users expected Material Design patterns — so I refined platform-specific UI, added a customisable quick-access widget, and improved visual feedback for state changes.
 
 ## Visual Design
 
 ### Design System
 
-Created 42 reusable components in Figma including device cards (8 variants), control widgets, status indicators, navigation elements, form inputs, and modals.
+I built a consistent, scalable component library of ~42 reusable Figma components — device cards (8 variants across device types), control widgets (sliders, toggles, buttons), status indicators, navigation elements, form inputs, and modals/bottom sheets.
 
-**Color Palette:** MOMAX Blue (#0066FF) for primary actions, with semantic colors for device states — green for "on", gray for "off", red for alerts, orange for "connecting".
+**Color:** MOMAX Blue (`#0195E2` / `#02A4DF`) as the primary, paired with semantic states — green for "on", gray for "off", red for alerts, orange for "connecting" — plus an 8-step neutral scale. A deeper blue (`#30465F` / `#1A2F47`) is used for dark device-card backgrounds and the night-time control screen.
 
-**Platform Considerations:** Followed Apple HIG and Material Design 3 respectively, with shared IA and flows but adapted visual language. Included WCAG AA compliance, voice control integration, and Dynamic Type support.
+**Typography:** SF Pro on iOS and Roboto on Android for a native feel, with a 5-style hierarchy (Hero, H1, H2, Body, Caption).
+
+<ColorPalette
+  colors={["#EBEBEB", "#0195E2", "#02A4DF", "#1A2F47"]}
+  labels={["Surface", "MOMAX Blue", "Blue Light", "Deep Blue"]}
+/>
+
+### Platform Considerations
+
+**iOS** followed Apple HIG — native tab bar/navigation bar, swipe-back and long-press gestures, Dynamic Type and Dark Mode. **Android** followed Material Design 3 — bottom navigation and FABs, Material motion and elevation, adaptive layouts. The two platforms **shared the same IA, task flows, and logic**, with only the visual language adapted to feel native on each.
+
+### Accessibility
+
+- **WCAG AA** — minimum 4.5:1 text contrast
+- **Non-color indicators** — device status shown via icon + color, not color alone
+- **Touch targets** — minimum 44x44pt (iOS) / 48x48dp (Android)
+- **Voice control** — Siri / Google Assistant / Alexa support, with VoiceOver/TalkBack optimisation
+- **Large text** up to 200%, haptic feedback for key actions, and a reduced-motion option
+
+## Outcomes & Feedback
+
+The redesign made the app meaningfully faster and simpler to use — device setup that previously took many minutes became a couple of steps, controls felt instant rather than laggy, and features users couldn't find were now one tap away.
+
+## Design Gallery
+
+<CaseStudyImage
+  src="/images/projects/momax-smart-app/g01.png"
+  label="UI Design & Wireframe"
+  caption="Redesigned home and device control interface"
+/>
+
+<CaseStudyImage
+  src="/images/projects/momax-smart-app/g02.png"
+  label="UI Design & Wireframe"
+  caption="Cross-platform device control — iOS / Android share the same IA"
+/>
+
+<CaseStudyImage
+  src="/images/projects/momax-smart-app/g03.png"
+  label="Landing Page"
+  caption="Landing page design"
+/>
 
 ## Reflections
 
-Early and frequent testing saved time — lo-fi prototypes caught major navigation issues that would have required significant rework during development. The design system investment paid off, as both platforms shared 80% of components. Involving developers earlier would have identified backend constraints sooner.
+**What worked.** Testing lo-fi prototypes early caught navigation problems before they became expensive to fix. Investing in a design system upfront made high-fidelity design and developer handoff smoother — both platforms shared most components. And combining analytics (where users struggled) with interviews (why they struggled) was essential; neither alone was enough.
+
+**Challenges.** Balancing cross-platform consistency with a native feel required deciding when to unify and when to adapt — I landed on shared IA and flows with adapted visual language. IoT latency was partly hardware-limited, so I improved *perceived* performance through optimistic UI updates and clear loading states rather than chasing raw speed alone.
+
+**What I'd do differently.** Involve developers earlier — some design ideas needed complex backend changes that earlier collaboration would have surfaced sooner. And plan for first-time-user onboarding from the start, rather than adding it later as a nice-to-have.

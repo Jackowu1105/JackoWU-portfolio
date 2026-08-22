@@ -1,22 +1,22 @@
 <ProjectHeader
-  overview="The GEO Fence Monitoring Platform is a real-time vehicle tracking system designed for airport apron operations. Ground crews and dispatchers need to monitor dozens of vehicles simultaneously across a large operational area, where unauthorized access or vehicle delays can cause safety hazards and flight disruptions."
-  challenge="Airport ground operation teams relied on traditional radio communication and manual tracking methods with no real-time visibility of vehicle locations across the apron. Difficulty coordinating multiple vehicles during peak operations and delayed response to unauthorized access were critical safety concerns."
-  role="UI/UX Designer (Solo Designer) — end-to-end design from user research through visual design and usability testing."
-  team="Solo Designer"
-  duration="3 months (2023)"
+  overview="The GEO Fence Monitoring Platform is a real-time vehicle tracking system designed for airport apron operations. Ground crews and dispatchers need to monitor many vehicles simultaneously across a large operational area, where unauthorised access or vehicle delays can cause safety hazards and flight disruptions."
+  challenge="Airport ground-operation teams relied on traditional radio communication and manual tracking methods with no real-time visibility of vehicle locations across the apron. Difficulty coordinating multiple vehicles during peak operations and delayed response to unauthorised access were critical safety concerns."
+  role="UI/UX Designer (solo) — end-to-end design from user research through visual design and usability testing."
+  team="1 UX Designer (me, solo) + developers"
+  duration="2023"
   tools={["Figma"]}
 />
 
 ## Research & Insights
 
-I conducted user interviews with 8 apron dispatchers and 5 ground supervisors, and observed control room operations during peak hours to understand workflow patterns.
+I conducted user interviews with apron dispatchers and ground supervisors, and observed control-room operations during peak hours to understand workflow patterns.
 
 ### Key Findings
 
-- **Information Overload:** Dispatchers need to focus on specific zones during critical operations, not all vehicles at once
-- **Mobile vs. Desktop Usage:** Supervisors need mobile access on-site, while dispatchers prefer large screen monitors
-- **Customization is Critical:** Different shifts monitor different zones — pre-defined zones don't match real operational needs
-- **Alert Fatigue:** Too many notifications reduce effectiveness — needed smart filtering and priority-based alerts
+- **Information overload** — dispatchers need to focus on specific zones during critical operations, not all vehicles at once
+- **Mobile vs. desktop usage** — supervisors need mobile access on-site, while dispatchers prefer large-screen monitors
+- **Customisation is critical** — different shifts monitor different zones, so pre-defined zones don't match real operational needs
+- **Alert fatigue** — too many notifications reduce effectiveness; the system needed smart filtering and priority-based alerts
 
 ## Design Process
 
@@ -26,24 +26,73 @@ Structured the interface into three core layers: **Map View** (primary workspace
 
 ### Key Design Decisions
 
-**Custom GEO Fences:** Enabled users to draw and save their own GEO fences directly on the map, empowering dispatchers to adapt to changing operations without IT support dependency.
+**Custom GEO fences** — Enabled users to draw and save their own GEO fences directly on the map, empowering dispatchers to adapt to changing operations without depending on IT.
 
-**Filter-First Approach:** Implemented persistent filter panel allowing users to quickly toggle visibility by vehicle type, status, or custom zones — reducing cognitive load and speeding up decision-making.
+**Filter-first approach** — A persistent filter panel lets users quickly toggle visibility by vehicle type, status, or custom zone — reducing cognitive load and speeding up decisions.
 
-**Platform-Specific Design:** Web Dashboard for multi-vehicle monitoring with analytics; Mobile App focused on single-vehicle tracking, quick status updates, and on-site notifications.
+**Platform-specific design** — A web dashboard for multi-vehicle monitoring with analytics, and a mobile app focused on single-vehicle tracking, quick status updates, and on-site notifications.
 
 ### Wireframe Iterations
 
 - **V1:** Traditional list + map split view — too much scrolling on mobile
 - **V2:** Full-screen map with overlay panel — filter controls hard to reach on mobile
-- **V3 (Final):** Collapsible filter drawer + floating action buttons — balanced quick access with screen real estate
+- **V3 (final):** Collapsible filter drawer + floating action buttons — balanced quick access with screen real estate
 
 ## Visual Design
 
-**Design System:** Color-coded status indicators (Active, Idle, Offline, Alert), map interaction patterns (zoom, pan, polygon drawing tools), filter controls (multi-select chips, quick toggle buttons), and priority-based alert banners.
+### Design System
 
-**Accessibility:** High contrast colors for outdoor mobile use in sunlight, 44x44pt minimum touch targets for gloved use, status indicators use both color and icons for color-blind users, dark mode for night shift dispatchers.
+Color-coded status indicators (Active, Idle, Offline, Alert), map-interaction patterns (zoom, pan, polygon drawing tools), filter controls (multi-select chips, quick-toggle buttons), and priority-based alert banners.
+
+**Color:** A light, airy base (`#F1F8F6` / `#DAEBE9`) so the map and vehicle markers stay prominent, with a deep teal (`#2C677A` / `#346F80`) as the primary for controls and active states. Vehicle status uses semantic colors paired with icons so color-blind dispatchers can still tell states apart.
+
+<ColorPalette
+  colors={["#F1F8F6", "#2C677A", "#346F80", "#DAEBE9"]}
+  labels={["Surface", "Teal", "Teal Deep", "Light Teal"]}
+/>
+
+**Typography:** A system sans-serif with a clear hierarchy — dense data labels stay readable while vehicle IDs and alerts stay scannable at a glance.
+
+### Accessibility
+
+High-contrast colors for outdoor mobile use in sunlight, generous touch targets for gloved use, status indicators that use both color and icons for color-blind users, and a dark mode for night-shift dispatchers.
+
+## Outcomes & Feedback
+
+The platform gave dispatchers real-time visibility of apron vehicles instead of relying on radio and manual tracking, and let each shift focus on the zones and vehicle types that mattered to its operation.
+
+## Design Gallery
+
+<CaseStudyImage
+  src="/images/projects/vehicle-tracker-geo-fence/g01.png"
+  label="Key Features"
+  caption="Real-time vehicle tracking platform"
+/>
+
+<CaseStudyImage
+  src="/images/projects/vehicle-tracker-geo-fence/g02.png"
+  label="Key Features"
+  caption="Custom drawable GEO fences — dispatchers draw their own zones"
+/>
+
+<CaseStudyImage
+  src="/images/projects/vehicle-tracker-geo-fence/g03.png"
+  label="Key Features"
+  caption="Filter-first interface — toggle by vehicle type, status, or zone"
+/>
+
+<CaseStudyImage
+  src="/images/projects/vehicle-tracker-geo-fence/g04.png"
+  label="Key Features"
+  caption="Web dashboard — multi-vehicle monitoring"
+/>
+
+<CaseStudyImage
+  src="/images/projects/vehicle-tracker-geo-fence/g05.png"
+  label="Key Features"
+  caption="Mobile — on-site single-vehicle tracking"
+/>
 
 ## Reflections
 
-Context matters deeply in B2B tools — spending time observing users in their actual work environment revealed pain points that interviews alone wouldn't uncover. Customization doesn't have to mean complexity if the interface is designed thoughtfully. Platform-specific design is crucial — don't just shrink the desktop UI for mobile; rethink the use case entirely.
+Context matters deeply in B2B tools — spending time observing users in their actual work environment revealed pain points that interviews alone wouldn't uncover. Customisation doesn't have to mean complexity if the interface is designed thoughtfully. Platform-specific design is crucial — don't just shrink the desktop UI for mobile; rethink the use case entirely.

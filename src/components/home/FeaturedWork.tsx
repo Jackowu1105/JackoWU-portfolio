@@ -17,10 +17,10 @@ export function FeaturedWork() {
         className="flex items-center gap-3 mb-16"
       >
         {/* Gold dot bullet */}
-        <span className="w-3 h-3 rounded-full bg-[#c9a74d] flex-shrink-0" />
+        <span className="w-3 h-3 rounded-full bg-gold flex-shrink-0" />
         <h2
-          className="text-[32px] font-bold text-[#1d1b20]"
-          style={{ fontFamily: 'Epilogue, sans-serif' }}
+          className="text-[32px] font-bold text-heading"
+          style={{ fontFamily: 'var(--font-heading)' }}
         >
           Selected Works
         </h2>
@@ -44,7 +44,7 @@ export function FeaturedWork() {
       >
         <Link
           href="/work"
-          className="inline-flex items-center gap-2 text-[#8A8480] hover:text-[#1d1b20] text-sm font-medium transition-colors"
+          className="inline-flex items-center gap-2 text-text-secondary hover:text-heading text-sm font-medium transition-colors"
         >
           View all projects
           <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth="2">

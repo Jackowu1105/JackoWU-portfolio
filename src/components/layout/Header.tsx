@@ -55,8 +55,8 @@ export function Header() {
               className="w-8 h-8 object-contain"
             />
             <span
-              className="text-[#1C1814] font-semibold tracking-tight text-lg"
-              style={{ fontFamily: 'var(--font-epilogue), sans-serif' }}
+              className="text-text-primary font-semibold tracking-tight text-lg"
+              style={{ fontFamily: 'var(--font-heading)' }}
             >
               Jacko WU
             </span>
@@ -68,12 +68,12 @@ export function Header() {
               <Link
                 key={link.href}
                 href={link.href}
-                style={{ fontFamily: 'var(--font-epilogue), sans-serif' }}
+                style={{ fontFamily: 'var(--font-heading)' }}
                 className={cn(
                   'px-4 py-2 rounded-lg text-sm font-medium transition-colors duration-200',
                   pathname === link.href
-                    ? 'text-[#1C1814] bg-black/5'
-                    : 'text-[#8A8480] hover:text-[#1C1814] hover:bg-black/5'
+                    ? 'text-text-primary bg-black/5'
+                    : 'text-text-secondary hover:text-text-primary hover:bg-black/5'
                 )}
               >
                 {link.label}
@@ -81,8 +81,8 @@ export function Header() {
             ))}
             <Link
               href="/resume"
-              style={{ fontFamily: 'var(--font-epilogue), sans-serif' }}
-              className="ml-3 px-4 py-2 rounded-lg text-sm font-medium bg-[#1C1814] text-white hover:opacity-80 transition-opacity relative overflow-hidden"
+              style={{ fontFamily: 'var(--font-heading)' }}
+              className="ml-3 px-4 py-2 rounded-lg text-sm font-medium bg-black text-white hover:opacity-80 transition-opacity relative overflow-hidden"
             >
               <RippleEffect />
               Resume
@@ -92,7 +92,7 @@ export function Header() {
           {/* Mobile hamburger */}
           <button
             onClick={() => setMobileOpen(!mobileOpen)}
-            className="md:hidden p-2 text-[#8A8480] hover:text-[#1C1814] transition-colors"
+            className="md:hidden p-2 text-text-secondary hover:text-text-primary transition-colors"
             aria-label="Toggle menu"
           >
             <svg
@@ -132,8 +132,8 @@ export function Header() {
                   className={cn(
                     'px-4 py-3 rounded-lg text-sm font-medium transition-colors',
                     pathname === link.href
-                      ? 'text-[#1C1814] bg-black/5'
-                      : 'text-[#8A8480] hover:text-[#1C1814] hover:bg-black/5'
+                      ? 'text-text-primary bg-black/5'
+                      : 'text-text-secondary hover:text-text-primary hover:bg-black/5'
                   )}
                 >
                   {link.label}
@@ -142,7 +142,7 @@ export function Header() {
               <Link
                 href="/resume"
                 onClick={() => setMobileOpen(false)}
-                className="mt-2 px-4 py-3 rounded-lg text-sm font-medium text-center bg-[#1C1814] text-white"
+                className="mt-2 px-4 py-3 rounded-lg text-sm font-medium text-center bg-black text-white"
               >
                 Resume
               </Link>

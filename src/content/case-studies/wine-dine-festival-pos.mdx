@@ -1,71 +1,133 @@
 <ProjectHeader
-  overview="The Hong Kong Wine & Dine Festival is one of Asia's premier culinary events. For the 2016 edition, the Hong Kong Tourism Board commissioned a cashless RFID payment system to replace the traditional cash-and-coupon model, aiming to improve transaction speed and reduce cash handling risks for 150,000+ attendees across 250+ vendor booths."
-  challenge="Cash transactions took 5-8 minutes during peak hours, vendors spent 30-45 minutes reconciling at end of day, and cash handling in a crowded outdoor environment raised security concerns. Additionally, 70% of vendors were part-time operators with limited tech experience, and wifi reliability at the outdoor venue averaged only 60% uptime."
-  role="Lead UX/UI Designer — responsible for end-to-end design of the vendor POS application and attendee balance-check interface."
-  team="1 Project Manager, 2 iOS Developers, QA Engineer, RFID Specialist"
+  overview="The Hong Kong Wine & Dine Festival is one of Asia's premier culinary events, held at the Central Harbourfront. For the 2016 edition, the Hong Kong Tourism Board commissioned a cashless RFID payment system to replace the traditional cash-and-coupon model — aiming to speed up transactions, reduce cash-handling risk, and improve the attendee experience across a large outdoor event."
+  challenge="Cash transactions were slow during peak hours, vendors spent significant time reconciling cash and coupons at close, and cash handling in a crowded outdoor environment raised security concerns. Most vendors were part-time operators with limited tech experience, working in direct sunlight, high noise, and while wearing gloves — and the outdoor venue had unreliable wifi."
+  role="UI/UX Designer (solo) — responsible for the end-to-end design of the vendor POS application and the attendee balance-check interface."
+  team="1 UX Designer (me, solo) + 2 developers"
   duration="3 months (Jun–Aug 2016)"
   tools={["Sketch", "InVision", "Principle"]}
 />
 
 ## The Challenge
 
+### Business Problems
+- **Long queues** — cash transactions were slow during peak hours
+- **Reconciliation burden** — vendors spent significant time counting cash and coupons at close
+- **Operational risk** — cash handling in a crowded outdoor environment raised security concerns
+
 ### User Pain Points
 
-**Attendees:** Carrying multiple payment methods was inconvenient. No way to track spending or check balance mid-event.
+**Attendees:** carrying multiple payment methods (cash + coupons) was inconvenient, and there was no way to track spending or check balance mid-event.
 
-**Vendors:** Most were small business owners aged 45+ with minimal smartphone experience. Direct sunlight made low-contrast screens unreadable. Ambient noise (85+ dB) drowned out audio feedback. Vendors wore gloves, making small tap targets unusable.
+**Vendors:** mostly part-time food-stall operators with limited tech experience, working under high pressure — noise, crowds, time pressure — where complex interfaces would be unusable. Direct sunlight made low-contrast screens unreadable, ambient noise drowned out audio feedback, and gloves made small tap targets unusable.
 
-**Environment:** Wifi reliability at outdoor venue averaged only 60% uptime during peak hours.
+**Environment:** wifi at the outdoor venue was unreliable, especially during peak hours — so the system had to keep working without a connection.
+
+### Design Goals
+- Make transactions fast enough to clear peak-hour queues
+- Make the interface usable for non-tech vendors in under 10 minutes of training
+- Keep the system working through wifi outages
 
 ## Research & Discovery
 
-I conducted **observational studies** at the previous year's festival (shadowing 8 vendors for 2 hours each), **vendor interviews** (n=12 returning stall operators), **attendee survey** (n=200 past festival-goers), and **competitive analysis** of RFID systems at Coachella, Glastonbury, and local events.
+There was no formal user-research programme. My understanding of the festival environment and vendor constraints came from **my own observation and reasoning, plus accounts from colleagues** who had worked the event before — what the peak-hour conditions were really like, how vendors operated, and where the old cash-and-coupon model broke down.
+
+From that, three findings shaped the design:
+
+1. **Tech-literacy gap** — many vendors were small-business owners with minimal smartphone experience, so onboarding had to be near-instant.
+2. **Environmental challenges** — sunlight killed screen contrast, noise drowned out sound, and gloves ruled out small tap targets.
+3. **Offline-first necessity** — wifi at the outdoor venue was unreliable at peak hours, so the system had to function without a connection.
 
 ### Design Principles
 
-1. **Glanceable** — All critical info visible in 1 second
-2. **Tactile** — Large tap targets (min 60x60pt) for gloved hands
-3. **Resilient** — Offline-first architecture with sync queue
-4. **Forgiving** — Undo/refund flow for cashier errors
+1. **Glanceable** — all critical info visible at a glance
+2. **Tactile** — large tap targets for gloved hands
+3. **Resilient** — offline-first architecture with a sync queue
+4. **Forgiving** — undo/refund flow for cashier errors
 
 ## Design Process
 
 ### Information Architecture
 
-I mapped 3 primary user flows: **Token Sale** (80% of use cases) — RFID Tap → Amount Selection → Confirmation → Receipt; **Balance Check** — RFID Tap → Display Remaining Balance; **Transaction History** — View Daily Summary.
+I mapped three primary user flows:
+
+- **Token sale** (the bulk of use cases) — RFID tap → amount selection → confirmation → receipt
+- **Balance check** — RFID tap → display remaining balance
+- **Transaction history** — daily summary for end-of-day reconciliation
 
 ### Wireframing & Iteration
 
-**Version 1** — Standard form layout overwhelmed non-tech vendors. 4/6 made input errors during simulation.
+**Version 1 — standard form layout.** Too many fields overwhelmed non-tech vendors; several made input errors during simulation.
 
-**Version 2** — Quick-select buttons only. Faster for common amounts but inflexible for custom pricing.
+**Version 2 — quick-select buttons only.** Faster for common amounts (HK$50, $100, $200), but inflexible for custom pricing like wine pairings and combo deals.
 
-**Version 3 (Final)** — Hybrid approach combining quick-select buttons for common amounts with a custom keypad. 40% faster transaction time vs. V2.
+**Version 3 (final) — hybrid.** Quick-select buttons for common amounts plus a custom keypad. Meaningfully faster than V2 while staying flexible.
 
 ### Key Design Decisions
 
-**Single-page transaction interface:** Multi-step wizards required too much navigation under pressure. 85% of vendors completed training in under 10 minutes.
+**Single-page transaction interface.** Multi-step wizards demanded too much navigation under pressure. A single dense page traded some visual cleanliness for speed — and most vendors picked it up quickly in training.
 
-**Multi-modal feedback (sound + haptic + visual):** Noisy environment made visual-only feedback insufficient. Zero failed transactions due to premature card removal.
+**Multi-modal feedback (sound + haptic + visual).** The noisy environment made visual-only feedback insufficient, so every transaction confirmed through three channels at once — meaning a vendor never mistakenly pulled the card too early.
 
-**Offline queue with visual indicator:** Research showed 40% wifi failure during peak hours. Transactions stored locally, synced when connection restored. System maintained 99.7% uptime.
+**Offline queue with visual indicator.** Because wifi was unreliable, transactions were stored locally and synced when the connection returned, with a clear indicator showing the sync state.
 
 ### Usability Testing
 
-Conducted 3 rounds: **Lab testing** (n=6) identified confusion with refund flow; **Field testing** at rehearsal event (n=20 vendors, 100 real transactions) discovered sunlight readability issues; **Final walkthrough** fine-tuned button sizing and contrast.
+I ran three rounds: lab testing that caught confusion in the refund flow; field testing at a rehearsal event that exposed sunlight readability issues; and a final walkthrough the week before the festival to fine-tune button sizing and contrast.
 
 ## Visual Design
 
-**Color Palette:** Tourism Board Red (#D71920) for brand consistency, high-visibility Green (#00C853) for success states, tested for WCAG AAA compliance. Minimum 18pt for body text optimized for outdoor readability.
+### Design System
 
-**Components:** Designed 12 reusable components including transaction buttons with 60x60pt minimum touch targets, RFID scan indicators with pulsing animation, and numeric displays with 48pt bold typography.
+**Color:** A muted slate base (`#494D5B` / `#787C8F`) with warm tan accents (`#C2A77A` / `#AB8E61`) — high-contrast enough to survive direct sunlight, with a high-visibility green for success states and amber for low-balance warnings. A light-gray background reduces eye strain in sunlight.
 
-**Accessibility:** Passed iOS Accessibility Inspector audit, tested with ColorOracle for color blindness simulations, VoiceOver support for visually impaired staff.
+<ColorPalette
+  colors={["#494D5B", "#C2A77A", "#AB8E61", "#787C8F"]}
+  labels={["Slate Base", "Tan", "Tan Deep", "Slate Light"]}
+/>
 
-## Impact
+**Typography:** SF Pro Display, with a generous minimum body size for outdoor readability and a semibold weight for primary actions.
 
-The system processed **62,000+ transactions** across 4 days with **22-second average transaction time** (63% faster than cash), **99.7% system uptime**, and **8-minute average vendor training time**. Post-event survey showed **94% vendor satisfaction**. The Tourism Board extended the contract for 2017-2018 festivals.
+**Components:** ~12 reusable components (buttons, cards, modals), documented in a style guide for developer handoff.
+
+### Accessibility
+- Passed iOS Accessibility Inspector audit
+- Tested with ColorOracle for color-blindness simulation
+- VoiceOver support for visually impaired staff
+
+### Responsive Design
+- Primary: iPad landscape (the devices provided by the Tourism Board)
+- Fallback: iPhone mode for backup devices, with the layout staying usable down to a small screen
+
+## Outcomes & Feedback
+
+The cashless RFID system replaced cash-and-coupons across the festival, transactions became fast enough to clear peak-hour queues, and non-tech vendors picked the interface up quickly with minimal training.
+
+The most memorable moment was a real resilience test:
+
+> On Day 2, the primary wifi failed for around 45 minutes during peak hours. The offline queue I'd designed held — it stored 800+ transactions locally and synced them seamlessly once the connection returned. Designing for the worst-case infrastructure paid off.
+
+## Design Gallery
+
+<CaseStudyImage
+  src="/images/projects/wine-dine-festival-pos/g01.png"
+  label="Process"
+  caption="POS system flow design"
+/>
+
+<CaseStudyImage
+  src="/images/projects/wine-dine-festival-pos/g02.png"
+  label="Process"
+  caption="RFID token purchase flow"
+/>
+
+<CaseStudyImage
+  src="/images/projects/wine-dine-festival-pos/g03.png"
+  label="UI Design"
+  caption="POS interface — built for outdoor sunlight, gloves, and high noise"
+/>
 
 ## Reflections
 
-This project taught me the importance of designing for extreme contexts. Many UX principles I learned in controlled environments broke down under real-world festival conditions. The key was empathizing with vendors' constraints — not everyone is a digital native, and good UX meets users where they are.
+This project taught me to **design for extreme contexts**. Many UX principles that work in controlled environments — small tap targets, subtle feedback — broke down under real festival conditions. The key was empathising with vendors' constraints: not everyone is a digital native, and that's fine. Good UX meets users where they are.
+
+I'd also do a few things differently next time: simulate the real conditions (heat, noise, crowds) earlier in the process; build a real-time analytics dashboard for organisers; and replace the PDF manual with an in-app interactive tutorial.

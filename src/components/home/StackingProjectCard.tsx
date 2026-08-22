@@ -35,8 +35,8 @@ export function StackingProjectCard({ project, index }: StackingProjectCardProps
   }, [stickyTop])
 
   // 正常用輕透玻璃，重疊時加深避免內容穿透
-  const bgNormal = 'linear-gradient(134deg, rgba(255,255,255,0.4) 0%, rgba(255,255,255,0.05) 100%)'
-  const bgOverlap = 'linear-gradient(134deg, rgba(255,255,255,0.7) 0%, rgba(255,255,255,0.15) 100%)'
+  const bgNormal = 'var(--glass-gradient-light)'
+  const bgOverlap = 'var(--glass-gradient-overlap)'
 
   return (
     <div
@@ -63,20 +63,20 @@ export function StackingProjectCard({ project, index }: StackingProjectCardProps
             <div className="flex-1 flex flex-col gap-6 min-w-0">
               <div className="flex flex-col gap-3">
                 {/* Category */}
-                <p className="text-xs font-semibold text-[#c9a74d] tracking-[1.2px] uppercase">
+                <p className="text-xs font-semibold text-gold tracking-[1.2px] uppercase">
                   {project.tags[0] ?? 'UX/UI DESIGN'}
                 </p>
 
                 {/* Title */}
                 <h3
-                  className="text-[22px] lg:text-[28px] font-semibold text-[#1d1b20] leading-[1.5]"
-                  style={{ fontFamily: 'Epilogue, sans-serif' }}
+                  className="text-[22px] lg:text-[28px] font-semibold text-heading leading-[1.5]"
+                  style={{ fontFamily: 'var(--font-heading)' }}
                 >
                   {project.title}
                 </h3>
 
                 {/* Description */}
-                <p className="text-sm lg:text-base text-[#494551] leading-relaxed line-clamp-4">
+                <p className="text-sm lg:text-base text-body leading-relaxed line-clamp-4">
                   {project.summary}
                 </p>
 
@@ -85,7 +85,7 @@ export function StackingProjectCard({ project, index }: StackingProjectCardProps
                   {project.tags.slice(0, 3).map((tag) => (
                     <span
                       key={tag}
-                      className="px-4 py-1 rounded-full bg-[rgba(205,193,160,0.2)] border border-[#cecece] text-sm text-[#b2b1ae]"
+                      className="px-4 py-1 rounded-full bg-tag-bg border border-tag-border text-sm text-text-tertiary"
                     >
                       {tag}
                     </span>
@@ -96,8 +96,8 @@ export function StackingProjectCard({ project, index }: StackingProjectCardProps
               {/* Desktop CTA button */}
               <Link
                 href={`/work/${project.slug}`}
-                className="hidden lg:inline-flex items-center gap-1.5 px-[15px] py-[12px] rounded-xl bg-[#1c1814] text-white text-sm font-medium w-fit shadow-sm hover:opacity-80 transition-opacity relative overflow-hidden"
-                style={{ fontFamily: 'Epilogue, sans-serif' }}
+                className="hidden lg:inline-flex items-center gap-1.5 px-[15px] py-[12px] rounded-xl bg-dark-bg text-white text-sm font-medium w-fit shadow-sm hover:opacity-80 transition-opacity relative overflow-hidden"
+                style={{ fontFamily: 'var(--font-heading)' }}
               >
                 <RippleEffect />
                 View Case Study
@@ -126,28 +126,28 @@ export function StackingProjectCard({ project, index }: StackingProjectCardProps
                 )}
               </div>
 
-              {/* Stats — first 2 metrics */}
-              {project.metrics.length > 0 && (
-                <div className="flex gap-6">
-                  {project.metrics.slice(0, 2).map((metric) => (
-                    <div key={metric.label} className="flex flex-col gap-2 flex-1">
-                      <p className="text-sm lg:text-base text-[#494551] leading-[1.5]">{metric.label}</p>
-                      <p
-                        className="text-[28px] lg:text-[40px] font-semibold text-[#1d1b20] leading-[1.05]"
-                        style={{ fontFamily: 'Epilogue, sans-serif' }}
-                      >
-                        {metric.value}
+              {/* Highlights — 誠實質化重點（取代假數字） */}
+              {project.highlights.length > 0 && (
+                <ul className="flex flex-col gap-3">
+                  {project.highlights.map((highlight) => (
+                    <li key={highlight} className="flex items-start gap-2.5">
+                      <span
+                        aria-hidden="true"
+                        className="mt-2 w-1.5 h-1.5 rounded-full bg-gold flex-shrink-0"
+                      />
+                      <p className="text-sm lg:text-[15px] text-body leading-[1.5]">
+                        {highlight}
                       </p>
-                    </div>
+                    </li>
                   ))}
-                </div>
+                </ul>
               )}
 
               {/* Mobile CTA */}
               <Link
                 href={`/work/${project.slug}`}
-                className="lg:hidden inline-flex items-center justify-center gap-1.5 px-[15px] py-[12px] rounded-xl bg-[#1c1814] text-white text-sm font-medium shadow-sm hover:opacity-80 transition-opacity relative overflow-hidden"
-                style={{ fontFamily: 'Epilogue, sans-serif' }}
+                className="lg:hidden inline-flex items-center justify-center gap-1.5 px-[15px] py-[12px] rounded-xl bg-dark-bg text-white text-sm font-medium shadow-sm hover:opacity-80 transition-opacity relative overflow-hidden"
+                style={{ fontFamily: 'var(--font-heading)' }}
               >
                 <RippleEffect />
                 View Case Study

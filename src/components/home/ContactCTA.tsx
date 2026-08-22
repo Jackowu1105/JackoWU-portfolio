@@ -16,18 +16,18 @@ export function ContactCTA() {
       >
         {/* Heading — two lines, first black, second teal */}
         <h2
-          className="text-[#1d1b20] font-bold text-4xl md:text-5xl tracking-tight leading-tight"
-          style={{ fontFamily: 'Epilogue, sans-serif', letterSpacing: '-0.02em' }}
+          className="text-heading font-bold text-4xl md:text-5xl tracking-tight leading-tight"
+          style={{ fontFamily: 'var(--font-heading)', letterSpacing: '-0.02em' }}
         >
           Have an idea?
           <br />
-          <span className="text-[#37848a]">Let&apos;s build it together.</span>
+          <span className="text-teal">Let&apos;s build it together.</span>
         </h2>
 
         {/* Subtitle */}
         <p
-          className="text-[#494551] text-base"
-          style={{ fontFamily: 'Inter, sans-serif' }}
+          className="text-body text-base"
+          style={{ fontFamily: 'var(--font-sans)' }}
         >
           Currently open for new freelance opportunities and exciting full-time roles.
         </p>
@@ -36,9 +36,9 @@ export function ContactCTA() {
         <div className="pt-6">
           <Link
             href="/contact"
-            className="inline-flex items-center gap-3 bg-[#1d1b20] text-white rounded-2xl px-10 font-medium hover:opacity-80 transition-opacity relative overflow-hidden"
+            className="inline-flex items-center gap-3 bg-black text-white rounded-2xl px-10 font-medium hover:opacity-80 transition-opacity relative overflow-hidden"
             style={{
-              fontFamily: 'Epilogue, sans-serif',
+              fontFamily: 'var(--font-heading)',
               fontSize: '18px',
               height: '64px',
             }}

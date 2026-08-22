@@ -1,28 +1,28 @@
 <ProjectHeader
-  overview="MTR Corporation manages 28 residential estates across Hong Kong, each with its own distinct community identity and service needs. Prior to this project, residents had to navigate fragmented digital touchpoints — from physical notice boards to separate estate-specific platforms — leading to inconsistent user experiences and low engagement with community services."
-  challenge="How might we create a unified digital platform for all 28 MTR estates that maintains consistent functionality while respecting each estate's unique identity and fostering a sense of community belonging? 12% of residents managed accounts for multiple properties and had to log in and out repeatedly. Generic app interfaces failed to reflect each estate's unique character."
-  role="Lead UI/UX Designer — user research, information architecture, wireframing, visual design, prototyping, usability testing, and creating a flexible design system for 28 estate themes."
-  team="2 Developers, 1 Project Manager, MTR Estate Stakeholders"
-  duration="6 months (2019)"
+  overview="MTR Corporation manages many residential estates across Hong Kong, each with its own distinct community identity and service needs. Prior to this project, residents navigated fragmented digital touchpoints — from physical notice boards to separate estate-specific platforms — leading to inconsistent experiences and low engagement with community services."
+  challenge="How might we create a unified digital platform for all estates that maintains consistent functionality while respecting each estate's unique identity and fostering a sense of community belonging? Some residents managed accounts for multiple properties and had to log in and out repeatedly, and generic interfaces failed to reflect each estate's unique character."
+  role="UI/UX Designer (solo) — user research, information architecture, wireframing, visual design, prototyping, usability testing, and creating a flexible design system with per-estate themes."
+  team="1 UX Designer (me, solo) + developers"
+  duration="2019"
   tools={["Adobe XD"]}
 />
 
 ## Research & Insights
 
-I conducted **stakeholder interviews** with MTR estate managers across all 28 estates, **user interviews** with 15 residents from 5 different estates, **competitive analysis** of property management apps, and **contextual inquiry** observing how residents accessed estate information.
+I conducted **stakeholder interviews** with MTR estate managers, **user interviews** with residents from different estates, **competitive analysis** of property management apps, and **contextual inquiry** observing how residents accessed estate information.
 
 ### Key Findings
 
-- **Identity matters:** Residents feel strong attachment to their specific estate and want visual differentiation
-- **Consistency is crucial:** Core navigation and features must remain predictable even with customization
-- **Multi-estate users exist:** ~12% of residents manage accounts for multiple properties
-- **Mobile-first behavior:** 85% of residents prefer mobile apps over websites for quick tasks
+- **Identity matters** — residents feel strong attachment to their specific estate and want visual differentiation
+- **Consistency is crucial** — core navigation and features must stay predictable even with customisation
+- **Multi-estate users exist** — a meaningful minority of residents manage accounts for multiple properties
+- **Mobile-first behaviour** — most residents prefer mobile apps over websites for quick tasks
 
 ## Design Process
 
 ### Information Architecture
 
-I defined a flexible IA that separates **universal features** (maintenance requests, facility booking) from **estate-specific content** (local events, notices), allowing content modules to be dynamically loaded based on the user's estate.
+I defined a flexible IA that separates **universal features** (maintenance requests, facility booking) from **estate-specific content** (local events, notices), allowing content modules to load dynamically based on the user's estate.
 
 ### Wireframing & Iteration
 
@@ -34,20 +34,67 @@ I defined a flexible IA that separates **universal features** (maintenance reque
 
 ### Key Design Decisions
 
-**Dynamic Color Theme System:** Created a theming system with 28 color palettes mapped to estate IDs. The app fetches the appropriate palette on login and applies it to UI components. Required rigorous color contrast testing to ensure WCAG 2.1 AA compliance across all themes.
+**Dynamic color theme system** — Created a theming system with a color palette mapped to each estate. The app fetches the appropriate palette on login and applies it to UI components. This required rigorous color-contrast testing to ensure WCAG 2.1 AA compliance across all themes.
 
-**Seamless Estate Switching:** Designed a switcher in the profile menu that instantly changes the UI theme and content without re-authentication. Usability testing showed 90% task completion rate for multi-estate users.
+**Seamless estate switching** — Designed a switcher in the profile menu that instantly changes the UI theme and content without re-authentication. Usability testing showed multi-estate users could switch comfortably.
 
 ## Visual Design
 
 ### Design System
 
-Created a flexible component library in Adobe XD featuring **28 color themes** (each estate's brand colors), responsive grid system for iOS/Android, reusable UI components (buttons, cards, forms), and a typography system ensuring readability across themes. Extended the design system to responsive website, print leaflets, and backend admin UI.
+A flexible component library in Adobe XD built around **per-estate color themes** — each estate's brand colors are mapped to a shared token set, so the same layout re-themes instantly without redesigning components.
+
+**Color:** The flagship MTR estate theme uses MTR's signature red (`#AD203A`) as the primary on a clean white base (`#FFFFFF`), with each estate swapping in its own palette via the token system. Every theme is contrast-tested to hold WCAG 2.1 AA across all components.
+
+<ColorPalette
+  colors={["#FFFFFF", "#AD203A", "#AE233C", "#61C27A"]}
+  labels={["Base", "MTR Red", "Red Deep", "Success Green"]}
+/>
+
+**Typography:** A system sans-serif with a clear hierarchy that stays readable when the accent color changes between estates.
+
+The design system was extended beyond the app to a responsive website, print leaflets, and the backend admin UI — one source of truth across every touchpoint.
 
 ### Accessibility
 
-WCAG 2.1 AA compliance for color contrast across all 28 themes, touch targets minimum 44x44pt, and screen reader support for visually impaired residents.
+WCAG 2.1 AA color contrast verified across every estate theme, a minimum tap-target size, and screen-reader support for visually impaired residents.
+
+## Outcomes & Feedback
+
+The theming system let every estate feel like its own app while sharing one consistent core — residents recognised their estate instantly, and multi-estate users could switch without friction.
+
+## Design Gallery
+
+<CaseStudyImage
+  src="/images/projects/mtr-property-app/g01.png"
+  label="App"
+  caption="App interface — dynamic per-estate theming"
+/>
+
+<CaseStudyImage
+  src="/images/projects/mtr-property-app/g02.png"
+  label="Website"
+  caption="Website extension — the same design system"
+/>
+
+<CaseStudyImage
+  src="/images/projects/mtr-property-app/g03.png"
+  label="Leaflet"
+  caption="Print leaflet extension"
+/>
+
+<CaseStudyImage
+  src="/images/projects/mtr-property-app/g04.png"
+  label="Backend UI"
+  caption="Backend admin interface design"
+/>
+
+<CaseStudyImage
+  src="/images/projects/mtr-property-app/g05.png"
+  label="Backend UI"
+  caption="Backend admin interface design"
+/>
 
 ## Reflections
 
-Personalization doesn't have to mean complexity — dynamic UI can enhance UX without overwhelming users if the system is well-architected. Designing for edge cases early is crucial; multi-estate users were a minority but had the most critical pain points. Accessibility testing is non-negotiable — with 28 color themes, rigorous contrast testing was essential to avoid excluding users.
+Personalisation doesn't have to mean complexity — dynamic UI can enhance UX without overwhelming users if the system is well-architected. Designing for edge cases early is crucial; multi-estate users were a minority but had the most critical pain points. Accessibility testing is non-negotiable — with many color themes, rigorous contrast testing was essential to avoid excluding users.
