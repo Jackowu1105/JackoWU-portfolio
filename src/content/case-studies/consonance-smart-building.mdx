@@ -1,11 +1,22 @@
 <ProjectHeader
-  overview="The Consonance is a luxury residential development by Henderson Land in Hong Kong. As smart home technology becomes standard in high-end properties, residents expect seamless digital experiences that enhance daily convenience and security. I led the design of a unified smart building app integrating access control, mailbox, lift, and clubhouse booking."
-  challenge="Residents had to carry multiple physical keys and cards for entrance, mailbox, and clubhouse access. Clubhouse booking required calling management during limited business hours. There was no way to pre-register visitors, causing delays at security. Management fielded many routine calls a day that the app could handle."
+  overview="維峯‧浚匯 (The Consonance) is a luxury residential development by Henderson Land in Hong Kong. As smart home technology becomes standard in high-end properties, residents expect a seamless digital experience that enhances daily convenience, security, and comfort. I designed Smart Building Plus — a connected ecosystem spanning the resident app, building-wide QR access, lobby and clubhouse kiosks, and a pool locker flow."
+  challenge="Residents juggled multiple physical keys and cards for entrance, mailbox, and clubhouse. Clubhouse booking meant calling management during limited business hours. Visitors had to be registered manually at security, causing peak-hour delays. Smart home devices were controlled through separate apps with no single entry point, and there was no way to trigger a 'coming home' routine that set the apartment the way a resident wanted it."
   role="UI/UX Designer (solo) — end-to-end design from research to final handoff, collaborating with product, engineering, and Henderson Land's property management team."
   team="1 UX Designer (me, solo) + developers"
   duration="2021"
   tools={["Figma", "Sketch", "InVision", "Miro"]}
 />
+
+## Project Scope
+
+Smart Building Plus is one ecosystem across four touchpoints, each designed for a different moment in a resident's day:
+
+1. **The Resident App** — the hub every resident carries in their pocket
+2. **Access Control** — one QR-based system replacing keys and cards across the building
+3. **Kiosk Experience** — guest registration and clubhouse booking, standing up at the lobby
+4. **Pool Locker** — securing belongings poolside without carrying keys
+
+Each touchpoint gets its own section below.
 
 ## Research & Discovery
 
@@ -13,16 +24,17 @@ I conducted **stakeholder interviews** with property managers, **user interviews
 
 ### Key Findings
 
-- Most users wanted opening the app to be faster than using a physical key
+- Most residents wanted opening the app to be faster than fumbling for a physical key
 - Many had security concerns about unauthorised access if they lost their phone
-- Users strongly preferred a clean interface with a handful of core features over many rarely-used functions
-- Most residents preferred a single unified app over installing several separate facility apps
+- Residents strongly preferred a single unified app over installing several separate facility apps
+- Coming home was a recurring pain point — unlocking the door, calling the lift, and adjusting the apartment (lights, air-con) were three disconnected actions residents did every day
+- A single QR system should cover every access point, so residents never carry a pocketful of keys and cards
 
-## Design Process
+## The Resident App
 
 ### Information Architecture
 
-I organised features into three categories based on frequency of use: **Access Control** (the bulk of daily usage — door, mailbox, lift), **Reservations** (less frequent — clubhouse, facilities), and **Visitor Management** (occasional — kiosk registration).
+I organised the app's features into three categories based on frequency of use: **Access Control** (the bulk of daily usage — lobby, clubhouse, mailbox, locker), **Reservations** (less frequent — clubhouse, facilities), and **Visitor Management** (occasional — kiosk registration).
 
 ### Wireframing & Iteration
 
@@ -34,9 +46,9 @@ I organised features into three categories based on frequency of use: **Access C
 
 ### Key Design Decisions
 
-**QR code for locker/access** — Faster than Bluetooth pairing, works offline, and familiar for Hong Kong users (widely used with Octopus card integration).
+**QR code for access** — Faster than Bluetooth pairing, works offline, and familiar for Hong Kong users (widely used with Octopus card integration).
 
-**Combined features in one app** — Research showed users preferred a unified app over multiple facility apps. A single app reduced cognitive load, minimised home-screen clutter, and provided a cohesive brand experience. The trade-off was a unified app over separate, simpler per-function apps (which would have fragmented the experience and labelled users).
+**Combined features in one app** — Research showed residents preferred a unified app over multiple facility apps. A single app reduced cognitive load, minimised home-screen clutter, and provided a cohesive brand experience.
 
 ### Usability Testing
 
@@ -44,29 +56,85 @@ I organised features into three categories based on frequency of use: **Access C
 
 **Round 2** — Including elderly residents revealed they struggled with a small QR-code scanning area. I enlarged the viewfinder and added real-time visual feedback, which markedly improved task completion for senior users.
 
-## Visual Design
+## Access Control
 
-### Design System
+The building's physical access — lobby, clubhouse, mailbox, and locker — runs on one QR-based system instead of a pocketful of keys and cards. The same pattern applies everywhere, so a resident who has learned one flow knows them all:
 
-Built a reusable component library across the app screens.
-
-**Color:** A dark, near-black base (`#151819` / `#2D3030`) anchors the smart-building interface with a sense of security and premium feel, layered with deep blue-grey (`#1F282E` / `#364047`) for functional surfaces — aligning with the luxury residential positioning. QR codes and status accents read clearly against the dark theme.
-
-<ColorPalette
-  colors={["#151819", "#1F282E", "#364047", "#2D3030"]}
-  labels={["Base", "Blue-Grey", "Surface", "Dark"]}
+<CaseStudyImage
+  src="/images/projects/consonance-smart-building/g03.png"
+  label="Access Control"
+  caption="Access control — lobby, clubhouse, mailbox, locker"
 />
 
-**Typography:** System fonts (SF Pro / Roboto) with a generous minimum body size for readability across age groups.
+<CaseStudyImage
+  src="/images/projects/consonance-smart-building/g04.png"
+  label="Access Control"
+  caption="Access control interfaces"
+/>
 
-### Accessibility
+## Kiosk Experience
 
-WCAG AA compliance (4.5:1 contrast ratios), large tap targets, VoiceOver/TalkBack support, bilingual support (Traditional Chinese / English), and a high-contrast mode for low-vision users.
+The building experience isn't only on phones. Two kiosk touchpoints needed their own design:
+
+- **Guest Registration Kiosk** — visitors register at a lobby kiosk instead of queueing at the desk. The flow captures identity documents through OCR, collects the visit details, and issues a QR pass — designed to be completed standing up, without staff help
+- **Clubhouse Booking Kiosk** — residents browse facilities, check availability, and book on the spot, with payment integrated into the flow
+
+<CaseStudyImage
+  src="/images/projects/consonance-smart-building/g01.png"
+  label="Kiosk Guest Registration"
+  caption="Payment kiosk — guest registration with OCR"
+/>
+
+<CaseStudyImage
+  src="/images/projects/consonance-smart-building/g02.png"
+  label="Kiosk Club House Booking"
+  caption="Kiosk club house facilities booking"
+/>
+
+Kiosk UI is phone UI with different physics: fixed screen height, standing users, no private screen. Buttons sit in reachable zones, text is sized for reading distance, and every flow ends with a clear confirmation the resident can act on.
+
+## Pool Locker
+
+Swimmers at the clubhouse pool needed a way to secure their belongings without carrying keys to the poolside. The pool locker flow uses the same QR access as the rest of the building: a resident opens the app, triggers the locker unlock, and the system assigns and opens a locker through the access-control network.
+
+I mapped the functional flow end-to-end before touching screens — from the resident triggering the unlock, through the system locating an available locker, to the unlock confirmation and any failure path:
+
+<CaseStudyImage
+  src="/images/projects/consonance-smart-building/g05.png"
+  label="Pool Locker Flow"
+  caption="Pool locker — functional design flow"
+/>
+
+The flow design surfaced the edge cases early: what happens when no locker is free, what the resident sees if the unlock times out, and how the system recovers after a failed attempt — each mapped so the interface never leaves a resident standing poolside without a next step.
+
+<CaseStudyImage
+  src="/images/projects/consonance-smart-building/g06.png"
+  label="Pool Locker UI"
+  caption="Pool locker — app interface"
+/>
+
+<CaseStudyImage
+  src="/images/projects/consonance-smart-building/g07.png"
+  label="Pool Locker UI"
+  caption="Pool locker — app interface"
+/>
+
+## The Full Demo
+
+A walkthrough of the complete Smart Building Plus experience — kiosk registration, access control, and the pool locker flow in action:
+
+<iframe
+  className="w-full aspect-video rounded-xl border-0 my-8"
+  src="https://www.youtube-nocookie.com/embed/g8t-HTbIp6k"
+  title="維峯‧浚匯 Smart Building Plus demo"
+  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+  allowFullScreen
+/>
 
 ## Outcomes & Feedback
 
-The unified app replaced multiple physical keys and cards, let residents book the clubhouse and pre-register visitors without phoning management, and cut down routine inquiries to the management office.
+The unified app replaced multiple physical keys and cards, let residents book the clubhouse and pre-register visitors without phoning management, and gave the building's access a single QR-based system across lobby, clubhouse, mailbox, and locker.
 
 ## Reflections
 
-This project reinforced the importance of designing for diverse user groups. Balancing the needs of tech-savvy professionals who wanted speed with elderly residents who needed simplicity required careful prioritisation and extensive usability testing. Early testing with elderly users is crucial — initial designs failed accessibility requirements, and involving senior residents from the wireframe stage prevented costly late-stage revisions. Offline functionality mattered more than expected — QR code generation needed to work without internet in parking garages with poor signal.
+This project reinforced the importance of designing for the moment, not just the feature list. The pool locker flow exists because residents shouldn't carry keys poolside, and the kiosks exist because the front desk shouldn't be a bottleneck — every touchpoint mapped to a real daily ritual rather than a checklist of features. Balancing the needs of tech-savvy professionals who wanted speed with elderly residents who needed simplicity required careful prioritisation and extensive usability testing. Early testing with elderly users is crucial; involving senior residents from the wireframe stage prevented costly late-stage revisions. Offline functionality mattered more than expected — QR code generation needed to work without internet in parking garages with poor signal.

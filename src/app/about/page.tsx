@@ -21,11 +21,36 @@ const education = [
 ]
 
 const certifications = [
-  'User Interface Design — University of Minnesota (2023)',
-  'Responsive Web Design — freeCodeCamp (2023)',
-  'Start the UX Design Process: Empathize, Define, and Ideate — Google (2023)',
-  'Foundations of User Experience (UX) Design — Google (2021)',
-  'From Beginner to Industry Practice: UI/UX Front-End Web Design — Hahow (2020)',
+  {
+    name: 'User Interface Design',
+    issuer: 'University of Minnesota',
+    date: 'Nov 2023',
+    image: '/images/certificates/ui-design-minnesota.jpg',
+  },
+  {
+    name: 'Responsive Web Design Certification',
+    issuer: 'freeCodeCamp',
+    date: 'Nov 2023',
+    image: '/images/certificates/responsive-web-freecodecamp.png',
+  },
+  {
+    name: 'Foundations of User Experience (UX) Design',
+    issuer: 'Google',
+    date: 'Nov 2021',
+    image: '/images/certificates/ux-foundations-google.jpg',
+  },
+  {
+    name: 'Start the UX Design Process: Empathize, Define, and Ideate',
+    issuer: 'Google',
+    date: 'Jun 2023',
+    image: '/images/certificates/ux-empathize-google.jpg',
+  },
+  {
+    name: '從入門到業界實戰 — UI/UX 前端網頁設計',
+    issuer: 'Hahow',
+    date: 'Aug 2020',
+    image: '/images/certificates/uiux-hahow.png',
+  },
 ]
 
 export default function AboutPage() {
@@ -147,26 +172,25 @@ export default function AboutPage() {
           </p>
           <h2 className="text-3xl font-bold text-text-primary">Certifications</h2>
         </div>
-        <GlassCard hover={false} className="p-6 md:p-8">
-          <ul className="space-y-3">
-            {certifications.map((cert, i) => (
-              <li key={i} className="flex items-start gap-3 text-text-secondary">
-                <svg
-                  width="18"
-                  height="18"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  strokeWidth="2"
-                  className="shrink-0 mt-0.5"
-                >
-                  <path d="M20 6L9 17l-5-5" />
-                </svg>
-                <span>{cert}</span>
-              </li>
-            ))}
-          </ul>
-        </GlassCard>
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
+          {certifications.map((cert, i) => (
+            <GlassCard key={i} hover={false} className="p-4 flex flex-col overflow-hidden">
+              <div className="rounded-lg overflow-hidden bg-bg-elevated mb-4 aspect-[4/3] flex items-center justify-center">
+                <img
+                  src={cert.image}
+                  alt={`${cert.name} — ${cert.issuer}`}
+                  loading="lazy"
+                  className="w-full h-full object-contain"
+                />
+              </div>
+              <h3 className="font-semibold text-text-primary text-sm leading-snug mb-1">
+                {cert.name}
+              </h3>
+              <p className="text-xs text-text-secondary">{cert.issuer}</p>
+              <p className="text-xs text-text-tertiary mt-1">{cert.date}</p>
+            </GlassCard>
+          ))}
+        </div>
       </section>
 
       {/* Skills */}

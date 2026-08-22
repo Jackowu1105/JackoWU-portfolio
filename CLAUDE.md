@@ -10,13 +10,14 @@
 - build：`npm run build`；lint：`npm run lint`
 - 唔好改 `node_modules`；寫 code 前先睇 `node_modules/next/dist/docs/`（Next 16 有 breaking changes，見 AGENTS.md）
 
-## 內容架構（17 個 case study）
-- Case study 內容：`src/content/case-studies/<slug>.mdx`（17 篇，slug 同 `src/data/projects.ts` 對應）
+## 內容架構（22 個 case study）
+- Case study 內容：`src/content/case-studies/<slug>.mdx`（22 篇，slug 同 `src/data/projects.ts` 對應）
 - Project metadata：`src/data/projects.ts`（欄位：slug / title / client / role / timeline / tools / tags / featured / thumbnail / heroImage / summary / highlights / **palette** / order）
   - `palette: string[]` — 4 色（surface / primary / accent / dark），由真實截圖提取， Work page card 同 case study hero 會顯示
 - `src/app/work/[slug]/page.tsx` 用 `await import(@/content/case-studies/${slug}.mdx)` 動態載入；MDX 唔存在就靜默跳過
 - 加新 case study = 喺 projects.ts 加 entry + 開對應 `.mdx` + 攞圖入 `public/images/projects/<slug>/`
-- 排位原則：featured 6 個（最強 UX case）+ 非 featured 11 個；`order` 排先後
+- 排位原則：featured 6 個（最強 UX case）+ 非 featured 16 個；`order` 排先後
+- 舊 PPTX（`Downloads/JackoWu_profilo_All (1).pptx`）係內容來源之一 — 入面有 kiosk 設計、demo 影片、marketing campaign 等額外材料
 
 ## 圖片資產
 - 全部喺 `public/images/projects/<slug>/`，每個 project：`cover.<ext>` + `g01.<ext>` `g02.<ext>` …
@@ -27,6 +28,7 @@
 - 開頭用 `<ProjectHeader overview=... challenge=... role=... team=... duration=... tools={[...]} />`
 - 內文用 `## Section` / `### Subsection`，**全英文**（Jacko 要求 website 唔出現中文）
 - Visual Design 段加 `<ColorPalette colors={[...]} labels={[...]} />` 顯示色板 swatch card
+- Demo 影片用 `<iframe src="https://www.youtube-nocookie.com/embed/<id>" className="w-full aspect-video rounded-xl border-0 my-8" />` 嵌入（Consoance、wine-dine、iddf 已有）
 - 結尾 `## Reflections`
 - 唔好留 `[需補充]` placeholder 或中文 remarks——要補嘅嘢合理推斷寫英文，唔作假數據
 

@@ -106,13 +106,13 @@ export function CaseStudyHero({ project }: { project: Project }) {
             <img
               src={project.heroImage}
               alt={project.title}
-              className="w-full aspect-[21/9] object-cover"
+              className="w-full h-[440px] object-cover block"
             />
           ) : (
             <ProjectPlaceholder
               title={project.title}
               tags={project.tags}
-              className="w-full aspect-[21/9]"
+              className="w-full h-[440px]"
             />
           )}
         </div>
