@@ -54,11 +54,34 @@ A card-sorting exercise with ~10 users showed strong agreement with the new IA.
 
 ### Key Design Decisions
 
-**Decision 1 — Navigation pattern.** I considered a hamburger menu (the old pattern), a tab bar, and a hybrid. I went with a **bottom tab bar**: testing showed meaningfully faster task completion than the hamburger menu, both iOS and Android users are familiar with tab bars, and it capped navigation depth at two levels.
+**Decision 1 — Navigation pattern.**
 
-**Decision 2 — Device control interface.** I considered a list view (old), a grid of small cards, and large cards with status indicators. I chose **large cards with prominent status and controls**: IoT devices need clear on/off/connected status at a glance, larger touch targets (48x48dp) reduce misclicks, and the visual hierarchy speeds scanning.
+<DecisionCards
+  items={[
+    { tag: 'A', title: 'Hamburger menu', summary: 'The old pattern — everything tucked behind a drawer.', outcome: 'Testing showed meaningfully slower task completion than a tab bar.', status: 'rejected' },
+    { tag: 'B', title: 'Hybrid navigation', summary: 'Tabs for top-level, hamburger for the long tail.', outcome: 'Workable, but two navigation patterns meant two things to learn.', status: 'rejected' },
+    { tag: 'C', title: 'Bottom tab bar', summary: 'Four primary sections always one tap away.', outcome: 'Meaningfully faster task completion than the hamburger menu, familiar to both iOS and Android users, and capped navigation depth at two levels.', status: 'final' },
+  ]}
+/>
 
-**Decision 3 — Device setup flow.** The old flow had 7 steps (scan -> pair -> name -> assign room -> set icon -> add to scene -> done). I cut it to **3 steps** (scan & auto-pair -> name & location -> done) by combining pairing with smart auto-detection, merging room assignment and naming into one step, and moving advanced options (icon, scenes) to optional post-setup.
+**Decision 2 — Device control interface.**
+
+<DecisionCards
+  items={[
+    { tag: 'A', title: 'List view', summary: 'The old pattern — devices as dense text rows.', outcome: 'Status was hard to read at a glance across many devices.', status: 'rejected' },
+    { tag: 'B', title: 'Grid of small cards', summary: 'More devices per screen in a compact grid.', outcome: 'Compact, but touch targets shrank and states got cramped.', status: 'rejected' },
+    { tag: 'C', title: 'Large cards with prominent status and controls', summary: 'One device per large card with clear on/off/connected state.', outcome: 'Clear status at a glance, larger touch targets (48x48dp) reduce misclicks, and the visual hierarchy speeds scanning.', status: 'final' },
+  ]}
+/>
+
+**Decision 3 — Device setup flow.**
+
+<DecisionCards
+  items={[
+    { tag: 'Before', title: '7-step setup', summary: 'Scan → pair → name → assign room → set icon → add to scene → done.', outcome: 'Every step was a chance to fail — and failure at setup meant users never came back.', status: 'rejected' },
+    { tag: 'After', title: '3-step setup', summary: 'Scan & auto-pair → name & location → done.', outcome: 'Pairing combined with smart auto-detection, room assignment merged into naming, advanced options (icon, scenes) moved to optional post-setup.', status: 'final' },
+  ]}
+/>
 
 ### Wireframes & Iteration
 

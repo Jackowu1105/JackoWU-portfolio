@@ -33,9 +33,23 @@
 
 ### Design Iteration
 
-An initial grid layout showing many posters per screen felt overwhelming. I switched to a list view with large preview images and clear categorisation by medical specialty.
+**ePoster browsing:**
 
-Manual form entry for the lucky draw was too slow during peak hours. I implemented QR-code scanning of attendee badges with auto-populated fields and 3 quick multiple-choice questions.
+<DecisionCards
+  items={[
+    { tag: 'V1', title: 'Grid layout', summary: 'Many posters shown per screen at once.', outcome: 'Felt overwhelming — switched to a list view with large preview images, categorised by medical specialty.', status: 'rejected' },
+    { tag: 'V2', title: 'List view with large previews', summary: 'One poster per row with a large preview and clear specialty grouping.', outcome: 'Browsing became calm and scannable instead of overwhelming.', status: 'final' },
+  ]}
+/>
+
+**Lucky draw entry:**
+
+<DecisionCards
+  items={[
+    { tag: 'V1', title: 'Manual form entry', summary: 'Attendees typed their details by hand at the booth tablet.', outcome: 'Too slow during peak hours.', status: 'rejected' },
+    { tag: 'V2', title: 'QR badge scan + auto-fill', summary: 'Scan the attendee badge to auto-populate fields, then 3 quick multiple-choice questions.', outcome: 'Entry took seconds instead of minutes, keeping booth queues moving.', status: 'final' },
+  ]}
+/>
 
 ## Visual Design
 

@@ -25,11 +25,13 @@ I restructured the dashboard around a **modular widget system**: core widgets (C
 
 ### Wireframing & Iteration
 
-**Low-fidelity** — I sketched several layout concepts. A rigid grid felt too restrictive, so I pivoted to a drag-and-drop flexible grid.
-
-**Mid-fidelity** — Tested the widget-customisation flow with users. Key insight: users wanted preset templates for common airport types to avoid starting from scratch.
-
-**High-fidelity** — Finalised visual design, built a scalable component library, and refined micro-interactions like drag-and-drop feedback and alert animations.
+<DecisionCards
+  items={[
+    { tag: 'LO', title: 'Low-fidelity', summary: 'Sketched several layout concepts for the dashboard.', outcome: 'A rigid grid felt too restrictive — pivoted to a drag-and-drop flexible grid.', status: 'neutral' },
+    { tag: 'MID', title: 'Mid-fidelity', summary: 'Tested the widget-customisation flow with users.', outcome: 'Key insight: users wanted preset templates for common airport types to avoid starting from scratch.', status: 'neutral' },
+    { tag: 'HI', title: 'High-fidelity', summary: 'Final visual design, scalable component library, and polished micro-interactions.', outcome: 'Drag-and-drop feedback and alert animations refined into a production-ready dashboard.', status: 'final' },
+  ]}
+/>
 
 ### Key Design Decisions
 

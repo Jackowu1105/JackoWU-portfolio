@@ -34,9 +34,13 @@ Structured the interface into three core layers: **Map View** (primary workspace
 
 ### Wireframe Iterations
 
-- **V1:** Traditional list + map split view — too much scrolling on mobile
-- **V2:** Full-screen map with overlay panel — filter controls hard to reach on mobile
-- **V3 (final):** Collapsible filter drawer + floating action buttons — balanced quick access with screen real estate
+<DecisionCards
+  items={[
+    { tag: 'V1', title: 'List + map split view', summary: 'A traditional split: vehicle list on one side, map on the other.', outcome: 'Too much scrolling on mobile.', status: 'rejected' },
+    { tag: 'V2', title: 'Full-screen map + overlay panel', summary: 'The map takes over the screen with filter controls overlaid on top.', outcome: 'Filter controls hard to reach on mobile.', status: 'rejected' },
+    { tag: 'V3', title: 'Collapsible filter drawer + floating actions', summary: 'A drawer that collapses away, with floating action buttons for the frequent controls.', outcome: 'Balanced quick access with screen real estate.', status: 'final' },
+  ]}
+/>
 
 ## Visual Design
 

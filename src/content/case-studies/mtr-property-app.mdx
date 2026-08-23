@@ -26,11 +26,13 @@ I defined a flexible IA that separates **universal features** (maintenance reque
 
 ### Wireframing & Iteration
 
-**V1** — Single static home page. Feedback: "Feels generic, doesn't reflect my estate."
-
-**V2** — Manual estate selection at launch. Feedback: "Extra step is annoying."
-
-**V3** — Auto-detected estate with dynamic UI. Feedback: "Feels like it's made for my community!" ✅
+<DecisionCards
+  items={[
+    { tag: 'V1', title: 'Single static home page', summary: 'One shared home page for every estate.', outcome: '"Feels generic, doesn\'t reflect my estate."', status: 'rejected' },
+    { tag: 'V2', title: 'Manual estate selection at launch', summary: 'Residents pick their estate on a launch screen.', outcome: '"Extra step is annoying."', status: 'rejected' },
+    { tag: 'V3', title: 'Auto-detected estate with dynamic UI', summary: 'The app detects the resident\'s estate and loads its theme and content automatically.', outcome: '"Feels like it\'s made for my community!"', status: 'final' },
+  ]}
+/>
 
 ### Key Design Decisions
 

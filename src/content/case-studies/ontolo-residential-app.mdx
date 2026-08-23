@@ -63,11 +63,13 @@ Rather than creating separate apps (which would stigmatise users and double main
 
 ### Iterations
 
-**Iteration 1 — Concept validation.** Users didn't understand the mode-switching concept during onboarding. I designed an adaptive onboarding flow that suggests the appropriate mode based on the user's stated needs and comfort level. Mode comprehension improved meaningfully.
-
-**Iteration 2 — Information architecture.** Simplified mode still felt cluttered with 8 visible functions. I reduced it to 5 core functions on the home screen and moved secondary features to a clearly labelled "More" section. Task completion time and user confidence both improved.
-
-**Iteration 3 — Mode-switching safety.** Some users accidentally switched modes mid-task, causing confusion. I added a confirmation dialog and moved the mode toggle from the home screen to settings, with a clear explanation. Accidental switches dropped to almost none.
+<DecisionCards
+  items={[
+    { tag: '1', title: 'Concept validation', summary: 'Users didn\'t understand the mode-switching concept during onboarding.', outcome: 'Designed an adaptive onboarding flow that suggests the right mode from the user\'s stated needs and comfort level — mode comprehension improved meaningfully.', status: 'neutral' },
+    { tag: '2', title: 'Information architecture', summary: 'Simplified mode still felt cluttered with 8 visible functions.', outcome: 'Reduced to 5 core functions on the home screen, with secondary features in a clearly labelled "More" section — task completion time and user confidence both improved.', status: 'neutral' },
+    { tag: '3', title: 'Mode-switching safety', summary: 'Some users accidentally switched modes mid-task, causing confusion.', outcome: 'Added a confirmation dialog and moved the mode toggle into settings with a clear explanation — accidental switches dropped to almost none.', status: 'final' },
+  ]}
+/>
 
 ### Key Design Decisions
 

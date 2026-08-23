@@ -38,11 +38,13 @@ I organised the app's features into three categories based on frequency of use: 
 
 ### Wireframing & Iteration
 
-**V1** — All features on a single scrolling home screen. Users complained about having to scroll to find commonly-used functions.
-
-**V2** — Bottom tab navigation with "Access Control" as the default landing tab, plus quick-access widgets for entrance and lift controls. Task completion became noticeably faster.
-
-**V3** — Accessibility refinement: increased minimum tap targets, added haptic feedback, and implemented VoiceOver support.
+<DecisionCards
+  items={[
+    { tag: 'V1', title: 'Single scrolling home screen', summary: 'Every feature stacked on one scrolling home screen.', outcome: 'Users complained about having to scroll to find commonly-used functions.', status: 'rejected' },
+    { tag: 'V2', title: 'Bottom tabs + quick-access widgets', summary: 'Bottom tab navigation with "Access Control" as the default landing tab, plus entrance and lift widgets.', outcome: 'Task completion became noticeably faster.', status: 'neutral' },
+    { tag: 'V3', title: 'Accessibility refinement', summary: 'Increased minimum tap targets, added haptic feedback, and implemented VoiceOver support.', outcome: 'The app became genuinely usable for elderly residents, not just tolerable.', status: 'final' },
+  ]}
+/>
 
 ### Key Design Decisions
 

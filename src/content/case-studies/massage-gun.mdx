@@ -44,7 +44,12 @@ I structured the app around four primary sections:
 
 ### Iteration
 
-An early concept put all customisation on the home screen, which felt cluttered for first-time users. I moved the quick-start to the foreground and tucked customisation behind a "Customise" action — testing showed users found the calm home view less intimidating and still reached the advanced controls comfortably.
+<DecisionCards
+  items={[
+    { tag: 'V1', title: 'Everything on the home screen', summary: 'All customisation options surfaced on the home screen from the start.', outcome: 'Felt cluttered and intimidating for first-time users.', status: 'rejected' },
+    { tag: 'V2', title: 'Quick-start first, customise tucked away', summary: 'A calm home view with the quick-start in front; advanced settings behind a "Customise" action.', outcome: 'Testing showed users found the home view less intimidating while still reaching advanced controls comfortably.', status: 'final' },
+  ]}
+/>
 
 ## Visual Design
 

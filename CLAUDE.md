@@ -35,7 +35,8 @@
 ## MDX component（`mdx-components.tsx`）
 - h2 自動編號（01、02…）via `.case-study-body` CSS counter（`globals.css`），加金色 accent 線
 - h3 有金色圓點；list 有金色 marker；blockquote 係 callout card；table 有圓角邊框
-- 已註冊嘅自訂 component：`ProjectHeader`、`CaseStudyImage`、`ImageComparison`、`ColorPalette`
+- 已註冊嘅自訂 component：`ProjectHeader`、`CaseStudyImage`、`ImageComparison`、`ColorPalette`、`DecisionCards`
+- `DecisionCards` — 方案比較／版本迭代卡片堆（A/B/C、V1/V2/V3），最後採納嗰張金框高亮；取代 markdown table 顯示 options
 
 ## Case study 專屬 component（`src/components/case-study/`）
 - `CaseStudyHero` — breadcrumb + title + meta grid + tags + **palette swatches** + hero 圖（21:9）

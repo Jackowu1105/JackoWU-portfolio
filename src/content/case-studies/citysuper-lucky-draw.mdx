@@ -29,9 +29,13 @@ I analysed competitor campaigns to identify common patterns and pain points — 
 
 ### Wireframe Iterations
 
-- **Concept A** (single-page scroll) — felt too long
-- **Concept B** (multi-step wizard) — felt too slow
-- **Concept C** (hybrid: sticky product selector + wizard flow) — best feedback ✅
+<DecisionCards
+  items={[
+    { tag: 'A', title: 'Single-page scroll', summary: 'The whole entry journey on one long scrolling page.', outcome: 'Felt too long — users lost patience before reaching the form.', status: 'rejected' },
+    { tag: 'B', title: 'Multi-step wizard', summary: 'Each stage on its own screen, one step at a time.', outcome: 'Felt too slow for a casual campaign.', status: 'rejected' },
+    { tag: 'C', title: 'Hybrid: sticky product selector + wizard flow', summary: 'A sticky selector keeps choices visible while the wizard handles each step.', outcome: 'Best feedback of the three concepts.', status: 'final' },
+  ]}
+/>
 
 ### Visual Design
 

@@ -30,11 +30,13 @@ Mapped 2 primary user flows:
 
 ### Wireframing & Iteration
 
-**Round 1 (paper sketches):** Initial design required too many taps per transaction — too slow. Removed an unnecessary confirmation step.
-
-**Round 2 (digital prototypes):** A numeric keypad caused input errors in a rushed environment. Simplified to preset amount buttons plus a custom-amount option.
-
-**Round 3 (high-fidelity):** The default color scheme was barely visible in direct sunlight. Increased contrast to WCAG AAA standards.
+<DecisionCards
+  items={[
+    { tag: 'R1', title: 'Paper sketches', summary: 'First flows tested on paper with the vendor flow end-to-end.', outcome: 'Too many taps per transaction — removed an unnecessary confirmation step.', status: 'neutral' },
+    { tag: 'R2', title: 'Digital prototypes', summary: 'Clickable prototypes with a numeric keypad for amounts.', outcome: 'The keypad caused input errors in a rushed environment — simplified to preset amount buttons plus a custom-amount option.', status: 'neutral' },
+    { tag: 'R3', title: 'High-fidelity', summary: 'Full visual design under real sunlight conditions.', outcome: 'The default color scheme was barely visible outdoors — contrast raised to WCAG AAA standards.', status: 'final' },
+  ]}
+/>
 
 ### Key Design Decisions
 

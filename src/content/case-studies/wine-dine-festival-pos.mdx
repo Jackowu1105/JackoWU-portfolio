@@ -56,11 +56,13 @@ I mapped three primary user flows:
 
 ### Wireframing & Iteration
 
-**Version 1 — standard form layout.** Too many fields overwhelmed non-tech vendors; several made input errors during simulation.
-
-**Version 2 — quick-select buttons only.** Faster for common amounts (HK$50, $100, $200), but inflexible for custom pricing like wine pairings and combo deals.
-
-**Version 3 (final) — hybrid.** Quick-select buttons for common amounts plus a custom keypad. Meaningfully faster than V2 while staying flexible.
+<DecisionCards
+  items={[
+    { tag: 'V1', title: 'Standard form layout', summary: 'A familiar transaction form with every field visible at once.', outcome: 'Too many fields overwhelmed non-tech vendors; several made input errors during simulation.', status: 'rejected' },
+    { tag: 'V2', title: 'Quick-select buttons only', summary: 'One-tap amount buttons for the common cases (HK$50, $100, $200).', outcome: 'Faster, but inflexible for custom pricing like wine pairings and combo deals.', status: 'rejected' },
+    { tag: 'V3', title: 'Hybrid: quick-select + custom keypad', summary: 'Quick-select buttons for common amounts plus a custom keypad on the side.', outcome: 'Meaningfully faster than V2 while staying flexible for any price.', status: 'final' },
+  ]}
+/>
 
 ### Key Design Decisions
 

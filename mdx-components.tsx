@@ -1,6 +1,7 @@
 import type { MDXComponents } from 'mdx/types'
 import { CaseStudyImage } from '@/components/case-study/CaseStudyImage'
 import { ColorPalette } from '@/components/case-study/ColorPalette'
+import { DecisionCards } from '@/components/case-study/DecisionCards'
 import { ImageComparison } from '@/components/case-study/ImageComparison'
 import { ProjectHeader } from '@/components/case-study/ProjectHeader'
 
@@ -62,6 +63,7 @@ const components: MDXComponents = {
   ),
   CaseStudyImage,
   ColorPalette,
+  DecisionCards,
   ImageComparison,
   ProjectHeader,
 }
