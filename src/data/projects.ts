@@ -13,6 +13,8 @@ export interface Project {
   highlights: string[]
   // 專案主色板（由真實截圖提取：surface / primary / accent / dark）
   palette: string[]
+  /** 分類：ux（預設）／ graphic（graphic/poster 設計）／ motion（motion graphic/影片） */
+  category?: 'ux' | 'graphic' | 'motion'
   order: number
 }
 
@@ -353,6 +355,7 @@ export const projects: Project[] = [
       'Style guide covers logo construction, clear space, color, and typography',
     ],
     palette: ['#D7D5D7', '#C1BDC3', '#171116', '#A9A6AA'],
+    category: 'graphic',
     order: 16,
   },
   {
@@ -374,6 +377,7 @@ export const projects: Project[] = [
       'Consistent visual language across large-format print and digital materials',
     ],
     palette: ['#2E64A7', '#3170C1', '#D93E61', '#2D3046'],
+    category: 'graphic',
     order: 17,
   },
   {
@@ -479,7 +483,30 @@ export const projects: Project[] = [
       'One consistent visual language across digital and print',
     ],
     palette: ['#FFFFFF', '#0195E2', '#02A4DF', '#1A2F47'],
+    category: 'graphic',
     order: 22,
+  },
+  {
+    slug: 'momax-product-videos',
+    title: 'MOMAX Product Videos',
+    client: 'MOMAX',
+    role: 'Motion Graphic Designer',
+    timeline: '2021',
+    tools: ['Adobe Premiere Pro', 'After Effects'],
+    tags: ['Motion Graphic', 'Video Editing', 'Product', 'IoT'],
+    featured: false,
+    thumbnail: '/images/projects/momax-product-videos/cover.jpg',
+    heroImage: '/images/projects/momax-product-videos/cover.jpg',
+    summary:
+      'Produced product demo videos for MOMAX smart devices — editing footage, adding motion graphics, and pacing each cut so the device\'s key features read clearly in seconds.',
+    highlights: [
+      'Edited and motion-graphed product demo videos for MOMAX smart devices',
+      'Each video highlights the device\'s key features in a short, watchable cut',
+      'Motion graphics keep the pacing tight and the product the star',
+    ],
+    palette: ['#90C0D8', '#4890C0', '#1878A8', '#183048'],
+    category: 'motion',
+    order: 23,
   },
 ]
 

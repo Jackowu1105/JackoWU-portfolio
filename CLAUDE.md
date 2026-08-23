@@ -10,14 +10,20 @@
 - build：`npm run build`；lint：`npm run lint`
 - 唔好改 `node_modules`；寫 code 前先睇 `node_modules/next/dist/docs/`（Next 16 有 breaking changes，見 AGENTS.md）
 
-## 內容架構（22 個 case study）
-- Case study 內容：`src/content/case-studies/<slug>.mdx`（22 篇，slug 同 `src/data/projects.ts` 對應）
-- Project metadata：`src/data/projects.ts`（欄位：slug / title / client / role / timeline / tools / tags / featured / thumbnail / heroImage / summary / highlights / **palette** / order）
+## 內容架構（23 個 case study）
+- Case study 內容：`src/content/case-studies/<slug>.mdx`（23 篇，slug 同 `src/data/projects.ts` 對應）
+- Project metadata：`src/data/projects.ts`（欄位：slug / title / client / role / timeline / tools / tags / featured / thumbnail / heroImage / summary / highlights / **palette** / **category** / order）
   - `palette: string[]` — 4 色（surface / primary / accent / dark），由真實截圖提取， Work page card 同 case study hero 會顯示
+  - `category: 'ux' | 'graphic' | 'motion'` — 分類（預設 ux）。Work page tabs 按此分組
 - `src/app/work/[slug]/page.tsx` 用 `await import(@/content/case-studies/${slug}.mdx)` 動態載入；MDX 唔存在就靜默跳過
 - 加新 case study = 喺 projects.ts 加 entry + 開對應 `.mdx` + 攞圖入 `public/images/projects/<slug>/`
-- 排位原則：featured 6 個（最強 UX case）+ 非 featured 16 個；`order` 排先後
+- 排位原則：featured 6 個（最強 UX case）+ 非 featured 17 個；`order` 排先後
 - 舊 PPTX（`Downloads/JackoWu_profilo_All (1).pptx`）係內容來源之一 — 入面有 kiosk 設計、demo 影片、marketing campaign 等額外材料
+
+## 加新 case study 嘅流程
+- 有 Custom Agent `case-study-writer`（`~/.claude/agents/case-study-writer.md`）專做呢件事：Jacko 提供文字（bullets 或口述）+ 圖片 + 影片/連結，agent 自動寫 MDX、註冊 projects.ts、提取 palette、build 驗證
+- Jacko 畀資料嘅最佳方式（B/C 模式）+ 圖片/影片/連結規範：見 `docs/case-study-submission-guide.md`
+- 畀 palette 唔好作假——用 sharp 讀 cover.jpg dominant color cluster 提取 4 色
 
 ## 圖片資產
 - 全部喺 `public/images/projects/<slug>/`，每個 project：`cover.<ext>` + `g01.<ext>` `g02.<ext>` …
@@ -45,8 +51,10 @@
 - `ColorPalette` — 4 格 swatch card（色塊 + hex + label），放 Visual Design 段
 - `ProjectHeader`、`ReadingProgress`、`NextProject`、`MetricCard`（MetricCard 已冇用，可刪）
 
-## Work page（`src/app/work/page.tsx` + `src/components/work/ProjectCard.tsx`）
-- 兩段式 layout：**Featured**（6 個大卡，2 欄）+ **More projects**（11 個 compact 卡，3 欄）
+## Work page（`src/app/work/page.tsx` + `src/components/work/WorkGallery.tsx` + `ProjectCard.tsx`）
+- `WorkGallery`（client component）：分類 tabs（All / UX & Product / Graphic Design / Motion）+ **Show more** 分批載入（首屏 3 compact，每次 +4），避免首屏一次過太多圖
+- tabs 按 `projects.ts` 嘅 `category` 分組；`category` 冇設就當 `ux`
+- 兩段式 layout：**Featured**（6 個大卡，2 欄）+ **More work**（compact 卡，3 欄）
 - ProjectCard 顯示：編號、category eyebrow、thumbnail、title、client · timeline、tags、palette swatches
 - featured 大卡仲有 summary + hover 效果
 
