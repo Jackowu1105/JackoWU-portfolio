@@ -1,0 +1,87 @@
+<ProjectHeader
+  overview="FinSightsAI is an AI-powered investment advisor — a 智能金融投顧平台 — that turns market data and portfolio analytics into plain-language guidance for everyday investors. I designed the app's UX/UI end-to-end, from the registration and onboarding flow through the core AI-assistant experience and its five-tab information architecture."
+  challenge="Investment apps are usually two products in one: a data-heavy dashboard for the few who can read it, and a wall of jargon for everyone else. The brief was to design an app where an AI advisor carries the complexity — so a user asks a question in plain language and gets a clear, actionable answer instead of a chart they have to interpret."
+  role="UI/UX Designer — end-to-end UX/UI design from information architecture and flows to high-fidelity visual design, built on a micro-service backend architecture (advisor, market data, portfolio)."
+  team="1 UX/UI Designer (me) + product + engineering"
+  duration="2025"
+  tools={["Figma"]}
+/>
+
+## Problem Definition
+
+The core tension in a robo-advisor app is trust versus simplicity. Investors want to feel in control, but most cannot — and do not want to — parse raw market data. Two failure modes follow:
+
+- **The dashboard trap** — surface every metric, and the app becomes a tool only a professional can use
+- **The black-box trap** — hide every decision behind "the AI said so," and users stop trusting it
+
+### Design Goals
+
+- **Plain-language advice as the front door** — the AI assistant is the home, not a feature buried in a menu
+- **Make the AI's reasoning legible** — show enough of the "why" that a user can decide whether to follow the advice
+- **Let engaged users go deeper without forcing casual users to** — watchlists, notes, and favorites exist for power users, out of the way of the core flow
+
+## Design Process
+
+### Information Architecture
+
+I structured the app around five primary sections, each mapped to a distinct user intent:
+
+1. **AI 助手 (AI Assistant)** — the home and front door; the conversational advisor
+2. **關注 (Watchlist)** — investments the user is actively tracking
+3. **收藏 (Favorites)** — saved insights and recommendations
+4. **筆記 (Notes)** — the user's own annotations on positions and research
+5. **我的 (Profile)** — account, portfolio, and settings
+
+The decision to put the AI assistant first — rather than a portfolio dashboard — reflects the product's thesis: the assistant is the product, the dashboard is a reference.
+
+### Authentication & Onboarding Flow
+
+A meaningful share of the design work went into registration, login, and account recovery — the flow that decides whether a fintech user ever sees the product:
+
+- **Registration** — email and phone variants, with verification
+- **Login** — combined email & phone entry to reduce "which one did I use?" friction
+- **Forgot password** — email and phone recovery paths
+
+<DecisionCards
+  items={[
+    { tag: 'A', title: 'Separate email / phone flows', summary: 'Two distinct registration screens, one per credential type.', outcome: 'Cleaner per-screen, but doubles the surface area and forces users to pick an entry point before they start.', status: 'rejected' },
+    { tag: 'B', title: 'Single adaptive entry', summary: 'One input that detects email vs phone and adapts the downstream flow.', outcome: 'Fewer screens, less decision fatigue at the front door, and the recovery flow reuses the same adaptive pattern.', status: 'final' },
+  ]}
+/>
+
+### The Notes Feature
+
+筆記 (Notes) is the feature that makes FinSightsAI more than a chatbot. Users annotate positions and research with their own notes — so the AI's recommendations live alongside the user's own reasoning. It is a small surface with an outsized purpose: turn the app from "things the AI tells me" into "things I am thinking about."
+
+## Visual Design
+
+### Color
+
+A restrained, dark-neutral system — warm greys and near-blacks — chosen so that data and the AI's responses are the only things that carry colour. In a fintech app, colour should mean signal, not decoration.
+
+<ColorPalette
+  colors={['#9F9BA0', '#3A3941', '#62606A', '#19181C']}
+  labels={['Surface', 'Primary', 'Accent', 'Dark']}
+/>
+
+### Architecture
+
+The app is built on a micro-service architecture (advisor, market data, portfolio) so each domain can scale and evolve independently — the advisor can be retrained without touching the portfolio service, and market data can stream without blocking the conversational interface.
+
+## Design Gallery
+
+<CaseStudyImage
+  src="/images/projects/finsights-ai/g01.jpg"
+  label="App Design"
+  caption="FinSightsAI app screens — the five-tab IA and the AI-assistant-led home"
+/>
+
+<CaseStudyImage
+  src="/images/projects/finsights-ai/cover.jpg"
+  label="App Poster"
+  caption="Design poster — the full screen set at a glance"
+/>
+
+## Reflections
+
+Designing a robo-advisor taught me that the hardest part is not the AI — it is the trust layer around it. The assistant has to be confident enough to be useful and transparent enough to be trustworthy, and the IA has to make that legible. Putting the assistant at the front door and the notes feature beside it was the bet that FinSightsAI is a tool for thinking with, not a dashboard to obey.

@@ -21,7 +21,7 @@
 - playwright 截圖驗證 Visual Design 段、ColorPalette、h2 編號、hero palette 都 render 正確
 
 ### Phase 5 — 進度筆記 ✅
-- 已更新 `Obsidian/Claude記憶/專案/進度-portfolio-case-studies.md`
+- 已更新 `Obsidian/01_Projects/進度-portfolio-case-studies.md`
 
 ## 計劃外完成咗嘅嘢
 
