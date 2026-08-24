@@ -1,0 +1,195 @@
+<ProjectHeader
+  overview="FUNDel is a dual-role logistics platform — operators manage shipments, finance, and carbon; shippers get a telemetry-driven quotation flow, with an AI assistant on both sides. I did not just design it: I built it. Working as a designer who is not an engineer, I shipped the whole thing as a working MVP via vibe coding — steering Cursor and gpt-engineer to write ~31,000 lines of React/TypeScript across ~1,300 commits over five months."
+  challenge="The harder problem was not the logistics domain — it was the gap between a design and a running product. As a designer, I could draw the screens; I could not traditionally build them. Vibe coding closed that gap. The brief became: can one designer, paired with an AI coding agent, ship a real, dual-role fintech-grade web app end-to-end — and keep it coherent, not a pile of AI spaghetti?"
+  role="Designer & Builder (vibe-coded MVP) — UX/UI design and the build. I set the design system and information architecture, then drove an AI coding agent (Cursor + gpt-engineer) to implement it, reviewing and integrating every commit."
+  team="1 Designer-builder (me, leading) + AI coding agent (gpt-engineer, ~88% of commits) + a few teammates contributing on top"
+  duration="Feb – Jul 2026 (~5 months)"
+  tools={["Cursor", "gpt-engineer", "React", "TypeScript", "Vite", "Tailwind CSS", "shadcn/ui"]}
+/>
+
+## Context — Who FUNDel Is
+
+The product in this case study is FUNDel Limited, a Hong Kong–based fintech company founded and led by Prof. Henry Ko. FUNDel connects e-commerce merchants, logistics companies, and financial institutions to enable data-driven trade and supply-chain finance solutions — with a particular focus on small and medium-sized enterprises (SMEs) across Greater China and ASEAN.
+
+Two memoranda of understanding frame why this platform exists:
+
+- **19 January 2026** — FUNDel signed an MOU with the Hong Kong SAR Government and the Logistics and Supply Chain MultiTech R&D Centre (LSCM) to leverage trusted logistics data within Hong Kong's Port Community System (PCS) as the foundation for new financial products for SMEs.
+- **5 February 2026** — FUNDel signed a further MOU with Tolo Digitech Limited, a spin-off from AIFT (the InnoHK-recognised FinTech research lab cofounded by City University of Hong Kong and Columbia University, with Tsinghua University joining), to develop a trade finance platform on top of PCS logistics data — pairing Tolo Digitech's logistics digitalisation and applied AI with FUNDel's fintech reach, under a strategic equity-exchange arrangement.
+
+The platform I designed and built is the surface where that trusted logistics data turns into something a user can act on — a telemetry-driven quotation, a shipment, a finance facility, a carbon read — in one place. My day job at AIFT put me inside the ecosystem that produced the partnership, and FUNDel is where I got to make the abstract idea of "logistics data becomes finance" into a real, running product.
+
+## Problem Definition
+
+A logistics fintech product has two user populations that never sit in the same room:
+
+- **Operators** — the logistics team running shipments, documents, finance, and carbon reporting
+- **Shippers** — the customers who need a quote, a telemetry read, and a way to act on it
+
+Two failure modes follow from building this badly:
+
+- **The split-product trap** — ship two separate apps and the two sides drift out of sync; the operator sees one truth, the shipper another
+- **The handoff trap** — a designer draws the whole thing, hands 80 screens to engineering, and waits six months for something that no longer matches the design — or never ships
+
+My version of the brief sidestepped both by keeping it one SPA, and by not handing off at all: I built it myself, with an AI agent as the typing.
+
+### Design Goals
+
+- **One product, two roles** — a single SPA that re-skins by role, sharing one data model and one AI assistant
+- **Design fidelity survives the build** — because the designer is the builder, what gets shipped is what was designed
+- **An AI-friendly stack** — choose tools that let an AI coding agent produce consistent, reviewable code, not novel-looking code on every prompt
+- **Real, not a prototype** — actual data flows (live news stream, 3D globe, document generation), not placeholder screens
+
+## The Vibe-Coding Workflow
+
+This is the part that makes FUNDel different from my other case studies: the build was the work, and the AI agent was the tool.
+
+### The stack, chosen for the AI as much as for the user
+
+I picked the stack partly for how well an AI agent can write in it:
+
+- **React + Vite + TypeScript** — the most-represented combination in the AI's training, so generated code is idiomatic, not exotic
+- **shadcn/ui + Tailwind** — component primitives the AI already knows, so it reaches for a known `Dialog` or `Select` instead of inventing a new one each time. This is the single biggest reason the code stayed consistent across a thousand commits
+- **TanStack Query + react-hook-form + zod** — standard patterns the agent reproduces reliably, so data fetching and validation look the same everywhere
+- **Cursor** as the IDE, with a `.cursor/rules` file enforcing a linear git history — so the AI commits onto the tip of `main` cleanly, no merge-commit soup
+
+The principle: the more conventional the stack, the less the AI improvises, and the more of the design intent survives into code.
+
+### The rhythm: I direct, the AI types
+
+Across ~1,300 commits over five months, roughly **88% were authored by the AI agent** (`gpt-engineer-app[bot]`), ~8% by me directly, and the rest by a few teammates. That ratio is the point — I was not writing every line; I was **directing, reviewing, and integrating**. The workflow on any given feature:
+
+1. I describe the screen or flow in design terms (layout, states, data, edge cases)
+2. The agent produces a first pass
+3. I review it as a designer — does it match the design? is the hierarchy right? are the states covered? — and request changes in plain language
+4. The agent iterates; I merge when it's right
+
+The designer advantage here is concrete: because I can *see* whether a generated UI is good, I reject bad output fast instead of accepting it and patching later. The AI is a fast, prolific junior who never sleeps; I am the senior who keeps the bar.
+
+### Discipline
+
+A few rules kept the AI-generated codebase from rotting:
+
+- **Linear git history only** — a `.cursor/rules` policy forbids merge commits; everything fast-forwards onto `main`. The commit log reads as one clean line, which makes five months of AI-authored history navigable
+- **One component library, not many** — the AI reaches for shadcn/ui by default; I do not let it hand-roll parallel component systems
+- **Design intent over prompt length** — the shortest path to good output is a clear design instruction, not a longer prompt
+
+## Design & Build Decisions
+
+**Decision 1 — One SPA or two apps.**
+
+<DecisionCards
+  items={[
+    { tag: 'A', title: 'Two separate apps', summary: 'An operator app and a shipper app, each its own codebase.', outcome: 'Cleaner per-app, but two codebases drift, two deploy pipelines to maintain, and the shared data model has to be synced by hand.', status: 'rejected' },
+    { tag: 'B', title: 'One role-aware SPA', summary: 'A single React app that switches routes and skin by OPERATOR / SHIPPER role.', outcome: 'One source of truth, one deploy, shared components and AI assistant — and the role switch is one line of state. The AI agent maintains one mental model instead of two.', status: 'final' },
+  ]}
+/>
+
+**Decision 2 — The component library.**
+
+<DecisionCards
+  items={[
+    { tag: 'A', title: 'Bespoke component system', summary: 'Build every primitive from scratch for full control.', outcome: 'Maximum control, but the AI agent has no reference for bespoke components and invents a new variant every time — inconsistency compounds over a thousand commits.', status: 'rejected' },
+    { tag: 'B', title: 'shadcn/ui + Tailwind', summary: 'A known, copy-in component library the AI has seen thousands of times.', outcome: 'The agent reaches for a known Dialog / Select / Table instead of rolling its own, so the UI stays consistent and my review is faster — I judge against a known standard, not a novel one.', status: 'final' },
+  ]}
+/>
+
+**Decision 3 — Where the AI assistant lives.**
+
+<DecisionCards
+  items={[
+    { tag: 'A', title: 'A separate chat page', summary: 'AI assistant on its own route.', outcome: 'Forces a context switch — users leave their work to ask about their work.', status: 'rejected' },
+    { tag: 'B', title: 'A mounted panel on both portals', summary: 'The assistant is a side panel available across operator and shipper views.', outcome: 'Always one tap away, sees the screen the user is on, and the AI agent builds it once and reuses the mount on both roles.', status: 'final' },
+  ]}
+/>
+
+## What Got Built
+
+The honest measure of a vibe-coded MVP is not the design — it is what actually runs. Over five months this shipped:
+
+- **16 route-level pages** and **73 feature components** on top of 49 shadcn/ui primitives — ~31,000 lines of TypeScript/TSX in `src/`
+- **Operator portal** — Dashboard (with a 3D globe of live shipment routes), Shipments list + detail, Document preview/generation (air waybill, MAWB/HAWB), Customer management, Finance Solutions (loan, KYC), Carbon/Sustainability tracking
+- **Shipper portal** — Shipper Dashboard and a telemetry-driven quotation flow
+- **AI assistant** — a panel mounted on both portals
+- **Real data surfaces** — a live Refinitiv news stream on the dashboard, echarts/echarts-gl for the globe and charts, react-simple-maps for routes, jsPDF + html2canvas for document and invoice generation
+- **Auth** — login with email/phone, OTP, reCAPTCHA, forgot-password, sign-up — built to the standard a fintech product is held to, not a demo login
+
+None of this is a clickable prototype. It is a running web app.
+
+## Visual Design
+
+### Color
+
+A data-product palette: a near-black slate base (`#0F172A`), a blue primary for structure and links, an emerald accent for positive/active signal (the AI assistant, target states), and a light surface for daytime and admin-adjacent views. Color means signal — green for on-track, red for exception, blue for structure — not decoration.
+
+<ColorPalette
+  colors={['#0F172A', '#3B82F6', '#41B893', '#F1F5F9']}
+  labels={['Dark', 'Primary', 'Accent', 'Surface']}
+/>
+
+### System
+
+shadcn/ui + Tailwind gave a component library that the AI agent could reproduce consistently — the same `Card`, `Dialog`, `Tabs`, `Table` across a thousand commits. The design system survived the build precisely because it was a system the AI already knew.
+
+## Design Gallery
+
+<CaseStudyImage
+  src="/images/projects/fundel-logistics-portal/g01.jpg"
+  label="Login"
+  caption="The front door — email/phone login with OTP and reCAPTCHA, built to a fintech auth standard rather than a demo"
+/>
+
+<CaseStudyImage
+  src="/images/projects/fundel-logistics-portal/g02.jpg"
+  label="Operator Dashboard"
+  caption="The operator home — a 3D globe of live shipment routes alongside a real-time Refinitiv news feed, spot rates, and market data"
+/>
+
+<CaseStudyImage
+  src="/images/projects/fundel-logistics-portal/g03.jpg"
+  label="Shipments"
+  caption="The shipment operations view — filterable table, status tracking, and create-shipment entry"
+/>
+
+<CaseStudyImage
+  src="/images/projects/fundel-logistics-portal/g04.jpg"
+  label="Shipment Detail"
+  caption="A single shipment end-to-end — progress timeline, route map, documents, and milestone tracking"
+/>
+
+<CaseStudyImage
+  src="/images/projects/fundel-logistics-portal/g05.jpg"
+  label="Document Preview"
+  caption="Document generation — air waybill / MAWB / HAWB with structured forms and validation"
+/>
+
+<CaseStudyImage
+  src="/images/projects/fundel-logistics-portal/g06.jpg"
+  label="Finance Solutions"
+  caption="Finance surface — loan and KYC flows, credit cards, and facility overview built into the operator portal"
+/>
+
+<CaseStudyImage
+  src="/images/projects/fundel-logistics-portal/g07.jpg"
+  label="Carbon / Sustainability"
+  caption="Carbon tracking — emissions data and sustainability metrics across the shipment base"
+/>
+
+<CaseStudyImage
+  src="/images/projects/fundel-logistics-portal/g08.jpg"
+  label="Shipper Dashboard"
+  caption="The shipper side — the same product re-skinned by role, with a telemetry-driven quotation workflow"
+/>
+
+<CaseStudyImage
+  src="/images/projects/fundel-logistics-portal/g09.jpg"
+  label="AI Assistant"
+  caption="The AI assistant panel — mounted on both portals, one tap away from whatever the user is working on"
+/>
+
+## Reflections
+
+The lesson of FUNDel is that vibe coding did not turn me into an engineer — it removed the reason I needed to be one to ship. The bottleneck was never typing speed; it was design judgment, and that is the part I already had. The AI agent writes the code; I keep the bar.
+
+A few things I would not have predicted going in. **The stack choice is a prompt-engineering decision**: picking shadcn/ui over bespoke components was not a design preference, it was the single biggest reason the AI's output stayed consistent across a thousand commits. **Reviewing is the job**: ~88% of commits were AI-authored, but every one of them passed my eyes — the designer's ability to *see* bad output is what stops a vibe-coded app from quietly rotting. And **linear git history** turned out to matter more than I expected: a clean commit line made five months of AI-authored history readable, which made the codebase navigable, which made the AI more useful on commit 1,200 than on commit 12.
+
+What I would do differently: involve the discipline of tests earlier — I leaned on visual review, and a test layer would have caught regressions the eye misses. And I would write the design-system rules file (the `.cursor/rules` equivalent for components) on day one, so the AI never had a chance to improvise before the rules existed.

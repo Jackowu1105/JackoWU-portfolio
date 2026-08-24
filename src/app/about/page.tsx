@@ -22,6 +22,36 @@ const education = [
 
 const certifications = [
   {
+    name: 'Fundamentals of LLMs — The LLM Course',
+    issuer: 'Hugging Face',
+    date: 'Aug 2026',
+    image: '/images/certificates/huggingface-llm-fundamentals.jpg',
+  },
+  {
+    name: 'Work Smarter with AI',
+    issuer: 'Canva',
+    date: 'Aug 2026',
+    image: '/images/certificates/canva-work-smarter-with-ai.jpg',
+  },
+  {
+    name: 'Marketing with Canva',
+    issuer: 'Canva',
+    date: 'Aug 2026',
+    image: '/images/certificates/canva-marketing.jpg',
+  },
+  {
+    name: 'Graphic Design Essentials',
+    issuer: 'Canva',
+    date: 'Aug 2026',
+    image: '/images/certificates/canva-graphic-design-essentials.jpg',
+  },
+  {
+    name: 'Canva Essentials',
+    issuer: 'Canva',
+    date: 'Aug 2026',
+    image: '/images/certificates/canva-essentials.jpg',
+  },
+  {
     name: 'User Interface Design',
     issuer: 'University of Minnesota',
     date: 'Nov 2023',

@@ -1,0 +1,143 @@
+<ProjectHeader
+  overview="TAP-X is a blockchain-based virtual asset management platform from AIFT (AI FinTech Lab) — at its core, a Tokenized ABS (Asset-Backed Securities) Planner that lets investors buy and manage fractional shares of real-world assets on-chain. I designed the end-to-end UX/UI: the investor planner, the RWA admin back-office, an AI-assisted overview dashboard, and the financing board, including the gold-coin visual system and the crypto-coin / NFT icon language that runs across the product."
+  challenge="Tokenized ABS sits at an awkward intersection: the underlying idea — owning a fraction of a real, income-producing asset — is intuitive, but the wrapping (blockchain, wallets, token terms, ABS jargon) is intimidating to anyone outside crypto. The brief was to make fractional RWA ownership feel concrete and trustworthy, not like a trading terminal for specialists."
+  role="UI/UX Designer — end-to-end UX/UI design across investor and admin surfaces: information architecture, flows, high-fidelity visual design, the coin-based visual system, and the dark/light mode treatment."
+  team="1 UX/UI Designer (me) + product + blockchain engineering"
+  duration="2025"
+  tools={["Figma"]}
+/>
+
+## Problem Definition
+
+Tokenized RWA products fail in one of two ways:
+
+- **The jargon trap** — surface ABS terms (issue size, coupon, maturity, collateral pool) the way a prospectus does, and only a fixed-income professional can read it
+- **The crypto-bro trap** — dress it up as a "degen" trading app and you lose the institutional trust that an asset-backed product is supposed to project
+
+The product had to land between the two: concrete enough that a non-crypto user understands *what they own*, restrained enough that it reads as a serious fintech tool, and fluent enough in Web3 visual language (coins, NFT tiles, wallet flows) that it doesn't feel like a traditional banking app pretending to be on-chain.
+
+### Design Goals
+
+- **Make "a fraction of an asset" visible** — the abstract idea of a token should resolve to something a user can picture
+- **Carry trust through the interface** — dark, considered, premium — not a casino
+- **Speak Web3 without screaming it** — coins, tiles, and wallet patterns where they aid comprehension, not as decoration
+- **Support multiple asset classes in one system** — tokenized ABS is the flagship, but the visual language has to also hold crypto currencies and NFTs
+
+## Design Process
+
+### Information Architecture
+
+The product surface breaks into four distinct zones, each mapped to a different user and intent:
+
+1. **Investor Planner** — the front door; where a user browses tokenized ABS, plans an investment, and watches their position
+2. **Overview Dashboard + AI Assistant** — the home base; portfolio at a glance with a conversational AI helper
+3. **RWA Admin** — the back-office; where the team manages underlying assets, issuance, and compliance
+4. **Financing Board (貸中管理 / 融資看板)** — the lifecycle view; tracking an ABS issue from origination through financing to settlement
+
+The investor and admin sides share an asset model but not a vocabulary — investors see coins and plans, admins see pools, tranches, and status. The IA keeps the two apart so neither leaks jargon into the other.
+
+### The Coin Metaphor
+
+The central design decision was to anchor the product on a **gold coin** — a single, tangible object that stands in for "your fraction of a real asset." A token is abstract; a coin you can hold in your mind is not. The gold coin appears on the login screen, in the planner hero, beside every holding, and as the loading affordance. It does one job: it makes the phrase *own a piece of this asset* resolve to an image instead of a sentence.
+
+### Key Design Decisions
+
+**Decision 1 — Primary mode.**
+
+<DecisionCards
+  items={[
+    { tag: 'A', title: 'Light as primary', summary: 'Light, banking-app feel as the default; dark as an alternative.', outcome: 'Felt safe and familiar, but the gold coin and the on-chain identity of the product got lost against a white canvas.', status: 'rejected' },
+    { tag: 'B', title: 'Dark as primary, light as parity', summary: 'Dark mode is the default and the hero; light mode is built as a full parity surface, not an afterthought.', outcome: 'The gold coin reads instantly against deep navy, the product signals premium/fintech rather than retail banking, and light mode still serves daytime and accessibility needs.', status: 'final' },
+  ]}
+/>
+
+**Decision 2 — The planner metaphor.**
+
+<DecisionCards
+  items={[
+    { tag: 'A', title: 'Terms-first form', summary: 'ABS terms (issue size, coupon, maturity) as a prospectus-style form.', outcome: 'Accurate to the instrument, but only a professional could read it — exactly the jargon trap we were told to avoid.', status: 'rejected' },
+    { tag: 'B', title: 'Chart-heavy dashboard', summary: 'Lead with price and yield charts, trading-app style.', outcome: 'Read as speculative, undermined the "own a real asset" framing, and invited the crypto-bro reading we wanted to avoid.', status: 'rejected' },
+    { tag: 'C', title: 'Coin-based planning metaphor', summary: 'The gold coin represents your fractional holding; the planner turns ABS terms into a visual, step-by-step plan with the coin as the anchor.', outcome: 'The abstract becomes concrete — users picture what they own, the plan is legible without finance literacy, and the coin ties every screen back to the same mental model.', status: 'final' },
+  ]}
+/>
+
+**Decision 3 — Where the AI assistant lives.**
+
+<DecisionCards
+  items={[
+    { tag: 'A', title: 'Separate AI page', summary: 'A dedicated assistant screen reachable from the nav.', outcome: 'Forces a context switch — users leave their portfolio to ask about their portfolio.', status: 'rejected' },
+    { tag: 'B', title: 'Floating assistant', summary: 'A chat bubble overlaid on any screen.', outcome: 'Always available, but detached from the dashboard context it is meant to explain.', status: 'rejected' },
+    { tag: 'C', title: 'Integrated panel in the overview dashboard', summary: 'The AI sits beside the portfolio overview, sharing the screen so answers reference what is visible.', outcome: 'The assistant explains the dashboard from inside the dashboard — no context switch, and its answers are grounded by the data on screen.', status: 'final' },
+  ]}
+/>
+
+### A Multi-Asset Visual Language
+
+TAP-X is an ABS planner first, but the system carries more than one asset class. The visual language was built to hold **crypto currencies, NFTs, and tokenized RWA** in the same product without one colonising the others:
+
+- **Crypto currencies** — a set of round coin icons, each token getting its own glyph on a dark field, with two finishes (a gold variant and a muted variant) to signal active vs inactive or featured vs reference
+- **NFTs** — square tiles that break from the round coin grid, so an NFT never reads as "just another coin"
+- **Tokenized RWA / ABS** — the flagship gold coin, kept distinct from the crypto coin set by its material rendering and gold treatment, so the real-asset product always reads as the premium tier
+
+The rule: shape signals asset class, finish signals state, and the gold coin is reserved for the real-asset product.
+
+## Visual Design
+
+### Color
+
+A dark, restrained system built around deep navy and a single gold accent. In a tokenized-asset product, colour should mean *value and material*, not decoration — so the gold is reserved for the coin and the figures that matter, and everything else is a quiet blue-to-neutral scale.
+
+<ColorPalette
+  colors={['#ACBECA', '#192F54', '#516D97', '#040812']}
+  labels={['Surface', 'Primary', 'Accent', 'Dark']}
+/>
+
+### Dark / Light
+
+Dark mode is the primary surface — the coin, the charts, and the on-chain identity all land against the navy. Light mode is built to full parity, not as a checkbox: every screen, state, and component exists in both. The decision to invest in both, rather than ship dark-only, came from the product needing to read as a serious tool in daylight contexts (admin, compliance) and as a premium on-chain product in dark.
+
+### The Coin System
+
+The gold coin is a rendered object, not a flat icon — material, lit, with a minted edge — so it carries the "tangible asset" reading. The crypto coin set is flatter and glyph-led, so the two never compete for the same attention.
+
+## Design Gallery
+
+<CaseStudyImage
+  src="/images/projects/tap-tokenized-abs-planner/g01.png"
+  label="Investor Planner — Dark"
+  caption="The investor dashboard: the gold coin anchors the planner, with portfolio cards, asset value charts, and the available tokenized ABS list"
+/>
+
+<CaseStudyImage
+  src="/images/projects/tap-tokenized-abs-planner/g02.png"
+  label="Investor Planner — Light"
+  caption="Light mode parity — the same planner, rebuilt on a light surface for daytime and admin-adjacent contexts"
+/>
+
+<CaseStudyImage
+  src="/images/projects/tap-tokenized-abs-planner/g04.png"
+  label="Overview Dashboard + AI Assistant"
+  caption="The portfolio overview with the AI assistant integrated alongside, so answers reference what is on screen"
+/>
+
+<CaseStudyImage
+  src="/images/projects/tap-tokenized-abs-planner/g03.png"
+  label="RWA Admin"
+  caption="The back-office for managing underlying assets, issuance, and compliance — denser, more operational than the investor side"
+/>
+
+<CaseStudyImage
+  src="/images/projects/tap-tokenized-abs-planner/g05.png"
+  label="Financing Board (貸中管理)"
+  caption="The financing lifecycle view — tracking an ABS issue from origination through financing to settlement"
+/>
+
+<CaseStudyImage
+  src="/images/projects/tap-tokenized-abs-planner/g06.png"
+  label="Login"
+  caption="The login screen — the gold coin is the first thing a user sees, setting the tangible-asset frame before they enter"
+/>
+
+## Reflections
+
+The hardest part of designing a tokenized-RWA product is not the blockchain — it is the translation layer between a financial instrument and a person's intuition. The gold coin did more work than any chart could: it gave users something to picture, and it let the interface stay quiet and serious around it. Building dark and light to full parity was more expensive than shipping dark-only, but it kept the product honest as a tool rather than a vibe. And drawing a clear shape rule across crypto coins, NFT tiles, and the RWA gold coin meant the product could grow into more asset classes without the flagship getting lost in the crowd.

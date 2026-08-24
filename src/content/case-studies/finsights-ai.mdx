@@ -1,5 +1,5 @@
 <ProjectHeader
-  overview="FinSightsAI is an AI-powered investment advisor — a 智能金融投顧平台 — that turns market data and portfolio analytics into plain-language guidance for everyday investors. I designed the app's UX/UI end-to-end, from the registration and onboarding flow through the core AI-assistant experience and its five-tab information architecture."
+  overview="FinSightsAI is an AI-powered investment advisor — a 智能金融投顧平台 — that turns market data and portfolio analytics into plain-language guidance for everyday investors. I designed the app's UX/UI end-to-end, from the registration and onboarding flow through the core AI-assistant experience, the Home workspace tabs, and the market-data layer that grounds it."
   challenge="Investment apps are usually two products in one: a data-heavy dashboard for the few who can read it, and a wall of jargon for everyone else. The brief was to design an app where an AI advisor carries the complexity — so a user asks a question in plain language and gets a clear, actionable answer instead of a chart they have to interpret."
   role="UI/UX Designer — end-to-end UX/UI design from information architecture and flows to high-fidelity visual design, built on a micro-service backend architecture (advisor, market data, portfolio)."
   team="1 UX/UI Designer (me) + product + engineering"
@@ -24,15 +24,13 @@ The core tension in a robo-advisor app is trust versus simplicity. Investors wan
 
 ### Information Architecture
 
-I structured the app around five primary sections, each mapped to a distinct user intent:
+The app is built around a conversational front door and a market-data backbone. I structured it into three primary surfaces, each mapped to a distinct user intent:
 
-1. **AI 助手 (AI Assistant)** — the home and front door; the conversational advisor
-2. **關注 (Watchlist)** — investments the user is actively tracking
-3. **收藏 (Favorites)** — saved insights and recommendations
-4. **筆記 (Notes)** — the user's own annotations on positions and research
-5. **我的 (Profile)** — account, portfolio, and settings
+1. **AI 助手 (AI Assistant)** — the front door; the conversational advisor. Underneath it, two sub-views — **近期熱門 (Recent Hot Topics)** and **權威指數 (Authority Index)** — surface what the market is paying attention to and a ranked signal layer, so the assistant answers from a base of live context, not in a vacuum.
+2. **首頁 (Home)** — the user's own workspace, split into tabs: **推薦 (Recommendations)**, **筆記 (Notes)**, **關注 (Watchlist)**, and **個人 (Profile)**. The recommendation feed is the discovery surface; the others are the user's own collection.
+3. **行情 (Market)** — the data layer underneath everything: a market overview, **圖表 (Charts)**, **公司簡介 (Company Profile)**, **基本數據 (Fundamentals)**, **頭條新聞 (Headlines)**, **觀點 (Views)**, and **技術分析 (Technical Analysis)**. This is where the AI's answers are grounded.
 
-The decision to put the AI assistant first — rather than a portfolio dashboard — reflects the product's thesis: the assistant is the product, the dashboard is a reference.
+The decision to put the AI assistant at the front door — rather than a portfolio dashboard — reflects the product's thesis: the assistant is the product, the data and the dashboard are the reference. **收藏 (Favorites)** and **關注 (Watchlist)** exist as user-collection features inside the Home tabs, not as top-level destinations.
 
 ### Authentication & Onboarding Flow
 
@@ -71,15 +69,27 @@ The app is built on a micro-service architecture (advisor, market data, portfoli
 ## Design Gallery
 
 <CaseStudyImage
-  src="/images/projects/finsights-ai/g01.jpg"
-  label="App Design"
-  caption="FinSightsAI app screens — the five-tab IA and the AI-assistant-led home"
+  src="/images/projects/finsights-ai/g01.png"
+  label="AI Assistant"
+  caption="The conversational front door — the AI assistant home, with 近期熱門 (recent hot topics) and 權威指數 (authority index) sub-views that ground answers in live market context"
 />
 
 <CaseStudyImage
-  src="/images/projects/finsights-ai/cover.jpg"
-  label="App Poster"
-  caption="Design poster — the full screen set at a glance"
+  src="/images/projects/finsights-ai/g02.png"
+  label="Home Tabs"
+  caption="The Home workspace — 推薦 (recommendations feed), 筆記 (notes), and 關注 (watchlist); the assistant's advice lives alongside the user's own thinking"
+/>
+
+<CaseStudyImage
+  src="/images/projects/finsights-ai/g03.png"
+  label="Market Data"
+  caption="The 行情 (market) layer underneath everything — market overview, 圖表 (charts), and 基本數據 (fundamentals) that ground the AI's answers"
+/>
+
+<CaseStudyImage
+  src="/images/projects/finsights-ai/g04.png"
+  label="Authentication"
+  caption="Login and the adaptive email/phone entry — one input that detects the credential type and adapts the downstream flow, shared with recovery"
 />
 
 ## Reflections

@@ -11,7 +11,7 @@ export const experience: ExperienceItem[] = [
     company: 'Laboratory for AI-Powered Financial Technologies Limited (AIFT)',
     period: '10 / 2024 — Present',
     highlights: [
-      'Designed end-to-end UI/UX for AI-powered fintech platforms including supply chain finance (TOLO Analysis), AI-driven financial research assistant (FinSights), and trade finance platform (Fundel)',
+      'Designed end-to-end UI/UX for AI-powered fintech platforms including supply chain finance (TOLO Analysis), AI-driven financial research assistant (FinSights), and trade finance platform (FUNDel)',
       'Produced exhibition materials, brand identity, and AI-generated video content for industry events',
       'Delivered front-end web interfaces via AI-assisted coding, bridging design and development',
     ],

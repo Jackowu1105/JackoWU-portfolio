@@ -21,10 +21,11 @@
 
 ### AIFT 現職工作（order 24–32）
 - Jacko 現職 AIFT（人工智能金融科技實驗室 / AI FinTech Lab，11/2024–而家）。工作內容檔案喺 `D:\AIFT`
-- 9 個 AIFT case study：finsights-ai / tap-tokenized-abs-planner / tolod-logistics-portal / scf-supply-chain-finance / tolo-analytics-platform（UX）/ aift-hackathon-2024 / innoex-2025-booth / innoex-2026-backdrop（Graphic）/ aift-corporate-motion（Motion）
-- cover + palette 提取流程：靜態圖用 sharp crop 16:9 + k-means k=4（`limitInputPixels:false` 處理巨圖）；video 用 ffmpeg 抽 frame；跑緊嘅 web app（SCF）跑 `npm run dev` + headless Chrome 截圖
-- 4 個 UX case（FinSightsAI / TAP-X / TOLOAnalytics / TOLOD）Jacko 會畀 Figma 設計稿做 refinement + 換 gallery 圖；而家用 pptx / 官網圖 / login_poster / 截圖做暫代
-- TOLOD（營運平台）同 TOLOAnalytics（官網）係同一產品線，分開 2 個 case study 但講清關係
+- 9 個 AIFT case study：finsights-ai / tap-tokenized-abs-planner / fundel-logistics-portal / scf-supply-chain-finance / tolo-analytics-platform（UX）/ aift-hackathon-2024 / innoex-2025-booth / innoex-2026-backdrop（Graphic）/ aift-corporate-motion（Motion）
+- cover + palette 提取流程：靜態圖用 sharp crop 16:9 + k-means k=4（`limitInputPixels:false` 處理巨圖）；video 用 ffmpeg 抽 frame；跑緊嘅 web app 跑 `npm run dev` + headless Chrome 截圖
+- FinSightsAI 同 TAP-X 已經用 Figma MCP 拉咗真實設計稿做 gallery（trio 圖 + 單 screen）；Fundel（前 TOLOD）用跑緊嘅 web app 截圖做 gallery；TOLOAnalytics 仲未 refinement
+- Fundel（前 TOLOD，order 26）係 vibe-coding MVP showcase：Jacko 用 Cursor + gpt-engineer 親手 build（~31k LOC / ~1300 commits / 88% AI-authored），case study 主角係 vibe-coding workflow 而唔係純設計。client 改做「Fendel」，slug 改做 `fundel-logistics-portal`，image folder rename 咗
+- TOLOD/Fundel（營運平台）同 TOLOAnalytics（官網）係同一產品線，分開 2 個 case study 但講清關係
 - 舊 PPTX（`Downloads/JackoWu_profilo_All (1).pptx`）係內容來源之一 — 入面有 kiosk 設計、demo 影片、marketing campaign 等額外材料
 
 ## 加新 case study 嘅流程
