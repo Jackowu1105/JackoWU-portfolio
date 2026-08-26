@@ -7,13 +7,45 @@
   tools={["Adobe Premiere Pro", "After Effects"]}
 />
 
-## The Work
+## Problem Definition
 
-Product demo videos sit at the top of the sales funnel — on the product page, in app-store previews, on social. My role was to take raw product footage and shape it into a demo that sells:
+A product demo video sits at the top of the sales funnel — on the product page, in app-store previews, on social. Its job is to show the device doing what it promises, fast enough to hold attention and clear enough that a viewer who skips ahead still gets the point.
+
+### Design Goals
+
+- **The product is the star** — motion graphics explain, they never compete with the device on screen
+- **Works on mute** — social feeds autoplay without sound, so captions and graphics carry the message
+- **First three seconds decide** — the hook appears immediately; details follow in the body of the cut
+
+## Design Process
+
+### The Edit
+
+My role was to take raw product footage and shape it into a demo that sells:
 
 - **Editing** — cutting footage to a tight, purposeful rhythm: establish the product, show it in action, land the key feature, end with the brand
 - **Motion graphics** — labels, callouts, and animated captions that explain what the device is doing at each moment, so the demo works even on mute
 - **Pacing** — every cut earns its place; a demo that drags loses the viewer before the payoff
+
+### Key Design Decisions
+
+**Decision 1 — Motion graphics vs. raw footage.**
+
+<DecisionCards
+  items={[
+    { tag: 'A', title: 'Raw footage only', summary: 'Let the product footage speak for itself without overlays.', outcome: 'Key features weren\'t always obvious from footage alone — a viewer couldn\'t tell what the device was doing without context.', status: 'rejected' },
+    { tag: 'B', title: 'Footage + motion graphics', summary: 'Labels, callouts, and animated captions that explain what the device is doing at each moment.', outcome: 'The demo works even on mute — motion graphics carry the message where footage can\'t, and the product stays the star.', status: 'final' },
+  ]}
+/>
+
+**Decision 2 — Pacing strategy.**
+
+<DecisionCards
+  items={[
+    { tag: 'A', title: 'Comprehensive feature tour', summary: 'Show every feature of the device in sequence.', outcome: 'Too long — viewers drop off before the payoff, and the demo becomes a spec sheet in video form.', status: 'rejected' },
+    { tag: 'B', title: 'Hook-first, details later', summary: 'The key feature appears in the first three seconds; details follow in the body of the cut.', outcome: 'A viewer who skips ahead still gets the point; a viewer who stays gets the full story.', status: 'final' },
+  ]}
+/>
 
 ## The Demo
 
@@ -27,13 +59,17 @@ Product demo videos sit at the top of the sales funnel — on the product page, 
   Your browser does not support the video tag.
 </video>
 
-## Design Principles
+## Visual Design
+
+### Design Principles
 
 **The product is the star.** Motion graphics explain; they never compete with the device on screen.
 
 **Works on mute.** Social feeds autoplay without sound — captions and graphics carry the message.
 
 **First three seconds decide.** The hook appears immediately; details follow in the body of the cut.
+
+**Typography:** Bold, high-contrast captions that read clearly even on a small phone screen — the motion graphics are designed to be read at a glance, not studied.
 
 ## Reflections
 

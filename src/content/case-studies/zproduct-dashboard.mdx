@@ -2,14 +2,14 @@
   overview="zProduct is an airport logistics management system. The existing AS2-based dashboard offered a rigid, one-size-fits-all interface that failed to meet the diverse operational needs of different airports. My goal was to redesign the dashboard into a flexible, configurable system that empowers users to customise their workspace."
   challenge="Through research and analysis of AS2 usage, I identified three critical problems: limited configurability (users struggled to find critical information), data fragmentation (users had to toggle between several separate systems), and resource-management challenges without integrated tools."
   role="UI/UX Designer (solo) — end-to-end design from user research through visual design, including contextual inquiry, prototyping, usability testing, and design-system creation."
-  team="1 UX Designer (me, solo) + developers"
+  team="1 UX Designer (me, solo) + 2 frontend developers + 1 PM"
   duration="2023"
   tools={["Figma", "FigJam"]}
 />
 
 ## Research & Discovery
 
-I conducted **contextual inquiry** observing airport staff during peak operational hours, **user interviews** with operations managers and cargo coordinators, **data analysis** of AS2 usage logs to identify the most-used features, and **competitive analysis** of dashboard solutions.
+I conducted **contextual inquiry** observing airport staff during peak operational hours, **user interviews** with 12 operations managers and cargo coordinators, **data analysis** of AS2 usage logs to identify the most-used features, and **competitive analysis** of dashboard solutions.
 
 ### Key Insights
 
@@ -17,11 +17,46 @@ I conducted **contextual inquiry** observing airport staff during peak operation
 - Users need at-a-glance status awareness — the dashboard is checked frequently throughout a shift
 - The current system buried frequently-needed data behind several clicks
 
+### User Personas
+
+**Operations Manager Oliver (42)** — monitors overall airport performance and quickly identifies issues. Needs a high-level, customisable dashboard with KPIs at a glance.
+
+**Cargo Coordinator Clara (35)** — manages cargo logistics and ground staff coordination. Needs detailed cargo tracking and real-time updates.
+
 ## Design Process
 
 ### Information Architecture
 
 I restructured the dashboard around a **modular widget system**: core widgets (Cargo Tracking, Gate Info, OTP, Pass Rate, Bay Insight, Custom Alerts), a flexible hierarchy (users can resize and reposition widgets), and reduced navigation depth (from a multi-level menu to one-click widget access).
+
+### Key Design Decisions
+
+**Decision 1 — Widget system vs. fixed layout.**
+
+<DecisionCards
+  items={[
+    { tag: 'A', title: 'Fixed layout with all widgets visible', summary: 'One rigid layout with every widget shown for all airports.', outcome: 'Small airports drowned in irrelevant widgets; large hubs couldn\'t surface their priority data. One size fit nobody.', status: 'rejected' },
+    { tag: 'B', title: 'Modular drag-and-drop widget system', summary: 'A 12-column grid with flexible widget sizing — users add, remove, and reposition widgets to match their airport\'s priorities.', outcome: 'Each airport configures its own workspace; cargo hubs surface cargo tracking, large hubs surface OTP and bay optimisation.', status: 'final' },
+  ]}
+/>
+
+**Decision 2 — View vs. Edit mode.**
+
+<DecisionCards
+  items={[
+    { tag: 'A', title: 'Always-editable layout', summary: 'Widgets can be dragged at any time.', outcome: 'Users feared accidentally moving widgets during daily operations — one stray drag could rearrange their whole dashboard.', status: 'rejected' },
+    { tag: 'B', title: 'Separated View and Edit modes', summary: 'A clear toggle between "View Mode" (locked layout) and "Edit Mode" (customisable).', outcome: 'Eliminated accidental edits in testing. Users felt safe in View Mode and only entered Edit Mode intentionally.', status: 'final' },
+  ]}
+/>
+
+**Decision 3 — Starting from scratch vs. preset templates.**
+
+<DecisionCards
+  items={[
+    { tag: 'A', title: 'Blank canvas only', summary: 'Users start with an empty grid and add widgets from scratch.', outcome: 'Felt overwhelming — users wanted starting points, not a blank canvas.', status: 'rejected' },
+    { tag: 'B', title: 'Preset templates + customisation', summary: 'Preset templates for common airport types (cargo hub, large hub, regional) that users can then customise.', outcome: 'Users got a relevant starting point instantly, then fine-tuned — the best of both worlds.', status: 'final' },
+  ]}
+/>
 
 ### Wireframing & Iteration
 
@@ -32,14 +67,6 @@ I restructured the dashboard around a **modular widget system**: core widgets (C
     { tag: 'HI', title: 'High-fidelity', summary: 'Final visual design, scalable component library, and polished micro-interactions.', outcome: 'Drag-and-drop feedback and alert animations refined into a production-ready dashboard.', status: 'final' },
   ]}
 />
-
-### Key Design Decisions
-
-**Drag-and-drop widget system** — No single layout works for all airports. I implemented a 12-column grid with flexible widget sizing, and mitigated complexity with an onboarding tour and preset templates.
-
-**Separated View and Edit modes** — Users feared accidentally moving widgets during daily operations, so I added a clear toggle between "View Mode" (locked layout) and "Edit Mode" (customisable). This eliminated accidental edits in testing.
-
-**Color-coded status indicators** — Red (critical), yellow (warning), green (normal) with WCAG AA-compliant contrast ratios. Testing showed users spotted anomalies faster than in the old AS2 system.
 
 ### Usability Testing
 

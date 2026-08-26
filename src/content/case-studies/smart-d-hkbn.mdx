@@ -16,6 +16,12 @@ The work split into two tracks:
 - **Product integration** — designing how MOMAX devices appear, pair, and get controlled inside the HKBN app, including voice control via Google Assistant and Alexa
 - **Project management** — managing Smart D's IoT IP product production timelines and submitting designs with HKBN so hardware and software stayed in step
 
+### Design Goals
+
+- **Make MOMAX devices feel native to HKBN** — not a bolt-on, but an integrated part of the ecosystem
+- **Voice control as a first-class citizen** — not just in-app control, but Google Assistant and Alexa too
+- **Keep hardware and software timelines aligned** — a design decision made today shouldn't stall a production line tomorrow
+
 ## Design Process
 
 ### Integration Design
@@ -25,6 +31,26 @@ Designing for an ecosystem means designing *against* your own assumptions. MOMAX
 - **Pairing and onboarding** — how a MOMAX device enters the HKBN ecosystem smoothly, without two-step brand confusion for the customer
 - **Control surfaces** — device cards, toggles, and status states that match HKBN's design language while still reading clearly as MOMAX hardware
 - **Voice control** — mapping device states and scenes so Google Assistant and Alexa can control the same devices the app controls
+
+### Key Design Decisions
+
+**Decision 1 — Device pairing experience.**
+
+<DecisionCards
+  items={[
+    { tag: 'A', title: 'Two-step brand-aware pairing', summary: 'Show the MOMAX brand during pairing, then switch to HKBN branding for control.', outcome: 'Two-step brand confusion — customers didn\'t understand why the device had two identities.', status: 'rejected' },
+    { tag: 'B', title: 'HKBN-native pairing with device recognition', summary: 'The pairing flow is entirely HKBN-branded; the MOMAX device is recognised and presented as a native HKBN app element.', outcome: 'Customers experience a single ecosystem — the device feels like it was always part of HKBN.', status: 'final' },
+  ]}
+/>
+
+**Decision 2 — Voice control scope.**
+
+<DecisionCards
+  items={[
+    { tag: 'A', title: 'In-app control only', summary: 'Devices controlled through the HKBN app interface.', outcome: 'Limited — customers expect smart home devices to work with voice assistants.', status: 'rejected' },
+    { tag: 'B', title: 'In-app + voice (Google Assistant and Alexa)', summary: 'Full voice control mapped to the same device states and scenes the app controls.', outcome: 'Once a device answers to Google Assistant and Alexa, it stops being "a MOMAX device" and becomes simply part of the home.', status: 'final' },
+  ]}
+/>
 
 ### Coordination & Project Management
 

@@ -9,6 +9,8 @@
 
 ## Problem Definition
 
+A single-day photo marathon is a logistics problem disguised as a creative event. Participants shoot under time pressure, then rush to submit — and if the upload flow is unclear, queues form, tempers rise, and Canon's brand takes the hit. Judges then face a wall of images with hours to score them, and without efficient browsing tools the review becomes a bottleneck.
+
 ### User Pain Points
 
 **For participants:** long submission queues, unclear upload steps leading to errors, anxiety about missing deadlines, and confusion about technical requirements (file format, resolution).
@@ -17,23 +19,58 @@
 
 **Business impact:** delayed event schedule, increased staffing costs for on-site support, and risk of participant frustration affecting Canon's brand perception.
 
+### Design Goals
+
+- **Speed and accuracy over visual polish** — in a high-pressure event context, clarity beats decoration
+- **Mobile-first for participants, desktop for judges** — each side gets the platform that fits its workflow
+- **Real-time validation** — catch file-format and resolution errors before submission, not after
+
 ## Design Process
 
 ### Information Architecture
 
 I mapped the end-to-end workflow for both user groups, identifying the critical touchpoints where friction occurred:
 
-**Participant journey:** Registration → Photo Capture → Upload Initiation → File Selection → Submission Confirmation
+**Participant journey:** Registration → Photo Capture → Upload Initiation → File Selection → Validation → Submission Confirmation
 
 **Judge journey:** Login → Image Queue → Review Interface → Scoring/Filtering → Selection Finalisation
 
 ### Key Design Decisions
 
-**Simplified, guided upload flow** — Redesigned the submission process into clear, sequential steps with real-time validation (file size, format, resolution checks), progress indicators to reduce anxiety, and inline help text for technical requirements.
+**Decision 1 — Upload flow structure.**
 
-**Batch-enabled judging interface** — Grid view with thumbnail previews for quick scanning, filtering and sorting by category or timestamp, and a side-by-side comparison mode for similar entries.
+<DecisionCards
+  items={[
+    { tag: 'A', title: 'Single-page upload form', summary: 'All fields and file selection on one screen.', outcome: 'Participants missed required fields in the rush — incomplete submissions and support requests.', status: 'rejected' },
+    { tag: 'B', title: 'Guided step-by-step wizard', summary: 'Sequential steps: select theme → choose file → validate → confirm.', outcome: 'Each step has one job; real-time validation catches errors before submission. Progress indicators reduce anxiety about missing deadlines.', status: 'final' },
+  ]}
+/>
 
-**Mobile-first design** — Participants primarily used smartphones for submission, so I designed for one-handed operation with responsive adaptation to desktop for judges.
+**Decision 2 — Judging interface.**
+
+<DecisionCards
+  items={[
+    { tag: 'A', title: 'List view, one image at a time', summary: 'Judges scroll through images one by one.', outcome: 'Too slow for the volume — judges couldn\'t get through all entries in the allotted time.', status: 'rejected' },
+    { tag: 'B', title: 'Grid view with batch tools', summary: 'Thumbnail grid for quick scanning, with filtering by category/timestamp and side-by-side comparison.', outcome: 'Judges could scan dozens of images at a glance, filter by theme, and compare similar entries side by side — review speed improved dramatically.', status: 'final' },
+  ]}
+/>
+
+**Decision 3 — Platform split.**
+
+<DecisionCards
+  items={[
+    { tag: 'A', title: 'One responsive interface for both', summary: 'A single web app that adapts to screen size.', outcome: 'Compromised both sides — participants needed one-handed mobile operation; judges needed desktop screen real estate for the grid.', status: 'rejected' },
+    { tag: 'B', title: 'Mobile-first for participants, responsive desktop for judges', summary: 'Each side gets the platform that fits its workflow.', outcome: 'Participants upload one-handed on their phones; judges get a full-screen grid on desktop. Both workflows optimised without compromise.', status: 'final' },
+  ]}
+/>
+
+### Guided Upload Flow
+
+The redesigned submission process breaks into clear, sequential steps with real-time validation — file size, format, and resolution checks happen inline, so a participant sees an error before they submit, not after. Progress indicators reduce anxiety about missing the deadline, and inline help text explains technical requirements in plain language.
+
+### Batch-Enabled Judging
+
+The judging interface gives reviewers a grid of thumbnail previews for quick scanning, with filtering and sorting by category or timestamp. A side-by-side comparison mode lets judges put similar entries next to each other — so the shortlisting process becomes about visual judgement, not navigation.
 
 ## Visual Design
 
@@ -51,6 +88,26 @@ A lightweight, clean system on a white base (`#FFFFFF` / `#F3F1F1`) with neutral
 ### Accessibility
 
 WCAG AA color contrast for outdoor visibility, generous touch targets for ease of use under pressure, and clear error messages for submission validation.
+
+## Design Gallery
+
+<CaseStudyImage
+  src="/images/projects/canon-photomarathon-2016/cover.png"
+  label="Photo Upload System"
+  caption="Dual-sided photo submission and judging platform"
+/>
+
+<CaseStudyImage
+  src="/images/projects/canon-photomarathon-2016/g01.png"
+  label="Upload Flow"
+  caption="Guided step-by-step upload with real-time validation"
+/>
+
+<CaseStudyImage
+  src="/images/projects/canon-photomarathon-2016/g02.png"
+  label="Judging Interface"
+  caption="Batch judging — grid view with filtering and side-by-side comparison"
+/>
 
 ## Outcomes & Feedback
 

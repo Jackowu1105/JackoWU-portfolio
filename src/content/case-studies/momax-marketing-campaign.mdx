@@ -7,6 +7,16 @@
   tools={["Adobe Illustrator", "Photoshop"]}
 />
 
+## Problem Definition
+
+A marketing campaign lives across wildly different surfaces — a Facebook post on a phone screen, a collectible token in someone's hand, and a three-metre EV charger backdrop at a charging station. The challenge was to make every touchpoint read as the same campaign instantly, without designing each piece from scratch.
+
+### Design Goals
+
+- **One campaign, many surfaces** — every touchpoint reads as the same campaign instantly
+- **Flex across sizes and mediums** — from social feed to large-format print
+- **System, not one-offs** — each piece is a configuration of the campaign system, not a fresh design problem
+
 ## Design Process
 
 ### Campaign System
@@ -19,7 +29,25 @@ I established the campaign's visual language first — colour, typography, and t
 - **Large format** — EV charger backdrop
 - **Handout print** — A5 leaflet and A4 posters
 
-Each piece was a configuration of the campaign system, not a fresh design problem — which kept the campaign recognisable whether a customer saw it on their phone or at a charging station.
+### Key Design Decisions
+
+**Decision 1 — Campaign system approach.**
+
+<DecisionCards
+  items={[
+    { tag: 'A', title: 'Design each piece individually', summary: 'Treat each material as a separate design problem.', outcome: 'The materials list looked intimidating, and the results risked feeling inconsistent across surfaces.', status: 'rejected' },
+    { tag: 'B', title: 'Lock the visual language first, then configure', summary: 'Establish colour, typography, and core motif before the first Facebook post goes out — then apply the system across all materials.', outcome: 'Each piece was a configuration of the campaign system, not a fresh design problem — the token, the backdrop, and the leaflet all fell out of the same system without rework.', status: 'final' },
+  ]}
+/>
+
+**Decision 2 — Cross-medium consistency.**
+
+<DecisionCards
+  items={[
+    { tag: 'A', title: 'Same design for all surfaces', summary: 'Use identical layouts across digital and print.', outcome: 'A Facebook post and a three-metre backdrop have completely different viewing distances and aspect ratios — identical layouts don\'t work.', status: 'rejected' },
+    { tag: 'B', title: 'Same system, different configurations', summary: 'The visual language (colour, motif, typography) stays constant; the layout adapts to each surface\'s constraints.', outcome: 'The campaign is recognisable whether a customer sees it on their phone or at a charging station — same identity, different composition.', status: 'final' },
+  ]}
+/>
 
 ## Visual Design
 
@@ -31,6 +59,8 @@ MOMAX brand blue (`#0195E2` / `#02A4DF`) leads the campaign identity, set agains
   colors={["#FFFFFF", "#0195E2", "#02A4DF", "#1A2F47"]}
   labels={["Base", "MOMAX Blue", "Blue Light", "Deep Blue"]}
 />
+
+**Typography:** A bold sans-serif for headlines (readable at distance on the backdrop, scroll-stopping on social), with a clean body sans for details.
 
 ## Design Gallery
 

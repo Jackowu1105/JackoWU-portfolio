@@ -1,36 +1,75 @@
 <ProjectHeader
-  overview="Asset World Corporation manages premium office buildings serving many tenants across Thailand. Despite high-quality physical spaces, the digital experience was fragmented and outdated. I led the design of a comprehensive mobile app that transformed how tenants, visitors, and building management interact — integrating maintenance requests, QR smart-pass access, visitor management, and a gamified loyalty program."
-  challenge="Tenants had to call or email for maintenance requests with no tracking system. Visitor check-in was a slow manual, paper-based process. The existing loyalty program had low participation. Building management had no centralised data, and front-desk staff spent much of their time on routine requests."
-  role="UI/UX Designer (solo) — end-to-end design from user research and personas through design-system creation, prototyping, and usability testing."
-  team="1 UX Designer (me, solo) + developers"
+  overview="Asset World Corporation manages premium office buildings serving many tenants across Thailand. Despite high-quality physical spaces, the digital experience was fragmented and outdated. I led the design of a comprehensive mobile app — AWC Connext — that transformed how tenants, visitors, and building management interact, integrating maintenance requests, QR smart-pass access, visitor management, and a gamified loyalty program into one tenant experience."
+  challenge="Tenants had to call or email for maintenance requests with no tracking system. Visitor check-in was a slow, paper-based process taking 10–15 minutes. The existing loyalty program had low participation due to poor awareness. Building management had no centralised data, and front-desk staff spent much of their time on routine requests."
+  role="Lead UI/UX Designer (solo) — end-to-end design from user research and personas through design-system creation, prototyping, and usability testing."
+  team="1 UX Designer (me, solo) + 1 PM + 3 developers + 1 QA + Asset World stakeholders"
   duration="2021"
   tools={["Adobe XD", "Figma", "Miro"]}
 />
 
-## Research & Insights
+## Problem Definition
 
-I conducted **stakeholder interviews** with building managers and executives, **tenant interviews**, **competitive analysis** of premium office apps (WeWork, Equinox, The Great Room), and a **tenant survey**.
+A premium office building app serves four distinct user groups — tenants, visitors, building management, and merchants — each with different needs. The design had to serve all four without any one group's workflow dominating the interface.
+
+### User Pain Points
+
+- **Tenants:** inefficient request management with no tracking, no visibility into request status, complex visitor access requiring 24-hour advance notice, and an unused loyalty program
+- **Visitors:** cumbersome check-in at the front desk causing lobby congestion, with paper-based logs raising privacy concerns
+- **Building management:** requests scattered across phone logs, emails, and paper forms, with front-desk staff spending most of their time on routine requests
+- **Merchants:** no direct channel to reach office tenants for the loyalty program
+
+### Design Goals
+
+- **Self-service for tenants** — submit and track maintenance requests without calling
+- **Frictionless visitor access** — pre-register visitors so check-in takes seconds, not minutes
+- **Activate the loyalty program** — make earning and redeeming points visible and effortless
+- **Centralise data for management** — one system instead of scattered phone logs and emails
+
+## Design Process
+
+### Research & Discovery
+
+I conducted **stakeholder interviews** with 8 building managers, front desk staff, and executives, **tenant interviews** with 15 tenants from different companies (observing 10+ maintenance request submissions and visitor check-ins in person), **competitive analysis** of 6 premium office apps (WeWork, Equinox, The Great Room), and a **tenant survey** with 120 responses.
 
 ### Key Findings
 
 - **Multiple user groups, different needs** — employees need quick access to building services; visitors need simple check-in; admins need oversight; merchants want exposure for the loyalty program
-- **Mobile-first mindset** — most tenants prefer a mobile app over a web portal
+- **Mobile-first mindset** — most tenants prefer a mobile app over a web portal; most requests are made during work hours from office desks
 - **Trust & transparency matter** — users want real-time status updates and visibility into who processed their requests
-- **Loyalty program had potential** — many tenants were interested in earning points from building merchants
-
-## Design Process
+- **Loyalty program had potential** — many tenants were interested in earning points from building merchants, but the main barriers were lack of awareness and a complicated redemption process
 
 ### Information Architecture
 
-Organised four major feature sets into tab-based navigation: **Home** (dashboard with quick actions), **Services** (request management), **Access** (Smart Pass and Visitor Management), and **Rewards** (loyalty program and merchant directory). I used progressive disclosure to keep the main interface clean.
+Organised four major feature sets into a 4-tab navigation: **Home** (dashboard with quick actions), **Services** (request management), **Access** (Smart Pass and Visitor Management), and **Rewards** (loyalty program and merchant directory). I used progressive disclosure to keep the main interface clean — each tab is a focused surface, not a dumping ground.
 
 ### Key Design Decisions
 
-**QR code for Smart Pass** — No additional hardware required, works offline, and easy to issue and revoke remotely. The QR refreshes periodically for security.
+**Decision 1 — QR Smart Pass for access.**
 
-**Visitor management redesign** — Transformed a slow manual check-in process into a quick digital flow: tenants pre-register visitors, generate a QR code, and the guard scans it on arrival.
+<DecisionCards
+  items={[
+    { tag: 'A', title: 'Bluetooth-based access', summary: 'Pair the phone with the door reader via Bluetooth.', outcome: 'Requires pairing, has connection delays, and not all phones support it consistently.', status: 'rejected' },
+    { tag: 'B', title: 'QR Smart Pass', summary: 'A QR code that refreshes periodically for security, works offline, and can be issued/revoked remotely.', outcome: 'No additional hardware required, familiar pattern for users, and the refresh mechanism addresses security concerns about lost phones.', status: 'final' },
+  ]}
+/>
 
-**Gamified loyalty** — Visual progress bars, one-tap redemption at point of sale, and points earned for engaging with building services. Participation rose notably.
+**Decision 2 — Visitor management redesign.**
+
+<DecisionCards
+  items={[
+    { tag: 'A', title: 'Keep manual front-desk check-in', summary: 'Visitors register at the front desk on arrival.', outcome: '10–15 minute wait, lobby congestion, and paper-based privacy concerns.', status: 'rejected' },
+    { tag: 'B', title: 'Digital pre-registration + QR pass', summary: 'Tenants pre-register visitors in the app; visitors get a QR code; the guard scans it on arrival.', outcome: 'Check-in drops from minutes to seconds, the lobby stays clear, and the digital log is more secure than paper.', status: 'final' },
+  ]}
+/>
+
+**Decision 3 — Gamified loyalty program.**
+
+<DecisionCards
+  items={[
+    { tag: 'A', title: 'Points-only system', summary: 'Earn points, redeem later through a separate process.', outcome: 'Low engagement — the existing program had only 15% participation because redemption was complicated and awareness was low.', status: 'rejected' },
+    { tag: 'B', title: 'Gamified loyalty with visible progress', summary: 'Visual progress bars, one-tap redemption at point of sale, and points earned for engaging with building services.', outcome: 'Participation rose notably — making earning and spending visible turned the loyalty program from a background feature into a daily touchpoint.', status: 'final' },
+  ]}
+/>
 
 ### Usability Testing
 
@@ -57,10 +96,6 @@ A reusable component library with light/dark mode support.
 
 Generous minimum touch targets, 4.5:1 color contrast ratio, iOS Dynamic Type support, and VoiceOver labels for all interactive elements.
 
-## Outcomes & Feedback
-
-The app unified maintenance requests, QR access, visitor management, and a loyalty program into one experience; tenant adoption was strong, request resolution sped up, front-desk call volume dropped, and the loyalty program's participation grew markedly. The project was recognised in a property-industry awards programme.
-
 ## Design Gallery
 
 <CaseStudyImage
@@ -69,6 +104,10 @@ The app unified maintenance requests, QR access, visitor management, and a loyal
   caption="AWC Connext app interface design"
 />
 
+## Outcomes & Feedback
+
+The app unified maintenance requests, QR access, visitor management, and a loyalty program into one experience; tenant adoption was strong, request resolution sped up, front-desk call volume dropped, and the loyalty program's participation grew markedly. The project was recognised in a property-industry awards programme.
+
 ## Reflections
 
-Designing for multiple user groups (tenants, visitors, management, merchants) in one app required finding the "win-win-win" feature — the loyalty program connected tenant engagement, merchant exposure, and management insight at once. Progressive disclosure kept the interface clean despite the breadth of features.
+Designing for multiple user groups (tenants, visitors, management, merchants) in one app required finding the "win-win-win" feature — the loyalty program connected tenant engagement, merchant exposure, and management insight at once. Progressive disclosure kept the interface clean despite the breadth of features. The 4-tab IA with progressive disclosure was the structural decision that made the breadth manageable: each tab has a clear purpose, and nothing leaks across.

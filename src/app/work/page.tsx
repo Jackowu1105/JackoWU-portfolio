@@ -10,11 +10,12 @@ export default function WorkPage() {
           Selected Work
         </p>
         <h1 className="text-4xl md:text-5xl font-bold tracking-tight text-text-primary mb-4">
-          Design that works under real constraints
+          30+ products shipped across 5 industries
         </h1>
         <p className="text-text-secondary leading-relaxed max-w-2xl">
-          {projects.length} projects across UX &amp; product design, graphic design, and motion —
-          each a deep dive into the design process, decisions, and trade-offs.
+          {projects.length} case studies across fintech, IoT, aviation, property tech, and logistics —
+          each one a deep dive into the design decisions, trade-offs, and real-world constraints
+          that shaped the final product.
         </p>
       </div>
 

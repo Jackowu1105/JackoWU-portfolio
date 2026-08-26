@@ -24,15 +24,15 @@ const jetbrainsMono = JetBrains_Mono({
 
 export const metadata: Metadata = {
   title: {
-    default: 'Jacko — UX/UI Designer',
-    template: '%s — Jacko',
+    default: 'Jacko Wu — Design-Engineer Hybrid | UX/UI Designer & Front-End',
+    template: '%s — Jacko Wu',
   },
   description:
-    'UX/UI Designer crafting thoughtful digital experiences. Specializing in user research, interaction design, and design systems.',
+    'Hong Kong-based UX/UI Designer with 8+ years across fintech, IoT, aviation, and property tech. Design-engineer hybrid shipping real products — from user research and design systems to AI-assisted front-end delivery.',
   openGraph: {
-    title: 'Jacko — UX/UI Designer',
+    title: 'Jacko Wu — Design-Engineer Hybrid | UX/UI Designer & Front-End',
     description:
-      'UX/UI Designer crafting thoughtful digital experiences.',
+      'Hong Kong UX/UI Designer with 8+ years across fintech, IoT, aviation, and property tech. Ships real products — design to front-end, accelerated by AI.',
     type: 'website',
   },
 }

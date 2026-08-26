@@ -95,9 +95,9 @@ export default function AboutPage() {
           Designer,<br />
           <span className="text-accent-gold">code enthusiast.</span>
         </h1>
-        <p className="text-text-secondary leading-relaxed text-lg whitespace-nowrap">
-          A UX/UI Designer evolving into a design-engineer hybrid — turning ideas into
-          real products with AI-assisted workflows.
+        <p className="text-text-secondary leading-relaxed text-lg md:whitespace-nowrap">
+          8+ years designing products across fintech, IoT, aviation, and property tech —
+          now shipping front-end code with AI-assisted workflows.
         </p>
       </div>
 
@@ -106,8 +106,20 @@ export default function AboutPage() {
         <GlassCard hover={false} className="p-8 md:p-10">
           <div className="flex flex-col md:flex-row gap-8 items-start">
             {/* Portrait placeholder */}
-            <div className="shrink-0 w-32 h-32 rounded-2xl bg-black/5 flex items-center justify-center text-text-tertiary text-xs">
-              Photo
+            <div
+              className="shrink-0 w-32 h-32 rounded-2xl flex items-center justify-center relative overflow-hidden"
+              style={{
+                background: 'linear-gradient(135deg, rgba(55,132,138,0.15) 0%, rgba(196,168,130,0.15) 100%)',
+                border: '1px solid rgba(255,255,255,0.3)',
+                backdropFilter: 'blur(10px)',
+              }}
+            >
+              <span
+                className="text-4xl font-bold text-text-tertiary/60"
+                style={{ fontFamily: 'var(--font-heading)' }}
+              >
+                JW
+              </span>
             </div>
             <div>
               <h2 className="text-2xl font-bold text-text-primary mb-4">
@@ -115,24 +127,25 @@ export default function AboutPage() {
               </h2>
               <div className="space-y-3 text-text-secondary leading-relaxed">
                 <p>
-                  A UX/UI Designer with over 8 years of experience spanning system design,
-                  product design, and branding across fintech, IoT, and logistics industries.
-                  Based in Hong Kong, I&apos;ve had the privilege of working with research labs,
-                  universities, and product teams to ship digital experiences that matter.
+                  I&apos;m a UX/UI Designer with 8+ years across fintech, IoT, aviation, property tech,
+                  and logistics — based in Hong Kong. I&apos;ve shipped 30+ real products with clients
+                  ranging from the Hong Kong International Airport and MTR Corporation to AIFT
+                  (an InnoHK AI fintech lab backed by the Hong Kong government) and MOMAX.
                 </p>
                 <p>
-                  In recent years, I&apos;ve undergone a transformative shift — evolving from a
-                  pure designer into a <strong className="text-text-primary">design-engineer hybrid</strong> —
-                  by embracing AI-assisted development and vibe coding workflows. This evolution
-                  lets me independently translate design concepts into fully functional front-end
-                  applications, bridging the gap between vision and delivery with remarkable efficiency.
+                  More recently, I&apos;ve evolved from a pure designer into a <strong className="text-text-primary">design-engineer hybrid</strong> —
+                  using AI-assisted development and vibe coding to ship front-end products myself.
+                  My most recent project, FUNDel, is a 16-page logistics platform I designed and
+                  built solo: ~31k lines across ~1,300 commits, ~88% AI-authored under my direction,
+                  delivered as a working MVP without an engineering team.
                 </p>
                 <p>
-                  I&apos;m passionate about leveraging AI tools to augment creativity, accelerate
-                  prototyping, and deliver end-to-end product experiences that are both visually
-                  compelling and technically sound. When I&apos;m not designing or coding, you&apos;ll
-                  find me exploring new tools, contributing to open source, or pushing the
-                  boundaries of what a designer-engineer can create.
+                  What drives me is simplifying complexity — taking a dense regulatory requirement or a
+                  multi-stakeholder logistics flow and turning it into something a person can actually
+                  use. I build design systems so teams can move fast without breaking consistency, and
+                  I use AI to compress the gap between idea and shipped product. When I&apos;m not
+                  designing or coding, I&apos;m exploring new AI tools and workflows to stay at the
+                  frontier of what one person can build.
                 </p>
               </div>
             </div>

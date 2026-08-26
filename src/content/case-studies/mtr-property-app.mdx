@@ -9,7 +9,7 @@
 
 ## Research & Insights
 
-I conducted **stakeholder interviews** with MTR estate managers, **user interviews** with residents from different estates, **competitive analysis** of property management apps, and **contextual inquiry** observing how residents accessed estate information.
+I conducted **stakeholder interviews** with MTR estate managers, **user interviews** with 15 residents from 5 different estates, **competitive analysis** of property management apps, and **contextual inquiry** observing how residents accessed estate information.
 
 ### Key Findings
 
@@ -17,6 +17,10 @@ I conducted **stakeholder interviews** with MTR estate managers, **user intervie
 - **Consistency is crucial** — core navigation and features must stay predictable even with customisation
 - **Multi-estate users exist** — a meaningful minority of residents manage accounts for multiple properties
 - **Mobile-first behaviour** — most residents prefer mobile apps over websites for quick tasks
+
+### User Persona: "Mrs. Chan — The Multi-Estate Owner"
+
+A 45-year-old who owns units in 2 MTR estates. Her pain point: *"I have to log in and out constantly, and I forget which app is for which estate."* Her goal: quick access to both estates' info without confusion.
 
 ## Design Process
 
@@ -36,9 +40,23 @@ I defined a flexible IA that separates **universal features** (maintenance reque
 
 ### Key Design Decisions
 
-**Dynamic color theme system** — Created a theming system with a color palette mapped to each estate. The app fetches the appropriate palette on login and applies it to UI components. This required rigorous color-contrast testing to ensure WCAG 2.1 AA compliance across all themes.
+**Decision 1 — Dynamic color theme system.**
 
-**Seamless estate switching** — Designed a switcher in the profile menu that instantly changes the UI theme and content without re-authentication. Usability testing showed multi-estate users could switch comfortably.
+<DecisionCards
+  items={[
+    { tag: 'A', title: 'Single generic colour scheme', summary: 'One MTR-wide colour palette for all estates.', outcome: 'Felt generic — residents didn\'t feel the app reflected their specific estate\'s identity.', status: 'rejected' },
+    { tag: 'B', title: 'Per-estate dynamic theming', summary: 'A theming system with a colour palette mapped to each estate. The app fetches the appropriate palette on login and applies it to UI components.', outcome: 'Each estate feels like its own app — residents recognise their estate instantly. Required rigorous colour-contrast testing to ensure WCAG 2.1 AA compliance across all themes.', status: 'final' },
+  ]}
+/>
+
+**Decision 2 — Multi-estate switching.**
+
+<DecisionCards
+  items={[
+    { tag: 'A', title: 'Log out and log back in', summary: 'Residents log out of one estate and into another.', outcome: 'Created unnecessary friction — multi-estate users had to re-authenticate every time they switched.', status: 'rejected' },
+    { tag: 'B', title: 'Seamless estate switcher', summary: 'A switcher in the profile menu that instantly changes the UI theme and content without re-authentication.', outcome: 'Multi-estate users could switch comfortably — usability testing showed strong task completion for the switching flow.', status: 'final' },
+  ]}
+/>
 
 ## Visual Design
 

@@ -7,6 +7,16 @@
   tools={["Sketch", "Figma"]}
 />
 
+## Problem Definition
+
+Hong Kong Land's residential estates each have their own identity — The Horizon, Eden Manor, and Mount Verdant — but building three completely separate apps would be expensive to maintain and inconsistent in quality. The challenge was to give each estate a distinct digital presence while keeping the underlying system shared and maintainable.
+
+### Design Goals
+
+- **Estate identity over generic branding** — residents don't think of themselves as "Hong Kong Land users"; they live in The Horizon, or Eden Manor, or Mount Verdant
+- **Shared core, flexible skin** — identical core flows (facilities, notices, service requests) with per-estate theming
+- **Premium feel** — each app should match the quality of the physical property
+
 ## Design Process
 
 ### One System, Three Identities
@@ -15,9 +25,27 @@ Rather than designing three unrelated apps, I built a shared structure — the s
 
 ### Key Design Decisions
 
-**Estate identity over generic branding.** Residents don't think of themselves as "Hong Kong Land users" — they live in The Horizon, or Eden Manor, or Mount Verdant. The app should say the estate's name, not the developer's.
+**Decision 1 — Shared core vs. separate apps.**
 
-**Shared core, flexible skin.** Identical core flows (facilities, notices, service requests) with per-estate theming — the same approach as the MTR property system, refined for a premium segment.
+<DecisionCards
+  items={[
+    { tag: 'A', title: 'Three separate apps', summary: 'Design and build each estate\'s app independently.', outcome: 'Triple the maintenance effort, inconsistent quality across estates, and no economies of scale.', status: 'rejected' },
+    { tag: 'B', title: 'One shared system, three estate themes', summary: 'Identical core flows with per-estate colour, imagery, and typography layered on top.', outcome: 'Each estate reads as its own product; the shared system keeps it consistent and efficient to maintain — the same approach as the MTR property system, refined for a premium segment.', status: 'final' },
+  ]}
+/>
+
+**Decision 2 — How far to differentiate.**
+
+<DecisionCards
+  items={[
+    { tag: 'A', title: 'Full visual differentiation', summary: 'Different layouts, navigation patterns, and component styles per estate.', outcome: 'Broke the shared system — maintenance doubled, and residents who moved between estates had to relearn the app.', status: 'rejected' },
+    { tag: 'B', title: 'Theming within a shared structure', summary: 'Same layout and navigation; estate identity expressed through colour, imagery, and typography only.', outcome: 'Each estate feels distinct without breaking the system. Residents recognise their estate instantly, and the shared codebase stays maintainable.', status: 'final' },
+  ]}
+/>
+
+### Resident Services
+
+The core flows are shared across all three estates: facility booking, community notices, service requests, and visitor access. Each estate's content loads dynamically based on the resident's estate, so the app always shows relevant information — The Horizon's events, Eden Manor's facilities, Mount Verdant's notices.
 
 ## Visual Design
 
@@ -29,6 +57,8 @@ A light, premium system: white and soft neutral surfaces (`#FFFFFF` / `#EDF0F5`)
   colors={["#FFFFFF", "#EDF0F5", "#D6DFE8", "#454549"]}
   labels={["Base", "Surface", "Blue-Grey", "Slate"]}
 />
+
+**Typography:** A system sans-serif with a clear hierarchy, adaptable to each estate's brand voice while maintaining consistent structure.
 
 ## Design Gallery
 

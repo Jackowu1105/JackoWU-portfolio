@@ -1,0 +1,80 @@
+<ProjectHeader
+  overview="SCF (Supply Chain Finance) is a web app where an LLM assistant helps users reason about assets — pairing a conversational interface with an asset list and asset calculator so users can talk to their data instead of hunting through menus. I designed the end-to-end UX/UI including the LLM-first home, dark/light theming, and the glass-morphism sidebar."
+  challenge="Supply chain finance interfaces are typically dense, menu-driven dashboards that require users to know exactly where to look. The brief was to make an LLM assistant the front door — so users ask about assets in natural language and the app answers and acts — while still providing structured tools (asset list, calculator) for users who prefer to browse."
+  role="UI/UX Designer — end-to-end UX/UI design from information architecture and flows to high-fidelity visual design, including the LLM conversational interface and dark/light theming."
+  team="1 UX/UI Designer (me) + product + engineering"
+  duration="2025"
+  tools={["Figma", "Vue 3", "TypeScript", "Vite"]}
+/>
+
+## Problem Definition
+
+Supply chain finance platforms are data-heavy environments where users typically navigate through deep menu hierarchies to find the asset or calculation they need. Two failure modes follow:
+
+- **The menu maze** — users hunt through nested navigation to find a specific asset or run a calculation
+- **The spreadsheet trap** — the data is all there, but only a finance professional can read it efficiently
+
+### Design Goals
+
+- **LLM-first home** — users ask about assets in natural language, the app answers and acts
+- **Structured companions** — an asset list and asset calculator sit alongside the chat for users who prefer to browse
+- **Dark/light theming** — a glass-morphism sidebar and consistent token system across both modes
+
+## Design Process
+
+### Information Architecture
+
+The app is structured around three primary surfaces:
+
+1. **LLM Assistant (Home)** — the front door; users ask about assets in natural language and the app responds with data, charts, and actions
+2. **Asset List** — a structured, searchable list of all assets for users who prefer to browse rather than ask
+3. **Asset Calculator** — a tool for running calculations on assets, accessible from both the assistant (as a referenced action) and independently
+
+The decision to put the LLM assistant at the front door — rather than a traditional dashboard — reflects the product's thesis: the assistant is the primary interface, the structured tools are the reference.
+
+### Key Design Decisions
+
+**Decision 1 — Where the LLM lives.**
+
+<DecisionCards
+  items={[
+    { tag: 'A', title: 'Separate AI page', summary: 'A dedicated assistant screen reachable from the nav.', outcome: 'Forces a context switch — users leave their assets to ask about their assets.', status: 'rejected' },
+    { tag: 'B', title: 'LLM-first home', summary: 'The assistant is the home screen; the asset list and calculator are companions accessible from the same view.', outcome: 'Users ask about assets in natural language and the app answers and acts — the structured tools are there for reference, not as the primary path.', status: 'final' },
+  ]}
+/>
+
+**Decision 2 — Theming approach.**
+
+<DecisionCards
+  items={[
+    { tag: 'A', title: 'Light mode only', summary: 'A single light theme for the entire app.', outcome: 'Felt too corporate and flat — the glass-morphism sidebar and data visualisations lost depth against a white canvas.', status: 'rejected' },
+    { tag: 'B', title: 'Light/dark with glass-morphism', summary: 'Light/dark theming with a glass-morphism sidebar and a consistent token system across both modes.', outcome: 'Dark mode gives the data and the LLM responses depth; light mode serves daytime and admin contexts. The glass-morphism sidebar works in both.', status: 'final' },
+  ]}
+/>
+
+## Visual Design
+
+### Color
+
+A clean, light system with a glass-morphism sidebar — light blue and white surfaces (`#FDFEFF` / `#E4F0F6`) with a confident cyan primary (`#44BBDC` / `#A6D0E0`) for actions and active states. The glass effect on the sidebar adds depth without competing with the data.
+
+<ColorPalette
+  colors={["#FDFEFF", "#A6D0E0", "#E4F0F6", "#44BBDC"]}
+  labels={["Base", "Cyan Light", "Surface", "Cyan"]}
+/>
+
+### Typography
+
+A system sans-serif with a clear hierarchy — conversational text for the LLM responses, structured data for the asset list, and clear numeric formatting for the calculator.
+
+## Design Gallery
+
+<CaseStudyImage
+  src="/images/projects/scf-supply-chain-finance/cover.jpg"
+  label="SCF Platform"
+  caption="Supply Chain Finance platform — LLM-first home with asset list and calculator"
+/>
+
+## Reflections
+
+Designing an LLM-first finance tool taught me that the conversational interface and the structured tools need to coexist, not compete. The assistant is the front door, but the asset list and calculator are there for users who want to browse — and the assistant can reference them directly, so the two paths stay connected.

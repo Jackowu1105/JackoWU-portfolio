@@ -19,9 +19,9 @@ export function ContactCTA() {
           className="text-heading font-bold text-4xl md:text-5xl tracking-tight leading-tight"
           style={{ fontFamily: 'var(--font-heading)', letterSpacing: '-0.02em' }}
         >
-          Have an idea?
+          Have a product to ship?
           <br />
-          <span className="text-teal">Let&apos;s build it together.</span>
+          <span className="text-teal">Let&apos;s design &amp; build it together.</span>
         </h2>
 
         {/* Subtitle */}
@@ -29,7 +29,8 @@ export function ContactCTA() {
           className="text-body text-base"
           style={{ fontFamily: 'var(--font-sans)' }}
         >
-          Currently open for new freelance opportunities and exciting full-time roles.
+          Open to full-time product design roles and selective freelance projects — especially
+          at the intersection of AI, fintech, and complex enterprise workflows.
         </p>
 
         {/* CTA Button */}
