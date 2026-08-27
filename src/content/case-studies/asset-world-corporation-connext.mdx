@@ -7,6 +7,51 @@
   tools={["Adobe XD", "Figma", "Miro"]}
 />
 
+## UX Research
+
+With four distinct user groups sharing one building, the first question was who does what — and where the current experience breaks for each of them. I ran a Double Diamond across tenants, visitors, management, and merchants to map the fragmented touchpoints before designing the unified app.
+
+<ResearchProcess
+  stages={[
+    {
+      phase: 1,
+      title: 'Research all four user groups',
+      summary: 'Stakeholder interviews with 8 building managers, front-desk staff, and executives; tenant interviews with 15 tenants, observing 10+ maintenance request submissions and visitor check-ins in person; a competitive analysis of 6 premium office apps; and a tenant survey with 120 responses.',
+      artifact: 'Interviews + observation + 120-response survey',
+    },
+    {
+      phase: 2,
+      title: 'Converge on the touchpoint gaps',
+      summary: 'Maintenance requests lived in phone logs and emails with no tracking; visitor check-in took 10–15 minutes of paper forms; the loyalty program sat at 15% participation; merchants had no channel to reach tenants.',
+      artifact: 'Touchpoint-gap map',
+    },
+    {
+      phase: 3,
+      title: 'Map the unified journey',
+      summary: 'Four feature sets organised into a 4-tab IA — Home, Services, Access, Rewards — using progressive disclosure so no group dominates. Usability round 1 showed Visitor Management was buried too deep, so it moved to a top-level Access tab.',
+      artifact: 'Touchpoint map (before → after)',
+
+
+    },
+    {
+      phase: 4,
+      title: 'Validate the converged experience',
+      summary: 'Round 2 high-fidelity testing saw most participants complete all primary tasks; the System Usability Scale (SUS) score landed in the top grade range and task time fell sharply versus the manual process.',
+      artifact: 'SUS-tested app flows',
+    },
+  ]}
+/>
+
+<JourneyFlow
+  label="Touchpoint map · before → after"
+  steps={[
+    { title: 'Maintenance requests', desc: 'Before: phone calls and emails with no tracking. After: in-app submission with request status visible to tenant and management.', tag: 'tracked' },
+    { title: 'Visitor check-in', desc: 'Before: 10–15 minutes of paper forms and lobby congestion. After: pre-registered QR pass scanned in seconds.', tag: 'seconds, not minutes' },
+    { title: 'Loyalty program', desc: 'Before: 15% participation and low awareness. After: gamified points with visible progress and one-tap redemption.', tag: 'activated' },
+    { title: 'Merchant channel', desc: 'Before: no direct way to reach tenants. After: a merchant directory inside the Rewards tab.', tag: 'connected' },
+  ]}
+/>
+
 ## Problem Definition
 
 A premium office building app serves four distinct user groups — tenants, visitors, building management, and merchants — each with different needs. The design had to serve all four without any one group's workflow dominating the interface.

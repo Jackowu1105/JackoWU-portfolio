@@ -7,6 +7,51 @@
   tools={["Sketch", "InVision", "Principle"]}
 />
 
+## UX Research
+
+There was no formal research programme for this build, so I treated the festival floor itself as the research site — my own observation and reasoning, plus accounts from colleagues who had worked previous editions. The Double Diamond turned those raw constraints into a tested, resilient design.
+
+<ResearchProcess
+  stages={[
+    {
+      phase: 1,
+      title: 'Learn the festival floor from the ground up',
+      summary: 'Observation and reasoning about the event environment, plus accounts from colleagues who had worked earlier editions — how peak hours really run, how vendors operate, and where the old cash-and-coupon model broke down.',
+      artifact: 'Field observation notes',
+    },
+    {
+      phase: 2,
+      title: 'Converge on three hard constraints',
+      summary: 'A tech-literacy gap (many vendors are small-business owners needing near-instant onboarding), environmental challenges (sunlight, noise, gloves), and offline-first necessity — wifi at the outdoor venue was unreliable.',
+      artifact: 'Constraint findings',
+    },
+    {
+      phase: 3,
+      title: 'Test the payment flow variants',
+      summary: 'V1, a standard transaction form, overwhelmed non-tech vendors; V2, quick-select buttons only, could not handle custom pricing; V3 — quick-select amounts plus a custom keypad — won. Three testing rounds (lab, rehearsal field test, final walkthrough) refined it further.',
+      artifact: 'Dual-role journey map',
+
+
+    },
+    {
+      phase: 4,
+      title: 'Ship the resilient build',
+      summary: 'A single-page transaction interface, multi-modal feedback (sound + haptic + visual), and an offline queue with a visible sync indicator — the queue held 800+ transactions when wifi failed on Day 2.',
+      artifact: 'Usability-tested POS + tablet flows',
+    },
+  ]}
+/>
+
+<JourneyFlow
+  label="Dual-role journey · attendee & vendor on the festival floor"
+  steps={[
+    { title: 'Buy tokens', desc: 'RFID tap → amount selection → confirmation → receipt — quick-select buttons (HK$50/$100/$200) plus a custom keypad for any price.', tag: 'attendee' },
+    { title: 'Check balance mid-event', desc: 'RFID tap → remaining balance on screen — no more juggling cash and coupons or guessing spending.', tag: 'attendee' },
+    { title: 'Vendor transaction', desc: 'A single-page interface with large tactile targets for gloved hands — multi-modal feedback (sound + haptic + visual) confirms before the card leaves the reader.', tag: 'vendor' },
+    { title: 'Sync & reconcile', desc: 'Transactions store locally and sync when wifi returns — the daily summary replaced counting cash and coupons at close.', tag: 'offline-first' },
+  ]}
+/>
+
 ## The Challenge
 
 ### Business Problems

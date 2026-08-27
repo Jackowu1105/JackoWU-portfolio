@@ -3,6 +3,8 @@ import type { Metadata } from 'next'
 import { getProject, getAdjacentProjects } from '@/data/projects'
 import { CaseStudyHero } from '@/components/case-study/CaseStudyHero'
 import { ReadingProgress } from '@/components/case-study/ReadingProgress'
+import { CaseStudyTOC } from '@/components/case-study/CaseStudyTOC'
+import { AtAGlance } from '@/components/case-study/AtAGlance'
 import { NextProject } from '@/components/case-study/NextProject'
 import { GlassCard } from '@/components/shared/GlassCard'
 
@@ -48,34 +50,52 @@ export default async function CaseStudyPage({ params }: Props) {
       <CaseStudyHero project={project} />
 
       <article className="mx-auto max-w-6xl px-6 md:px-12 py-16">
-        {/* MDX content if available */}
-        {MDXContent ? (
-          <div className="case-study-body">
-            <MDXContent />
-          </div>
-        ) : (
-          <>
-            {/* Fallback: summary-based content */}
-            <section className="mb-20">
-              <h2 className="text-2xl font-bold text-[#1C1814] mb-6">Overview</h2>
-              <GlassCard hover={false} className="p-8">
-                <p className="text-[#8A8480] leading-relaxed text-lg">
-                  {project.summary}
-                </p>
-              </GlassCard>
-            </section>
+        {/* At-a-Glance summary — key facts + outcome cards */}
+        <AtAGlance
+          role={project.role}
+          timeline={project.timeline}
+          client={project.client}
+          tools={project.tools}
+          highlights={project.highlights}
+        />
 
-            <section className="mb-20">
-              <GlassCard hover={false} className="p-8 text-center">
-                <p className="text-[#B8B2AE] text-sm">
-                  Full case study coming soon. The detailed UX process — problem
-                  definition, research methods, design iterations, and final
-                  solutions — will appear here.
-                </p>
-              </GlassCard>
-            </section>
-          </>
-        )}
+        {/* Two-column: sticky TOC (left) + content (right) */}
+        <div className="grid grid-cols-1 lg:grid-cols-[220px_minmax(0,1fr)] gap-10 items-start">
+          <div className="lg:sticky lg:top-24">
+            <CaseStudyTOC />
+          </div>
+
+          <div className="min-w-0">
+            {/* MDX content if available */}
+            {MDXContent ? (
+              <div className="case-study-body">
+                <MDXContent />
+              </div>
+            ) : (
+              <>
+                {/* Fallback: summary-based content */}
+                <section className="mb-20">
+                  <h2 className="text-2xl font-bold text-[#1C1814] mb-6">Overview</h2>
+                  <GlassCard hover={false} className="p-8">
+                    <p className="text-[#8A8480] leading-relaxed text-lg">
+                      {project.summary}
+                    </p>
+                  </GlassCard>
+                </section>
+
+                <section className="mb-20">
+                  <GlassCard hover={false} className="p-8 text-center">
+                    <p className="text-[#B8B2AE] text-sm">
+                      Full case study coming soon. The detailed UX process — problem
+                      definition, research methods, design iterations, and final
+                      solutions — will appear here.
+                    </p>
+                  </GlassCard>
+                </section>
+              </>
+            )}
+          </div>
+        </div>
 
         {/* Highlights — 誠實質化重點（取代假量化 metrics） */}
         <section className="mb-20">

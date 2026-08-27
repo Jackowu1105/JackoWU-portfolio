@@ -7,6 +7,52 @@
   tools={["Sketch", "Adobe Illustrator"]}
 />
 
+## UX Research
+
+A corporate website is a first impression measured in seconds. The research started from the visitor, not the company: what does a prospective client actually need to know, and in what order?
+
+<ResearchProcess
+  stages={[
+    {
+      phase: 1,
+      title: 'Start from the client’s questions',
+      summary: 'Listed what a prospective client asks when first landing on the site: what does the company do, what has it delivered, how do I reach them? These questions became the skeleton of the site.',
+      artifact: 'Client question list',
+    },
+    {
+      phase: 2,
+      title: 'Define the failure mode',
+      summary: 'If a visitor cannot understand what the company does within seconds, they leave. An org-chart structure serves the company’s internal logic, not the visitor’s — the site had to mirror the client’s mental model.',
+      artifact: 'Problem definition',
+    },
+    {
+      phase: 3,
+      title: 'Build the content architecture around the questions',
+      summary: 'Structured the site around the three client questions — what you do, what you have delivered, how to reach you — and wireframed the page hierarchy and content flow before any visual design began.',
+      artifact: 'Content architecture',
+
+
+    },
+    {
+      phase: 4,
+      title: 'Let the message lead, quietly',
+      summary: 'Tested a bold, feature-rich direction against a restrained, content-led one. The site’s job is to disappear and let the company’s message land — so the final direction resisted decoration in favour of whitespace and clear hierarchy.',
+      artifact: 'Visual direction rationale',
+    },
+  ]}
+/>
+
+<ResearchIA
+  label="Content architecture · built on the client's questions, not the org chart"
+  root="Bright Way site"
+  children={[
+    { title: 'What do you do?', desc: 'value proposition and services — answered in seconds above the fold', badge: 'Home · Services' },
+    { title: 'What have you delivered?', desc: 'proof — projects and case studies that make the company credible', badge: 'Case Studies' },
+    { title: 'How do I reach you?', desc: 'contact made obvious — no guessing, no dead ends', badge: 'Contact' },
+  ]}
+/>
+
+
 ## Problem Definition
 
 A corporate website is the first impression for prospective clients. If a visitor can't understand what the company does within seconds, they leave. The challenge was to communicate clearly without overselling — the site needed to feel credible, not flashy.

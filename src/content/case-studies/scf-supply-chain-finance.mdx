@@ -7,6 +7,52 @@
   tools={["Figma", "Vue 3", "TypeScript", "Vite"]}
 />
 
+## UX Research
+
+Supply chain finance platforms are data-heavy by nature, so the research question was never about features — it was about how users should meet their data. I framed the design around two known failure modes, then used them to test where the conversational interface belongs.
+
+<ResearchProcess
+  stages={[
+    {
+      phase: 1,
+      title: 'Understand how users meet their data',
+      summary: 'Mapped how users actually work inside data-heavy finance platforms: hunting through nested menus to find an asset, or reading spreadsheets that only a finance professional can parse efficiently.',
+      artifact: 'Failure-mode map',
+    },
+    {
+      phase: 2,
+      title: 'Name the two failure modes',
+      summary: 'The menu maze — users hunt through deep navigation to find an asset or run a calculation. The spreadsheet trap — all the data is there, but only an expert can read it efficiently. Either way, the user does the hard work.',
+      artifact: 'Problem definition',
+    },
+    {
+      phase: 3,
+      title: 'Test where the LLM assistant lives',
+      summary: 'Weighed a separate AI page against an LLM-first home. The separate page forces a context switch — users leave their assets to ask about their assets. The LLM-first home pairs the assistant with the asset list and calculator on one surface.',
+      artifact: 'Mixed-interface IA map',
+
+
+    },
+    {
+      phase: 4,
+      title: 'Keep the two paths connected',
+      summary: 'Set the rule: the assistant is the front door, and the structured tools sit beside it for browsing — the assistant can reference them directly, so the two paths stay connected.',
+      artifact: 'Interaction principles',
+    },
+  ]}
+/>
+
+<ResearchIA
+  label="Mixed IA · one surface, two ways to meet your data"
+  root="LLM-first home"
+  children={[
+    { title: 'LLM Assistant', desc: 'the front door — ask about assets in natural language, the app answers and acts', badge: 'primary' },
+    { title: 'Asset List', desc: 'structured, searchable browsing for users who prefer to look rather than ask', badge: 'reference' },
+    { title: 'Asset Calculator', desc: 'run calculations on assets — reachable from the chat as a referenced action, or standalone', badge: 'companion' },
+  ]}
+/>
+
+
 ## Problem Definition
 
 Supply chain finance platforms are data-heavy environments where users typically navigate through deep menu hierarchies to find the asset or calculation they need. Two failure modes follow:

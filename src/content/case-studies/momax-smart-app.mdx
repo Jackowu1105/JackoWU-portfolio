@@ -7,6 +7,96 @@
   tools={["Figma", "Maze", "Miro", "Google Analytics"]}
 />
 
+## UX Research
+
+Before drawing a single screen, I treated the legacy app as a problem to understand, not a UI to reskin. The work followed a Double Diamond: diverge to gather evidence, converge on the real friction, diverge on solutions, converge on the build.
+
+<ResearchProcess
+  stages={[
+    {
+      phase: 1,
+      title: 'Understand how users actually live with the app',
+      summary: '~10 user interviews on smart-home routines and ~5 usability tests on the legacy app, plus analytics drop-off review and competitor teardown (Google Home, Apple Home, SmartThings).',
+      artifact: 'User interviews + usability test plan',
+    },
+    {
+      phase: 2,
+      title: 'Name the real friction',
+      summary: 'Three failures surfaced repeatedly: setup failed → users never returned; control felt "broken" past ~2s; features buried three levels deep. The core mismatch: users think by room, the app organised by device type.',
+      artifact: 'Research insight summary',
+    },
+    {
+      phase: 3,
+      title: 'Test the information architecture',
+      summary: 'A card-sorting exercise with ~10 users confirmed a four-section structure mapped to the user’s mental model, not the old 15-item flat menu.',
+      artifact: 'IA map (card sort)',
+
+
+    },
+    {
+      phase: 4,
+      title: 'Build against a defined persona',
+      summary: 'A composite persona ("Busy Ben") kept every design decision honest: fast control, minimal setup, no jargon. It became the bar the redesign was measured against.',
+      artifact: 'Persona card',
+
+
+    },
+  ]}
+/>
+
+<ResearchIA
+  label="Information Architecture · after card-sort (~10 users)"
+  root="MOMAX App"
+  children={[
+    { title: 'Home', desc: 'favourites · 1-tap', badge: 'quick' },
+    { title: 'Rooms', desc: 'by location, not type', badge: 'mental model' },
+    { title: 'Automation', desc: 'scenes + schedules', badge: 'renamed' },
+    { title: 'Settings', desc: 'account · devices', badge: 'consolidated' },
+  ]}
+/>
+
+<PersonaCard
+  label="UX RESEARCH · USER PERSONA · POWER SEEKER"
+  name="Busy Ben"
+  initials="BB"
+  subtitle="30-something · works from home · 8+ MOMAX devices"
+  quote="I just want to turn things on fast — without thinking. Don't make me learn what 'scenes' even means."
+  goals={['Control devices in under 2 minutes', 'Thinks by room, not device type']}
+  pains={['Fails first-time setup → never comes back', 'Finds "scenes vs schedules" confusing']}
+/>
+
+<StickyQuote
+  label="UX RESEARCH · VERBATIM USER VOICE"
+  quote="Setup took ages and I gave up the first time. If it doesn't connect in two minutes, I'm done."
+  source="Verbatim — usability testing, legacy app · ~5 users attempting first-time pairing"
+/>
+
+<PersonaCard
+  label="UX RESEARCH · USER PERSONA · POWER USER"
+  name="Power User Paul"
+  initials="PP"
+  subtitle="30-something · heavy automation user · 20+ scenes & schedules"
+  quote="I want my whole evening routine to run itself — lights, plugs, music — from one scene I set once."
+  goals={['Set-and-forget automation', 'Scene + schedule depth']}
+  pains={['Scenes and schedules were buried three levels deep', 'Feels slow when a scene fires tap-by-tap']}
+/>
+
+<PersonaCard
+  label="UX RESEARCH · USER PERSONA · CASUAL USER"
+  name="Casual Cathy"
+  initials="CC"
+  subtitle="20-something · renter · 2–3 devices · first smart-home app"
+  quote="I just want the lamp to turn on when I walk in. If setup takes more than a couple of minutes, I'll return it."
+  goals={['Painless first-time setup', 'Obvious, single-purpose controls']}
+  pains={['Overwhelmed by scenes vs schedules jargon', 'Failed first-time pairing and nearly gave up']}
+/>
+
+<StickyQuote
+  label="UX RESEARCH · VERBATIM USER VOICE"
+  quote="It took a couple of seconds and honestly it felt like it was broken. I tapped again and again."
+  source="Verbatim — usability testing, device control on the legacy app"
+/>
+
 ## Problem Definition
 
 Through user research and testing of the legacy app, I identified the core friction:

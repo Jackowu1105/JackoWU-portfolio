@@ -7,6 +7,51 @@
   tools={["Figma", "Sketch", "InVision", "Miro"]}
 />
 
+## UX Research
+
+Smart Building Plus spans four touchpoints, so I opened with a Double Diamond aimed at one question: what does a resident’s day actually look like, and where do the building’s physical rituals create friction? Research mapped those rituals, definition picked the moments worth fixing, development shaped one ecosystem across every touchpoint, and delivery tested it with the residents who live it.
+
+<ResearchProcess
+  stages={[
+    {
+      phase: 1,
+      title: 'Map the resident’s daily rituals',
+      summary: 'Stakeholder interviews with property managers, user interviews with residents across a range of ages, and a competitive analysis of smart building apps from similar Hong Kong luxury developments.',
+      artifact: 'Stakeholder + user interviews',
+    },
+    {
+      phase: 2,
+      title: 'Find the friction in everyday moments',
+      summary: 'Keys and cards for every door, clubhouse booking by phone within business hours, visitors registered manually at security, and a daily “coming home” ritual split into three disconnected actions — unlock, lift, adjust the apartment.',
+      artifact: 'Journey pain points',
+    },
+    {
+      phase: 3,
+      title: 'Design one ecosystem across four touchpoints',
+      summary: 'A single QR-based access system replacing keys and cards everywhere, kiosks for standing-up flows (guest registration, clubhouse booking), and a pool locker flow mapped end-to-end — edge cases included — so no resident is ever left without a next step.',
+      artifact: 'Multi-touchpoint ecosystem',
+
+
+    },
+    {
+      phase: 4,
+      title: 'Test with the people who live it',
+      summary: 'Two usability rounds with residents including seniors: the “Call Lift” feature moved from settings to the main Access tab, and the QR viewfinder was enlarged with live feedback after elderly users struggled — task completion improved markedly.',
+      artifact: 'Usability test rounds 1–2',
+    },
+  ]}
+/>
+
+<JourneyFlow
+  label="Resident journey · coming home across four touchpoints"
+  steps={[
+    { title: 'Unlock the door', desc: 'One QR code replaces keys and cards — the same flow at lobby, clubhouse, mailbox and locker.', tag: 'access' },
+    { title: 'Call the lift', desc: 'Smart Lift sits on the main Access tab — found by every participant after Round 1 testing.', tag: 'app' },
+    { title: 'Book & register', desc: 'Clubhouse booking and guest registration at the lobby kiosk — standing up, without phoning management.', tag: 'kiosk' },
+    { title: 'Secure poolside gear', desc: 'The app triggers the locker unlock and the system assigns an available QR locker — edge cases mapped end-to-end.', tag: 'locker' },
+  ]}
+/>
+
 ## Project Scope
 
 Smart Building Plus is one ecosystem across four touchpoints, each designed for a different moment in a resident's day:

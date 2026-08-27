@@ -1,5 +1,5 @@
 import type { Metadata } from 'next'
-import { Epilogue, Inter, JetBrains_Mono } from 'next/font/google'
+import { Caveat, Epilogue, Inter, JetBrains_Mono } from 'next/font/google'
 import { Layout } from '@/components/layout/Layout'
 import './globals.css'
 
@@ -13,6 +13,13 @@ const epilogue = Epilogue({
 const inter = Inter({
   variable: '--font-inter',
   subsets: ['latin'],
+  display: 'swap',
+})
+
+const caveat = Caveat({
+  variable: '--font-caveat',
+  subsets: ['latin'],
+  weight: ['500', '600', '700'],
   display: 'swap',
 })
 
@@ -45,7 +52,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${epilogue.variable} ${inter.variable} ${jetbrainsMono.variable} h-full antialiased`}
+      className={`${epilogue.variable} ${inter.variable} ${jetbrainsMono.variable} ${caveat.variable} h-full antialiased`}
     >
       <script src="https://mcp.figma.com/mcp/html-to-design/capture.js" async></script>
       <body className="min-h-full bg-bg-base text-text-primary flex flex-col">

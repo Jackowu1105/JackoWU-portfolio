@@ -7,6 +7,52 @@
   tools={["Figma"]}
 />
 
+## UX Research
+
+A trade finance analytics platform’s website has two jobs — convince a visitor the product is credible, and show what it actually does. The research framed the real barrier as trust, not comprehension.
+
+<ResearchProcess
+  stages={[
+    {
+      phase: 1,
+      title: 'Understand the audience and the barrier',
+      summary: 'Business owners face opaque financing terms and cannot tell whether they are getting a good deal. The data is complex and the terms are opaque, so the trust problem comes before the comprehension problem.',
+      artifact: 'Audience insight summary',
+    },
+    {
+      phase: 2,
+      title: 'Name the real question',
+      summary: 'The barrier is not “what does it do?” but “can I trust it?”. The site’s two jobs: communicate credibility, and make the product’s value immediately legible.',
+      artifact: 'Problem definition',
+    },
+    {
+      phase: 3,
+      title: 'Structure the site trust-first',
+      summary: 'Weighed a feature-led home against a trust-first home. Leading with partner logos, university affiliations, and a clear value proposition addresses the trust problem before the sales pitch — with the credit calculator as the interactive proof.',
+      artifact: 'Site structure map',
+
+
+    },
+    {
+      phase: 4,
+      title: 'Make the value interactive',
+      summary: 'Compared a static terms page against an interactive credit calculator. The calculator wins: business owners input their parameters and see financing cost, limit, and term comparable at a glance — the product’s value made tangible.',
+      artifact: 'Credit calculator spec',
+    },
+  ]}
+/>
+
+<ResearchIA
+  label="Trust-first IA · credibility before the pitch"
+  root="TOLOAnalytics"
+  children={[
+    { title: 'Home', desc: 'partner logos · university affiliations · value proposition', badge: 'trust signal' },
+    { title: 'About Us', desc: 'team · partners · institutional backing', badge: 'trust signal' },
+    { title: 'Credit Calculator', desc: 'financing cost · limit · term comparable at a glance', badge: 'interactive proof' },
+  ]}
+/>
+
+
 ## Problem Definition
 
 A trade finance analytics platform's website has two jobs: convince a visitor the product is credible, and show them what it actually does. The challenge was that trade finance terms are opaque to the business owners who need them most — a credit calculator was needed to make financing cost, limit, and term comparable at a glance.

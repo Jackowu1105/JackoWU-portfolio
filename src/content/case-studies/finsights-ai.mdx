@@ -7,6 +7,62 @@
   tools={["Figma"]}
 />
 
+## UX Research
+
+An AI advisor app fails on research before it fails on engineering. I framed the problem as a paradox to resolve, then let the resolution dictate the structure — not the other way around.
+
+<ResearchProcess
+  stages={[
+    {
+      phase: 1,
+      title: 'Map the failure space',
+      summary: 'Studied how everyday investors actually relate to market data: most want control but cannot — and do not want to — parse raw charts. Two trap states emerged.',
+      artifact: 'Competitive + behaviour scan',
+    },
+    {
+      phase: 2,
+      title: 'Name the core tension',
+      summary: 'Trust versus simplicity. Surface everything → only pros use it; hide everything behind "the AI said so" → users stop trusting it. The brief became resolving both at once.',
+      artifact: 'Research tension map',
+
+
+    },
+    {
+      phase: 3,
+      title: 'Design the IA around the resolution',
+      summary: 'If the AI carries complexity, it belongs at the front door. Three surfaces — AI Assistant, Home, Market — each mapped to one intent, with the assistant as the entry point.',
+      artifact: 'IA structure',
+
+
+    },
+    {
+      phase: 4,
+      title: 'Make the AI legible',
+      summary: 'Set the rule early: show enough of the "why" that a user can decide whether to follow the advice. Reasoning visible, plain-language I/O, power-user depth kept out of the core flow.',
+      artifact: 'Interaction principles',
+    },
+  ]}
+/>
+
+<InsightGrid
+  label="Research tension · the two failure modes"
+  items={[
+    { title: 'Dashboard trap', desc: 'Surface every metric — the app becomes a tool only a professional can use.', tone: 'bad', badge: 'data overload' },
+    { title: 'Black-box trap', desc: 'Hide every decision behind "the AI said so" — users stop trusting it.', tone: 'bad', badge: 'lost trust' },
+  ]}
+/>
+
+<ResearchIA
+  label="Information Architecture · three surfaces, three intents"
+  root="FinSightsAI"
+  children={[
+    { title: 'AI Assistant', desc: 'conversational front door · recent hot topics + authority index', badge: 'front door' },
+    { title: 'Home', desc: 'recommendations feed · notes · watchlist · profile', badge: 'workspace' },
+    { title: 'Market', desc: 'charts · company profile · fundamentals · headlines · technical analysis', badge: 'data layer' },
+  ]}
+/>
+
+
 ## Problem Definition
 
 The core tension in a robo-advisor app is trust versus simplicity. Investors want to feel in control, but most cannot — and do not want to — parse raw market data. Two failure modes follow:
