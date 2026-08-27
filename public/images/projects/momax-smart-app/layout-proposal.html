@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Case Study Layout — Redesign Proposal</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Epilogue:wght@600;700;800&display=swap" rel="stylesheet" />
+<style>
+  :root {
+    --bg-base: #faf7f5; --text-primary: #1c1814; --text-secondary: #8a8480;
+    --text-tertiary: #b8b2ae; --accent-gold: #c4a882; --color-teal: #37848a;
+    --color-gold: #c9a74d; --color-heading: #1d1b20;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { background: var(--bg-base); color: var(--text-primary); font-family: 'Inter', sans-serif; -webkit-font-smoothing: antialiased; }
+  .topbar { background: #1c1814; color: #fff; padding: 18px 32px; font-family: 'Epilogue'; font-size: 14px; font-weight: 700; display:flex; justify-content:space-between; align-items:center; }
+  .topbar .tag { font-size: 11px; background: rgba(196,168,130,0.25); padding: 4px 12px; border-radius: 99px; color: #e8d5b8; letter-spacing: 0.06em; }
+  .note { max-width: 1100px; margin: 0 auto; padding: 24px 24px 0; text-align: center; color: var(--text-tertiary); font-size: 13px; }
+
+  /* ============ Layout B (new): sticky TOC + glance + 2-col ============ */
+  .layout-b { max-width: 1200px; margin: 0 auto; padding: 32px 24px 100px; display: grid; grid-template-columns: 240px minmax(0,1fr); gap: 40px; align-items: start; }
+  @media (max-width: 900px) { .layout-b { grid-template-columns: 1fr; } }
+
+  /* Sticky TOC */
+  .toc { position: sticky; top: 24px; }
+  .toc-label { font-size: 10px; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; color: var(--text-tertiary); margin-bottom: 14px; }
+  .toc a { display: flex; align-items: center; gap: 10px; padding: 7px 12px; border-radius: 8px; font-size: 13px; color: var(--text-secondary); text-decoration: none; transition: all 0.15s; }
+  .toc a .num { font-family: ui-monospace, monospace; font-size: 10px; color: var(--accent-gold); opacity: 0.7; width: 18px; }
+  .toc a:hover { background: rgba(196,168,130,0.12); color: var(--text-primary); }
+  .toc a.active { background: rgba(196,168,130,0.16); color: var(--text-primary); font-weight: 600; border-left: 2px solid var(--accent-gold); }
+  .toc .glance-link { margin-top: 18px; border-top: 1px solid rgba(0,0,0,0.07); padding-top: 14px; font-weight: 600; color: var(--color-teal); }
+
+  /* At a glance */
+  .glance { background: #fff; border-radius: 16px; border: 1px solid rgba(0,0,0,0.06); box-shadow: 0 12px 32px rgba(0,0,0,0.06); padding: 22px 26px; margin-bottom: 36px; }
+  .glance .g-label { font-size: 10px; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; color: var(--text-tertiary); margin-bottom: 14px; }
+  .glance .g-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; }
+  @media (max-width: 700px) { .glance .g-grid { grid-template-columns: repeat(2, 1fr); } }
+  .g-item .k { font-size: 10px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.1em; color: var(--text-tertiary); margin-bottom: 4px; }
+  .g-item .v { font-size: 13px; font-weight: 600; color: var(--color-heading); line-height: 1.4; }
+  .g-item .v.sub { font-weight: 400; color: var(--text-secondary); }
+
+  /* Section */
+  .sec { margin-bottom: 44px; }
+  .sec-head { display: flex; align-items: baseline; gap: 14px; margin-bottom: 18px; }
+  .sec-head .n { font-family: ui-monospace, monospace; font-size: 12px; font-weight: 600; color: var(--accent-gold); letter-spacing: 0.1em; }
+  .sec-head h2 { font-family: 'Epilogue'; font-size: 24px; font-weight: 700; color: var(--color-heading); letter-spacing: -0.01em; }
+  .sec-head .rule { flex: 1; height: 1px; background: linear-gradient(to right, rgba(196,168,130,0.4), transparent); }
+  .sec p { color: #5a554f; line-height: 1.75; font-size: 15px; margin-bottom: 14px; }
+  .sec .chip-row { display: flex; gap: 8px; flex-wrap: wrap; margin-top: 10px; }
+  .chip { font-size: 12px; background: #f5f1ec; border: 1px solid rgba(0,0,0,0.06); border-radius: 8px; padding: 5px 11px; color: #494551; }
+
+  /* Two-col for gallery */
+  .gallery { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
+  @media (max-width: 700px) { .gallery { grid-template-columns: 1fr; } }
+  .g-img { aspect-ratio: 16/10; background: #f5f1ec; border-radius: 12px; border: 1px solid rgba(0,0,0,0.05); display: flex; align-items: center; justify-content: center; color: var(--text-tertiary); font-size: 12px; }
+
+  /* Mini highlight cards (right column inside sections) */
+  .mini-row { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; margin: 18px 0; }
+  @media (max-width: 700px) { .mini-row { grid-template-columns: 1fr; } }
+  .mini { background: #faf7f4; border: 1px solid rgba(0,0,0,0.06); border-radius: 12px; padding: 14px 16px; }
+  .mini .t { font-size: 12px; font-weight: 700; color: var(--color-heading); }
+  .mini .d { font-size: 12px; color: var(--text-secondary); margin-top: 4px; line-height: 1.5; }
+
+  .divider { max-width: 1100px; margin: 60px auto 20px; display: flex; align-items: center; gap: 16px; color: var(--text-tertiary); font-size: 12px; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; padding: 0 24px; }
+  .divider::before, .divider::after { content: ''; flex: 1; height: 1px; background: rgba(0,0,0,0.08); }
+</style>
+</head>
+<body>
+<div class="topbar">
+  <span>Case Study Layout — 重新設計提案</span>
+  <span class="tag">New Layout · Sticky TOC + At-a-Glance</span>
+</div>
+<div class="note">用 MOMAX Smart App 做例 · 重點：訪客 5 秒知「呢個係咩、我做咗咩、點搵到想睇嘅」</div>
+
+<!-- ============ NEW LAYOUT ============ -->
+<div class="layout-b">
+
+  <!-- Sticky TOC -->
+  <nav class="toc">
+    <div class="toc-label">On this page</div>
+    <a href="#" class="glance-link">✦ At a Glance</a>
+    <a href="#"><span class="num">01</span>UX Research</a>
+    <a href="#" class="active"><span class="num">02</span>Problem</a>
+    <a href="#"><span class="num">03</span>Design Process</a>
+    <a href="#"><span class="num">04</span>Key Decisions</a>
+    <a href="#"><span class="num">05</span>Visual Design</a>
+    <a href="#"><span class="num">06</span>Gallery</a>
+    <a href="#"><span class="num">07</span>Outcomes</a>
+    <a href="#"><span class="num">08</span>Reflections</a>
+  </nav>
+
+  <!-- Main column -->
+  <main>
+    <!-- At a Glance -->
+    <div class="glance">
+      <div class="g-label">At a Glance</div>
+      <div class="g-grid">
+        <div class="g-item"><div class="k">Role</div><div class="v">UI/UX Designer</div><div class="v sub">solo, end-to-end</div></div>
+        <div class="g-item"><div class="k">Timeline</div><div class="v">2021</div><div class="v sub">~5 months</div></div>
+        <div class="g-item"><div class="k">Team</div><div class="v">1 designer + PM</div><div class="v sub">3rd-party dev</div></div>
+        <div class="g-item"><div class="k">Tools</div><div class="v">Figma · Maze · Miro</div><div class="v sub">GA</div></div>
+      </div>
+      <div class="mini-row" style="margin-bottom:0;margin-top:16px;">
+        <div class="mini"><div class="t">Setup: 7 → 3 steps</div><div class="d">First-time pairing failure was the #1 churn driver</div></div>
+        <div class="mini"><div class="t">4-section IA</div><div class="d">Reorganised around mental model, confirmed by card-sort</div></div>
+        <div class="mini"><div class="t">Cross-platform</div><div class="d">iOS / Android shared IA, native feel each</div></div>
+      </div>
+    </div>
+
+    <!-- Sections -->
+    <div class="sec">
+      <div class="sec-head"><span class="n">01</span><h2>UX Research</h2><span class="rule"></span></div>
+      <p>Before drawing a single screen, I treated the legacy app as a problem to understand. ~10 user interviews, ~5 usability tests, analytics drop-off review, competitor teardown.</p>
+      <div class="chip-row"><span class="chip">10 interviews</span><span class="chip">5 usability tests</span><span class="chip">Card-sort ~10 users</span><span class="chip">Persona: Busy Ben</span></div>
+    </div>
+
+    <div class="sec">
+      <div class="sec-head"><span class="n">02</span><h2>Problem</h2><span class="rule"></span></div>
+      <p>Setup failed → users never returned. Control felt "broken" past ~2s. Features buried three levels deep. Users think by room, app organised by type.</p>
+    </div>
+
+    <div class="sec">
+      <div class="sec-head"><span class="n">03</span><h2>Design Process</h2><span class="rule"></span></div>
+      <p>Restructured into four primary sections mapped to the user's mental model, validated with card-sorting.</p>
+      <div class="mini-row">
+        <div class="mini"><div class="t">Home</div><div class="d">Favourites, one-tap controls</div></div>
+        <div class="mini"><div class="t">Rooms</div><div class="d">Spatial, matches thinking</div></div>
+        <div class="mini"><div class="t">Automation</div><div class="d">Scenes + schedules merged</div></div>
+      </div>
+    </div>
+
+    <div class="sec">
+      <div class="sec-head"><span class="n">04</span><h2>Key Decisions</h2><span class="rule"></span></div>
+      <p>Bottom tab bar over hamburger (faster task completion). Large device cards over list (clear status, 48px targets). Setup cut from 7 steps to 3.</p>
+    </div>
+
+    <div class="sec">
+      <div class="sec-head"><span class="n">05</span><h2>Visual Design</h2><span class="rule"></span></div>
+      <p>~42 reusable Figma components. MOMAX Blue primary with semantic states, 8-step neutral scale, WCAG AA contrast.</p>
+    </div>
+
+    <div class="sec">
+      <div class="sec-head"><span class="n">06</span><h2>Gallery</h2><span class="rule"></span></div>
+      <div class="gallery">
+        <div class="g-img">Screenshot 01 · Home</div>
+        <div class="g-img">Screenshot 02 · Control</div>
+        <div class="g-img">Screenshot 03 · Setup flow</div>
+        <div class="g-img">Screenshot 04 · Cross-platform</div>
+      </div>
+    </div>
+
+    <div class="sec">
+      <div class="sec-head"><span class="n">07</span><h2>Outcomes</h2><span class="rule"></span></div>
+      <p>Setup that took minutes became a couple of steps; controls felt instant; buried features one tap away.</p>
+    </div>
+  </main>
+</div>
+
+<div class="divider">而家 vs 新</div>
+<div class="note" style="padding-bottom:80px;">
+  而家：單欄長 page，冇導航，Highlight 喺最底，要碌晒先知有咩。<br/>
+  新：Sticky TOC 一眼知有咩 section + At-a-Glance 5 秒知重點 + 每 section 有 chips/迷你卡快速消化。
+</div>
+</body>
+</html>

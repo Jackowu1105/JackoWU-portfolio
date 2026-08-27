@@ -34,7 +34,8 @@ export function ResearchProcess({ stages }: { stages: ResearchStage[] }) {
 
       {/* Phase flow bar — two diverging/converging diamonds rendered as a simple timeline */}
       <div className="relative mb-8 hidden md:block">
-        <div className="absolute left-0 right-0 top-1/2 h-px bg-gradient-to-r from-[#A2CACD]/40 via-[#C9A74D]/40 to-[#C9A74D]/70" />
+        {/* line runs through the dot centers (dots are 40px tall → center at 20px) */}
+        <div className="absolute left-0 right-0 top-5 h-px bg-gradient-to-r from-[#A2CACD]/40 via-[#C9A74D]/40 to-[#C9A74D]/70" />
         <div className="relative flex justify-between">
           {stages.map((s) => (
             <div
