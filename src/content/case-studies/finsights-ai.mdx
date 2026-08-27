@@ -111,11 +111,11 @@ A meaningful share of the design work went into registration, login, and account
 
 ### Color
 
-A restrained, dark-neutral system — warm greys and near-blacks — chosen so that data and the AI's responses are the only things that carry colour. In a fintech app, colour should mean signal, not decoration.
+The app ships in both light and dark modes on a near-neutral base, so a single colour carries all the signal: violet. The brand purple (`#6058C0` in light mode, a brighter violet in dark) is reserved for actions, the AI's highlights, and what matters most — while charts and content stay neutral. In a fintech app, colour should mean signal, not decoration.
 
 <ColorPalette
-  colors={['#9F9BA0', '#3A3941', '#62606A', '#19181C']}
-  labels={['Surface', 'Primary', 'Accent', 'Dark']}
+  colors={['#F8F8F8', '#19181C', '#6058C0', '#383068']}
+  labels={['Light Surface', 'Ink', 'Brand Purple', 'Deep Indigo']}
 />
 
 ### Architecture
@@ -146,6 +146,22 @@ The app is built on a micro-service architecture (advisor, market data, portfoli
   src="/images/projects/finsights-ai/g04.png"
   label="Authentication"
   caption="Login and the adaptive email/phone entry — one input that detects the credential type and adapts the downstream flow, shared with recovery"
+/>
+
+The full registration flow also ships in light mode — the adaptive email/phone entry, sign-up, profile info, and OTP verification:
+
+<CaseStudyImage
+  src="/images/projects/finsights-ai/g05.png"
+  label="Registration — Light Mode"
+  caption="The registration journey in light mode — Login with the adaptive email/phone entry, Sign Up, profile Info, and OTP verification — the violet CTA carries the primary actions on a light surface"
+/>
+
+The onboarding continues after sign-up — profile complete, personalise your feed by industry, follow accounts, then land in the app:
+
+<CaseStudyImage
+  src="/images/projects/finsights-ai/g06.png"
+  label="Onboarding — Light Mode"
+  caption="The onboarding flow in light mode — profile info done, pick your Industry, Follow accounts, and the success screen that completes setup"
 />
 
 ## Reflections
