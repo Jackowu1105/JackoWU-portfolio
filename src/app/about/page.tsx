@@ -1,5 +1,6 @@
 import { GlassCard } from '@/components/shared/GlassCard'
 import { Button } from '@/components/shared/Button'
+import { CertificationsGrid } from '@/components/about/CertificationsGrid'
 import { experience, skillCategories } from '@/data/about'
 
 const education = [
@@ -215,25 +216,7 @@ export default function AboutPage() {
           </p>
           <h2 className="text-3xl font-bold text-text-primary">Certifications</h2>
         </div>
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
-          {certifications.map((cert, i) => (
-            <GlassCard key={i} hover={false} className="p-4 flex flex-col overflow-hidden">
-              <div className="rounded-lg overflow-hidden bg-bg-elevated mb-4 aspect-[4/3] flex items-center justify-center">
-                <img
-                  src={cert.image}
-                  alt={`${cert.name} — ${cert.issuer}`}
-                  loading="lazy"
-                  className="w-full h-full object-contain"
-                />
-              </div>
-              <h3 className="font-semibold text-text-primary text-sm leading-snug mb-1">
-                {cert.name}
-              </h3>
-              <p className="text-xs text-text-secondary">{cert.issuer}</p>
-              <p className="text-xs text-text-tertiary mt-1">{cert.date}</p>
-            </GlassCard>
-          ))}
-        </div>
+        <CertificationsGrid certifications={certifications} />
       </section>
 
       {/* Skills */}
