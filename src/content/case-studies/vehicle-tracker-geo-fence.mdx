@@ -7,6 +7,47 @@
   tools={["Figma"]}
 />
 
+## UX Research
+
+The platform is a monitoring tool first and an interface second, so I started by watching how apron teams actually work before drawing any screen. The research followed a Double Diamond — exploring the monitoring workflow, converging on the information priorities, then testing how those priorities should shape the interface.
+
+<ResearchProcess
+  stages={[
+    {
+      phase: 1,
+      title: 'Watch the operation before designing the screen',
+      summary: 'User interviews with apron dispatchers and ground supervisors, plus direct observation of control-room operations during peak hours to understand real workflow patterns.',
+      artifact: 'User interviews + control-room observation',
+    },
+    {
+      phase: 2,
+      title: 'Name the four operational pressures',
+      summary: 'Information overload (too many vehicles at once), split contexts (mobile on-site vs large screens in the control room), customisation needs (zones differ by shift), and alert fatigue from unfiltered notifications.',
+      artifact: 'Key findings summary',
+    },
+    {
+      phase: 3,
+      title: 'Test how the interface filters the noise',
+      summary: 'Structured the interface into three core layers — Map View, Filter Panel, and Alert System — and iterated from a list+map split to a full-screen map, finally landing on a collapsible filter drawer with floating actions.',
+      artifact: 'Monitoring workflow + alert-level map',
+      image: '/images/projects/vehicle-tracker-geo-fence/research-monitoring.svg',
+      caption: 'From the raw vehicle feed to priority alerts — the filter-first workflow that shapes every screen.',
+    },
+    {
+      phase: 4,
+      title: 'Design per platform, validate per shift',
+      summary: 'A web dashboard for multi-vehicle monitoring with analytics, a mobile app for single-vehicle tracking on-site, and usability testing across the final layouts.',
+      artifact: 'Platform-specific designs + usability test',
+    },
+  ]}
+/>
+
+<CaseStudyImage
+  src="/images/projects/vehicle-tracker-geo-fence/research-monitoring.svg"
+  label="Research artifact — monitoring workflow"
+  caption="The four-stage monitoring workflow, from the unfiltered vehicle feed to smart-filtered priority alerts — synthesised from dispatcher interviews and control-room observation."
+/>
+
 ## Research & Insights
 
 I conducted user interviews with apron dispatchers and ground supervisors, and observed control-room operations during peak hours to understand workflow patterns.

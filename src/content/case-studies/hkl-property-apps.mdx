@@ -5,9 +5,50 @@
   team="1 UX Designer (me, solo) + developers"
   duration="2020"
   tools={["Sketch", "Figma"]}
-/>
+  />
 
-## Problem Definition
+  ## UX Research
+
+  Three estates, three brands, one design problem. The research question was how far each estate’s identity could flex before the shared system broke — and the answer shaped every screen in all three apps.
+
+  <ResearchProcess
+    stages={[
+      {
+        phase: 1,
+        title: 'Audit the three estates and their shared needs',
+        summary: 'The Horizon, Eden Manor and Mount Verdant each have their own identity and resident community, yet the services underneath are the same: facility booking, community notices, service requests and visitor access.',
+        artifact: 'Estate identity + service inventory',
+      },
+      {
+        phase: 2,
+        title: 'Frame the build-versus-theme decision',
+        summary: 'Three separate apps meant triple the maintenance, inconsistent quality and no economies of scale; full visual differentiation would break the shared system and make residents who move between estates relearn the app.',
+        artifact: 'Design tension map',
+      },
+      {
+        phase: 3,
+        title: 'Define the shared core, flexible skin',
+        summary: 'One system, three themes: identical core flows with per-estate colour, imagery and typography layered on top, and content loaded dynamically per estate — The Horizon’s events, Eden Manor’s facilities, Mount Verdant’s notices.',
+        artifact: 'Multi-estate IA model',
+        image: '/images/projects/hkl-property-apps/research-ia.svg',
+        caption: 'Same core flows in every estate — only colour, imagery and typography change.',
+      },
+      {
+        phase: 4,
+        title: 'Spec the theming layer',
+        summary: 'A light, premium base system — white and soft neutral surfaces, blue-grey accents, dark slate type — that lets each estate’s photography and identity colours take the lead, with the pattern carried forward into later property-app work.',
+        artifact: 'Design system + estate theme spec',
+      },
+    ]}
+  />
+
+  <CaseStudyImage
+    src="/images/projects/hkl-property-apps/research-ia.svg"
+    label="Multi-estate IA comparison"
+    caption="Three estates, one structure — the shared core keeps the system maintainable while each skin reads as its own product."
+  />
+
+  ## Problem Definition
 
 Hong Kong Land's residential estates each have their own identity — The Horizon, Eden Manor, and Mount Verdant — but building three completely separate apps would be expensive to maintain and inconsistent in quality. The challenge was to give each estate a distinct digital presence while keeping the underlying system shared and maintainable.
 

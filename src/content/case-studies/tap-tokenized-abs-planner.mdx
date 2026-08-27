@@ -7,6 +7,41 @@
   tools={["Figma"]}
 />
 
+## UX Research
+
+Tokenized ABS fails when the interface picks a language — prospectus jargon or crypto hype — instead of a user. The research was about finding the translation layer between a financial instrument and a person’s intuition, and about keeping two audiences from leaking jargon into each other.
+
+<ResearchProcess
+  stages={[
+    {
+      phase: 1,
+      title: 'Map the two audiences and their traps',
+      summary: 'Investors and admins sit on the same asset model but speak different languages. Two failure modes frame the problem: the jargon trap — prospectus terms only a fixed-income professional can read — and the crypto-bro trap — trading-app styling that loses institutional trust.',
+      artifact: 'Audience + failure-mode map',
+    },
+    {
+      phase: 2,
+      title: 'Define the translation problem',
+      summary: 'Owning a fraction of a real, income-producing asset is intuitive — the wrapping is not. The interface had to land between a prospectus and a degen trading app, and make the abstract token resolve to something a user can picture.',
+      artifact: 'Problem definition',
+    },
+    {
+      phase: 3,
+      title: 'Converge on a dual-surface IA',
+      summary: 'Four zones mapped to intent: Investor Planner, Overview Dashboard + AI Assistant, RWA Admin, and Financing Board. The investor and admin sides share an asset model but not a vocabulary — investors see coins and plans, admins see pools, tranches, and status.',
+      artifact: 'Dual-surface IA map',
+      image: '/images/projects/tap-tokenized-abs-planner/research-dual-surface-ia.svg',
+      caption: 'One asset model, two vocabularies — the IA keeps investor and admin surfaces apart so neither leaks jargon into the other.',
+    },
+    {
+      phase: 4,
+      title: 'Anchor the abstract in a concrete object',
+      summary: 'Terms-first forms read like a prospectus; chart-heavy dashboards read like speculation. The gold coin — a tangible object standing in for a fractional holding — became the anchor, with dark-as-primary carrying the premium, serious tone.',
+      artifact: 'Coin metaphor rationale',
+    },
+  ]}
+/>
+
 ## Problem Definition
 
 Tokenized RWA products fail in one of two ways:

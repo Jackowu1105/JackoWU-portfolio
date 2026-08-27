@@ -7,6 +7,47 @@
   tools={["Sketch", "InVision", "Adobe Illustrator"]}
 />
 
+## UX Research
+
+This POS had to work in a place where a slow screen means a lost sale and a frustrated queue. I used the Double Diamond to map the two very different mental models on either side of the booth — the attendee's and the vendor's — before shaping a single interaction.
+
+<ResearchProcess
+  stages={[
+    {
+      phase: 1,
+      title: 'Interview everyone who touches the payment',
+      summary: 'Stakeholder interviews with event organisers, vendor interviews drawing on previous festival experience, observational research at similar events, and a competitive analysis of festival payment systems (Coachella, Tomorrowland, Clockenflap).',
+      artifact: 'Stakeholder & vendor interviews + competitive analysis',
+    },
+    {
+      phase: 2,
+      title: 'Converge on the two mental models',
+      summary: 'Attendees ask "How much do I have left?" while vendors ask "Did the payment go through?" — layered on top of speed-is-everything, minimal training for temporary staff, and a harsh outdoor environment (sunlight, noise, long shifts).',
+      artifact: 'Dual mental-model map',
+    },
+    {
+      phase: 3,
+      title: 'Test the flow in the field',
+      summary: 'Paper sketches removed a redundant confirmation step; digital prototypes showed the numeric keypad caused input errors, so amounts became preset buttons; high-fidelity testing in real sunlight pushed contrast up to WCAG AAA.',
+      artifact: 'Field journey map',
+      image: '/images/projects/road-to-ultra-pos/research-journey.svg',
+      caption: 'Attendee and vendor flows side by side — the two mental models the whole UI is built around.',
+    },
+    {
+      phase: 4,
+      title: 'Design for the peak-hour queue',
+      summary: 'Single-tap transaction confirmation, extra-large touch targets, and a persistent balance display — all validated through outdoor usability testing under festival conditions.',
+      artifact: 'Usability-tested POS flows',
+    },
+  ]}
+/>
+
+<CaseStudyImage
+  src="/images/projects/road-to-ultra-pos/research-journey.svg"
+  label="Research artifact — field journey"
+  caption="The dual-lane field journey: attendees manage their balance while vendors confirm every payment — speed and clarity are the shared currency."
+/>
+
 ## Research & Discovery
 
 I conducted **stakeholder interviews** with event organisers, **vendor interviews** drawing on previous music-festival experience, **observational research** at similar events, and **competitive analysis** of festival payment systems (Coachella, Tomorrowland, Clockenflap).

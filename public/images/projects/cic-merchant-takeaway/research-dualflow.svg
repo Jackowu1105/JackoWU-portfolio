@@ -1,0 +1,135 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="580" viewBox="0 0 800 580" font-family="Inter, system-ui, sans-serif">
+  <defs>
+    <linearGradient id="tbg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#FBF9F7"/>
+      <stop offset="1" stop-color="#F4EFEA"/>
+    </linearGradient>
+    <linearGradient id="tacc" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#02B3B9"/>
+      <stop offset="1" stop-color="#F8B64B"/>
+    </linearGradient>
+  </defs>
+  <rect width="800" height="580" rx="24" fill="url(#tbg)"/>
+  <rect x="0" y="0" width="800" height="8" rx="4" fill="url(#tacc)"/>
+
+  <text x="40" y="58" font-size="13" letter-spacing="2" fill="#B8B2AE" font-weight="600">DUAL-SIDED ORDER FLOW</text>
+  <text x="40" y="90" font-size="22" font-weight="700" fill="#1A1410">One order, two sides of the counter</text>
+
+  <!-- Resident lane -->
+  <circle cx="44" cy="115" r="5" fill="#02B3B9"/>
+  <text x="58" y="120" font-size="13" font-weight="700" letter-spacing="1.5" fill="#0E8F94">RESIDENTS · USER APP</text>
+
+  <g font-size="13" font-weight="600" fill="#1A1410" text-anchor="middle">
+    <rect x="40" y="136" width="112" height="64" rx="12" fill="#fff" stroke="#D4C5B0" stroke-opacity="0.5"/>
+    <rect x="48" y="144" width="18" height="18" rx="5" fill="#02B3B9"/>
+    <text x="57" y="157" font-size="11" fill="#fff">1</text>
+    <text x="96" y="174">Browse</text>
+    <text x="96" y="190" font-size="11" font-weight="500" fill="#8A8480">Restaurants</text>
+
+    <rect x="164" y="136" width="112" height="64" rx="12" fill="#fff" stroke="#D4C5B0" stroke-opacity="0.5"/>
+    <rect x="172" y="144" width="18" height="18" rx="5" fill="#02B3B9"/>
+    <text x="181" y="157" font-size="11" fill="#fff">2</text>
+    <text x="220" y="174">View Menu</text>
+    <text x="220" y="190" font-size="11" font-weight="500" fill="#8A8480">category filters</text>
+
+    <rect x="288" y="136" width="112" height="64" rx="12" fill="#fff" stroke="#D4C5B0" stroke-opacity="0.5"/>
+    <rect x="296" y="144" width="18" height="18" rx="5" fill="#02B3B9"/>
+    <text x="305" y="157" font-size="11" fill="#fff">3</text>
+    <text x="344" y="174">Customise</text>
+    <text x="344" y="190" font-size="11" font-weight="500" fill="#8A8480">items + extras</text>
+
+    <rect x="412" y="136" width="112" height="64" rx="12" fill="#fff" stroke="#D4C5B0" stroke-opacity="0.5"/>
+    <rect x="420" y="144" width="18" height="18" rx="5" fill="#02B3B9"/>
+    <text x="429" y="157" font-size="11" fill="#fff">4</text>
+    <text x="468" y="174">Place Order</text>
+    <text x="468" y="190" font-size="11" font-weight="500" fill="#8A8480">no phone call</text>
+
+    <rect x="536" y="136" width="112" height="64" rx="12" fill="#fff" stroke="#D4C5B0" stroke-opacity="0.5"/>
+    <rect x="544" y="144" width="18" height="18" rx="5" fill="#02B3B9"/>
+    <text x="553" y="157" font-size="11" fill="#fff">5</text>
+    <text x="592" y="174">Track Status</text>
+    <text x="592" y="190" font-size="11" font-weight="500" fill="#8A8480">3-stage progress</text>
+
+    <rect x="660" y="136" width="112" height="64" rx="12" fill="#fff" stroke="#D4C5B0" stroke-opacity="0.5"/>
+    <rect x="668" y="144" width="18" height="18" rx="5" fill="#02B3B9"/>
+    <text x="677" y="157" font-size="11" fill="#fff">6</text>
+    <text x="716" y="174">Pick Up</text>
+    <text x="716" y="190" font-size="11" font-weight="500" fill="#8A8480">notification first</text>
+  </g>
+
+  <g font-size="15" fill="#02B3B9" text-anchor="middle">
+    <text x="158" y="172">→</text>
+    <text x="282" y="172">→</text>
+    <text x="406" y="172">→</text>
+    <text x="530" y="172">→</text>
+    <text x="654" y="172">→</text>
+  </g>
+
+  <!-- 3-stage tracking strip -->
+  <rect x="40" y="214" width="732" height="36" rx="10" fill="#fff" stroke="#D4C5B0" stroke-opacity="0.5"/>
+  <text x="60" y="236" font-size="11" font-weight="700" letter-spacing="1" fill="#1A1410">3-STAGE TRACKING</text>
+  <g font-size="12" font-weight="600" fill="#0E8F94" text-anchor="middle">
+    <rect x="170" y="221" width="90" height="22" rx="11" fill="#EAF7F6" stroke="#02B3B9" stroke-opacity="0.4"/>
+    <text x="215" y="236">Order Received</text>
+    <rect x="275" y="221" width="90" height="22" rx="11" fill="#EAF7F6" stroke="#02B3B9" stroke-opacity="0.4"/>
+    <text x="320" y="236">Preparing</text>
+    <rect x="380" y="221" width="90" height="22" rx="11" fill="#EAF7F6" stroke="#02B3B9" stroke-opacity="0.4"/>
+    <text x="425" y="236">Ready</text>
+  </g>
+  <text x="500" y="234" font-size="14" fill="#02B3B9" text-anchor="middle">→</text>
+  <text x="515" y="234" font-size="14" fill="#02B3B9" text-anchor="middle">→</text>
+  <text x="550" y="237" font-size="11" fill="#8A8480">push notification at every stage</text>
+
+  <!-- Handoff: order lands in the kitchen -->
+  <path d="M468 200 V 292 H 110 V 308" stroke="#02B3B9" stroke-width="2" stroke-dasharray="5 4" fill="none" opacity="0.9"/>
+  <polygon points="104,302 116,302 110,314" fill="#02B3B9"/>
+  <rect x="205" y="254" width="190" height="22" rx="11" fill="#fff" stroke="#D4C5B0" stroke-opacity="0.5"/>
+  <text x="300" y="269" font-size="12" fill="#5A554F" text-anchor="middle">order lands in the kitchen</text>
+
+  <!-- Merchant lane -->
+  <circle cx="44" cy="295" r="5" fill="#F8B64B"/>
+  <text x="58" y="300" font-size="13" font-weight="700" letter-spacing="1.5" fill="#A06B12">MERCHANTS · MERCHANT APP</text>
+
+  <g font-size="13" font-weight="600" fill="#1A1410" text-anchor="middle">
+    <rect x="40" y="316" width="140" height="64" rx="12" fill="#fff" stroke="#D4C5B0" stroke-opacity="0.5"/>
+    <rect x="48" y="324" width="18" height="18" rx="5" fill="#F8B64B"/>
+    <text x="57" y="337" font-size="11" fill="#5A3D10">1</text>
+    <text x="110" y="354">Receive Order</text>
+    <text x="110" y="370" font-size="11" font-weight="500" fill="#8A8480">new order alert</text>
+
+    <rect x="196" y="316" width="140" height="64" rx="12" fill="#fff" stroke="#D4C5B0" stroke-opacity="0.5"/>
+    <rect x="204" y="324" width="18" height="18" rx="5" fill="#F8B64B"/>
+    <text x="213" y="337" font-size="11" fill="#5A3D10">2</text>
+    <text x="266" y="354">Mark as Preparing</text>
+    <text x="266" y="370" font-size="11" font-weight="500" fill="#8A8480">one tap</text>
+
+    <rect x="352" y="316" width="140" height="64" rx="12" fill="#fff" stroke="#D4C5B0" stroke-opacity="0.5"/>
+    <rect x="360" y="324" width="18" height="18" rx="5" fill="#F8B64B"/>
+    <text x="369" y="337" font-size="11" fill="#5A3D10">3</text>
+    <text x="422" y="354">Mark as Ready</text>
+    <text x="422" y="370" font-size="11" font-weight="500" fill="#8A8480">one tap</text>
+
+    <rect x="508" y="316" width="140" height="64" rx="12" fill="#fff" stroke="#D4C5B0" stroke-opacity="0.5"/>
+    <rect x="516" y="324" width="18" height="18" rx="5" fill="#F8B64B"/>
+    <text x="525" y="337" font-size="11" fill="#5A3D10">4</text>
+    <text x="578" y="354">Notify User</text>
+    <text x="578" y="370" font-size="11" font-weight="500" fill="#8A8480">auto push</text>
+  </g>
+
+  <g font-size="15" fill="#C98A1B" text-anchor="middle">
+    <text x="188" y="352">→</text>
+    <text x="344" y="352">→</text>
+    <text x="500" y="352">→</text>
+  </g>
+
+  <rect x="40" y="404" width="732" height="34" rx="10" fill="#fff" stroke="#D4C5B0" stroke-opacity="0.5"/>
+  <text x="56" y="426" font-size="13" fill="#5A554F">One-tap status buttons — an owner updates an order in under 3 seconds, even mid-rush.</text>
+
+  <rect x="40" y="452" width="732" height="34" rx="10" fill="#fff" stroke="#D4C5B0" stroke-opacity="0.5"/>
+  <text x="56" y="474" font-size="13" fill="#5A554F">Registration website — a lightweight web form (name, menu, hours) keeps sign-up friction low.</text>
+
+  <rect x="40" y="500" width="732" height="34" rx="10" fill="#fff" stroke="#D4C5B0" stroke-opacity="0.5"/>
+  <text x="56" y="522" font-size="13" fill="#5A554F">Post-launch beta testing — most residents completed checkout unaided; merchants asked for bulk order management.</text>
+
+  <text x="40" y="562" font-size="12" fill="#B8B2AE">CardApp · Dual-sided ordering — tracking on one side is a status tap on the other</text>
+</svg>

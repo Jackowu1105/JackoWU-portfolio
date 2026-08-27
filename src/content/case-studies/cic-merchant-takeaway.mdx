@@ -5,9 +5,50 @@
   team="1 UX Designer (me, solo) + 1 PM + 3 developers"
   duration="2021"
   tools={["Figma", "Miro"]}
-/>
+  />
 
-## Problem Definition
+  ## UX Research
+
+  A residential food-ordering system is two products sharing one transaction: residents want to order without picking up the phone, and restaurants want orders that don’t interrupt the kitchen. The research had to hold both sides of the counter in view at once.
+
+  <ResearchProcess
+    stages={[
+      {
+        phase: 1,
+        title: 'Understand both sides of the counter',
+        summary: 'A tight timeline compressed the research: stakeholder interviews for business goals and technical constraints, a competitive analysis of Uber Eats, Deliveroo and foodpanda for best practices, and proto-personas built on stakeholder insights (validated post-launch).',
+        artifact: 'Stakeholder interviews + competitor analysis',
+      },
+      {
+        phase: 2,
+        title: 'Name the friction on each side',
+        summary: 'Residents could not browse menus or track orders, so they called during busy hours; phone orders interrupted kitchen workflow, were prone to errors, and missed calls meant lost revenue. There was no standard way to tell users an order was ready.',
+        artifact: 'Dual-sided pain-point map',
+      },
+      {
+        phase: 3,
+        title: 'Design the shared transaction',
+        summary: 'User app: browse restaurants → view menu → customise → place order → receive notification → pick up. Merchant app: receive order → one-tap status (Preparing → Ready) → notify. A 3-stage progress indicator and a lightweight registration website completed the loop.',
+        artifact: 'Dual-sided flow diagram',
+        image: '/images/projects/cic-merchant-takeaway/research-dualflow.svg',
+        caption: 'One order, two sides — residents track their pickup while owners update status with one tap.',
+      },
+      {
+        phase: 4,
+        title: 'Test with real users after launch',
+        summary: 'Low-fi wireframes for both apps went through internal review with the PM and developers, then a small beta group tested after launch: most residents completed checkout unaided, users wanted more detailed ETAs, and merchants asked for bulk order management.',
+        artifact: 'Beta usability notes',
+      },
+    ]}
+  />
+
+  <CaseStudyImage
+    src="/images/projects/cic-merchant-takeaway/research-dualflow.svg"
+    label="Dual-sided order flow"
+    caption="The resident and merchant journeys share one transaction — tracking on one side is a status tap on the other."
+  />
+
+  ## Problem Definition
 
 A food-ordering system for residential communities is a dual-sided design problem: the resident's experience must be effortless, and the restaurant owner's experience must be simple enough for a non-tech-savvy user to operate during a kitchen rush.
 

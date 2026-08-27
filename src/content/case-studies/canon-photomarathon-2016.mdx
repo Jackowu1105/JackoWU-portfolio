@@ -5,9 +5,50 @@
   team="1 UX Designer (me, solo) + developers"
   duration="2016"
   tools={["Adobe XD"]}
-/>
+  />
 
-## Problem Definition
+  ## UX Research
+
+  A single-day photo marathon is a logistics problem disguised as a creative event — it runs on two clocks at once, with participants racing a submission deadline and judges racing a judging window. I mapped both journeys end-to-end before designing a single screen.
+
+  <ResearchProcess
+    stages={[
+      {
+        phase: 1,
+        title: 'Map the event day for both sides',
+        summary: 'Mapped the full workflow for both user groups — participants: registration, photo capture, upload initiation, file selection, validation, submission confirmation; judges: login, image queue, review, scoring and filtering, selection finalisation — and flagged the touchpoints where queues and errors form.',
+        artifact: 'Dual-sided journey maps',
+      },
+      {
+        phase: 2,
+        title: 'Name the bottlenecks',
+        summary: 'Participants hit long submission queues, unclear upload steps and deadline anxiety; judges lacked filtering and sorting, hit visual fatigue and could not compare similar entries — with a delayed schedule and extra on-site support as the business cost.',
+        artifact: 'Pain-point synthesis',
+      },
+      {
+        phase: 3,
+        title: 'Design the guided upload and batch judging',
+        summary: 'A guided step-by-step wizard with real-time format and resolution checks replaced the unclear single-page form, and a thumbnail grid with filtering, sorting and side-by-side comparison replaced one-at-a-time review.',
+        artifact: 'Dual-sided flow diagram',
+        image: '/images/projects/canon-photomarathon-2016/research-dayflow.svg',
+        caption: 'The event-day journey — participants race the upload deadline on mobile while judges work the queue on desktop.',
+      },
+      {
+        phase: 4,
+        title: 'Ship against the event clock',
+        summary: 'Mobile-first for participants, desktop for judges — each side got the platform that fits its workflow. At the 2016 event the flow cleared submission queues and cut support requests, and the system was reused for later Canon events.',
+        artifact: 'Final flow spec',
+      },
+    ]}
+  />
+
+  <CaseStudyImage
+    src="/images/projects/canon-photomarathon-2016/research-dayflow.svg"
+    label="Event-day journey map"
+    caption="The single-day timeline — capture, upload, judge, select — designed so neither side becomes the bottleneck."
+  />
+
+  ## Problem Definition
 
 A single-day photo marathon is a logistics problem disguised as a creative event. Participants shoot under time pressure, then rush to submit — and if the upload flow is unclear, queues form, tempers rise, and Canon's brand takes the hit. Judges then face a wall of images with hours to score them, and without efficient browsing tools the review becomes a bottleneck.
 

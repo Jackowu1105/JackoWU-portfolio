@@ -1,0 +1,63 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="500" viewBox="0 0 800 500" font-family="Inter, system-ui, sans-serif">
+  <defs>
+    <linearGradient id="bgV" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#FBF9F7"/>
+      <stop offset="1" stop-color="#F4EFEA"/>
+    </linearGradient>
+    <linearGradient id="accentV" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#0195E2"/>
+      <stop offset="1" stop-color="#1A2F47"/>
+    </linearGradient>
+  </defs>
+  <rect width="800" height="500" rx="24" fill="url(#bgV)"/>
+  <rect x="0" y="0" width="800" height="8" rx="4" fill="url(#accentV)"/>
+
+  <text x="40" y="58" font-size="13" letter-spacing="2" fill="#B8B2AE" font-weight="600">DEMO STRUCTURE · BEAT SHEET</text>
+  <text x="40" y="90" font-size="22" font-weight="700" fill="#1A1410">Hook first, details later — a cut that works on mute</text>
+
+  <!-- Beat 1: Hook (highlighted) -->
+  <rect x="40" y="130" width="170" height="116" rx="12" fill="#0195E2"/>
+  <text x="60" y="158" font-size="11" font-weight="600" letter-spacing="1" fill="#BFE4F5">BEAT 01 · 0–3 S</text>
+  <text x="60" y="186" font-size="15" font-weight="700" fill="#fff">Hook —</text>
+  <text x="60" y="206" font-size="15" font-weight="700" fill="#fff">key feature</text>
+  <text x="60" y="230" font-size="11" fill="#E6F4FC">The payoff, up front.</text>
+
+  <!-- Beat 2: Establish -->
+  <rect x="226" y="130" width="170" height="116" rx="12" fill="#fff" stroke="#D4C5B0" stroke-opacity="0.5"/>
+  <text x="246" y="158" font-size="11" font-weight="600" letter-spacing="1" fill="#B8B2AE">BEAT 02</text>
+  <text x="246" y="186" font-size="15" font-weight="700" fill="#1A1410">Establish</text>
+  <text x="246" y="206" font-size="15" font-weight="700" fill="#1A1410">the product</text>
+  <text x="246" y="230" font-size="11" fill="#5A554F">Device in context.</text>
+
+  <!-- Beat 3: In action -->
+  <rect x="412" y="130" width="170" height="116" rx="12" fill="#fff" stroke="#D4C5B0" stroke-opacity="0.5"/>
+  <text x="432" y="158" font-size="11" font-weight="600" letter-spacing="1" fill="#B8B2AE">BEAT 03</text>
+  <text x="432" y="186" font-size="15" font-weight="700" fill="#1A1410">In action</text>
+  <text x="432" y="206" font-size="15" font-weight="700" fill="#1A1410">with callouts</text>
+  <text x="432" y="230" font-size="11" fill="#5A554F">Labels do the talking.</text>
+
+  <!-- Beat 4: Brand -->
+  <rect x="598" y="130" width="170" height="116" rx="12" fill="#fff" stroke="#D4C5B0" stroke-opacity="0.5"/>
+  <text x="618" y="158" font-size="11" font-weight="600" letter-spacing="1" fill="#B8B2AE">BEAT 04</text>
+  <text x="618" y="186" font-size="15" font-weight="700" fill="#1A1410">Brand</text>
+  <text x="618" y="206" font-size="15" font-weight="700" fill="#1A1410">end card</text>
+  <text x="618" y="230" font-size="11" fill="#5A554F">Close on the brand.</text>
+
+  <!-- Timeline -->
+  <line x1="40" y1="268" x2="768" y2="268" stroke="#D4C5B0" stroke-width="1.5"/>
+  <g stroke="#D4C5B0" stroke-width="1.5">
+    <line x1="40" y1="262" x2="40" y2="274"/>
+    <line x1="226" y1="262" x2="226" y2="274"/>
+    <line x1="412" y1="262" x2="412" y2="274"/>
+    <line x1="598" y1="262" x2="598" y2="274"/>
+    <line x1="768" y1="262" x2="768" y2="274"/>
+  </g>
+  <text x="40" y="292" font-size="11" fill="#8A8480">0 s</text>
+  <text x="226" y="292" font-size="11" fill="#8A8480">3 s</text>
+
+  <text x="40" y="322" font-size="13" fill="#5A554F">Works on mute — captions and motion graphics carry the message on autoplay social feeds.</text>
+  <text x="40" y="346" font-size="13" fill="#5A554F">Motion graphics explain; they never compete with the device on screen — the product is the star.</text>
+  <text x="40" y="370" font-size="13" fill="#5A554F">Pacing: every cut earns its place; a demo that drags loses the viewer before the payoff.</text>
+
+  <text x="40" y="478" font-size="12" fill="#B8B2AE">MOMAX · Product demo videos — storyboard &amp; pacing research</text>
+</svg>

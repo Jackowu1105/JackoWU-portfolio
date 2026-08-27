@@ -7,6 +7,47 @@
   tools={["Figma", "FigJam"]}
 />
 
+## UX Research
+
+The redesign started from a research question, not a layout question: who actually uses this dashboard, and why does one fixed layout fail them all? I ran a Double Diamond — observing airport staff in context, defining the shared failure modes, developing a configurable structure, and delivering it against real usage data.
+
+<ResearchProcess
+  stages={[
+    {
+      phase: 1,
+      title: 'Watch the operation in context',
+      summary: 'Contextual inquiry observing airport staff during peak operational hours, interviews with 12 operations managers and cargo coordinators, analysis of AS2 usage logs for the most-used features, and a competitive review of dashboard solutions.',
+      artifact: 'Contextual inquiry + 12 interviews',
+    },
+    {
+      phase: 2,
+      title: 'Define why one size fits nobody',
+      summary: 'Three problems converged: limited configurability (critical data buried behind clicks), data fragmentation (users toggling between separate systems), and no integrated resource-management tools — all symptoms of a rigid, one-size-fits-all layout.',
+      artifact: 'Problem definition',
+    },
+    {
+      phase: 3,
+      title: 'Develop a modular workspace',
+      summary: 'A 12-column grid with resizable, repositionable widgets so each airport surfaces its own priorities — cargo hubs track cargo, large hubs watch OTP and bay optimisation. Mid-fidelity testing added preset templates as starting points.',
+      artifact: 'Widget system + preset templates',
+      image: '/images/projects/zproduct-dashboard/research-matrix.svg',
+      caption: 'Two roles, different needs — the matrix behind the modular widget system.',
+    },
+    {
+      phase: 4,
+      title: 'Deliver a dashboard users trust to touch',
+      summary: 'Separate View and Edit modes eliminated accidental drags, preset templates removed the blank-canvas fear, and two usability rounds ended with completion time down and the SUS score up versus the old AS2 system.',
+      artifact: 'Usability-tested dashboard',
+    },
+  ]}
+/>
+
+<CaseStudyImage
+  src="/images/projects/zproduct-dashboard/research-matrix.svg"
+  label="Role needs matrix"
+  caption="Operations managers and cargo coordinators need different data at different depths — a fixed layout could never serve both."
+/>
+
 ## Research & Discovery
 
 I conducted **contextual inquiry** observing airport staff during peak operational hours, **user interviews** with 12 operations managers and cargo coordinators, **data analysis** of AS2 usage logs to identify the most-used features, and **competitive analysis** of dashboard solutions.

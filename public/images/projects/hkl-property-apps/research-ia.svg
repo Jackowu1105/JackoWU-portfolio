@@ -1,0 +1,94 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="540" viewBox="0 0 800 540" font-family="Inter, system-ui, sans-serif">
+  <defs>
+    <linearGradient id="hbg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#FBF9F7"/>
+      <stop offset="1" stop-color="#F4EFEA"/>
+    </linearGradient>
+    <linearGradient id="hacc" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#454549"/>
+      <stop offset="1" stop-color="#9FB3C5"/>
+    </linearGradient>
+  </defs>
+  <rect width="800" height="540" rx="24" fill="url(#hbg)"/>
+  <rect x="0" y="0" width="800" height="8" rx="4" fill="url(#hacc)"/>
+
+  <text x="40" y="58" font-size="13" letter-spacing="2" fill="#B8B2AE" font-weight="600">MULTI-ESTATE IA COMPARISON</text>
+  <text x="40" y="90" font-size="22" font-weight="700" fill="#1A1410">Same core flows, three estate skins</text>
+
+  <!-- Estate headers -->
+  <g text-anchor="middle">
+    <rect x="40" y="116" width="220" height="70" rx="12" fill="#fff" stroke="#D4C5B0" stroke-opacity="0.5"/>
+    <rect x="40" y="116" width="220" height="6" rx="3" fill="#6B7F93"/>
+    <text x="150" y="158" font-size="16" font-weight="700" fill="#1A1410">The Horizon</text>
+    <text x="150" y="176" font-size="11" fill="#8A8480">resident app</text>
+
+    <rect x="290" y="116" width="220" height="70" rx="12" fill="#fff" stroke="#D4C5B0" stroke-opacity="0.5"/>
+    <rect x="290" y="116" width="220" height="6" rx="3" fill="#7D9B84"/>
+    <text x="400" y="158" font-size="16" font-weight="700" fill="#1A1410">Eden Manor</text>
+    <text x="400" y="176" font-size="11" fill="#8A8480">resident app</text>
+
+    <rect x="540" y="116" width="220" height="70" rx="12" fill="#fff" stroke="#D4C5B0" stroke-opacity="0.5"/>
+    <rect x="540" y="116" width="220" height="6" rx="3" fill="#4F7A63"/>
+    <text x="650" y="158" font-size="16" font-weight="700" fill="#1A1410">Mount Verdant</text>
+    <text x="650" y="176" font-size="11" fill="#8A8480">resident app</text>
+  </g>
+
+  <text x="400" y="212" font-size="11" font-weight="600" letter-spacing="1.5" fill="#B8B2AE" text-anchor="middle">SHARED CORE FLOWS — IDENTICAL IN EVERY ESTATE</text>
+
+  <!-- Service cards per estate -->
+  <g font-size="13" font-weight="600" fill="#1A1410" text-anchor="middle">
+    <rect x="40" y="230" width="220" height="40" rx="10" fill="#fff" stroke="#D4C5B0" stroke-opacity="0.5"/>
+    <circle cx="62" cy="250" r="4" fill="#6B7F93"/>
+    <text x="150" y="255">Facility Booking</text>
+    <rect x="40" y="280" width="220" height="40" rx="10" fill="#fff" stroke="#D4C5B0" stroke-opacity="0.5"/>
+    <circle cx="62" cy="300" r="4" fill="#6B7F93"/>
+    <text x="150" y="305">Community Notices</text>
+    <rect x="40" y="330" width="220" height="40" rx="10" fill="#fff" stroke="#D4C5B0" stroke-opacity="0.5"/>
+    <circle cx="62" cy="350" r="4" fill="#6B7F93"/>
+    <text x="150" y="355">Service Requests</text>
+    <rect x="40" y="380" width="220" height="40" rx="10" fill="#fff" stroke="#D4C5B0" stroke-opacity="0.5"/>
+    <circle cx="62" cy="400" r="4" fill="#6B7F93"/>
+    <text x="150" y="405">Visitor Access</text>
+
+    <rect x="290" y="230" width="220" height="40" rx="10" fill="#fff" stroke="#D4C5B0" stroke-opacity="0.5"/>
+    <circle cx="312" cy="250" r="4" fill="#7D9B84"/>
+    <text x="400" y="255">Facility Booking</text>
+    <rect x="290" y="280" width="220" height="40" rx="10" fill="#fff" stroke="#D4C5B0" stroke-opacity="0.5"/>
+    <circle cx="312" cy="300" r="4" fill="#7D9B84"/>
+    <text x="400" y="305">Community Notices</text>
+    <rect x="290" y="330" width="220" height="40" rx="10" fill="#fff" stroke="#D4C5B0" stroke-opacity="0.5"/>
+    <circle cx="312" cy="350" r="4" fill="#7D9B84"/>
+    <text x="400" y="355">Service Requests</text>
+    <rect x="290" y="380" width="220" height="40" rx="10" fill="#fff" stroke="#D4C5B0" stroke-opacity="0.5"/>
+    <circle cx="312" cy="400" r="4" fill="#7D9B84"/>
+    <text x="400" y="405">Visitor Access</text>
+
+    <rect x="540" y="230" width="220" height="40" rx="10" fill="#fff" stroke="#D4C5B0" stroke-opacity="0.5"/>
+    <circle cx="562" cy="250" r="4" fill="#4F7A63"/>
+    <text x="650" y="255">Facility Booking</text>
+    <rect x="540" y="280" width="220" height="40" rx="10" fill="#fff" stroke="#D4C5B0" stroke-opacity="0.5"/>
+    <circle cx="562" cy="300" r="4" fill="#4F7A63"/>
+    <text x="650" y="305">Community Notices</text>
+    <rect x="540" y="330" width="220" height="40" rx="10" fill="#fff" stroke="#D4C5B0" stroke-opacity="0.5"/>
+    <circle cx="562" cy="350" r="4" fill="#4F7A63"/>
+    <text x="650" y="355">Service Requests</text>
+    <rect x="540" y="380" width="220" height="40" rx="10" fill="#fff" stroke="#D4C5B0" stroke-opacity="0.5"/>
+    <circle cx="562" cy="400" r="4" fill="#4F7A63"/>
+    <text x="650" y="405">Visitor Access</text>
+  </g>
+
+  <!-- Theme layer -->
+  <rect x="40" y="442" width="720" height="42" rx="10" fill="#fff" stroke="#D4C5B0" stroke-opacity="0.5"/>
+  <text x="56" y="468" font-size="12" font-weight="700" fill="#1A1410">THE SKIN — THE ONLY VARIABLES</text>
+  <g font-size="12" fill="#5A554F" text-anchor="middle">
+    <rect x="250" y="450" width="86" height="26" rx="13" fill="#FBF9F7" stroke="#D4C5B0" stroke-opacity="0.6"/>
+    <text x="293" y="467">Colour</text>
+    <rect x="348" y="450" width="86" height="26" rx="13" fill="#FBF9F7" stroke="#D4C5B0" stroke-opacity="0.6"/>
+    <text x="391" y="467">Imagery</text>
+    <rect x="446" y="450" width="86" height="26" rx="13" fill="#FBF9F7" stroke="#D4C5B0" stroke-opacity="0.6"/>
+    <text x="489" y="467">Typography</text>
+  </g>
+  <text x="548" y="468" font-size="12" fill="#8A8480">layout + navigation never change</text>
+
+  <text x="40" y="522" font-size="12" fill="#B8B2AE">Hong Kong Land · Three estates, one structure — content loads per estate: The Horizon’s events, Eden Manor’s facilities, Mount Verdant’s notices</text>
+</svg>

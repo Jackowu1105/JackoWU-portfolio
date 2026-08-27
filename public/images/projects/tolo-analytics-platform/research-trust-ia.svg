@@ -1,0 +1,51 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="460" viewBox="0 0 800 460" font-family="Inter, system-ui, sans-serif">
+  <defs>
+    <linearGradient id="bg3" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#FBF9F7"/>
+      <stop offset="1" stop-color="#F4EFEA"/>
+    </linearGradient>
+    <linearGradient id="acc3" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#5183A2"/>
+      <stop offset="1" stop-color="#33577B"/>
+    </linearGradient>
+  </defs>
+  <rect width="800" height="460" rx="24" fill="url(#bg3)"/>
+  <rect x="0" y="0" width="800" height="8" rx="4" fill="url(#acc3)"/>
+
+  <text x="40" y="58" font-size="13" letter-spacing="2" fill="#B8B2AE" font-weight="600">SITE STRUCTURE · CREDIBILITY FIRST</text>
+  <text x="40" y="90" font-size="22" font-weight="700" fill="#1A1410">Trust signals first, then proof</text>
+
+  <!-- Home root -->
+  <rect x="280" y="118" width="240" height="56" rx="12" fill="#33577B"/>
+  <text x="400" y="143" font-size="15" fill="#fff" text-anchor="middle" font-weight="600">Home · front door</text>
+  <text x="400" y="163" font-size="11" fill="#fff" opacity="0.75" text-anchor="middle">trust signals + value proposition</text>
+
+  <!-- Two surfaces -->
+  <rect x="80" y="230" width="320" height="84" rx="12" fill="#fff" stroke="#D4C5B0" stroke-opacity="0.5"/>
+  <text x="104" y="262" font-size="14" font-weight="700" fill="#1A1410">About Us</text>
+  <text x="104" y="286" font-size="13" fill="#5A554F">the credibility layer</text>
+  <text x="104" y="306" font-size="13" fill="#5A554F">team · partners · institutional backing</text>
+
+  <rect x="400" y="230" width="320" height="84" rx="12" fill="#fff" stroke="#D4C5B0" stroke-opacity="0.5"/>
+  <text x="424" y="262" font-size="14" font-weight="700" fill="#1A1410">Credit Calculator</text>
+  <text x="424" y="286" font-size="13" fill="#5A554F">input parameters and compare</text>
+  <text x="424" y="306" font-size="13" fill="#5A554F">cost · limit · term at a glance</text>
+
+  <!-- Connectors -->
+  <g stroke="#5183A2" stroke-width="2" fill="none" opacity="0.7">
+    <path d="M360 174 L240 230"/>
+    <path d="M440 174 L560 230"/>
+  </g>
+
+  <!-- Sub labels -->
+  <g font-size="12" fill="#8A8480" text-anchor="middle">
+    <text x="240" y="340">who stands behind the platform</text>
+    <text x="560" y="340">the product’s value made tangible</text>
+  </g>
+
+  <text x="40" y="368" font-size="14" fill="#5A554F">Rejected: a feature-led home — it pitched features before answering</text>
+  <text x="40" y="392" font-size="14" fill="#5A554F">the trust question. Visitors see credibility first, then experience</text>
+  <text x="40" y="416" font-size="14" fill="#5A554F">the value through the calculator — the trust problem addressed first.</text>
+
+  <text x="40" y="442" font-size="12" fill="#B8B2AE">TOLOAnalytics · Trust-first site structure</text>
+</svg>

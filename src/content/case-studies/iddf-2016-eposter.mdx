@@ -5,9 +5,50 @@
   team="1 UX Designer (me, solo) + developers"
   duration="2016"
   tools={["Sketch"]}
-/>
+  />
 
-## Problem Definition
+  ## UX Research
+
+  A medical poster session runs on a scarce resource — time. Attendees had short windows to find the research they needed, and a wall of posters with no way to filter it. Research meant understanding that time pressure before choosing a single interaction pattern.
+
+  <ResearchProcess
+    stages={[
+      {
+        phase: 1,
+        title: 'Understand the conference floor',
+        summary: 'Traditional poster sessions suffered from poor discoverability: attendees wandered aimlessly and missed relevant research, with no way to filter by research topic, institution or author — and only short windows to view many posters.',
+        artifact: 'Attendee context map',
+      },
+      {
+        phase: 2,
+        title: 'Name the pain points',
+        summary: 'Time scarcity compounded by decision paralysis; papers unavailable after the conference; exhibitor booths struggling to attract visitors or collect meaningful data. Three audiences — attendees, exhibitors, organisers — needed one solution.',
+        artifact: 'Pain-point summary',
+      },
+      {
+        phase: 3,
+        title: 'Design the browse, search and bookmark flow',
+        summary: 'Kiosk IA: Home → Browse by Topic / Search / My Bookmarks / Trending Posters. A list view with large previews grouped by medical specialty replaced an overwhelming grid, with large touch targets for crowded venues.',
+        artifact: 'Browsing and search flow',
+        image: '/images/projects/iddf-2016-eposter/research-flow.svg',
+        caption: 'Four entry points into one calm list — search, browse, trending and bookmarks, grouped by specialty.',
+      },
+      {
+        phase: 4,
+        title: 'Add the engagement loop',
+        summary: 'The lucky-draw tablet turned booths into stops: scan badge QR → auto-fill info → 3-question survey → submit → confirmation with entry number. Entry took seconds instead of minutes, survey completion and booth traffic rose, and the system expanded to other CUHK conferences.',
+        artifact: 'Lucky draw flow (launched)',
+      },
+    ]}
+  />
+
+  <CaseStudyImage
+    src="/images/projects/iddf-2016-eposter/research-flow.svg"
+    label="ePoster browsing flow"
+    caption="Kiosk-first browsing — no download barrier, walk-up and start finding research in seconds."
+  />
+
+  ## Problem Definition
 
 ### Key Challenges
 

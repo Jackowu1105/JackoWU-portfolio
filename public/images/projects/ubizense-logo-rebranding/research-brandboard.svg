@@ -1,0 +1,71 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="500" viewBox="0 0 800 500" font-family="Inter, system-ui, sans-serif">
+  <defs>
+    <linearGradient id="bgU" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#FBF9F7"/>
+      <stop offset="1" stop-color="#F4EFEA"/>
+    </linearGradient>
+    <linearGradient id="accentU" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#171116"/>
+      <stop offset="1" stop-color="#A9A6AA"/>
+    </linearGradient>
+  </defs>
+  <rect width="800" height="500" rx="24" fill="url(#bgU)"/>
+  <rect x="0" y="0" width="800" height="8" rx="4" fill="url(#accentU)"/>
+
+  <text x="40" y="58" font-size="13" letter-spacing="2" fill="#B8B2AE" font-weight="600">LOGO EXPLORATION · BRAND BOARD</text>
+  <text x="40" y="90" font-size="22" font-weight="700" fill="#1A1410">Sensing, distilled into a scalable mark</text>
+
+  <!-- Tile 1: Detection -->
+  <rect x="40" y="118" width="170" height="130" rx="12" fill="#fff" stroke="#D4C5B0" stroke-opacity="0.5"/>
+  <g stroke="#1A1410" stroke-width="3" fill="none" stroke-linecap="round">
+    <path d="M103 180 a22 22 0 0 1 44 0"/>
+    <path d="M95 180 a30 30 0 0 1 60 0"/>
+    <path d="M87 180 a38 38 0 0 1 76 0"/>
+  </g>
+  <text x="125" y="226" font-size="12" font-weight="600" fill="#1A1410" text-anchor="middle">Detection</text>
+  <text x="125" y="240" font-size="11" fill="#8A8480" text-anchor="middle">arcs · scan</text>
+
+  <!-- Tile 2: Signal -->
+  <rect x="226" y="118" width="170" height="130" rx="12" fill="#fff" stroke="#D4C5B0" stroke-opacity="0.5"/>
+  <g stroke="#1A1410" stroke-width="2.5" stroke-linecap="round">
+    <line x1="311" y1="146" x2="311" y2="174"/>
+    <line x1="339" y1="156" x2="320" y2="175"/>
+    <line x1="349" y1="180" x2="321" y2="180"/>
+    <line x1="339" y1="204" x2="320" y2="185"/>
+    <line x1="311" y1="210" x2="311" y2="186"/>
+    <line x1="283" y1="204" x2="302" y2="185"/>
+    <line x1="273" y1="180" x2="301" y2="180"/>
+    <line x1="283" y1="156" x2="302" y2="175"/>
+  </g>
+  <circle cx="311" cy="180" r="6" fill="#1A1410"/>
+  <text x="311" y="226" font-size="12" font-weight="600" fill="#1A1410" text-anchor="middle">Signal</text>
+  <text x="311" y="240" font-size="11" fill="#8A8480" text-anchor="middle">rays · broadcast</text>
+
+  <!-- Tile 3: Awareness -->
+  <rect x="412" y="118" width="170" height="130" rx="12" fill="#fff" stroke="#D4C5B0" stroke-opacity="0.5"/>
+  <circle cx="478" cy="180" r="5" fill="#1A1410"/>
+  <g stroke="#1A1410" stroke-width="2.5" fill="none" stroke-linecap="round">
+    <path d="M490 180 a22 22 0 0 1 44 0"/>
+    <path d="M490 180 a32 32 0 0 1 64 0"/>
+  </g>
+  <text x="497" y="226" font-size="12" font-weight="600" fill="#1A1410" text-anchor="middle">Awareness</text>
+  <text x="497" y="240" font-size="11" fill="#8A8480" text-anchor="middle">ripple · detect</text>
+
+  <!-- Tile 4: Final mark on construction grid -->
+  <rect x="598" y="118" width="170" height="130" rx="12" fill="#fff" stroke="#D4C5B0" stroke-opacity="0.5"/>
+  <g stroke="#D4C5B0" stroke-width="1">
+    <line x1="652" y1="180" x2="714" y2="180"/>
+    <line x1="683" y1="149" x2="683" y2="211"/>
+  </g>
+  <rect x="658" y="155" width="50" height="50" rx="10" fill="#171116"/>
+  <circle cx="683" cy="180" r="9" fill="none" stroke="#fff" stroke-width="3"/>
+  <circle cx="683" cy="180" r="3.5" fill="#fff"/>
+  <text x="683" y="226" font-size="12" font-weight="600" fill="#1A1410" text-anchor="middle">Final mark</text>
+  <text x="683" y="240" font-size="11" fill="#8A8480" text-anchor="middle">grid-constructed</text>
+
+  <text x="40" y="300" font-size="13" fill="#5A554F">Audit: logo on name cards, website and event materials, no unified spec — every asset a one-off.</text>
+  <text x="40" y="324" font-size="13" fill="#5A554F">Scan: smart-sensing brands signal detection, signal, awareness — exploration centred on those ideas.</text>
+  <text x="40" y="348" font-size="13" fill="#5A554F">Refined: a geometric construction that reproduces accurately from a 9 pt favicon to a 3 m backdrop.</text>
+
+  <text x="40" y="478" font-size="12" fill="#B8B2AE">ubiZense · Logo rebranding — brand audit &amp; logo exploration</text>
+</svg>

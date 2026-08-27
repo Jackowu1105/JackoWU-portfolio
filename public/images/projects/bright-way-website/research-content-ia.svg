@@ -1,0 +1,59 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="460" viewBox="0 0 800 460" font-family="Inter, system-ui, sans-serif">
+  <defs>
+    <linearGradient id="bg4" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#FBF9F7"/>
+      <stop offset="1" stop-color="#F4EFEA"/>
+    </linearGradient>
+    <linearGradient id="acc4" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#767679"/>
+      <stop offset="1" stop-color="#454549"/>
+    </linearGradient>
+  </defs>
+  <rect width="800" height="460" rx="24" fill="url(#bg4)"/>
+  <rect x="0" y="0" width="800" height="8" rx="4" fill="url(#acc4)"/>
+
+  <text x="40" y="58" font-size="13" letter-spacing="2" fill="#B8B2AE" font-weight="600">CONTENT ARCHITECTURE</text>
+  <text x="40" y="90" font-size="22" font-weight="700" fill="#1A1410">Structured around the client’s questions</text>
+
+  <!-- Root -->
+  <rect x="280" y="118" width="240" height="46" rx="12" fill="#454549"/>
+  <text x="400" y="146" font-size="14" fill="#fff" text-anchor="middle" font-weight="600">Bright Way website</text>
+
+  <!-- Three question cards -->
+  <g>
+    <rect x="40" y="210" width="220" height="84" rx="12" fill="#fff" stroke="#D4C5B0" stroke-opacity="0.5"/>
+    <text x="150" y="244" font-size="14" font-weight="700" fill="#1A1410" text-anchor="middle">What do you do?</text>
+    <text x="150" y="268" font-size="12" fill="#5A554F" text-anchor="middle">services, clearly described</text>
+    <text x="150" y="286" font-size="12" fill="#5A554F" text-anchor="middle">credible, not flashy</text>
+
+    <rect x="290" y="210" width="220" height="84" rx="12" fill="#fff" stroke="#D4C5B0" stroke-opacity="0.5"/>
+    <text x="400" y="244" font-size="14" font-weight="700" fill="#1A1410" text-anchor="middle">What have you delivered?</text>
+    <text x="400" y="268" font-size="12" fill="#5A554F" text-anchor="middle">projects · case studies</text>
+    <text x="400" y="286" font-size="12" fill="#5A554F" text-anchor="middle">evidence of delivery</text>
+
+    <rect x="540" y="210" width="220" height="84" rx="12" fill="#fff" stroke="#D4C5B0" stroke-opacity="0.5"/>
+    <text x="650" y="244" font-size="14" font-weight="700" fill="#1A1410" text-anchor="middle">How do I reach you?</text>
+    <text x="650" y="268" font-size="12" fill="#5A554F" text-anchor="middle">contact · no dead ends</text>
+    <text x="650" y="286" font-size="12" fill="#5A554F" text-anchor="middle">guided, friction-free</text>
+  </g>
+
+  <!-- Connectors -->
+  <g stroke="#767679" stroke-width="2" fill="none" opacity="0.7">
+    <path d="M360 164 L150 210"/>
+    <path d="M400 164 L400 210"/>
+    <path d="M440 164 L650 210"/>
+  </g>
+
+  <!-- Sub labels -->
+  <g font-size="12" fill="#8A8480" text-anchor="middle">
+    <text x="150" y="320">the value proposition</text>
+    <text x="400" y="320">the track record</text>
+    <text x="650" y="320">the final ask</text>
+  </g>
+
+  <text x="40" y="366" font-size="14" fill="#5A554F">Rejected: an org-chart structure — visitors don’t care about the</text>
+  <text x="40" y="390" font-size="14" fill="#5A554F">company’s internal departments. The navigation is obvious because</text>
+  <text x="40" y="414" font-size="14" fill="#5A554F">it mirrors the visitor’s mental model: no guessing, no dead ends.</text>
+
+  <text x="40" y="442" font-size="12" fill="#B8B2AE">Bright Way · Client-question-driven content architecture</text>
+</svg>
