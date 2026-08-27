@@ -88,6 +88,21 @@ export function ResearchProcess({ stages }: { stages: ResearchStage[] }) {
             <span className="inline-block text-[10px] font-medium text-[#8A8480] px-2.5 py-1 rounded-md border border-[#D4C5B0]/30 bg-white/40">
               Artifact · {s.artifact}
             </span>
+            {s.image && (
+              <div className="mt-4">
+                <img
+                  src={s.image}
+                  alt={s.caption || s.artifact}
+                  loading="lazy"
+                  className="w-full rounded-xl border border-[#D4C5B0]/25 bg-[#FAF7F5]"
+                />
+                {s.caption && (
+                  <p className="mt-2 text-xs text-[#8A8480] leading-relaxed">
+                    {s.caption}
+                  </p>
+                )}
+              </div>
+            )}
           </motion.div>
         ))}
       </div>
