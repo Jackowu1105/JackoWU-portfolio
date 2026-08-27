@@ -23,10 +23,22 @@ export default function ContactPage() {
         {/* Form */}
         <GlassCard hover={false} className="p-8">
           <form
-            action="https://formspree.io/f/your-form-id"
+            action="https://api.web3forms.com/submit"
             method="POST"
             className="space-y-5"
           >
+            {/* Web3Forms access key — replace with your real key from web3forms.com */}
+            <input type="hidden" name="access_key" value="7dea379b-26ec-4470-9362-36a79f0da48f" />
+            <input type="hidden" name="subject" value="New message from Jacko's portfolio" />
+            {/* Honeypot anti-spam (hidden from humans) */}
+            <input
+              type="checkbox"
+              name="botcheck"
+              className="hidden"
+              style={{ display: 'none' }}
+              tabIndex={-1}
+              autoComplete="off"
+            />
             <div>
               <label htmlFor="name" className="block text-sm font-medium text-text-secondary mb-2">
                 Name
@@ -81,22 +93,22 @@ export default function ContactPage() {
           <GlassCard className="p-8">
             <h3 className="font-semibold text-text-primary mb-2">Email</h3>
             <a
-              href="mailto:hello@jacko.design"
+              href="mailto:wucheukying.life@gmail.com"
               className="text-text-secondary hover:text-text-primary transition-colors"
             >
-              hello@jacko.design
+              wucheukying.life@gmail.com
             </a>
           </GlassCard>
 
           <GlassCard className="p-8">
             <h3 className="font-semibold text-text-primary mb-2">LinkedIn</h3>
             <a
-              href="https://linkedin.com"
+              href="https://www.linkedin.com/in/jacko-wu"
               target="_blank"
               rel="noopener noreferrer"
               className="text-text-secondary hover:text-text-primary transition-colors"
             >
-              linkedin.com/in/jacko
+              linkedin.com/in/jacko-wu
             </a>
           </GlassCard>
 
