@@ -10,6 +10,7 @@ import { PersonaCard } from '@/components/case-study/PersonaCard'
 import { ResearchIA } from '@/components/case-study/ResearchIA'
 import { JourneyFlow } from '@/components/case-study/JourneyFlow'
 import { InsightGrid } from '@/components/case-study/InsightGrid'
+import { GalleryGrid } from '@/components/case-study/GalleryGrid'
 
 const components: MDXComponents = {
   h1: ({ children }) => (
@@ -78,6 +79,7 @@ const components: MDXComponents = {
   ResearchIA,
   JourneyFlow,
   InsightGrid,
+  GalleryGrid,
 }
 
 export function useMDXComponents(): MDXComponents {
