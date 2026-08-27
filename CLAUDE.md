@@ -3,7 +3,7 @@
 # Portfolio — 專案操作筆記
 
 > 自動載入於呢個 folder。技術 context 用，唔好同 Obsidian 記憶重複（Obsidian 記「呢個係咩」，呢度記「而家點做」）。
-> Obsidian 進度筆記：`01_Projects/進度-portfolio-case-studies.md`（vault 根目錄 `C:\Users\jacko\Desktop\Jacko-Obsidian\`，PARA 結構）
+> Obsidian 進度筆記：`01_Projects/進度-portfolio-case-studies.md`（vault 根目錄 `C:\Users\Acer\Desktop\Jacko-Obsidian\`，PARA 結構）
 
 ## Run
 - dev：`npm run dev`（http://localhost:3000）
@@ -14,10 +14,10 @@
 - Case study 內容：`src/content/case-studies/<slug>.mdx`（slug 同 `src/data/projects.ts` 對應；有 entry 但未有 .mdx 嘅會用 fallback 頁顯示 summary + highlights + "coming soon"，唔會 404）
 - Project metadata：`src/data/projects.ts`（欄位：slug / title / client / role / timeline / tools / tags / featured / thumbnail / heroImage / summary / highlights / **palette** / **category** / order）
   - `palette: string[]` — 4 色（surface / primary / accent / dark），由真實截圖提取， Work page card 同 case study hero 會顯示
-  - `category: 'ux' | 'graphic' | 'motion'` — 分類（預設 ux）。Work page tabs 按此分組
+  - `category: 'ux' | 'graphic' | 'video'` — 分類（預設 ux）。Work page tabs 按此分組（UX & Product / Graphic Design / Video）
 - `src/app/work/[slug]/page.tsx` 用 `await import(@/content/case-studies/${slug}.mdx)` 動態載入；MDX 唔存在就走 fallback（summary + highlights），唔係靜默跳過
 - 加新 case study = 喺 projects.ts 加 entry + 開對應 `.mdx` + 攞圖入 `public/images/projects/<slug>/`
-- 排位原則：featured 6 個（最強 UX case）+ 非 featured 26 個；`order` 排先後
+- 排位原則：featured 8 個（Jacko 定嘅 Top 8，Home 展示）+ 非 featured 24 個（其餘按新→舊時間排）；`order` 排先後
 
 ### AIFT 現職工作（order 24–32）
 - Jacko 現職 AIFT（人工智能金融科技實驗室 / AI FinTech Lab，11/2024–而家）。工作內容檔案喺 `D:\AIFT`
@@ -62,7 +62,7 @@
 ## Work page（`src/app/work/page.tsx` + `src/components/work/WorkGallery.tsx` + `ProjectCard.tsx`）
 - `WorkGallery`（client component）：分類 tabs（All / UX & Product / Graphic Design / Motion）+ **Show more** 分批載入（首屏 3 compact，每次 +4），避免首屏一次過太多圖
 - tabs 按 `projects.ts` 嘅 `category` 分組；`category` 冇設就當 `ux`
-- 兩段式 layout：**Featured**（6 個大卡，2 欄）+ **More work**（compact 卡，3 欄）
+- 兩段式 layout：**Featured**（8 個大卡，2 欄）+ **More work**（compact 卡，3 欄）
 - ProjectCard 顯示：編號、category eyebrow、thumbnail、title、client · timeline、tags、palette swatches
 - featured 大卡仲有 summary + hover 效果
 

@@ -87,47 +87,10 @@ export function HeroSection() {
               className="text-2xl sm:text-3xl md:text-4xl lg:text-[48px] font-bold tracking-[-0.8px] leading-[1.2] text-heading"
               style={{ fontFamily: 'var(--font-heading)' }}
             >
-              Jacko Wu — Crafting
+              I design it.
               <br />
-              Digital Experiences with
+              I build it.
             </motion.h1>
-          </div>
-
-          {/* Layer 3 — "Precision & Soul" */}
-          <div data-depth={3} className="will-change-transform" style={{ transition: 'transform 0.15s ease-out' }}>
-            <motion.div
-              initial={{ opacity: 0, y: 20, filter: 'blur(4px)' }}
-              animate={{ opacity: 1, y: 0, filter: 'blur(0px)' }}
-              transition={{ delay: 0.25, duration: 0.6, ease: [0.25, 0.1, 0.25, 1] }}
-              className="flex items-center justify-center gap-4 flex-wrap"
-            >
-              <span className="relative inline-block">
-                <span
-                  className="text-2xl sm:text-3xl md:text-4xl lg:text-[48px] font-bold tracking-[-0.8px] leading-[1.2] text-teal"
-                  style={{ fontFamily: 'var(--font-heading)' }}
-                >
-                  Precision
-                </span>
-                <span className="absolute -bottom-2 left-0 right-0 h-1 rounded-full bg-teal-underline" />
-              </span>
-
-              <span
-                className="text-2xl sm:text-3xl md:text-4xl lg:text-[48px] font-bold tracking-[-0.8px] leading-[1.2] text-heading"
-                style={{ fontFamily: 'var(--font-heading)' }}
-              >
-                &amp;
-              </span>
-
-              <span className="relative inline-block">
-                <span
-                  className="text-2xl sm:text-3xl md:text-4xl lg:text-[48px] font-bold tracking-[-0.8px] leading-[1.2] text-gold"
-                  style={{ fontFamily: 'var(--font-heading)' }}
-                >
-                  Soul
-                </span>
-                <span className="absolute -bottom-2 left-0 right-0 h-1 rounded-full bg-gold-underline" />
-              </span>
-            </motion.div>
           </div>
 
           {/* Description */}
@@ -138,9 +101,9 @@ export function HeroSection() {
             className="text-sm sm:text-base md:text-lg text-body max-w-[672px] mx-auto leading-relaxed mt-4"
             style={{ fontFamily: 'var(--font-sans)' }}
           >
-            I&apos;m a UX/UI Designer focused on creating human-centric digital products. By
-            blending minimalist aesthetics with advanced functionality, I build intuitive
-            interfaces that feel effortless and look premium.
+            I&apos;m Jacko Wu — a UX/UI designer who ships his own front-end code with AI.
+            8+ years across fintech, IoT and aviation logistics; now turning ideas into
+            running products instead of handing off mockups.
           </motion.p>
 
           {/* Layer 4 — CTAs */}

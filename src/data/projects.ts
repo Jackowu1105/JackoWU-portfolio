@@ -14,12 +14,12 @@ export interface Project {
   // 專案主色板（由真實截圖提取：surface / primary / accent / dark）
   palette: string[]
   /** 分類：ux（預設）／ graphic（graphic/poster 設計）／ motion（motion graphic/影片） */
-  category?: 'ux' | 'graphic' | 'motion'
+  category?: 'ux' | 'graphic' | 'video'
   order: number
 }
 
 // 32 case studies. Palettes extracted from real screenshots.
-// Ordering: representativeness + variety + recency-first. Featured = strongest UX case studies.
+// Ordering: Jacko-curated Top 8 (featured, shown on Home) first, then the rest by recency (newest first).
 // AIFT work (24–32): current company projects, UX products first then graphic/motion.
 export const projects: Project[] = [
   {
@@ -30,7 +30,7 @@ export const projects: Project[] = [
     timeline: '2024',
     tools: ['Figma'],
     tags: ['Enterprise', 'Dashboard', 'Aviation', 'Data Visualization'],
-    featured: true,
+    featured: false,
     thumbnail: '/images/projects/as2-aahk-controller-dashboard/cover.jpg',
     heroImage: '/images/projects/as2-aahk-controller-dashboard/cover.jpg',
     summary:
@@ -41,7 +41,7 @@ export const projects: Project[] = [
       'IA aligned to the controller mental model: body type first, bay type on demand',
     ],
     palette: ['#F1F1F1', '#304666', '#172333', '#A2ADBE'],
-    order: 1,
+    order: 14,
   },
   {
     slug: 'zproduct-dashboard',
@@ -62,7 +62,7 @@ export const projects: Project[] = [
       'Preset templates for common airport types (cargo hubs vs large hubs)',
     ],
     palette: ['#F2F3F3', '#61DBB7', '#2EA7A9', '#FFDF91'],
-    order: 2,
+    order: 4,
   },
   {
     slug: 'momax-smart-app',
@@ -83,7 +83,7 @@ export const projects: Project[] = [
       'Built a 42-component design system shared across iOS & Android (same IA, native visuals)',
     ],
     palette: ['#EBEBEB', '#0195E2', '#02A4DF', '#1A2F47'],
-    order: 3,
+    order: 6,
   },
   {
     slug: 'ontolo-residential-app',
@@ -104,7 +104,7 @@ export const projects: Project[] = [
       'Research with ~20 residents aged 8–75 across demographics and digital literacy',
     ],
     palette: ['#D3E6DF', '#57A3B1', '#51A1AF', '#42677E'],
-    order: 4,
+    order: 5,
   },
   {
     slug: 'mtr-property-app',
@@ -125,7 +125,7 @@ export const projects: Project[] = [
       'Extended the design system to web, print leaflets, and the backend admin UI',
     ],
     palette: ['#FFFFFF', '#AD203A', '#AE233C', '#61C27A'],
-    order: 5,
+    order: 7,
   },
   {
     slug: 'consonance-smart-building',
@@ -146,7 +146,7 @@ export const projects: Project[] = [
       'Pool locker flow designed end-to-end, with edge cases mapped before screens',
     ],
     palette: ['#151819', '#1F282E', '#364047', '#2D3030'],
-    order: 6,
+    order: 8,
   },
   {
     slug: 'wine-dine-festival-pos',
@@ -167,7 +167,7 @@ export const projects: Project[] = [
       'V1→V2→V3 hybrid keypad: quick-select buttons plus a custom amount entry',
     ],
     palette: ['#494D5B', '#C2A77A', '#AB8E61', '#787C8F'],
-    order: 7,
+    order: 28,
   },
   {
     slug: 'vehicle-tracker-geo-fence',
@@ -188,7 +188,7 @@ export const projects: Project[] = [
       'Platform-specific: web dashboard for monitoring, mobile for on-site single-vehicle tracking',
     ],
     palette: ['#F1F8F6', '#2C677A', '#346F80', '#DAEBE9'],
-    order: 8,
+    order: 17,
   },
   {
     slug: 'asset-world-corporation-connext',
@@ -209,7 +209,7 @@ export const projects: Project[] = [
       'Gamified loyalty with progress bars and one-tap redemption at point of sale',
     ],
     palette: ['#EDF0F5', '#D6DFE8', '#454549', '#C7D0DA'],
-    order: 9,
+    order: 19,
   },
   {
     slug: 'cic-merchant-takeaway',
@@ -230,7 +230,7 @@ export const projects: Project[] = [
       'Merchant-friendly: large single-tap status buttons for non-tech owners',
     ],
     palette: ['#FFFFFF', '#02B3B9', '#EBAD7E', '#F8B64B'],
-    order: 10,
+    order: 20,
   },
   {
     slug: 'citysuper-lucky-draw',
@@ -251,7 +251,7 @@ export const projects: Project[] = [
       'Trust signals: live participant counter, unique entry IDs, clear T&Cs',
     ],
     palette: ['#1C1710', '#494E5C', '#777C8F', '#8B94A4'],
-    order: 11,
+    order: 29,
   },
   {
     slug: 'road-to-ultra-pos',
@@ -272,7 +272,7 @@ export const projects: Project[] = [
       'Persistent balance display to address attendee anxiety about running out of tokens',
     ],
     palette: ['#1B112C', '#291733', '#2D1D44', '#442C48'],
-    order: 12,
+    order: 30,
   },
   {
     slug: 'iddf-2016-eposter',
@@ -293,7 +293,7 @@ export const projects: Project[] = [
       'Grid → list view with large previews, categorised by medical specialty',
     ],
     palette: ['#F0F0F1', '#FDD676', '#8E622E', '#A77C30'],
-    order: 13,
+    order: 31,
   },
   {
     slug: 'canon-photomarathon-2016',
@@ -314,7 +314,7 @@ export const projects: Project[] = [
       'Mobile-first for participants; responsive desktop for judges',
     ],
     palette: ['#FFFFFF', '#767679', '#A5A6A8', '#F3F1F1'],
-    order: 14,
+    order: 32,
   },
   {
     slug: 'massage-gun',
@@ -335,7 +335,7 @@ export const projects: Project[] = [
       'Progress tracking so users can monitor sessions and adjust over time',
     ],
     palette: ['#FFFFFF', '#187CDA', '#0778D7', '#C3D4F1'],
-    order: 15,
+    order: 21,
   },
   {
     slug: 'ubizense-logo-rebranding',
@@ -357,7 +357,7 @@ export const projects: Project[] = [
     ],
     palette: ['#D7D5D7', '#C1BDC3', '#171116', '#A9A6AA'],
     category: 'graphic',
-    order: 16,
+    order: 18,
   },
   {
     slug: 'smart-logistics-datathon-2024',
@@ -379,7 +379,7 @@ export const projects: Project[] = [
     ],
     palette: ['#2E64A7', '#3170C1', '#D93E61', '#2D3046'],
     category: 'graphic',
-    order: 17,
+    order: 15,
   },
   {
     slug: 'smart-d-hkbn',
@@ -400,7 +400,7 @@ export const projects: Project[] = [
       'Managed IoT product production timelines and design submissions end-to-end with HKBN',
     ],
     palette: ['#FFFFFF', '#EDF0F5', '#D6DFE8', '#454549'],
-    order: 18,
+    order: 22,
   },
   {
     slug: 'hk-times-square-app',
@@ -421,7 +421,7 @@ export const projects: Project[] = [
       'Staff app for operational workflows across the mall',
     ],
     palette: ['#FFFFFF', '#767679', '#A5A6A8', '#F3F1F1'],
-    order: 19,
+    order: 26,
   },
   {
     slug: 'bright-way-website',
@@ -442,7 +442,7 @@ export const projects: Project[] = [
       'Corporate identity carried consistently across all pages',
     ],
     palette: ['#FFFFFF', '#767679', '#A5A6A8', '#F3F1F1'],
-    order: 20,
+    order: 27,
   },
   {
     slug: 'hkl-property-apps',
@@ -463,7 +463,7 @@ export const projects: Project[] = [
       'Premium, resident-focused interface design',
     ],
     palette: ['#FFFFFF', '#EDF0F5', '#D6DFE8', '#454549'],
-    order: 21,
+    order: 24,
   },
   {
     slug: 'momax-marketing-campaign',
@@ -485,7 +485,7 @@ export const projects: Project[] = [
     ],
     palette: ['#FFFFFF', '#0195E2', '#02A4DF', '#1A2F47'],
     category: 'graphic',
-    order: 22,
+    order: 25,
   },
   {
     slug: 'momax-product-videos',
@@ -506,7 +506,7 @@ export const projects: Project[] = [
       'Motion graphics keep the pacing tight and the product the star',
     ],
     palette: ['#90C0D8', '#4890C0', '#1878A8', '#183048'],
-    category: 'motion',
+    category: 'video',
     order: 23,
   },
   // ── AIFT work (current company) ─────────────────────────────────────────
@@ -530,7 +530,7 @@ export const projects: Project[] = [
     ],
     palette: ['#9F9BA0', '#3A3941', '#62606A', '#19181C'],
     category: 'ux',
-    order: 24,
+    order: 2,
   },
   {
     slug: 'tap-tokenized-abs-planner',
@@ -553,7 +553,7 @@ export const projects: Project[] = [
     ],
     palette: ['#ACBECA', '#192F54', '#516D97', '#040812'],
     category: 'ux',
-    order: 25,
+    order: 3,
   },
   {
     slug: 'fundel-logistics-portal',
@@ -576,7 +576,7 @@ export const projects: Project[] = [
     ],
     palette: ['#0F172A', '#3B82F6', '#41B893', '#F1F5F9'],
     category: 'ux',
-    order: 26,
+    order: 1,
   },
   {
     slug: 'scf-supply-chain-finance',
@@ -598,7 +598,7 @@ export const projects: Project[] = [
     ],
     palette: ['#FDFEFF', '#A6D0E0', '#E4F0F6', '#44BBDC'],
     category: 'ux',
-    order: 27,
+    order: 11,
   },
   {
     slug: 'tolo-analytics-platform',
@@ -620,7 +620,7 @@ export const projects: Project[] = [
     ],
     palette: ['#FDFDFD', '#5183A2', '#8CAFC3', '#33577B'],
     category: 'ux',
-    order: 28,
+    order: 12,
   },
   {
     slug: 'aift-hackathon-2024',
@@ -642,7 +642,7 @@ export const projects: Project[] = [
     ],
     palette: ['#9BC7F5', '#4566D7', '#927BDE', '#0F1F82'],
     category: 'graphic',
-    order: 29,
+    order: 16,
   },
   {
     slug: 'innoex-2025-booth',
@@ -664,7 +664,7 @@ export const projects: Project[] = [
     ],
     palette: ['#D9EEFA', '#5EB7E5', '#A4D5F1', '#6994CC'],
     category: 'graphic',
-    order: 30,
+    order: 13,
   },
   {
     slug: 'innoex-2026-backdrop',
@@ -686,7 +686,7 @@ export const projects: Project[] = [
     ],
     palette: ['#D5D9E7', '#E39972', '#ACBEDB', '#6895C7'],
     category: 'graphic',
-    order: 31,
+    order: 9,
   },
   {
     slug: 'aift-corporate-motion',
@@ -707,8 +707,8 @@ export const projects: Project[] = [
       'One motion language across corporate film and festive greetings',
     ],
     palette: ['#E0E1D3', '#667077', '#A2A599', '#213058'],
-    category: 'motion',
-    order: 32,
+    category: 'video',
+    order: 10,
   },
 ]
 

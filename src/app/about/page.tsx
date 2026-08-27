@@ -93,11 +93,11 @@ export default function AboutPage() {
         </p>
         <h1 className="text-4xl md:text-5xl font-bold tracking-tight text-text-primary mb-4">
           Designer,<br />
-          <span className="text-accent-gold">code enthusiast.</span>
+          <span className="text-accent-gold">builder.</span>
         </h1>
-        <p className="text-text-secondary leading-relaxed text-lg whitespace-nowrap">
-          A UX/UI Designer evolving into a design-engineer hybrid — turning ideas into
-          real products with AI-assisted workflows.
+        <p className="text-text-secondary leading-relaxed text-lg">
+          A UX/UI designer who turned 8+ years of product design into shipping real
+          front-end code — with AI doing the typing, and me keeping the bar.
         </p>
       </div>
 
@@ -115,24 +115,26 @@ export default function AboutPage() {
               </h2>
               <div className="space-y-3 text-text-secondary leading-relaxed">
                 <p>
-                  A UX/UI Designer with over 8 years of experience spanning system design,
-                  product design, and branding across fintech, IoT, and logistics industries.
-                  Based in Hong Kong, I&apos;ve had the privilege of working with research labs,
-                  universities, and product teams to ship digital experiences that matter.
+                  I&apos;m Jacko Wu, a UX/UI designer with 8+ years across fintech, IoT,
+                  aviation logistics and property tech. I&apos;ve designed dashboards, apps and
+                  brand systems for research labs, universities and product teams in Hong Kong —
+                  and for most of that time, I handed my mockups to engineers and hoped they&apos;d
+                  survive the build.
                 </p>
                 <p>
-                  In recent years, I&apos;ve undergone a transformative shift — evolving from a
-                  pure designer into a <strong className="text-text-primary">design-engineer hybrid</strong> —
-                  by embracing AI-assisted development and vibe coding workflows. This evolution
-                  lets me independently translate design concepts into fully functional front-end
-                  applications, bridging the gap between vision and delivery with remarkable efficiency.
+                  That changed when I started building with AI. On FUNDel — a 16-page logistics
+                  platform — I didn&apos;t just design it, I shipped it: ~31,000 lines of
+                  React/TypeScript across ~1,300 commits, ~88% AI-authored under my direction, as
+                  a solo MVP with no engineering team. The bottleneck was never typing speed; it
+                  was design judgment — the part I already had.
                 </p>
                 <p>
-                  I&apos;m passionate about leveraging AI tools to augment creativity, accelerate
-                  prototyping, and deliver end-to-end product experiences that are both visually
-                  compelling and technically sound. When I&apos;m not designing or coding, you&apos;ll
-                  find me exploring new tools, contributing to open source, or pushing the
-                  boundaries of what a designer-engineer can create.
+                  Today I work as a design-engineer hybrid: I set the design system and
+                  information architecture, then drive an AI coding agent to implement it,
+                  reviewing every commit. The result is end-to-end products that are both
+                  visually considered and actually running — designed and shipped by the same
+                  hands. I&apos;m now looking for UI/UX and front-end roles where design and build
+                  stay in one person.
                 </p>
               </div>
             </div>

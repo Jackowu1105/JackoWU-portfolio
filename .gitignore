@@ -46,3 +46,6 @@ next-env.d.ts
 /*.jpeg
 /*.png
 /tmp_*.txt
+
+# local agent settings
+.claude/

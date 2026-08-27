@@ -9,7 +9,7 @@ const logos: { src: string; alt: string }[] = [
   { src: '/images/logos/03_Cursor.svg', alt: 'Cursor' },
   { src: '/images/logos/04_claude-ai.svg', alt: 'Claude AI' },
   { src: '/images/logos/05_github-copilot-icon.svg', alt: 'GitHub Copilot' },
-  { src: '/images/logos/06_lovable-color.svg', alt: 'Lovable' },
+  { src: '/images/logos/06_lovable-color.png', alt: 'Lovable' },
   { src: '/images/logos/07_Octicons-mark-github.svg', alt: 'GitHub' },
   { src: '/images/logos/08_Adobe_Illustrator_CC_icon.svg', alt: 'Adobe Illustrator' },
   { src: '/images/logos/09_Adobe_Photoshop_CC_icon.svg', alt: 'Adobe Photoshop' },
