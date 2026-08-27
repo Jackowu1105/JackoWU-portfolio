@@ -42,10 +42,14 @@ The campaign lives or dies on conversion, so the research focused on why people 
   ]}
 />
 
-<CaseStudyImage
-  src="/images/projects/citysuper-lucky-draw/research-funnel.svg"
-  label="Research artifact — conversion funnel"
-  caption="The progressive-disclosure funnel: browse first, ask for name and email only at the moment it matters, confirm instantly with a unique entry ID."
+<JourneyFlow
+  label="Conversion funnel · progressive disclosure"
+  steps={[
+    { title: 'Browse', desc: 'Prize visibility comes first — a card-based gallery with category filters and multi-select, so users see what they could win before any form.', tag: 'prize first' },
+    { title: 'Select', desc: 'A sticky product selector keeps chosen favourites visible while the wizard moves step by step — users browse without losing their place.', tag: 'sticky selector' },
+    { title: 'Enter', desc: 'Only name and email, asked at the moment they matter — the minimal field set that cut form abandonment.', tag: 'minimal form' },
+    { title: 'Confirm', desc: 'Instant confirmation with a unique entry ID, backed by a live participant counter and clear T&Cs with the draw date.', tag: 'trust' },
+  ]}
 />
 
 ## Research & Discovery

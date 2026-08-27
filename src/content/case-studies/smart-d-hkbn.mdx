@@ -42,10 +42,14 @@ Two brands, one ecosystem — the research question was what “native” means 
   ]}
 />
 
-<CaseStudyImage
-  src="/images/projects/smart-d-hkbn/research-ecosystem-flow.svg"
-  label="Ecosystem flow"
-  caption="MOMAX devices flow into the HKBN app through a pairing seam that keeps both brands legible."
+<JourneyFlow
+  label="Ecosystem flow · MOMAX device → HKBN app"
+  steps={[
+    { title: 'MOMAX device', desc: 'Hardware built under its own brand assumptions — its own pairing flow, naming conventions and control surfaces.', tag: 'device' },
+    { title: 'HKBN-native pairing', desc: 'The pairing flow is entirely HKBN-branded; the MOMAX device is recognised and presented as a native app element — no two-step brand confusion.', tag: 'pairing seam' },
+    { title: 'HKBN app control', desc: 'Device cards, toggles and status states match HKBN design language while still reading clearly as MOMAX hardware.', tag: 'control' },
+    { title: 'Voice control', desc: 'Device states and scenes mapped so Google Assistant and Alexa control exactly the same devices the app controls.', tag: 'Google Assistant · Alexa' },
+  ]}
 />
 
 

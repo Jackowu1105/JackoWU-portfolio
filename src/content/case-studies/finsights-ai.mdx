@@ -44,16 +44,22 @@ An AI advisor app fails on research before it fails on engineering. I framed the
   ]}
 />
 
-<CaseStudyImage
-  src="/images/projects/finsights-ai/research-tension.svg"
-  label="Research tension map"
-  caption="The two failure modes that defined the product — surface everything, or hide everything behind the AI."
+<InsightGrid
+  label="Research tension · the two failure modes"
+  items={[
+    { title: 'Dashboard trap', desc: 'Surface every metric — the app becomes a tool only a professional can use.', tone: 'bad', badge: 'data overload' },
+    { title: 'Black-box trap', desc: 'Hide every decision behind "the AI said so" — users stop trusting it.', tone: 'bad', badge: 'lost trust' },
+  ]}
 />
 
-<CaseStudyImage
-  src="/images/projects/finsights-ai/research-ia.svg"
-  label="IA structure"
-  caption="Three surfaces mapped to three intents, with the AI assistant as the front door."
+<ResearchIA
+  label="Information Architecture · three surfaces, three intents"
+  root="FinSightsAI"
+  children={[
+    { title: 'AI Assistant', desc: 'conversational front door · recent hot topics + authority index', badge: 'front door' },
+    { title: 'Home', desc: 'recommendations feed · notes · watchlist · profile', badge: 'workspace' },
+    { title: 'Market', desc: 'charts · company profile · fundamentals · headlines · technical analysis', badge: 'data layer' },
+  ]}
 />
 
 

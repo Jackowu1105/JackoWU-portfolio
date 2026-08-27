@@ -42,10 +42,14 @@ The platform is a monitoring tool first and an interface second, so I started by
   ]}
 />
 
-<CaseStudyImage
-  src="/images/projects/vehicle-tracker-geo-fence/research-monitoring.svg"
-  label="Research artifact — monitoring workflow"
-  caption="The four-stage monitoring workflow, from the unfiltered vehicle feed to smart-filtered priority alerts — synthesised from dispatcher interviews and control-room observation."
+<JourneyFlow
+  label="Monitoring workflow · dispatcher interviews + control-room observation"
+  steps={[
+    { title: 'Unfiltered feed', desc: 'Every vehicle on the apron at once — too much to process during peak operations, and unfiltered notifications cause alert fatigue.', tag: 'problem' },
+    { title: 'Filter', desc: 'A persistent filter panel toggles visibility by vehicle type, status, or custom zone — each shift draws the GEO fences its operation needs.', tag: 'filter-first' },
+    { title: 'Priority alert', desc: 'Smart-filtered, priority-based alerts surface only what needs attention, so urgent exceptions are not lost in the noise.', tag: 'smart' },
+    { title: 'Act', desc: 'Dispatchers respond from the web dashboard while on-site crews track the single vehicle on mobile.', tag: 'respond' },
+  ]}
 />
 
 ## Research & Insights

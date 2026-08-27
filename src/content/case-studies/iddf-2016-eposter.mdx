@@ -42,10 +42,14 @@
     ]}
   />
 
-  <CaseStudyImage
-    src="/images/projects/iddf-2016-eposter/research-flow.svg"
-    label="ePoster browsing flow"
-    caption="Kiosk-first browsing — no download barrier, walk-up and start finding research in seconds."
+  <JourneyFlow
+    label="ePoster browsing flow · kiosk-first"
+    steps={[
+      { title: 'Walk up', desc: 'Kiosks instead of an app — no download barrier, attendees start finding research in seconds.', tag: 'no download' },
+      { title: 'Browse', desc: 'Browse by topic, search, bookmarks and trending posters — a list view with large previews grouped by medical specialty.', tag: 'filter by topic' },
+      { title: 'View', desc: 'Large previews and touch targets optimised for kiosk viewing distance, calming the overwhelming grid of the wall session.', tag: 'kiosk-optimised' },
+      { title: 'Lucky draw', desc: 'Scan badge QR → auto-fill info → 3-question survey → instant confirmation with an entry number, turning booths into stops.', tag: 'engagement loop' },
+    ]}
   />
 
   ## Problem Definition

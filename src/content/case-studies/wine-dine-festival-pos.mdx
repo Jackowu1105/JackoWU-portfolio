@@ -42,10 +42,14 @@ There was no formal research programme for this build, so I treated the festival
   ]}
 />
 
-<CaseStudyImage
-  src="/images/projects/wine-dine-festival-pos/research-journey.svg"
-  label="Research artifact — dual-role journey"
-  caption="Attendee and vendor journeys built around glanceability, tactile targets, and offline resilience — the constraints that defined every screen."
+<JourneyFlow
+  label="Dual-role journey · attendee & vendor on the festival floor"
+  steps={[
+    { title: 'Buy tokens', desc: 'RFID tap → amount selection → confirmation → receipt — quick-select buttons (HK$50/$100/$200) plus a custom keypad for any price.', tag: 'attendee' },
+    { title: 'Check balance mid-event', desc: 'RFID tap → remaining balance on screen — no more juggling cash and coupons or guessing spending.', tag: 'attendee' },
+    { title: 'Vendor transaction', desc: 'A single-page interface with large tactile targets for gloved hands — multi-modal feedback (sound + haptic + visual) confirms before the card leaves the reader.', tag: 'vendor' },
+    { title: 'Sync & reconcile', desc: 'Transactions store locally and sync when wifi returns — the daily summary replaced counting cash and coupons at close.', tag: 'offline-first' },
+  ]}
 />
 
 ## The Challenge

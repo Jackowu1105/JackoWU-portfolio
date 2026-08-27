@@ -44,23 +44,29 @@ Before drawing a single screen, I treated the legacy app as a problem to underst
   ]}
 />
 
-<CaseStudyImage
-  src="/images/projects/momax-smart-app/research-ia.svg"
-  label="IA map (card sort)"
-  caption="The new IA — Home, Rooms, Automation, Settings — reorganised around location, the way users actually think."
+<ResearchIA
+  label="Information Architecture · after card-sort (~10 users)"
+  root="MOMAX App"
+  children={[
+    { title: 'Home', desc: 'favourites · 1-tap', badge: 'quick' },
+    { title: 'Rooms', desc: 'by location, not type', badge: 'mental model' },
+    { title: 'Automation', desc: 'scenes + schedules', badge: 'renamed' },
+    { title: 'Settings', desc: 'account · devices', badge: 'consolidated' },
+  ]}
 />
 
-<CaseStudyImage
-  src="/images/projects/momax-smart-app/research-persona.svg"
-  label="Persona card"
-  caption="Busy Ben — the composite persona that anchored the redesign."
+<PersonaCard
+  name="Busy Ben"
+  initials="BB"
+  subtitle="30-something · works from home · 8+ MOMAX devices"
+  quote="I just want to turn things on fast — without thinking. Don't make me learn what 'scenes' even means."
+  goals={['Control devices in under 2 minutes', 'Thinks by room, not device type']}
+  pains={['Fails first-time setup → never comes back', 'Finds "scenes vs schedules" confusing']}
 />
 
-
-<CaseStudyImage
-  src="/images/projects/momax-smart-app/research-quote.svg"
-  label="Voice of user"
-  caption="A verbatim pain point from usability testing — this is what drove the 7-step → 3-step setup redesign."
+<StickyQuote
+  quote="Setup took ages and I gave up the first time. If it doesn't connect in two minutes, I'm done."
+  source="Verbatim — usability testing, legacy app · ~5 users attempting first-time pairing"
 />
 
 ## Problem Definition

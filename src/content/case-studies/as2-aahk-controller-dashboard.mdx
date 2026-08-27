@@ -42,10 +42,14 @@ There was no formal research programme on this phase, so the Double Diamond ran 
   ]}
 />
 
-<CaseStudyImage
-  src="/images/projects/as2-aahk-controller-dashboard/research-priority.svg"
-  label="Task priority map"
-  caption="What a controller needs at a glance versus on demand — the priority order that drove the Phase 3 revamp."
+<InsightGrid
+  label="Task priority · what a controller needs at a glance vs on demand"
+  items={[
+    { title: 'Body type at a glance', desc: 'Wide- vs narrow-body drives PTS events and ground crew — recognised by icon, no text read.', tone: 'good', badge: 'always visible' },
+    { title: 'Bay type on demand', desc: 'Remote vs frontal stand revealed on expansion — exactly when the controller is about to act.', tone: 'neutral', badge: '1 click' },
+    { title: 'Hidden behind a click', desc: 'The old collapsed view buried both details — the extra click broke the 2–3 min scan rhythm during peak hours.', tone: 'bad', badge: 'phase 2' },
+    { title: 'Scanning beats diving', desc: 'Controllers take in the whole board and only expand to act — the board must be scannable, not readable.', tone: 'good', badge: 'principle' },
+  ]}
 />
 
 ## Problem Definition

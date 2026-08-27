@@ -42,10 +42,14 @@
     ]}
   />
 
-  <CaseStudyImage
-    src="/images/projects/massage-gun/research-flow.svg"
-    label="Usage scenario flow"
-    caption="Scenarios lead to programs, programs to guided sessions — and every session feeds progress tracking."
+  <JourneyFlow
+    label="Usage scenario flow · moment-of-use research"
+    steps={[
+      { title: 'Scenario', desc: 'At home, after a workout, often one-handed and mid-session — users glance at the screen, so controls must be large and reachable.', tag: 'usage context' },
+      { title: 'Program', desc: 'Recovery, pain relief and relaxation programs, each customisable in intensity, mode and target area.', tag: 'personalised' },
+      { title: 'Guided session', desc: 'Step-by-step guidance with safety precautions — advanced settings one tap away from a calm main control.', tag: 'safe default' },
+      { title: 'Progress', desc: 'Every session feeds history and improvement tracking, turning a one-off device into a daily habit.', tag: 'feedback loop' },
+    ]}
   />
 
   ## Problem Definition

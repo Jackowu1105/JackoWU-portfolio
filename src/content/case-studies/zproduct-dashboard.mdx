@@ -42,10 +42,14 @@ The redesign started from a research question, not a layout question: who actual
   ]}
 />
 
-<CaseStudyImage
-  src="/images/projects/zproduct-dashboard/research-matrix.svg"
-  label="Role needs matrix"
-  caption="Operations managers and cargo coordinators need different data at different depths — a fixed layout could never serve both."
+<InsightGrid
+  label="Role needs matrix · who uses the dashboard, and at what depth"
+  items={[
+    { title: 'Operations manager — overview', desc: 'Monitors overall performance and flags issues first; needs KPIs at a glance, not behind clicks.', tone: 'neutral', badge: 'Oliver · 42' },
+    { title: 'Cargo coordinator — detail', desc: 'Runs cargo logistics and ground staff; needs detailed tracking with real-time updates.', tone: 'neutral', badge: 'Clara · 35' },
+    { title: 'One size fit nobody', desc: 'The rigid AS2 layout buried critical data behind clicks and drowned small airports in irrelevant widgets.', tone: 'bad', badge: 'AS2 legacy' },
+    { title: 'Configurable workspace', desc: 'A modular 12-column widget grid lets each airport surface its own priorities — cargo hubs track cargo, large hubs watch OTP.', tone: 'good', badge: 'widget system' },
+  ]}
 />
 
 ## Research & Discovery

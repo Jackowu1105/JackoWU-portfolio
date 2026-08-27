@@ -42,10 +42,14 @@ This POS had to work in a place where a slow screen means a lost sale and a frus
   ]}
 />
 
-<CaseStudyImage
-  src="/images/projects/road-to-ultra-pos/research-journey.svg"
-  label="Research artifact — field journey"
-  caption="The dual-lane field journey: attendees manage their balance while vendors confirm every payment — speed and clarity are the shared currency."
+<JourneyFlow
+  label="Field journey · the attendee's day on the festival floor"
+  steps={[
+    { title: 'Check in', desc: 'Attendees receive an RFID card at entry — the cashless token account for the day.', tag: 'RFID' },
+    { title: 'Buy tokens', desc: 'Top up at a token booth — the balance lives on the card and stays visible on every screen.', tag: 'balance' },
+    { title: 'Pay a vendor', desc: 'RFID tap → preset amount → single-tap confirmation — no keypad slips in the rush, and the vendor sees the payment go through.', tag: 'single-tap' },
+    { title: 'Leave', desc: 'No cash to carry or guard in the crowd — queues stay moving through peak hours, and close-of-day reconciliation beats counting cash.', tag: 'cashless' },
+  ]}
 />
 
 ## Research & Discovery

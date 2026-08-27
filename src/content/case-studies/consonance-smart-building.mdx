@@ -42,10 +42,14 @@ Smart Building Plus spans four touchpoints, so I opened with a Double Diamond ai
   ]}
 />
 
-<CaseStudyImage
-  src="/images/projects/consonance-smart-building/research-journey.svg"
-  label="Resident journey"
-  caption="Every touchpoint maps to a real daily ritual — the journey research that shaped Smart Building Plus."
+<JourneyFlow
+  label="Resident journey · coming home across four touchpoints"
+  steps={[
+    { title: 'Unlock the door', desc: 'One QR code replaces keys and cards — the same flow at lobby, clubhouse, mailbox and locker.', tag: 'access' },
+    { title: 'Call the lift', desc: 'Smart Lift sits on the main Access tab — found by every participant after Round 1 testing.', tag: 'app' },
+    { title: 'Book & register', desc: 'Clubhouse booking and guest registration at the lobby kiosk — standing up, without phoning management.', tag: 'kiosk' },
+    { title: 'Secure poolside gear', desc: 'The app triggers the locker unlock and the system assigns an available QR locker — edge cases mapped end-to-end.', tag: 'locker' },
+  ]}
 />
 
 ## Project Scope

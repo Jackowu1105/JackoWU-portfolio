@@ -42,10 +42,14 @@
     ]}
   />
 
-  <CaseStudyImage
-    src="/images/projects/cic-merchant-takeaway/research-dualflow.svg"
-    label="Dual-sided order flow"
-    caption="The resident and merchant journeys share one transaction — tracking on one side is a status tap on the other."
+  <JourneyFlow
+    label="Dual-sided order flow · one transaction, two apps"
+    steps={[
+      { title: 'Order placed', desc: 'Browse restaurants, view the menu, customise and check out in-app — no more calling during busy hours.', tag: 'resident' },
+      { title: 'Merchant receives', desc: 'The order lands in the merchant app without ringing the kitchen — missed calls and lost revenue gone.', tag: 'merchant' },
+      { title: 'Preparing', desc: 'Large one-tap status buttons update the order in under 3 seconds — non-tech owners manage mid-rush.', tag: 'merchant' },
+      { title: 'Ready for pickup', desc: 'A push notification fires at each stage of the 3-stage progress — residents know exactly when to leave the apartment.', tag: 'resident' },
+    ]}
   />
 
   ## Problem Definition

@@ -42,10 +42,14 @@ The brief was a unified resident app, but the research question came first: one 
   ]}
 />
 
-<CaseStudyImage
-  src="/images/projects/ontolo-residential-app/research-segments.svg"
-  label="Segment structure"
-  caption="Elderly residents, children and adults share a small core — two modes let each group work at its own depth."
+<InsightGrid
+  label="Segment structure · one core, two modes"
+  items={[
+    { title: 'Elderly residents (60+)', desc: 'Overwhelmed, not incapable — too many options, small touch targets and fear of mistakes stalled tasks. Served by Simplified Mode.', badge: 'Simplified Mode', tone: 'bad' },
+    { title: 'Children (8–12)', desc: 'Preferred visual, icon-based navigation with sensitive functions (payments, lease info) kept supervision-friendly.', badge: 'Supervised', tone: 'neutral' },
+    { title: 'Adult residents', desc: 'Expected the complete feature set — all community services and account management with standard, modern patterns.', badge: 'Full Mode', tone: 'neutral' },
+    { title: 'Shared core', desc: 'Five functions drove most usage across every group — emergency contacts, facility booking, announcements, visitor access, service requests — surfaced differently per mode.', badge: 'Pareto', tone: 'good' },
+  ]}
 />
 
 ## The Challenge

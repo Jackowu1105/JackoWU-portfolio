@@ -5,6 +5,11 @@ import { DecisionCards } from '@/components/case-study/DecisionCards'
 import { ImageComparison } from '@/components/case-study/ImageComparison'
 import { ProjectHeader } from '@/components/case-study/ProjectHeader'
 import { ResearchProcess } from '@/components/case-study/ResearchProcess'
+import { StickyQuote } from '@/components/case-study/StickyQuote'
+import { PersonaCard } from '@/components/case-study/PersonaCard'
+import { ResearchIA } from '@/components/case-study/ResearchIA'
+import { JourneyFlow } from '@/components/case-study/JourneyFlow'
+import { InsightGrid } from '@/components/case-study/InsightGrid'
 
 const components: MDXComponents = {
   h1: ({ children }) => (
@@ -68,6 +73,11 @@ const components: MDXComponents = {
   ImageComparison,
   ProjectHeader,
   ResearchProcess,
+  StickyQuote,
+  PersonaCard,
+  ResearchIA,
+  JourneyFlow,
+  InsightGrid,
 }
 
 export function useMDXComponents(): MDXComponents {

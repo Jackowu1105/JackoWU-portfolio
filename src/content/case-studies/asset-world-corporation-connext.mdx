@@ -42,10 +42,14 @@ With four distinct user groups sharing one building, the first question was who 
   ]}
 />
 
-<CaseStudyImage
-  src="/images/projects/asset-world-corporation-connext/research-touchpoints.svg"
-  label="Research artifact — touchpoint map"
-  caption="Before: scattered phone calls, paper forms, and an unused loyalty program. After: one app where each touchpoint has a home."
+<JourneyFlow
+  label="Touchpoint map · before → after"
+  steps={[
+    { title: 'Maintenance requests', desc: 'Before: phone calls and emails with no tracking. After: in-app submission with request status visible to tenant and management.', tag: 'tracked' },
+    { title: 'Visitor check-in', desc: 'Before: 10–15 minutes of paper forms and lobby congestion. After: pre-registered QR pass scanned in seconds.', tag: 'seconds, not minutes' },
+    { title: 'Loyalty program', desc: 'Before: 15% participation and low awareness. After: gamified points with visible progress and one-tap redemption.', tag: 'activated' },
+    { title: 'Merchant channel', desc: 'Before: no direct way to reach tenants. After: a merchant directory inside the Rewards tab.', tag: 'connected' },
+  ]}
 />
 
 ## Problem Definition

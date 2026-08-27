@@ -42,10 +42,14 @@ Because I was both designer and builder, the research step was compressed but no
   ]}
 />
 
-<CaseStudyImage
-  src="/images/projects/fundel-logistics-portal/research-dualrole-ia.svg"
-  label="Dual-role IA"
-  caption="One SPA, two roles: the structure that kept operators and shippers in sync."
+<ResearchIA
+  label="Dual-role IA · one product, re-skinned by role"
+  root="One SPA"
+  children={[
+    { title: 'Operator', desc: 'shipments · documents · finance · carbon tracking', badge: 'role skin' },
+    { title: 'Shipper', desc: 'telemetry-driven quotation flow · shipper dashboard', badge: 'role skin' },
+    { title: 'AI Assistant', desc: 'panel mounted on both portals · one shared data model', badge: 'shared' },
+  ]}
 />
 
 

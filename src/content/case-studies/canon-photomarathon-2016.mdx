@@ -42,10 +42,14 @@
     ]}
   />
 
-  <CaseStudyImage
-    src="/images/projects/canon-photomarathon-2016/research-dayflow.svg"
-    label="Event-day journey map"
-    caption="The single-day timeline — capture, upload, judge, select — designed so neither side becomes the bottleneck."
+  <JourneyFlow
+    label="Event-day timeline · capture → upload → judge → select"
+    steps={[
+      { title: 'Capture', desc: 'Participants shoot through the day on their own phones — one marathon running on two clocks at once.', tag: 'participant' },
+      { title: 'Upload', desc: 'A guided step-by-step wizard with real-time format and resolution checks — errors caught before submission, not after.', tag: 'participant' },
+      { title: 'Judge', desc: 'A thumbnail grid with filtering and sorting by category or timestamp — scanning dozens of images at a glance.', tag: 'judge' },
+      { title: 'Select', desc: 'Side-by-side comparison turns shortlisting into visual judgement — the review clears the bottleneck and the schedule holds.', tag: 'judge' },
+    ]}
   />
 
   ## Problem Definition
