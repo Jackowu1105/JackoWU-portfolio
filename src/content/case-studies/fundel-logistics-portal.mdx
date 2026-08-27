@@ -7,6 +7,41 @@
   tools={["Cursor", "gpt-engineer", "React", "TypeScript", "Vite", "Tailwind CSS", "shadcn/ui"]}
 />
 
+## UX Research
+
+Because I was both designer and builder, the research step was compressed but not skipped: the discipline was defining the problem precisely enough that the build could not drift. I treated the two user populations as the central research question.
+
+<ResearchProcess
+  stages={[
+    {
+      phase: 1,
+      title: 'Interview the two sides of the product',
+      summary: 'Operators run shipments, documents, finance, carbon; shippers need a quote and a way to act. They never sit in one room, so the product had to serve both without forcing one to adopt the other’s mental model.',
+      artifact: 'Stakeholder mapping',
+    },
+    {
+      phase: 2,
+      title: 'Define the real failure modes',
+      summary: 'Two ways to build it badly: split into two apps (they drift out of sync), or hand off 80 screens to engineering and wait six months for something that no longer matches the design.',
+      artifact: 'Problem definition',
+    },
+    {
+      phase: 3,
+      title: 'Converge on one role-aware SPA',
+      summary: 'One product, re-skinned by role, sharing one data model and one AI assistant. The IA decision that avoided the split-product trap — and, for a solo builder, removed the handoff trap entirely.',
+      artifact: 'Dual-role IA',
+      image: '/images/projects/fundel-logistics-portal/research-dualrole-ia.svg',
+      caption: 'One SPA, two roles: the structure that kept operators and shippers in sync.',
+    },
+    {
+      phase: 4,
+      title: 'Set build-time research rules',
+      summary: 'Research became engineering discipline: an AI-friendly stack, a linear git history, one component library. The design intent survived the build because the research had already fixed the shape.',
+      artifact: 'Build constraints',
+    },
+  ]}
+/>
+
 ## Context — Who FUNDel Is
 
 The product in this case study is FUNDel Limited, a Hong Kong–based fintech company founded and led by Prof. Henry Ko. FUNDel connects e-commerce merchants, logistics companies, and financial institutions to enable data-driven trade and supply-chain finance solutions — with a particular focus on small and medium-sized enterprises (SMEs) across Greater China and ASEAN.

@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="360" viewBox="0 0 800 360" font-family="Inter, system-ui, sans-serif">
+  <defs>
+    <linearGradient id="bg4" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#FBF9F7"/>
+      <stop offset="1" stop-color="#F4EFEA"/>
+    </linearGradient>
+    <linearGradient id="acc4" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#9F9BA0"/>
+      <stop offset="1" stop-color="#3A3941"/>
+    </linearGradient>
+  </defs>
+  <rect width="800" height="360" rx="24" fill="url(#bg4)"/>
+  <rect x="0" y="0" width="800" height="8" rx="4" fill="url(#acc4)"/>
+
+  <text x="40" y="56" font-size="13" letter-spacing="2" fill="#B8B2AE" font-weight="600">CORE RESEARCH TENSION</text>
+  <text x="40" y="88" font-size="22" font-weight="700" fill="#1A1410">Trust vs simplicity — the robo-advisor paradox</text>
+
+  <!-- Two failure modes -->
+  <rect x="40" y="120" width="340" height="150" rx="16" fill="#fff" stroke="#D4C5B0" stroke-opacity="0.5"/>
+  <text x="64" y="156" font-size="15" font-weight="700" fill="#1A1410">Failure mode A · Dashboard trap</text>
+  <text x="64" y="186" font-size="14" fill="#5A554F">Surface every metric → only a</text>
+  <text x="64" y="208" font-size="14" fill="#5A554F">professional can use it.</text>
+  <text x="64" y="244" font-size="13" font-style="italic" fill="#8A8480">“Too much data = no decision”</text>
+
+  <rect x="420" y="120" width="340" height="150" rx="16" fill="#fff" stroke="#D4C5B0" stroke-opacity="0.5"/>
+  <text x="444" y="156" font-size="15" font-weight="700" fill="#1A1410">Failure mode B · Black-box trap</text>
+  <text x="444" y="186" font-size="14" fill="#5A554F">Hide every decision behind</text>
+  <text x="444" y="208" font-size="14" fill="#5A554F">“the AI said so” → trust dies.</text>
+  <text x="444" y="244" font-size="13" font-style="italic" fill="#8A8480">“Too little why = no trust”</text>
+
+  <!-- Resolution -->
+  <rect x="40" y="290" width="720" height="48" rx="12" fill="#1A1410"/>
+  <text x="400" y="319" font-size="15" fill="#F1F5F9" text-anchor="middle" font-weight="600">Resolution: AI carries the complexity, but shows its reasoning — advice as the front door, not a buried feature.</text>
+
+  <text x="40" y="350" font-size="12" fill="#B8B2AE">FinSightsAI · research framing before a screen was drawn</text>
+</svg>

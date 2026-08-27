@@ -7,6 +7,43 @@
   tools={["Figma"]}
 />
 
+## UX Research
+
+An AI advisor app fails on research before it fails on engineering. I framed the problem as a paradox to resolve, then let the resolution dictate the structure — not the other way around.
+
+<ResearchProcess
+  stages={[
+    {
+      phase: 1,
+      title: 'Map the failure space',
+      summary: 'Studied how everyday investors actually relate to market data: most want control but cannot — and do not want to — parse raw charts. Two trap states emerged.',
+      artifact: 'Competitive + behaviour scan',
+    },
+    {
+      phase: 2,
+      title: 'Name the core tension',
+      summary: 'Trust versus simplicity. Surface everything → only pros use it; hide everything behind "the AI said so" → users stop trusting it. The brief became resolving both at once.',
+      artifact: 'Research tension map',
+      image: '/images/projects/finsights-ai/research-tension.svg',
+      caption: 'The two failure modes that defined the product — and the resolution that followed.',
+    },
+    {
+      phase: 3,
+      title: 'Design the IA around the resolution',
+      summary: 'If the AI carries complexity, it belongs at the front door. Three surfaces — AI Assistant, Home, Market — each mapped to one intent, with the assistant as the entry point.',
+      artifact: 'IA structure',
+      image: '/images/projects/finsights-ai/research-ia.svg',
+      caption: 'The assistant leads; the data layer underpins it. Structure followed the research, not a dashboard convention.',
+    },
+    {
+      phase: 4,
+      title: 'Make the AI legible',
+      summary: 'Set the rule early: show enough of the "why" that a user can decide whether to follow the advice. Reasoning visible, plain-language I/O, power-user depth kept out of the core flow.',
+      artifact: 'Interaction principles',
+    },
+  ]}
+/>
+
 ## Problem Definition
 
 The core tension in a robo-advisor app is trust versus simplicity. Investors want to feel in control, but most cannot — and do not want to — parse raw market data. Two failure modes follow:

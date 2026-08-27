@@ -4,6 +4,7 @@ import { ColorPalette } from '@/components/case-study/ColorPalette'
 import { DecisionCards } from '@/components/case-study/DecisionCards'
 import { ImageComparison } from '@/components/case-study/ImageComparison'
 import { ProjectHeader } from '@/components/case-study/ProjectHeader'
+import { ResearchProcess } from '@/components/case-study/ResearchProcess'
 
 const components: MDXComponents = {
   h1: ({ children }) => (
@@ -66,6 +67,7 @@ const components: MDXComponents = {
   DecisionCards,
   ImageComparison,
   ProjectHeader,
+  ResearchProcess,
 }
 
 export function useMDXComponents(): MDXComponents {

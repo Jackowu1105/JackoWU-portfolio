@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="500" viewBox="0 0 800 500" font-family="Inter, system-ui, sans-serif">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#FBF9F7"/>
+      <stop offset="1" stop-color="#F4EFEA"/>
+    </linearGradient>
+    <linearGradient id="accent" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#37848A"/>
+      <stop offset="1" stop-color="#0195E2"/>
+    </linearGradient>
+  </defs>
+  <rect width="800" height="500" rx="24" fill="url(#bg)"/>
+  <rect x="0" y="0" width="800" height="8" rx="4" fill="url(#accent)"/>
+
+  <!-- Avatar -->
+  <circle cx="140" cy="170" r="62" fill="#0195E2" opacity="0.12"/>
+  <circle cx="140" cy="158" r="30" fill="#0195E2" opacity="0.55"/>
+  <path d="M92 232 a48 48 0 0 1 96 0 z" fill="#0195E2" opacity="0.55"/>
+
+  <!-- Label -->
+  <text x="232" y="118" font-size="13" letter-spacing="2" fill="#B8B2AE" font-weight="600">USER PERSONA</text>
+  <text x="232" y="156" font-size="38" font-weight="700" fill="#1A1410">Busy Ben</text>
+  <text x="232" y="186" font-size="16" fill="#5A554F">30-something · works from home · 8+ MOMAX devices</text>
+
+  <!-- Quote -->
+  <rect x="232" y="210" width="528" height="92" rx="14" fill="#FFFFFF" stroke="#D4C5B0" stroke-opacity="0.4"/>
+  <text x="256" y="246" font-size="17" font-style="italic" fill="#3D3833">“I just want to turn things on fast — without</text>
+  <text x="256" y="272" font-size="17" font-style="italic" fill="#3D3833">thinking about it. Don’t make me learn what</text>
+  <text x="256" y="298" font-size="17" font-style="italic" fill="#3D3833">‘scenes’ even means.”</text>
+
+  <!-- Goals -->
+  <text x="40" y="330" font-size="13" letter-spacing="1.5" fill="#B8B2AE" font-weight="600">GOALS &amp; PAINS</text>
+  <g font-size="15" fill="#5A554F">
+    <circle cx="52" cy="358" r="3" fill="#0195E2"/>
+    <text x="68" y="363">Control devices in under 2 minutes</text>
+    <circle cx="52" cy="386" r="3" fill="#0195E2"/>
+    <text x="68" y="391">Thinks by room (“bedroom lights”), not device type</text>
+    <circle cx="52" cy="414" r="3" fill="#C9A74D"/>
+    <text x="68" y="419">Fails first-time setup → never comes back</text>
+    <circle cx="52" cy="442" r="3" fill="#C9A74D"/>
+    <text x="68" y="447">Finds “scenes vs schedules” confusing</text>
+  </g>
+
+  <text x="40" y="486" font-size="12" fill="#B8B2AE">Synthesised from ~10 user interviews · MOMAX Smart App research</text>
+</svg>

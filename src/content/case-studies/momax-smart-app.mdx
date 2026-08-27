@@ -7,6 +7,49 @@
   tools={["Figma", "Maze", "Miro", "Google Analytics"]}
 />
 
+## UX Research
+
+Before drawing a single screen, I treated the legacy app as a problem to understand, not a UI to reskin. The work followed a Double Diamond: diverge to gather evidence, converge on the real friction, diverge on solutions, converge on the build.
+
+<ResearchProcess
+  stages={[
+    {
+      phase: 1,
+      title: 'Understand how users actually live with the app',
+      summary: '~10 user interviews on smart-home routines and ~5 usability tests on the legacy app, plus analytics drop-off review and competitor teardown (Google Home, Apple Home, SmartThings).',
+      artifact: 'User interviews + usability test plan',
+    },
+    {
+      phase: 2,
+      title: 'Name the real friction',
+      summary: 'Three failures surfaced repeatedly: setup failed → users never returned; control felt "broken" past ~2s; features buried three levels deep. The core mismatch: users think by room, the app organised by device type.',
+      artifact: 'Research insight summary',
+    },
+    {
+      phase: 3,
+      title: 'Test the information architecture',
+      summary: 'A card-sorting exercise with ~10 users confirmed a four-section structure mapped to the user’s mental model, not the old 15-item flat menu.',
+      artifact: 'IA map (card sort)',
+      image: '/images/projects/momax-smart-app/research-ia.svg',
+      caption: 'The new IA — Home, Rooms, Automation, Settings — reorganised around location, the way users actually think.',
+    },
+    {
+      phase: 4,
+      title: 'Build against a defined persona',
+      summary: 'A composite persona ("Busy Ben") kept every design decision honest: fast control, minimal setup, no jargon. It became the bar the redesign was measured against.',
+      artifact: 'Persona card',
+      image: '/images/projects/momax-smart-app/research-persona.svg',
+      caption: 'Busy Ben — the composite persona that anchored the redesign.',
+    },
+  ]}
+/>
+
+<CaseStudyImage
+  src="/images/projects/momax-smart-app/research-quote.svg"
+  label="Voice of user"
+  caption="A verbatim pain point from usability testing — this is what drove the 7-step → 3-step setup redesign."
+/>
+
 ## Problem Definition
 
 Through user research and testing of the legacy app, I identified the core friction:
