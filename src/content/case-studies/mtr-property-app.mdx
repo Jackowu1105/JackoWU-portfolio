@@ -7,9 +7,54 @@
   tools={["Adobe XD"]}
 />
 
+## UX Research
+
+The problem was never a missing app — it was fragmentation: notice boards, separate estate platforms, and logins scattered across the properties a resident may hold. I ran a Double Diamond to map how residents actually reach estate information, define what a unified platform must keep and what it may vary, develop the estate-aware structure, and deliver it across every theme.
+
+<ResearchProcess
+  stages={[
+    {
+      phase: 1,
+      title: 'Map how residents reach estate information',
+      summary: 'Stakeholder interviews with MTR estate managers, user interviews with 15 residents across 5 estates, competitive analysis of property management apps, and contextual inquiry observing how residents accessed estate information day to day.',
+      artifact: 'Interviews (15 residents, 5 estates)',
+    },
+    {
+      phase: 2,
+      title: 'Define what unifies and what must vary',
+      summary: 'Identity matters — residents feel strong attachment to their own estate and want visual differentiation; consistency is crucial — navigation and features must stay predictable; and a meaningful minority manage accounts for multiple properties, logging in and out repeatedly.',
+      artifact: 'Key findings summary',
+    },
+    {
+      phase: 3,
+      title: 'Develop one estate-aware platform',
+      summary: 'A flexible IA separates universal features (maintenance requests, facility booking) from estate-specific content (local events, notices). Three home-page concepts were tested: generic, manual selection, and auto-detected estate with dynamic UI — the last won.',
+      artifact: 'Flexible IA + home-page tests',
+
+
+    },
+    {
+      phase: 4,
+      title: 'Deliver per-estate theming that stays consistent',
+      summary: 'A token-based theming system maps each estate’s colours onto one component library, contrast-tested to WCAG 2.1 AA across every theme, plus a seamless estate switcher so multi-estate owners never re-authenticate — strong task completion in testing.',
+      artifact: 'Theming system + estate switcher',
+    },
+  ]}
+/>
+
+<InsightGrid
+  label="Channel consolidation · 15 residents across 5 estates + stakeholder interviews"
+  items={[
+    { title: 'Fragmented touchpoints', desc: 'Physical notice boards, separate estate platforms and scattered logins gave residents no single place to go — inconsistent experiences and low engagement.', tone: 'bad', badge: 'before' },
+    { title: 'Multi-estate friction', desc: 'A meaningful minority manage accounts for multiple properties and had to log in and out repeatedly — the most critical pain point.', tone: 'bad', badge: 'pain point' },
+    { title: 'Identity vs consistency', desc: 'Residents want their estate recognised visually, but navigation and features must stay predictable across all estates.', tone: 'neutral', badge: 'finding' },
+    { title: 'One estate-aware app', desc: 'A single entry point: universal features plus estate-specific content, auto-detected estate theme and a seamless switcher with no re-login.', tone: 'good', badge: 'after' },
+  ]}
+/>
+
 ## Research & Insights
 
-I conducted **stakeholder interviews** with MTR estate managers, **user interviews** with residents from different estates, **competitive analysis** of property management apps, and **contextual inquiry** observing how residents accessed estate information.
+I conducted **stakeholder interviews** with MTR estate managers, **user interviews** with 15 residents from 5 different estates, **competitive analysis** of property management apps, and **contextual inquiry** observing how residents accessed estate information.
 
 ### Key Findings
 
@@ -17,6 +62,10 @@ I conducted **stakeholder interviews** with MTR estate managers, **user intervie
 - **Consistency is crucial** — core navigation and features must stay predictable even with customisation
 - **Multi-estate users exist** — a meaningful minority of residents manage accounts for multiple properties
 - **Mobile-first behaviour** — most residents prefer mobile apps over websites for quick tasks
+
+### User Persona: "Mrs. Chan — The Multi-Estate Owner"
+
+A 45-year-old who owns units in 2 MTR estates. Her pain point: *"I have to log in and out constantly, and I forget which app is for which estate."* Her goal: quick access to both estates' info without confusion.
 
 ## Design Process
 
@@ -36,9 +85,23 @@ I defined a flexible IA that separates **universal features** (maintenance reque
 
 ### Key Design Decisions
 
-**Dynamic color theme system** — Created a theming system with a color palette mapped to each estate. The app fetches the appropriate palette on login and applies it to UI components. This required rigorous color-contrast testing to ensure WCAG 2.1 AA compliance across all themes.
+**Decision 1 — Dynamic color theme system.**
 
-**Seamless estate switching** — Designed a switcher in the profile menu that instantly changes the UI theme and content without re-authentication. Usability testing showed multi-estate users could switch comfortably.
+<DecisionCards
+  items={[
+    { tag: 'A', title: 'Single generic colour scheme', summary: 'One MTR-wide colour palette for all estates.', outcome: 'Felt generic — residents didn\'t feel the app reflected their specific estate\'s identity.', status: 'rejected' },
+    { tag: 'B', title: 'Per-estate dynamic theming', summary: 'A theming system with a colour palette mapped to each estate. The app fetches the appropriate palette on login and applies it to UI components.', outcome: 'Each estate feels like its own app — residents recognise their estate instantly. Required rigorous colour-contrast testing to ensure WCAG 2.1 AA compliance across all themes.', status: 'final' },
+  ]}
+/>
+
+**Decision 2 — Multi-estate switching.**
+
+<DecisionCards
+  items={[
+    { tag: 'A', title: 'Log out and log back in', summary: 'Residents log out of one estate and into another.', outcome: 'Created unnecessary friction — multi-estate users had to re-authenticate every time they switched.', status: 'rejected' },
+    { tag: 'B', title: 'Seamless estate switcher', summary: 'A switcher in the profile menu that instantly changes the UI theme and content without re-authentication.', outcome: 'Multi-estate users could switch comfortably — usability testing showed strong task completion for the switching flow.', status: 'final' },
+  ]}
+/>
 
 ## Visual Design
 

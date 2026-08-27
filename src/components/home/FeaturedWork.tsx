@@ -26,21 +26,20 @@ export function FeaturedWork() {
         </h2>
       </motion.div>
 
-      {/* Stacking cards — sticky scroll effect */}
-      <div className="flex flex-col gap-0 pb-[40vh]">
+      {/* Featured project cards */}
+      <div className="flex flex-col gap-8">
         {featuredProjects.map((project, i) => (
           <StackingProjectCard key={project.slug} project={project} index={i} />
         ))}
       </div>
 
-      {/* View all link — pulled up with negative margin to sit right below the last card (overlapping the pb-[40vh]) */}
+      {/* View all link */}
       <motion.div
         initial={{ opacity: 0, y: 8 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
         transition={{ duration: 0.4, ease: [0.25, 0.1, 0.25, 1] }}
-        className="flex justify-center"
-        style={{ marginTop: 'calc(-40vh + 36px)' }}
+        className="flex justify-center mt-12"
       >
         <Link
           href="/work"

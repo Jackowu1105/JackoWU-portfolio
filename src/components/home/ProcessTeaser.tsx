@@ -13,9 +13,9 @@ const services = [
         <rect x="3" y="23" width="14" height="3" rx="1.5" fill="#37848a" opacity="0.4" />
       </svg>
     ),
-    title: 'Graphic Design',
+    title: 'Product Strategy & Research',
     description:
-      'Translating business goals into user-centric product visions that resonate with your target audience and drive measurable results.',
+      'Turning ambiguous business problems into clear product direction — user research, competitive analysis, and information architecture that align teams before a single screen is drawn.',
   },
   {
     iconBg: 'rgba(255,223,147,0.5)',
@@ -27,9 +27,9 @@ const services = [
         <path d="M16 23v4" stroke="#c9a74d" strokeWidth="2" strokeLinecap="round" />
       </svg>
     ),
-    title: 'UI/UX Design',
+    title: 'UX/UI Design',
     description:
-      'Crafting intuitive user journeys and beautiful interfaces that bridge the gap between user needs and business objectives.',
+      'Designing interfaces that make complex workflows feel simple — from wireframes and prototypes to pixel-perfect visual design, validated with usability testing across 30+ shipped products.',
   },
   {
     iconBg: 'rgba(162,202,205,0.5)',
@@ -41,9 +41,9 @@ const services = [
         <rect x="18" y="18" width="11" height="11" rx="2" fill="#37848a" />
       </svg>
     ),
-    title: 'Design Systems',
+    title: 'Design Systems & Front-End',
     description:
-      'Building scalable, accessible, and comprehensive component libraries that keep your product consistent and teams moving fast.',
+      'Building cross-platform design systems with 40+ shared components, then shipping them as production front-end code using AI-assisted workflows — so design and delivery stay in sync.',
   },
 ]
 

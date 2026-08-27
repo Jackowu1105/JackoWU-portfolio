@@ -1,11 +1,56 @@
 <ProjectHeader
-  overview="Hong Kong Times Square is one of the city's busiest shopping malls, and its digital experience needed to serve two very different audiences at once: shoppers who want offers, wayfinding, and services at their fingertips — and mall staff who keep the building running. I designed a dual-sided mobile app covering both."
+  overview="Hong Kong Times Square is one of the city's busiest shopping malls, and its digital experience needed to serve two very different audiences at once: shoppers who want offers, wayfinding, and services at their fingertips — and mall staff who keep the building running. I designed a dual-sided mobile app covering both, from information architecture through final UI."
   challenge="Shoppers and staff use the mall in completely different ways, yet the app had to feel like one coherent product. The shopper side needed to be effortless — find a store, see an offer, book a service — while the staff side needed operational depth: task workflows, checklists, and status updates across a large property."
   role="UI/UX Designer — end-user app and staff app design, from information architecture to final UI."
   team="1 UX Designer (me, solo) + developers"
   duration="2019"
   tools={["Sketch", "InVision"]}
 />
+
+## UX Research
+
+A mall app is two products wearing one name. The research started from the two kinds of attention the app must serve — a shopper’s seconds and a staff member’s whole shift — and every structural decision was tested against that difference.
+
+<ResearchProcess
+  stages={[
+    {
+      phase: 1,
+      title: 'Map the two audiences and their contexts',
+      summary: 'Shoppers arrive with a goal — a store, a restaurant, an offer — and want it resolved in seconds, usually while walking. Staff run operational workflows that demand clarity and speed over long shifts, from maintenance tasks to event coordination.',
+      artifact: 'Audience context map',
+    },
+    {
+      phase: 2,
+      title: 'Name the difference',
+      summary: 'Shoppers scan, staff tap. A single generic interface would serve neither, so the design had to split into an end-user app and a staff app — sharing a visual language, each shaped around its own tasks.',
+      artifact: 'Problem definition',
+    },
+    {
+      phase: 3,
+      title: 'Test one app vs two',
+      summary: 'Weighed a single app with a role toggle against two apps built on one shared component system. The two audiences have different mental models and usage contexts — cramming both into one app compromised both. The two-app structure won, with shopper navigation converging on a bottom tab bar with prominent offers.',
+      artifact: 'Dual-audience IA map',
+
+
+    },
+    {
+      phase: 4,
+      title: 'Shape each app around its user',
+      summary: 'Shopper side: large imagery, a searchable directory, and prominent offers reachable within a couple of taps while walking. Staff side: task-focused with clear states and single-tap actions — staff tap, they do not type.',
+      artifact: 'Per-app design principles',
+    },
+  ]}
+/>
+
+<ResearchIA
+  label="Dual-audience IA · one system, two apps"
+  root="Times Square App"
+  children={[
+    { title: 'Shopper app', desc: 'offers · wayfinding · searchable directory · services', badge: 'scan' },
+    { title: 'Staff app', desc: 'task lists · status updates · operational checklists', badge: 'tap' },
+  ]}
+/>
+
 
 ## Problem Definition
 
@@ -15,6 +60,12 @@ A mall app is two products wearing one name:
 - **Staff** run operational workflows that demand clarity and speed over long shifts, from maintenance tasks to event coordination
 
 A single generic interface would serve neither. The design split into an end-user app and a staff app, sharing a visual language but each shaped around its own tasks.
+
+### Design Goals
+
+- **Shopper side:** resolve a goal in seconds — find a store, see an offer, book a service, all while walking
+- **Staff side:** operational depth with clarity and speed — task lists, status updates, and checklists for one-handed use during busy shifts
+- **One system, two apps** — shared component library so the brand feels consistent while each interface fits its user's hands and pace
 
 ## Design Process
 
@@ -34,9 +85,32 @@ The staff side is a working tool, not a showcase: task lists, status updates, an
 
 ### Key Design Decisions
 
-**Two apps, one system.** Separate apps for shoppers and staff, built from a shared component system — so the brand feels consistent while each interface fits its user's hands and pace.
+**Decision 1 — One app or two?**
 
-**Glanceability on the move.** Shoppers scan, they don't read; staff tap, they don't type. Both apps optimise for glance-and-act over read-and-think.
+<DecisionCards
+  items={[
+    { tag: 'A', title: 'Single app with role toggle', summary: 'One app where users switch between shopper and staff modes.', outcome: 'The two audiences have completely different mental models and usage contexts — cramming both into one app compromised both.', status: 'rejected' },
+    { tag: 'B', title: 'Two apps, one system', summary: 'Separate apps for shoppers and staff, built from a shared component system.', outcome: 'Each app is optimised for its user without compromise, while the shared component library keeps the brand coherent across both.', status: 'final' },
+  ]}
+/>
+
+**Decision 2 — Shopper navigation pattern.**
+
+<DecisionCards
+  items={[
+    { tag: 'A', title: 'Hamburger menu navigation', summary: 'All features tucked behind a drawer.', outcome: 'Shoppers scan, they don\'t read — hiding features behind a menu slowed down task completion.', status: 'rejected' },
+    { tag: 'B', title: 'Bottom tab bar with prominent offers', summary: 'Four primary sections always one tap away, with offers surfaced on the home screen.', outcome: 'Everything reachable within a couple of taps while walking. Glance-and-act over read-and-think.', status: 'final' },
+  ]}
+/>
+
+**Decision 3 — Staff interface density.**
+
+<DecisionCards
+  items={[
+    { tag: 'A', title: 'Full-featured dashboard', summary: 'All operational tools visible on one screen.', outcome: 'Too dense for one-handed use during a busy shift — staff needed clarity, not comprehensiveness.', status: 'rejected' },
+    { tag: 'B', title: 'Task-focused with quick actions', summary: 'Task lists with clear states and single-tap actions, designed for one-handed use.', outcome: 'Staff tap, they don\'t type — the interface respects the pace of a working shift.', status: 'final' },
+  ]}
+/>
 
 ## Visual Design
 
@@ -50,6 +124,8 @@ A clean, light system that lets mall content — photography, offers, brand colo
   colors={["#FFFFFF", "#767679", "#A5A6A8", "#F3F1F1"]}
   labels={["Base", "Grey", "Grey Light", "Surface"]}
 />
+
+**Typography:** A system sans-serif with a clear hierarchy — large imagery for shoppers, dense but scannable data for staff.
 
 ## Design Gallery
 
@@ -85,4 +161,4 @@ A clean, light system that lets mall content — photography, offers, brand colo
 
 ## Reflections
 
-Dual-sided design is about respecting two very different kinds of attention. Shoppers give you seconds and a thumb; staff give you a whole shift and one hand. Splitting the apps — while keeping one underlying system — let each side be optimised without compromise, and the shared component library kept the brand coherent across both.
+Dual-sided design is about respecting two very different kinds of attention. Shoppers give you seconds and a thumb; staff give you a whole shift and one hand. Splitting the apps — while keeping one underlying system — let each side be optimised without compromise, and the shared component library kept the brand coherent across both. The key insight: **shoppers scan, staff tap** — designing for that difference is what made each app feel native to its user.

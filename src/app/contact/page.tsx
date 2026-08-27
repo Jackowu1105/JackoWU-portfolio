@@ -11,10 +11,11 @@ export default function ContactPage() {
           Contact
         </p>
         <h1 className="text-4xl md:text-5xl font-bold tracking-tight text-text-primary mb-4">
-          Let&apos;s work together
+          Let&apos;s ship something real
         </h1>
         <p className="text-text-secondary max-w-lg leading-relaxed text-lg">
-          Got a project, opportunity, or just want to say hi? I&apos;d love to hear from you.
+          Whether it&apos;s a product to design, a front-end to ship, or a complex workflow to simplify —
+          I&apos;d love to hear about it.
         </p>
       </div>
 
@@ -62,7 +63,7 @@ export default function ContactPage() {
                 required
                 rows={5}
                 className="w-full px-4 py-3 rounded-xl bg-white/60 border border-black/10 text-text-primary placeholder:text-text-tertiary focus:outline-none focus:border-accent-gold focus:ring-1 focus:ring-accent-glow transition-colors text-sm resize-none"
-                placeholder="Tell me about your project..."
+                placeholder="Tell me about your project, role, or idea..."
               />
             </div>
             <button

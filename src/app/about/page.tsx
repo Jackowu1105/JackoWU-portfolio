@@ -1,5 +1,6 @@
 import { GlassCard } from '@/components/shared/GlassCard'
 import { Button } from '@/components/shared/Button'
+import { CertificationsGrid } from '@/components/about/CertificationsGrid'
 import { experience, skillCategories } from '@/data/about'
 
 const education = [
@@ -95,9 +96,9 @@ export default function AboutPage() {
           Designer,<br />
           <span className="text-accent-gold">builder.</span>
         </h1>
-        <p className="text-text-secondary leading-relaxed text-lg">
-          A UX/UI designer who turned 8+ years of product design into shipping real
-          front-end code — with AI doing the typing, and me keeping the bar.
+        <p className="text-text-secondary leading-relaxed text-lg md:whitespace-nowrap">
+          8+ years designing products across fintech, IoT, aviation, and property tech —
+          now shipping front-end code with AI-assisted workflows.
         </p>
       </div>
 
@@ -106,8 +107,20 @@ export default function AboutPage() {
         <GlassCard hover={false} className="p-8 md:p-10">
           <div className="flex flex-col md:flex-row gap-8 items-start">
             {/* Portrait placeholder */}
-            <div className="shrink-0 w-32 h-32 rounded-2xl bg-black/5 flex items-center justify-center text-text-tertiary text-xs">
-              Photo
+            <div
+              className="shrink-0 w-32 h-32 rounded-2xl flex items-center justify-center relative overflow-hidden"
+              style={{
+                background: 'linear-gradient(135deg, rgba(55,132,138,0.15) 0%, rgba(196,168,130,0.15) 100%)',
+                border: '1px solid rgba(255,255,255,0.3)',
+                backdropFilter: 'blur(10px)',
+              }}
+            >
+              <span
+                className="text-4xl font-bold text-text-tertiary/60"
+                style={{ fontFamily: 'var(--font-heading)' }}
+              >
+                JW
+              </span>
             </div>
             <div>
               <h2 className="text-2xl font-bold text-text-primary mb-4">
@@ -115,26 +128,25 @@ export default function AboutPage() {
               </h2>
               <div className="space-y-3 text-text-secondary leading-relaxed">
                 <p>
-                  I&apos;m Jacko Wu, a UX/UI designer with 8+ years across fintech, IoT,
-                  aviation logistics and property tech. I&apos;ve designed dashboards, apps and
-                  brand systems for research labs, universities and product teams in Hong Kong —
-                  and for most of that time, I handed my mockups to engineers and hoped they&apos;d
-                  survive the build.
+                  I&apos;m a UX/UI Designer with 8+ years across fintech, IoT, aviation, property tech,
+                  and logistics — based in Hong Kong. I&apos;ve shipped 30+ real products with clients
+                  ranging from the Hong Kong International Airport and MTR Corporation to AIFT
+                  (an InnoHK AI fintech lab backed by the Hong Kong government) and MOMAX.
                 </p>
                 <p>
-                  That changed when I started building with AI. On FUNDel — a 16-page logistics
-                  platform — I didn&apos;t just design it, I shipped it: ~31,000 lines of
-                  React/TypeScript across ~1,300 commits, ~88% AI-authored under my direction, as
-                  a solo MVP with no engineering team. The bottleneck was never typing speed; it
-                  was design judgment — the part I already had.
+                  More recently, I&apos;ve evolved from a pure designer into a <strong className="text-text-primary">design-engineer hybrid</strong> —
+                  using AI-assisted development and vibe coding to ship front-end products myself.
+                  My most recent project, FUNDel, is a 16-page logistics platform I designed and
+                  built solo: ~31k lines across ~1,300 commits, ~88% AI-authored under my direction,
+                  delivered as a working MVP without an engineering team.
                 </p>
                 <p>
-                  Today I work as a design-engineer hybrid: I set the design system and
-                  information architecture, then drive an AI coding agent to implement it,
-                  reviewing every commit. The result is end-to-end products that are both
-                  visually considered and actually running — designed and shipped by the same
-                  hands. I&apos;m now looking for UI/UX and front-end roles where design and build
-                  stay in one person.
+                  What drives me is simplifying complexity — taking a dense regulatory requirement or a
+                  multi-stakeholder logistics flow and turning it into something a person can actually
+                  use. I build design systems so teams can move fast without breaking consistency, and
+                  I use AI to compress the gap between idea and shipped product. When I&apos;m not
+                  designing or coding, I&apos;m exploring new AI tools and workflows to stay at the
+                  frontier of what one person can build.
                 </p>
               </div>
             </div>
@@ -204,25 +216,7 @@ export default function AboutPage() {
           </p>
           <h2 className="text-3xl font-bold text-text-primary">Certifications</h2>
         </div>
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
-          {certifications.map((cert, i) => (
-            <GlassCard key={i} hover={false} className="p-4 flex flex-col overflow-hidden">
-              <div className="rounded-lg overflow-hidden bg-bg-elevated mb-4 aspect-[4/3] flex items-center justify-center">
-                <img
-                  src={cert.image}
-                  alt={`${cert.name} — ${cert.issuer}`}
-                  loading="lazy"
-                  className="w-full h-full object-contain"
-                />
-              </div>
-              <h3 className="font-semibold text-text-primary text-sm leading-snug mb-1">
-                {cert.name}
-              </h3>
-              <p className="text-xs text-text-secondary">{cert.issuer}</p>
-              <p className="text-xs text-text-tertiary mt-1">{cert.date}</p>
-            </GlassCard>
-          ))}
-        </div>
+        <CertificationsGrid certifications={certifications} />
       </section>
 
       {/* Skills */}

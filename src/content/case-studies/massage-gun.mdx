@@ -5,9 +5,54 @@
   team="1 UX Designer (me, solo) + developers"
   duration="2021"
   tools={["Figma"]}
-/>
+  />
 
-## Problem Definition
+  ## UX Research
+
+  A massage gun is only as good as the guidance around it — used wrong it can cause injury, used right it becomes a daily recovery habit. Research framed the companion app around the moment of use: at home, after a workout, often one-handed and mid-session.
+
+  <ResearchProcess
+    stages={[
+      {
+        phase: 1,
+        title: 'Map the usage context',
+        summary: 'The device lives at home, used after workouts and for recovery and relaxation, by people who may glance at the screen mid-session. Without instruction, wrong intensity, wrong muscle group or sessions that run too long limit the benefit and risk injury.',
+        artifact: 'Usage-scenario map',
+      },
+      {
+        phase: 2,
+        title: 'Name the guidance-versus-overwhelm tension',
+        summary: 'First-time users need clear step-by-step guidance, but a surface that shows every customisation at once feels cluttered and intimidating — while every user’s body and recovery needs still demand personalisation.',
+        artifact: 'Design tension summary',
+      },
+      {
+        phase: 3,
+        title: 'Structure the app around a safe default',
+        summary: 'Four sections — Home (quick-start with recent and recommended sessions), Programs (recovery, pain relief, relaxation), Guide (step-by-step tutorials with safety precautions) and Progress (session history and improvement tracking) — with advanced settings one tap away from a calm main control.',
+        artifact: 'App structure + session flow',
+
+
+      },
+      {
+        phase: 4,
+        title: 'Test the calm default',
+        summary: 'Iteration compared an everything-on-home layout against a quick-start-first layout: testing showed users found the calm home view less intimidating while still reaching advanced controls comfortably.',
+        artifact: 'Usability test notes (V1 vs V2)',
+      },
+    ]}
+  />
+
+  <JourneyFlow
+    label="Usage scenario flow · moment-of-use research"
+    steps={[
+      { title: 'Scenario', desc: 'At home, after a workout, often one-handed and mid-session — users glance at the screen, so controls must be large and reachable.', tag: 'usage context' },
+      { title: 'Program', desc: 'Recovery, pain relief and relaxation programs, each customisable in intensity, mode and target area.', tag: 'personalised' },
+      { title: 'Guided session', desc: 'Step-by-step guidance with safety precautions — advanced settings one tap away from a calm main control.', tag: 'safe default' },
+      { title: 'Progress', desc: 'Every session feeds history and improvement tracking, turning a one-off device into a daily habit.', tag: 'feedback loop' },
+    ]}
+  />
+
+  ## Problem Definition
 
 A smart massage gun is only as good as the guidance around it. Without instruction, users apply it incorrectly — wrong intensity, wrong muscle group, too long — which limits the benefit and risks injury. The companion app needed to solve three things at once:
 

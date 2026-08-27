@@ -7,15 +7,91 @@
   tools={["Sketch", "Adobe Illustrator"]}
 />
 
+## UX Research
+
+A corporate website is a first impression measured in seconds. The research started from the visitor, not the company: what does a prospective client actually need to know, and in what order?
+
+<ResearchProcess
+  stages={[
+    {
+      phase: 1,
+      title: 'Start from the client’s questions',
+      summary: 'Listed what a prospective client asks when first landing on the site: what does the company do, what has it delivered, how do I reach them? These questions became the skeleton of the site.',
+      artifact: 'Client question list',
+    },
+    {
+      phase: 2,
+      title: 'Define the failure mode',
+      summary: 'If a visitor cannot understand what the company does within seconds, they leave. An org-chart structure serves the company’s internal logic, not the visitor’s — the site had to mirror the client’s mental model.',
+      artifact: 'Problem definition',
+    },
+    {
+      phase: 3,
+      title: 'Build the content architecture around the questions',
+      summary: 'Structured the site around the three client questions — what you do, what you have delivered, how to reach you — and wireframed the page hierarchy and content flow before any visual design began.',
+      artifact: 'Content architecture',
+
+
+    },
+    {
+      phase: 4,
+      title: 'Let the message lead, quietly',
+      summary: 'Tested a bold, feature-rich direction against a restrained, content-led one. The site’s job is to disappear and let the company’s message land — so the final direction resisted decoration in favour of whitespace and clear hierarchy.',
+      artifact: 'Visual direction rationale',
+    },
+  ]}
+/>
+
+<ResearchIA
+  label="Content architecture · built on the client's questions, not the org chart"
+  root="Bright Way site"
+  children={[
+    { title: 'What do you do?', desc: 'value proposition and services — answered in seconds above the fold', badge: 'Home · Services' },
+    { title: 'What have you delivered?', desc: 'proof — projects and case studies that make the company credible', badge: 'Case Studies' },
+    { title: 'How do I reach you?', desc: 'contact made obvious — no guessing, no dead ends', badge: 'Contact' },
+  ]}
+/>
+
+
+## Problem Definition
+
+A corporate website is the first impression for prospective clients. If a visitor can't understand what the company does within seconds, they leave. The challenge was to communicate clearly without overselling — the site needed to feel credible, not flashy.
+
+### Design Goals
+
+- **Communicate what the company does in seconds** — clear value proposition above the fold
+- **Guide visitors to the right page without friction** — intuitive navigation, no dead ends
+- **Responsive across all devices** — composed layout from desktop to mobile
+
 ## Design Process
 
 ### Structure & Wireframing
 
 I started from the questions a prospective client asks — what does the company do, what has it delivered, how do I reach them — and built the site structure around those answers. Wireframes established the page hierarchy and content flow before any visual design began.
 
-### Visual Design
+### Key Design Decisions
 
-The visual system keeps the site corporate but not stiff: a clean, light layout with generous whitespace, clear type hierarchy, and the company's brand carried consistently across pages. Responsive breakpoints keep the layout composed from desktop down to mobile.
+**Decision 1 — Information architecture.**
+
+<DecisionCards
+  items={[
+    { tag: 'A', title: 'Company org chart structure', summary: 'Organise the site around the company\'s internal departments.', outcome: 'Visitors don\'t care about the org chart — they want to know what the company does and how to get in touch.', status: 'rejected' },
+    { tag: 'B', title: 'Client-question-driven structure', summary: 'Structure the site around the questions a prospective client actually asks: What do you do? What have you delivered? How do I reach you?', outcome: 'The navigation is obvious because it mirrors the visitor\'s mental model — no guessing, no dead ends.', status: 'final' },
+  ]}
+/>
+
+**Decision 2 — Visual direction.**
+
+<DecisionCards
+  items={[
+    { tag: 'A', title: 'Bold, feature-rich design', summary: 'Heavy animations, large hero videos, and interactive elements.', outcome: 'Risked overshadowing the content and feeling flashy rather than credible — wrong tone for a corporate audience.', status: 'rejected' },
+    { tag: 'B', title: 'Restrained, content-led design', summary: 'Clean layout with generous whitespace, clear type hierarchy, and brand carried consistently across pages.', outcome: 'The site\'s job is to disappear and let the company\'s message land — every decorative impulse resisted made the result more credible.', status: 'final' },
+  ]}
+/>
+
+### Responsive Design
+
+Designed for desktop first, then scaled down to mobile with breakpoints that keep the layout composed at every size. The navigation simplifies gracefully on mobile without losing any content.
 
 ## Visual Design
 
@@ -27,6 +103,8 @@ The visual system keeps the site corporate but not stiff: a clean, light layout 
   colors={["#FFFFFF", "#767679", "#A5A6A8", "#F3F1F1"]}
   labels={["Base", "Grey", "Grey Light", "Surface"]}
 />
+
+**Typography:** A system sans-serif with a clear hierarchy — large headings for the value proposition, readable body text for services and case studies.
 
 ## Design Gallery
 

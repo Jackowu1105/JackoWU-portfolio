@@ -2,20 +2,20 @@
 
 import { motion } from 'framer-motion'
 
-const testimonials = [
+const milestones = [
   {
     quote:
-      'Jacko has a rare ability to balance deep strategic thinking with stunning visual execution. He transformed our complex product into an experience our users love.',
-    author: 'Sarah Jenkins',
-    role: 'VP of Product',
-    company: 'FinTech Innovators',
+      'Designed and vibe-coded a full logistics MVP — 16 pages, 73 components, ~31k lines across ~1,300 commits over five months, ~88% AI-authored under my direction. Shipped a working product without an engineering team.',
+    author: 'FUNDel Logistics Portal',
+    role: 'Designer & Builder',
+    company: 'AIFT × FUNDel · 2026',
   },
   {
     quote:
-      'Working with Jacko was a game-changer for our team. His attention to detail and deep understanding of UX principles resulted in a product our customers can\'t stop praising.',
-    author: 'Michael Chen',
-    role: 'Head of Design',
-    company: 'TechVision Labs',
+      'Built a 42-component cross-platform design system shared across iOS and Android for 50+ IoT devices. Cut device setup from 7 steps to 3 by restructuring the IA around rooms instead of device type.',
+    author: 'MOMAX Smart App Redesign',
+    role: 'Lead UI/UX Designer',
+    company: 'MOMAX · 2021',
   },
 ]
 
@@ -38,7 +38,7 @@ export function TestimonialSection() {
 
       <div className="mx-auto max-w-6xl px-6 md:px-12">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-          {testimonials.map((t, i) => (
+          {milestones.map((t, i) => (
             <motion.div
               key={t.author}
               initial={{ opacity: 0, y: 24 }}
@@ -76,13 +76,17 @@ export function TestimonialSection() {
 
               {/* Author */}
               <div className="flex items-center gap-4 pt-4 border-t border-black/5">
-                {/* Avatar placeholder */}
+                {/* Achievement badge */}
                 <div
-                  className="w-10 h-10 rounded-full shrink-0"
+                  className="w-10 h-10 rounded-full shrink-0 flex items-center justify-center"
                   style={{
                     background: 'linear-gradient(135deg, #37848a 0%, #c9a74d 100%)',
                   }}
-                />
+                >
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                    <path d="M12 2l3 7h7l-5.5 4.5L18 21l-6-4-6 4 1.5-7.5L2 9h7z" />
+                  </svg>
+                </div>
                 <div>
                   <p
                     className="text-heading font-semibold text-sm"

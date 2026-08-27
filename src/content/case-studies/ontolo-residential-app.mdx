@@ -7,6 +7,87 @@
   tools={["Adobe XD", "Sketch", "InVision", "UsabilityHub"]}
 />
 
+## UX Research
+
+The brief was a unified resident app, but the research question came first: one interface cannot serve residents from 8 to 75. The Double Diamond here was about finding the shared core of three very different user groups, then designing complexity that adapts instead of assuming.
+
+<ResearchProcess
+  stages={[
+    {
+      phase: 1,
+      title: 'Observe and interview across the age range',
+      summary: 'Contextual inquiries watching elderly residents use competitor apps at home, interviews with about 20 residents aged 8–75, a competitive analysis of property and senior-friendly apps, and usability tests of existing solutions with about 5 users.',
+      artifact: 'Interviews (20, ages 8–75) + inquiry',
+    },
+    {
+      phase: 2,
+      title: 'Define why one-size-fits-all fails',
+      summary: 'Elderly users were overwhelmed, not incapable — complexity, small targets and fear of mistakes stalled tasks; children needed supervision-friendly access; adults wanted full features. No existing app offered adaptive complexity: everything was either patronising or overwhelming.',
+      artifact: 'Segment pain-point map',
+    },
+    {
+      phase: 3,
+      title: 'Develop “simplify by default, expand on demand”',
+      summary: 'One app with two adaptive modes instead of separate apps: a shared core of the five functions everyone used (Pareto), surfaced differently per mode. Onboarding suggests a mode from stated needs, and switching carries a confirmation so nobody gets lost.',
+      artifact: 'Dual-mode concept + onboarding',
+
+
+    },
+    {
+      phase: 4,
+      title: 'Validate with the least confident users first',
+      summary: 'Iterative usability testing drove the 60×60pt touch targets, WCAG AAA simplified mode, and 2-level navigation depth — stripping to core functions made task completion jump for elderly users while adults kept the full feature set.',
+      artifact: 'Usability-tested dual-mode app',
+    },
+  ]}
+/>
+
+<InsightGrid
+  label="Segment structure · one core, two modes"
+  items={[
+    { title: 'Elderly residents (60+)', desc: 'Overwhelmed, not incapable — too many options, small touch targets and fear of mistakes stalled tasks. Served by Simplified Mode.', badge: 'Simplified Mode', tone: 'bad' },
+    { title: 'Children (8–12)', desc: 'Preferred visual, icon-based navigation with sensitive functions (payments, lease info) kept supervision-friendly.', badge: 'Supervised', tone: 'neutral' },
+    { title: 'Adult residents', desc: 'Expected the complete feature set — all community services and account management with standard, modern patterns.', badge: 'Full Mode', tone: 'neutral' },
+    { title: 'Shared core', desc: 'Five functions drove most usage across every group — emergency contacts, facility booking, announcements, visitor access, service requests — surfaced differently per mode.', badge: 'Pareto', tone: 'good' },
+  ]}
+/>
+
+<PersonaCard
+  label="UX RESEARCH · USER PERSONA · ELDERLY"
+  name="Madam Lam"
+  initials="ML"
+  subtitle="68 · retired · lives alone · first smartphone app"
+  quote="I press one button and hope. If it asks me to do too many things, I stop and call my daughter instead."
+  goals={['Big, obvious touch targets', 'One clear path to call for help']}
+  pains={['Too many options froze her mid-task', 'Small targets and fear of mistakes stalled everything']}
+/>
+
+<PersonaCard
+  label="UX RESEARCH · USER PERSONA · CHILD"
+  name="Ethan (11)"
+  initials="E"
+  subtitle="11 · schoolkid · borrows parents' phone"
+  quote="I just want to see when the pool is open and book it — the icons tell me everything."
+  goals={['Visual, icon-based navigation', 'Book the facility himself']}
+  pains={['Payment and lease info should stay parent-gated', 'Long menus lose him instantly']}
+/>
+
+<PersonaCard
+  label="UX RESEARCH · USER PERSONA · ADULT"
+  name="David"
+  initials="D"
+  subtitle="38 · working professional · manages the family account"
+  quote="I expect the full estate app — announcements, visitor access, service requests — all in one place, fast."
+  goals={['Complete feature set', 'Standard, modern interaction patterns']}
+  pains={['Fragmented channels before this app', 'Wants depth without wading through menus']}
+/>
+
+<StickyQuote
+  label="UX RESEARCH · VERBATIM USER VOICE"
+  quote="I got to the payment screen and had no idea if I'd pressed the right thing, so I just closed it."
+  source="Verbatim — usability test, elderly resident on an existing property app"
+/>
+
 ## The Challenge
 
 Great Eagle Holdings wanted a unified resident app, but research showed that **one-size-fits-all interfaces failed to serve diverse resident demographics**.

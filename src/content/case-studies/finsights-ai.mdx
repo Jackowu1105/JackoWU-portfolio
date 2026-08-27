@@ -7,6 +7,62 @@
   tools={["Figma"]}
 />
 
+## UX Research
+
+An AI advisor app fails on research before it fails on engineering. I framed the problem as a paradox to resolve, then let the resolution dictate the structure — not the other way around.
+
+<ResearchProcess
+  stages={[
+    {
+      phase: 1,
+      title: 'Map the failure space',
+      summary: 'Studied how everyday investors actually relate to market data: most want control but cannot — and do not want to — parse raw charts. Two trap states emerged.',
+      artifact: 'Competitive + behaviour scan',
+    },
+    {
+      phase: 2,
+      title: 'Name the core tension',
+      summary: 'Trust versus simplicity. Surface everything → only pros use it; hide everything behind "the AI said so" → users stop trusting it. The brief became resolving both at once.',
+      artifact: 'Research tension map',
+
+
+    },
+    {
+      phase: 3,
+      title: 'Design the IA around the resolution',
+      summary: 'If the AI carries complexity, it belongs at the front door. Three surfaces — AI Assistant, Home, Market — each mapped to one intent, with the assistant as the entry point.',
+      artifact: 'IA structure',
+
+
+    },
+    {
+      phase: 4,
+      title: 'Make the AI legible',
+      summary: 'Set the rule early: show enough of the "why" that a user can decide whether to follow the advice. Reasoning visible, plain-language I/O, power-user depth kept out of the core flow.',
+      artifact: 'Interaction principles',
+    },
+  ]}
+/>
+
+<InsightGrid
+  label="Research tension · the two failure modes"
+  items={[
+    { title: 'Dashboard trap', desc: 'Surface every metric — the app becomes a tool only a professional can use.', tone: 'bad', badge: 'data overload' },
+    { title: 'Black-box trap', desc: 'Hide every decision behind "the AI said so" — users stop trusting it.', tone: 'bad', badge: 'lost trust' },
+  ]}
+/>
+
+<ResearchIA
+  label="Information Architecture · three surfaces, three intents"
+  root="FinSightsAI"
+  children={[
+    { title: 'AI Assistant', desc: 'conversational front door · recent hot topics + authority index', badge: 'front door' },
+    { title: 'Home', desc: 'recommendations feed · notes · watchlist · profile', badge: 'workspace' },
+    { title: 'Market', desc: 'charts · company profile · fundamentals · headlines · technical analysis', badge: 'data layer' },
+  ]}
+/>
+
+
 ## Problem Definition
 
 The core tension in a robo-advisor app is trust versus simplicity. Investors want to feel in control, but most cannot — and do not want to — parse raw market data. Two failure modes follow:
@@ -55,11 +111,11 @@ A meaningful share of the design work went into registration, login, and account
 
 ### Color
 
-A restrained, dark-neutral system — warm greys and near-blacks — chosen so that data and the AI's responses are the only things that carry colour. In a fintech app, colour should mean signal, not decoration.
+The app ships in both light and dark modes on a near-neutral base, so a single colour carries all the signal: violet. The brand purple (`#6058C0` in light mode, a brighter violet in dark) is reserved for actions, the AI's highlights, and what matters most — while charts and content stay neutral. In a fintech app, colour should mean signal, not decoration.
 
 <ColorPalette
-  colors={['#9F9BA0', '#3A3941', '#62606A', '#19181C']}
-  labels={['Surface', 'Primary', 'Accent', 'Dark']}
+  colors={['#F8F8F8', '#19181C', '#6058C0', '#383068']}
+  labels={['Light Surface', 'Ink', 'Brand Purple', 'Deep Indigo']}
 />
 
 ### Architecture
@@ -90,6 +146,22 @@ The app is built on a micro-service architecture (advisor, market data, portfoli
   src="/images/projects/finsights-ai/g04.png"
   label="Authentication"
   caption="Login and the adaptive email/phone entry — one input that detects the credential type and adapts the downstream flow, shared with recovery"
+/>
+
+The full registration flow also ships in light mode — the adaptive email/phone entry, sign-up, profile info, and OTP verification:
+
+<CaseStudyImage
+  src="/images/projects/finsights-ai/g05.png"
+  label="Registration — Light Mode"
+  caption="The registration journey in light mode — Login with the adaptive email/phone entry, Sign Up, profile Info, and OTP verification — the violet CTA carries the primary actions on a light surface"
+/>
+
+The onboarding continues after sign-up — profile complete, personalise your feed by industry, follow accounts, then land in the app:
+
+<CaseStudyImage
+  src="/images/projects/finsights-ai/g06.png"
+  label="Onboarding — Light Mode"
+  caption="The onboarding flow in light mode — profile info done, pick your Industry, Follow accounts, and the success screen that completes setup"
 />
 
 ## Reflections

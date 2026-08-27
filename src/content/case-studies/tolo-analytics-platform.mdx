@@ -1,0 +1,218 @@
+<ProjectHeader
+  overview="TOLO Analytics is a trade finance analytics platform built at AIFT — a lender-facing system where risk officers review loan applications, run KYC / KYS / KYP due diligence on borrowers, score creditworthiness, and assemble investment portfolios. Alongside the platform I designed the public marketing website (Home + About Us) with full mobile versions. I designed the end-to-end system UI in Figma: the portfolio dashboard, the customer list, the due-diligence detail layers, the scorecard, and portfolio selection. Part of the same product line as TOLOD."
+  challenge="Trade finance lending is decided on trust before credit. A risk officer underwrites a borrower against how verifiable their identity is (KYC), how real their operations are (KYS — know your store), and how sound the collateral is (KYP — know your product). The brief was to turn that fragmented due-diligence data into a workspace where three questions can be answered in minutes: who is this customer, how risky are they, and where does this loan sit in the portfolio?"
+  role="UI/UX Designer — end-to-end system UI design: information architecture, due-diligence workflows, data visualization, and high-fidelity screens built in Figma."
+  team="1 UX/UI Designer (me) + product + engineering"
+  duration="2025"
+  tools={["Figma"]}
+/>
+
+## UX Research
+
+An underwriting workspace fails on trust before it fails on functionality. I framed the problem as a tension to resolve, then let the resolution dictate the structure.
+
+<ResearchProcess
+  stages={[
+    {
+      phase: 1,
+      title: 'Map the underwriting workflow',
+      summary: 'Studied how a risk officer underwrites a trade-finance loan. The decision rests on three checks — corporate identity, store operations, product provenance — but the data lived in separate silos with no single workspace to move through them.',
+      artifact: 'Workflow + data audit',
+    },
+    {
+      phase: 2,
+      title: 'Name the core tension',
+      summary: 'Coverage versus speed. Check everything and approvals stall; check too little and risk slips through. The brief became: keep due diligence deep, make the workspace fast.',
+      artifact: 'Research tension map',
+    },
+    {
+      phase: 3,
+      title: 'Design the IA around the workflow',
+      summary: 'If the decision is the unit of work, each surface maps to one step in it — dashboard, customer list, KYC / KYS / KYP layers, scorecard, portfolio. The underwriting journey becomes the information architecture.',
+      artifact: 'IA structure',
+    },
+    {
+      phase: 4,
+      title: 'Make risk legible',
+      summary: 'Set the rule early: compress due diligence into a score, but always keep the evidence one click below the number. And meet the borrower where the question is — an embedded AI assistant inside the workspace.',
+      artifact: 'Interaction principles',
+    },
+  ]}
+/>
+
+<InsightGrid
+  label="Research tension · the two failure modes"
+  items={[
+    { title: 'Document maze', desc: 'KYC, store, and product data scattered across screens — every check means context-switching and an underwriting decision stalls.', tone: 'bad', badge: 'fragmented data' },
+    { title: 'Score without evidence', desc: 'A credit score with nothing behind it is a black box — no risk officer underwrites on faith.', tone: 'bad', badge: 'black box' },
+  ]}
+/>
+
+<ResearchIA
+  label="Information Architecture · the lending journey as the IA"
+  root="TOLO Analytics"
+  children={[
+    { title: 'Dashboard', desc: 'pending work · loan KPIs · 7-day trend · active-loan status · Ask TOLO AI', badge: 'front door' },
+    { title: 'Customer List', desc: 'every borrower in one filterable surface', badge: 'portfolio view' },
+    { title: 'KYC / KYS / KYP', desc: 'due-diligence detail layers — identity · store · product', badge: 'due diligence' },
+    { title: 'Scorecard', desc: 'risk compressed into a decision, evidence beneath', badge: 'decision' },
+    { title: 'Portfolio', desc: 'select and assemble loan portfolios', badge: 'invest' },
+  ]}
+/>
+
+## Problem Definition
+
+A trade-finance lending decision is a chain of trust checks. The system's job is to make that trust cheap to verify — so the risk officer's attention goes to the decision, not to finding the documents.
+
+### Design Goals
+
+- **Make the dashboard a to-do list, not a chart wall** — pending applications, disbursements, repayments, and risk alerts surface first; charts support, they don't lead
+- **Keep due diligence deep but navigable** — KYC / KYS / KYP as layered drill-downs from one customer record, not separate silos
+- **Compress risk into a scorecard that can always show its working** — the evidence a click below the number
+- **Put the portfolio decision in context** — assemble loan portfolios against the same customer and risk data the underwriters see
+
+## Design Process
+
+### Information Architecture
+
+The system is structured around the lending journey — each surface maps to one step in it:
+
+1. **Dashboard (整體看板)** — the front door. Pending work leads: loan applications awaiting review, disbursements and repayments to process, customers awaiting credit-limit decisions, overdue loans, and customers triggering risk alerts. KPI rows keep loan volumes, balances, customer counts, and settlement health in view; a 7-day trend chart shows new loans; an active-loan donut splits the book by status (overdue / disbursed / pending disbursement / pending review); a recent-KYC-updates list keeps underwriting context fresh.
+2. **Customer List (客戶列表)** — the portfolio in one scrollable, filterable surface. Every borrower reachable, every detail a click away.
+3. **KYC / KYS / KYP detail layers** — from a customer record, the underwriter drills down: corporate identity (KYC), store operations (KYS), and product provenance (KYP). Three levels of verification, one thread of decision.
+4. **Scorecard** — the risk decision, compressed into a number, with the evidence layers beneath it.
+5. **Portfolio (投資組合)** — selection and assembly of loan portfolios, sitting on the same data the underwriting screens use.
+
+### The embedded assistant
+
+The dashboard carries an **Ask TOLO AI** panel — a plain-language assistant inside the workspace, with suggested questions to start from. The bet: a risk officer should be able to ask about the book in the same language they think in, without leaving the dashboard.
+
+## Visual Design
+
+### Color
+
+The system is a single-brand blue on white. The brand blue (`#1078C0`) carries actions and emphasis; pale blue surfaces (`#C2DCEE`) keep the workspace calm; neutral ink (`#313233`) keeps tables and data legible. In a lending workspace, colour is status and signal — overdue reads warm, everything else stays cool and credible.
+
+<ColorPalette
+  colors={['#FFFFFF', '#1078C0', '#C2DCEE', '#313233']}
+  labels={['Base', 'Brand Blue', 'Light Blue', 'Ink']}
+/>
+
+### Typography
+
+A clean system sans with a strong numeric treatment — loan amounts, counts, and scorecard numbers get display weight, while table data stays tight and highly legible. The hierarchy is engineered for scanning: KPIs read in a glance, documents in focus.
+
+## Design Gallery
+
+<CaseStudyImage
+  src="/images/projects/tolo-analytics-platform/g01.jpg"
+  label="Customer List"
+  caption="The customer list (客戶列表) — every borrower in one scrollable, filterable surface, the starting point for any underwriting decision"
+/>
+
+<CaseStudyImage
+  src="/images/projects/tolo-analytics-platform/g02.jpg"
+  label="KYC"
+  caption="KYC detail — the corporate identity layer of the customer record, where underwriting starts"
+/>
+
+<CaseStudyImage
+  src="/images/projects/tolo-analytics-platform/g03.jpg"
+  label="KYS"
+  caption="KYS (know your store) — the store-operations layer beneath the corporate identity, evidence the business is real"
+/>
+
+<CaseStudyImage
+  src="/images/projects/tolo-analytics-platform/g04.jpg"
+  label="KYP"
+  caption="KYP (know your product) — the product level, where the goods behind the loan sit and the risk actually lives"
+/>
+
+<CaseStudyImage
+  src="/images/projects/tolo-analytics-platform/g05.jpg"
+  label="Scorecard"
+  caption="The scorecard — due diligence compressed into a decision, with the evidence layers a click below the number"
+/>
+
+<CaseStudyImage
+  src="/images/projects/tolo-analytics-platform/g06.jpg"
+  label="Portfolio"
+  caption="Portfolio selection (投資組合) — assembling loan portfolios from the same customer and risk data the underwriters use"
+/>
+
+## Public Website
+
+Alongside the platform, I designed the public marketing website — the story told to prospective borrowers. Two pages (Home + About Us), each with a full mobile version, built as a scroll that leads from trust to action.
+
+### A deeper register
+
+The website deliberately steps away from the platform's vivid interactive blue. Where the app needs energy and signal, the marketing site reads as a financial brand — a deep navy carries the hero and sections, with muted steel and sky blues for accents.
+
+<ColorPalette
+  colors={['#FFFFFF', '#22376B', '#546C90', '#9CC0CC']}
+  labels={['Base', 'Brand Navy', 'Steel Blue', 'Sky Blue']}
+/>
+
+### Home
+
+The Home page opens with the value proposition — e-commerce financing without collateral — then proves it in four features, a real client success story, and an interactive credit calculator that lets a borrower estimate their options before they ever apply.
+
+<CaseStudyImage
+  src="/images/projects/tolo-analytics-platform/g07.jpg"
+  label="Home — Hero"
+  caption="Above the fold: the TOLO value proposition on a deep-navy canvas, with the primary Quick Application action"
+/>
+
+<CaseStudyImage
+  src="/images/projects/tolo-analytics-platform/g08.jpg"
+  label="Home — Features"
+  caption="E-commerce financing, unpacked — No Collateral Required, Fully Online Process, Flexible Solutions, and Intelligent Management, each grounded in what the platform actually does"
+/>
+
+<CaseStudyImage
+  src="/images/projects/tolo-analytics-platform/g09.jpg"
+  label="Home — Showcase + Credit Calculator"
+  caption="Proof before the pitch — a real client success story (US$140,000 financed in two days), then an interactive credit calculator that estimates financing options on the spot"
+/>
+
+### About Us
+
+The About page answers the credibility question: who founded TOLO, and why the AI-driven approach. It ties the product back to AIFT, the Hong Kong fintech lab behind it.
+
+<CaseStudyImage
+  src="/images/projects/tolo-analytics-platform/g10.jpg"
+  label="About — Intro"
+  caption="About TOLO on a navy canvas — an AI + FinTech platform founded by AIFT, grounded in the research and application of AI in finance"
+/>
+
+<CaseStudyImage
+  src="/images/projects/tolo-analytics-platform/g11.jpg"
+  label="About — Body"
+  caption="The detail — cross-border e-commerce supply-chain financing, AI technology services, and the research-led team behind the platform"
+/>
+
+### Responsive
+
+Every screen reflows to mobile — the same story, condensed to a thumb-scroll. The mobile versions keep the navy identity while stacking the hero, features, and calculator into a single column.
+
+<CaseStudyImage
+  src="/images/projects/tolo-analytics-platform/g12.jpg"
+  label="Mobile — Home Hero"
+  caption="The mobile Home — the value proposition restacked for a single-column, thumb-first reading"
+/>
+
+<CaseStudyImage
+  src="/images/projects/tolo-analytics-platform/g13.jpg"
+  label="Mobile — Features"
+  caption="The feature cards collapse into a vertical rhythm on mobile, keeping the reading order intact"
+/>
+
+<CaseStudyImage
+  src="/images/projects/tolo-analytics-platform/g14.jpg"
+  label="Mobile — About"
+  caption="The About page on mobile — the same credibility story, restructured for the smaller canvas"
+/>
+
+## Reflections
+
+Designing TOLO Analytics taught me that in trade finance, the interface is a trust machine. The dashboard's first job is not to look smart — it is to make sure nothing that needs a decision gets missed, which is why the to-do surface leads and the charts follow. The KYC / KYS / KYP layering is the quiet core of the system: it lets an underwriter verify a borrower three levels deep without ever losing the thread of the decision. And the scorecard is only trustworthy because the evidence is always one click away.

@@ -1,6 +1,8 @@
 'use client'
 
+import { useState } from 'react'
 import { motion } from 'framer-motion'
+import { Lightbox } from '@/components/case-study/Lightbox'
 
 interface CaseStudyImageProps {
   /** Image path (/images/...). Omit to show the original placeholder. */
@@ -33,6 +35,7 @@ export function CaseStudyImage({
   href,
   hrefLabel = '▶ Open prototype',
 }: CaseStudyImageProps) {
+  const [lightboxOpen, setLightboxOpen] = useState(false)
   const figureBody = (
     <>
       <div className="glass-card overflow-hidden rounded-xl p-0">
@@ -136,14 +139,30 @@ export function CaseStudyImage({
   }
 
   return (
-    <motion.figure
-      initial={{ opacity: 0, y: 12, filter: 'blur(4px)' }}
-      whileInView={{ opacity: 1, y: 0, filter: 'blur(0px)' }}
-      viewport={{ once: true, margin: '-80px' }}
-      transition={{ duration: 0.5, ease: [0.25, 0.1, 0.25, 1] }}
-      className="my-10"
-    >
-      {figureBody}
-    </motion.figure>
+    <>
+      <motion.figure
+        initial={{ opacity: 0, y: 12, filter: 'blur(4px)' }}
+        whileInView={{ opacity: 1, y: 0, filter: 'blur(0px)' }}
+        viewport={{ once: true, margin: '-80px' }}
+        transition={{ duration: 0.5, ease: [0.25, 0.1, 0.25, 1] }}
+        whileHover={{ y: -2 }}
+        onClick={() => setLightboxOpen(true)}
+        className="my-10 cursor-zoom-in"
+      >
+        {figureBody}
+      </motion.figure>
+
+      {/* Click to enlarge */}
+      {src && (
+        <Lightbox
+          open={lightboxOpen}
+          onClose={() => setLightboxOpen(false)}
+          src={src}
+          alt={caption || label}
+          caption={label}
+          sub={caption}
+        />
+      )}
+    </>
   )
 }

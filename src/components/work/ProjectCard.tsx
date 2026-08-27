@@ -139,8 +139,11 @@ export function ProjectCard({ project, index, variant = 'compact' }: ProjectCard
             <h3 className="text-base font-semibold text-text-primary mb-1 group-hover:text-[#2C2622] transition-colors leading-snug">
               {project.title}
             </h3>
-            <p className="text-[12px] text-text-tertiary mb-3">
+            <p className="text-[12px] text-text-tertiary mb-2">
               {project.client} · {project.timeline}
+            </p>
+            <p className="text-[13px] text-text-secondary leading-relaxed line-clamp-2 mb-3">
+              {project.summary}
             </p>
 
             <div className="flex items-center justify-between gap-2 pt-3 border-t border-black/5">

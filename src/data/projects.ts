@@ -34,7 +34,7 @@ export const projects: Project[] = [
     thumbnail: '/images/projects/as2-aahk-controller-dashboard/cover.jpg',
     heroImage: '/images/projects/as2-aahk-controller-dashboard/cover.jpg',
     summary:
-      'Revamped the airport apron control dashboard so controllers can identify aircraft body type and bay type at a glance — aligning the information hierarchy with how controllers already scan the board during peak hours.',
+      'Revamped the HKIA apron control dashboard so controllers identify aircraft body type and bay type at a glance — re-aligning the information hierarchy to match how controllers already scan the board during peak hours, reducing lookup time per aircraft.',
     highlights: [
       'Body-type icons in collapsed view — controllers scan without reading text',
       'Bay type (Remote/Frontal) color-coded and paired with icon + label for color-blind safety',
@@ -55,7 +55,7 @@ export const projects: Project[] = [
     thumbnail: '/images/projects/zproduct-dashboard/cover.png',
     heroImage: '/images/projects/zproduct-dashboard/cover.png',
     summary:
-      'Redesigned an airport logistics dashboard into a configurable widget system — letting each airport surface the data that matters to its operation instead of forcing one rigid layout on everyone.',
+      'Redesigned an airport logistics dashboard into a modular widget system — so each airport configures the data that matters to its operation instead of adapting to one rigid layout. Shipped to real airport operations teams.',
     highlights: [
       'Modular drag-and-drop widget system on a flexible grid',
       'Separated View and Edit modes to prevent accidental layout changes',
@@ -76,7 +76,7 @@ export const projects: Project[] = [
     thumbnail: '/images/projects/momax-smart-app/cover.jpg',
     heroImage: '/images/projects/momax-smart-app/cover.jpg',
     summary:
-      'Led the end-to-end redesign of a smart home control app for 50+ IoT devices — restructuring the IA around rooms instead of device type, cutting setup from 7 steps to 3, and building a cross-platform design system shared across iOS and Android.',
+      'Led the end-to-end redesign of a smart home app controlling 50+ IoT devices — restructured the IA around rooms instead of device type, cut device setup from 7 steps to 3, and built a 42-component design system shared across iOS and Android. Shipped to production.',
     highlights: [
       'Restructured IA around location (rooms) instead of device type to match how users think',
       'Cut device setup from 7 steps to 3 by combining pairing with smart auto-detection',
@@ -97,7 +97,7 @@ export const projects: Project[] = [
     thumbnail: '/images/projects/ontolo-residential-app/cover.jpg',
     heroImage: '/images/projects/ontolo-residential-app/cover.jpg',
     summary:
-      'Designed a dual-mode adaptive interface serving elderly, children, and adult residents from a single app — built on the principle "simplify by default, expand on demand" so no user group is patronised or short-changed.',
+      'Designed a dual-mode adaptive interface serving elderly, children, and adult residents from a single app — built on the principle "simplify by default, expand on demand." Validated with ~20 residents aged 8–75 across demographics and digital literacy levels.',
     highlights: [
       'Single app with two adaptive modes (Simplified / Full) instead of separate apps',
       'Simplified mode: 60×60pt targets, WCAG AAA contrast, max 2-level navigation',
@@ -118,7 +118,7 @@ export const projects: Project[] = [
     thumbnail: '/images/projects/mtr-property-app/cover.png',
     heroImage: '/images/projects/mtr-property-app/cover.png',
     summary:
-      'Created a scalable design system with dynamic color theming for many residential estates — each estate feels like its own app while sharing one architecture, with WCAG contrast verified across every theme.',
+      'Created a scalable design system with dynamic color theming for multiple MTR residential estates — each estate feels like its own app while sharing one architecture. WCAG contrast verified across every theme, extended to web, print, and admin UI.',
     highlights: [
       'Dynamic per-estate theming — each estate feels like its own app, one architecture',
       'Seamless multi-estate switching without re-authentication',
@@ -139,7 +139,7 @@ export const projects: Project[] = [
     thumbnail: '/images/projects/consonance-smart-building/cover.jpg',
     heroImage: '/images/projects/consonance-smart-building/cover.jpg',
     summary:
-      'Designed the Smart Building Plus app for 維峯‧浚匯 (The Consonance), a luxury Henderson Land estate — unifying door access, lift, mailbox, clubhouse booking, and visitor management behind one premium interface, with kiosks and a pool locker flow designed alongside the app.',
+      'Designed the Smart Building Plus app for 維峯‧浚匯 (The Consonance), a luxury Henderson Land estate — unified door access, lift, mailbox, clubhouse booking, and visitor management behind one premium interface. Designed lobby kiosks and a pool locker flow alongside the resident app.',
     highlights: [
       'Kiosk design: guest registration with OCR + clubhouse booking, alongside the resident app',
       'Access control across lobby, clubhouse, mailbox, and locker via one QR-based system',
@@ -160,7 +160,7 @@ export const projects: Project[] = [
     thumbnail: '/images/projects/wine-dine-festival-pos/cover.png',
     heroImage: '/images/projects/wine-dine-festival-pos/cover.png',
     summary:
-      'Designed an offline-first cashless RFID POS for an outdoor festival — built for part-time vendors working in direct sunlight, high noise, and gloves, where the wifi was unreliable at peak hours.',
+      'Designed an offline-first cashless RFID POS for the HK Wine & Dine Festival — built for part-time vendors in direct sunlight, high noise, and gloves. The offline queue held 800+ transactions during a Day 2 wifi outage with zero data loss.',
     highlights: [
       'Offline-first queue held 800+ transactions during a Day 2 wifi outage',
       'Designed for gloved hands, direct sunlight, and high ambient noise',
@@ -181,7 +181,7 @@ export const projects: Project[] = [
     thumbnail: '/images/projects/vehicle-tracker-geo-fence/cover.png',
     heroImage: '/images/projects/vehicle-tracker-geo-fence/cover.png',
     summary:
-      'Designed a real-time vehicle tracking platform with custom drawable GEO fences for airport apron operations — giving dispatchers real-time visibility instead of radio and manual tracking, with a filter-first interface to cut cognitive load.',
+      'Designed a real-time vehicle tracking platform with custom drawable GEO fences for airport apron operations — replaced radio calls and manual tracking with live visibility. Filter-first interface cuts cognitive load during high-traffic periods.',
     highlights: [
       'Custom drawable GEO fences — dispatchers adapt zones without IT',
       'Filter-first: persistent panel toggles by vehicle type, status, or zone',
@@ -202,7 +202,7 @@ export const projects: Project[] = [
     thumbnail: '/images/projects/asset-world-corporation-connext/cover.jpg',
     heroImage: '/images/projects/asset-world-corporation-connext/cover.jpg',
     summary:
-      'Designed a comprehensive mobile app for Thailand premium office buildings — integrating maintenance requests, QR smart-pass access, visitor management, and a gamified loyalty program into one tenant experience.',
+      'Designed a comprehensive tenant app for Thailand premium office buildings — integrated maintenance requests, QR smart-pass access, visitor management, and a gamified loyalty program into one experience. Shipped across multiple AWC properties.',
     highlights: [
       'QR Smart Pass for visitor access — refreshes periodically, works offline',
       '4-tab IA (Home / Services / Access / Rewards) with progressive disclosure',
@@ -223,7 +223,7 @@ export const projects: Project[] = [
     thumbnail: '/images/projects/cic-merchant-takeaway/cover.jpg',
     heroImage: '/images/projects/cic-merchant-takeaway/cover.jpg',
     summary:
-      'Designed a dual-sided food ordering system for residential communities — a user app for residents, a merchant app for restaurant owners, and a registration website, all sharing one component library.',
+      'Designed a dual-sided food ordering system for residential communities — a resident ordering app, a merchant management app, and a registration website, all sharing one component library. Built for non-tech restaurant owners with large single-tap controls.',
     highlights: [
       'Dual-sided flow: user ordering app + merchant app + registration website',
       '3-stage real-time progress (Received → Preparing → Ready) with push notifications',
@@ -244,7 +244,7 @@ export const projects: Project[] = [
     thumbnail: '/images/projects/citysuper-lucky-draw/cover.png',
     heroImage: '/images/projects/citysuper-lucky-draw/cover.png',
     summary:
-      'Designed an interactive online lucky draw campaign for a summer promotion — using progressive disclosure and trust signals to turn a skeptical, form-averse audience into participants, mobile-first.',
+      'Designed a mobile-first online lucky draw for c!ty&apos;super&apos;s summer campaign — used progressive disclosure and trust signals (live participant counter, unique entry IDs) to convert a skeptical, form-averse audience into participants.',
     highlights: [
       'Progressive disclosure: browse products → minimal info (name + email) → instant confirmation',
       'Concept A/B/C iteration → hybrid sticky selector + wizard flow',
@@ -265,7 +265,7 @@ export const projects: Project[] = [
     thumbnail: '/images/projects/road-to-ultra-pos/cover.jpeg',
     heroImage: '/images/projects/road-to-ultra-pos/cover.jpeg',
     summary:
-      'Designed a festival-proof RFID cashless POS for an outdoor music festival — built for temporary vendors with minimal tech experience working in direct sunlight, high noise, and long shifts.',
+      'Designed a festival-proof RFID cashless POS for Road To Ultra HK — built for temporary vendors with minimal tech experience in direct sunlight, high noise, and long shifts. Single-tap confirmation cleared peak queues that a two-tap flow couldn&apos;t.',
     highlights: [
       'Single-tap transaction confirmation (vs a two-tap flow) to clear peak queues',
       'Extra-large touch targets after outdoor testing showed a high error rate',
@@ -286,7 +286,7 @@ export const projects: Project[] = [
     thumbnail: '/images/projects/iddf-2016-eposter/cover.png',
     heroImage: '/images/projects/iddf-2016-eposter/cover.png',
     summary:
-      'Designed a digital ePoster browsing system and gamified lucky draw for a medical conference — choosing kiosks over a mobile app to remove the download barrier and drive higher adoption.',
+      'Designed a digital ePoster browsing system and gamified lucky draw for the IDDF medical conference — chose kiosks over a mobile app to remove the download barrier. The questionnaire + lucky draw gamification drove survey completion at exhibitor booths.',
     highlights: [
       'Kiosk over mobile app — removes the download barrier, higher adoption',
       'Questionnaire + lucky draw gamification drove survey completion at exhibitor booths',
@@ -307,7 +307,7 @@ export const projects: Project[] = [
     thumbnail: '/images/projects/canon-photomarathon-2016/cover.png',
     heroImage: '/images/projects/canon-photomarathon-2016/cover.png',
     summary:
-      'Designed a dual-sided photo submission and judging platform for a single-day photography marathon — streamlining the upload flow for participants and enabling efficient batch review for judges.',
+      'Designed a dual-sided photo submission and judging platform for Canon PhotoMarathon HK 2016 — streamlined the upload flow for participants with real-time validation, and enabled judges to batch-review with grid view, filtering, and side-by-side comparison.',
     highlights: [
       'Guided upload flow with real-time validation (size, format, resolution)',
       'Batch judging: grid view, filtering/sorting, and side-by-side comparison',
@@ -328,7 +328,7 @@ export const projects: Project[] = [
     thumbnail: '/images/projects/massage-gun/cover.png',
     heroImage: '/images/projects/massage-gun/cover.png',
     summary:
-      'Designed the companion mobile app for a smart massage gun — providing guided usage instructions, personalised therapy programs, and progress tracking so users get safe, effective, tailored treatment.',
+      'Designed the companion app for a MOMAX smart massage gun — guided usage instructions, personalised therapy programs (recovery, pain relief, relaxation), and progress tracking so users get safe, effective, tailored treatment at home.',
     highlights: [
       'Guided usage instructions with step-by-step guidance and safety precautions',
       'Personalised therapy programs (recovery, pain relief, relaxation) with customisable intensity, mode, and target area',
@@ -349,7 +349,7 @@ export const projects: Project[] = [
     thumbnail: '/images/projects/ubizense-logo-rebranding/cover.jpg',
     heroImage: '/images/projects/ubizense-logo-rebranding/cover.jpg',
     summary:
-      'Redesigned the ubiZense company logo and built a comprehensive style guide — ensuring branding consistency across the logo, name cards, website, and event materials.',
+      'Redesigned the ubiZense company logo and built a comprehensive style guide — ensured branding consistency across the logo, name cards, website, and event booth materials. The style guide covers logo construction, clear space, color, and typography.',
     highlights: [
       'Redesigned company logo with a unified style guide for cross-platform consistency',
       'Applied the brand across name cards, website, and booth backdrop',
@@ -371,7 +371,7 @@ export const projects: Project[] = [
     thumbnail: '/images/projects/smart-logistics-datathon-2024/cover.jpeg',
     heroImage: '/images/projects/smart-logistics-datathon-2024/cover.jpeg',
     summary:
-      'Led the visual identity for the Smart Logistics Datathon 2024 — designing the event backdrop, roll-up, rundown, and certificate in collaboration with AISCL and GOVHK to communicate the event clearly and consistently.',
+      'Led the visual identity for the Smart Logistics Datathon 2024 — designed the event backdrop, roll-up, rundown, and certificate in collaboration with AISCL and GOVHK. Consistent visual language across large-format print and digital materials.',
     highlights: [
       'Shaped the event visual identity across backdrop, roll-up, rundown, and certificate',
       'Collaborated with AISCL and GOVHK on the official event branding',
@@ -393,7 +393,7 @@ export const projects: Project[] = [
     thumbnail: '/images/projects/smart-d-hkbn/cover.png',
     heroImage: '/images/projects/smart-d-hkbn/cover.png',
     summary:
-      'Integrated MOMAX Smart products into the HKBN smart home app — enabling in-app product control and voice control through Google Assistant and Alexa — while managing the IoT product production timelines and coordinating designs with HKBN.',
+      'Integrated MOMAX Smart IoT products into the HKBN smart home app — enabled in-app control plus voice control via Google Assistant and Alexa. Managed IoT product production timelines and coordinated design submissions end-to-end with HKBN.',
     highlights: [
       'Cross-brand IoT integration: MOMAX Smart products controlled inside the HKBN app',
       'Voice control via Google Assistant and Alexa, not just in-app control',
@@ -414,7 +414,7 @@ export const projects: Project[] = [
     thumbnail: '/images/projects/hk-times-square-app/cover.png',
     heroImage: '/images/projects/hk-times-square-app/cover.png',
     summary:
-      'Designed the mobile app UI/UX for Hong Kong Times Square — a dual-sided experience with an end-user app for shoppers and a staff app for mall operations, from information architecture through final visual design.',
+      'Designed the HK Times Square mobile app — a dual-sided experience with a shopper app for wayfinding, offers, and mall services, plus a staff app for mall operations. Owned the full design from IA through final visual design.',
     highlights: [
       'Dual-sided design: end-user shopper app + staff operations app',
       'End-user app centred on wayfinding, offers, and mall services',
@@ -435,7 +435,7 @@ export const projects: Project[] = [
     thumbnail: '/images/projects/bright-way-website/cover.png',
     heroImage: '/images/projects/bright-way-website/cover.png',
     summary:
-      'Designed a responsive corporate website for Bright Way — from site structure and wireframes through to final visual design, presenting the company and its services clearly to prospective clients.',
+      'Designed a responsive corporate website for Bright Way — owned the full process from site structure and wireframes through final visual design, presenting the company and its services clearly to prospective clients.',
     highlights: [
       'End-to-end website design from structure to visual design',
       'Responsive layout across desktop and mobile',
@@ -456,7 +456,7 @@ export const projects: Project[] = [
     thumbnail: '/images/projects/hkl-property-apps/cover.png',
     heroImage: '/images/projects/hkl-property-apps/cover.png',
     summary:
-      'Designed resident app experiences for Hong Kong Land residential estates — The Horizon, Eden Manor, and Mount Verdant — giving each estate a digital presence that matches its premium positioning.',
+      'Designed resident app experiences for three Hong Kong Land estates — The Horizon, Eden Manor, and Mount Verdant — each with a distinct visual identity within a consistent framework, matching the premium positioning of each property.',
     highlights: [
       'App designs for three estates: The Horizon, Eden Manor, Mount Verdant',
       'Each estate gets a distinct visual identity within a consistent framework',
@@ -477,7 +477,7 @@ export const projects: Project[] = [
     thumbnail: '/images/projects/momax-marketing-campaign/cover.jpeg',
     heroImage: '/images/projects/momax-marketing-campaign/cover.jpeg',
     summary:
-      'Produced marketing event campaign materials for MOMAX — Facebook posts, campaign posters and tokens, app banners, an EV charger backdrop, an A5 leaflet, and A4 posters — keeping every touchpoint visually consistent.',
+      'Produced the full marketing campaign suite for MOMAX — Facebook posts, campaign posters, tokens, app banners, an EV charger backdrop, A5 leaflets, and A4 posters — one consistent visual language across every digital and print touchpoint.',
     highlights: [
       'Full campaign suite: social posts, posters, tokens, app banners',
       'Large-format EV charger backdrop plus A5 leaflet and A4 posters',
@@ -499,7 +499,7 @@ export const projects: Project[] = [
     thumbnail: '/images/projects/momax-product-videos/cover.jpg',
     heroImage: '/images/projects/momax-product-videos/cover.jpg',
     summary:
-      'Produced product demo videos for MOMAX smart devices — editing footage, adding motion graphics, and pacing each cut so the device\'s key features read clearly in seconds.',
+      'Produced product demo videos for MOMAX smart IoT devices — edited footage, added motion graphics, and paced each cut so the device\'s key features read clearly in seconds. Tight pacing keeps the product the star.',
     highlights: [
       'Edited and motion-graphed product demo videos for MOMAX smart devices',
       'Each video highlights the device\'s key features in a short, watchable cut',
@@ -522,13 +522,13 @@ export const projects: Project[] = [
     thumbnail: '/images/projects/finsights-ai/cover.jpg',
     heroImage: '/images/projects/finsights-ai/cover.jpg',
     summary:
-      'Designed an AI-powered investment advisor app that turns complex market data and portfolio analytics into plain-language guidance — so everyday investors understand what to do with their money, not just what the numbers say.',
+      'Designed an AI-powered investment advisor app for AIFT that turns complex market data and portfolio analytics into plain-language guidance — so everyday investors understand what to do with their money, not just what the numbers say. Built on a micro-services architecture for scalability.',
     highlights: [
       'Conversational AI advisor translates market signals into plain-language recommendations',
       'Portfolio insights surfaced proactively instead of buried in reports',
       'Architecture split into micro-services (advisor, market data, portfolio) for scalability',
     ],
-    palette: ['#9F9BA0', '#3A3941', '#62606A', '#19181C'],
+    palette: ['#F8F8F8', '#19181C', '#6058C0', '#383068'],
     category: 'ux',
     order: 2,
   },
@@ -544,7 +544,7 @@ export const projects: Project[] = [
     thumbnail: '/images/projects/tap-tokenized-abs-planner/cover.jpg',
     heroImage: '/images/projects/tap-tokenized-abs-planner/cover.jpg',
     summary:
-      'Designed a blockchain-based virtual asset management platform for AIFT — at its core a Tokenized ABS Planner that turns fractional real-world-asset ownership into a coin-based plan, with a multi-asset visual language spanning crypto currencies, NFTs, and tokenized RWA across dark and light modes.',
+      'Designed a blockchain-based virtual asset management platform for AIFT — a Tokenized ABS Planner that turns fractional real-world-asset ownership into a coin-based plan. Built a multi-asset visual language spanning crypto, NFTs, and tokenized RWA across dark and light modes.',
     highlights: [
       'Coin-based planning metaphor makes fractional RWA ownership legible to non-crypto users',
       'Multi-asset visual system holds crypto coins, NFT tiles, and the flagship gold RWA coin in one product',
@@ -567,7 +567,7 @@ export const projects: Project[] = [
     thumbnail: '/images/projects/fundel-logistics-portal/cover.jpg',
     heroImage: '/images/projects/fundel-logistics-portal/cover.jpg',
     summary:
-      'Designed and built a dual-role logistics platform — operators manage shipments, finance, and carbon; shippers get a telemetry-driven quotation flow — shipping it myself as a working MVP via vibe coding (Cursor + gpt-engineer), without handing the design off to an engineering team.',
+      'Designed and built a dual-role logistics platform — operators manage shipments, finance, and carbon; shippers get a telemetry-driven quotation flow. Shipped it myself as a working MVP via vibe coding (Cursor + gpt-engineer), without an engineering team — 16 pages, 73 components, ~31k lines, ~88% AI-authored under my direction.',
     highlights: [
       'Vibe-coded a full working MVP — 16 pages, 73 components, ~31k lines across ~1,300 commits over five months, ~88% AI-authored under my direction',
       'Dual-role SPA: OPERATOR portal (dashboard, shipments, documents, finance, carbon) + SHIPPER portal (telemetry-driven quotation) with an AI assistant on both sides',
@@ -590,7 +590,7 @@ export const projects: Project[] = [
     thumbnail: '/images/projects/scf-supply-chain-finance/cover.jpg',
     heroImage: '/images/projects/scf-supply-chain-finance/cover.jpg',
     summary:
-      'Designed a supply chain finance web app where an LLM assistant helps users reason about assets — pairing a conversational interface with an asset list and asset calculator so users can talk to their data instead of hunting through menus.',
+      'Designed a supply chain finance web app for AIFT where an LLM assistant helps users reason about assets — paired a conversational interface with an asset list and calculator so users can talk to their data instead of hunting through menus. Light/dark theming with a glass-morphism sidebar.',
     highlights: [
       'LLM-first home: users ask about assets in natural language, the app answers and acts',
       'Asset list + asset calculator as structured companions to the chat',
@@ -602,23 +602,26 @@ export const projects: Project[] = [
   },
   {
     slug: 'tolo-analytics-platform',
-    title: 'TOLOAnalytics — Trade Finance Analytics Platform',
+    title: 'TOLO Analytics — Trade Finance Analytics Platform',
     client: 'AIFT (人工智能金融科技實驗室)',
     role: 'UI/UX Designer',
     timeline: '2025',
     tools: ['Figma'],
-    tags: ['FinTech', 'Trade Finance', 'Website', 'Analytics', 'Branding'],
+    tags: ['FinTech', 'Trade Finance', 'Analytics', 'Dashboard', 'KYC'],
     featured: false,
     thumbnail: '/images/projects/tolo-analytics-platform/cover.jpg',
     heroImage: '/images/projects/tolo-analytics-platform/cover.jpg',
     summary:
-      'Designed the public platform and website for TOLOAnalytics — a trade finance analytics product — communicating credibility through a clean home and About Us, with a credit calculator that turns opaque financing terms into something a business owner can actually evaluate.',
+      'Designed the end-to-end system UI for TOLO Analytics, an AIFT trade finance analytics platform — a lender-facing workspace where risk officers review loan applications, run KYC / KYS / KYP due diligence on borrowers, score creditworthiness, and assemble investment portfolios, with an embedded Ask TOLO AI assistant. Also designed the public marketing website (Home + About Us) with full mobile versions.',
     highlights: [
-      'Home + About Us structured around trust signals (partner logos, university affiliations)',
-      'Credit calculator makes financing cost, limit, and term comparable at a glance',
-      'Part of the same product line as TOLOD — the marketing site to TOLOD\'s operations app',
+      'Dashboard leads with pending work — applications, disbursements, repayments, and risk alerts as a to-do list, not a chart wall',
+      'KYC / KYS / KYP due-diligence layers carry a borrower from corporate identity to store to product',
+      'Risk compressed into a scorecard whose evidence is always one click below the number',
+      'Embedded Ask TOLO AI assistant answers portfolio questions in plain language inside the workspace',
+      'Public website on a deep-navy register tells the borrower story in Home + About Us, with responsive mobile versions',
+      'Part of the same product line as TOLOD — the analytics system to TOLOD\'s operations platform',
     ],
-    palette: ['#FDFDFD', '#5183A2', '#8CAFC3', '#33577B'],
+    palette: ['#FFFFFF', '#1078C0', '#C2DCEE', '#313233'],
     category: 'ux',
     order: 12,
   },
@@ -634,7 +637,7 @@ export const projects: Project[] = [
     thumbnail: '/images/projects/aift-hackathon-2024/cover.jpg',
     heroImage: '/images/projects/aift-hackathon-2024/cover.jpg',
     summary:
-      'Built the visual identity for AIFT\'s 2024 hackathon — the LED wall backdrop, entrance TV signage, certificates, and logo lockup — a blue-purple tech system flexible enough to span a 2048×1280 wall and a printed certificate.',
+      'Built the visual identity for AIFT\'s 2024 hackathon — LED wall backdrop (2048×1280), entrance TV signage, certificates, and logo lockup. A blue-purple tech system flexible enough to span a large-format wall and a printed certificate.',
     highlights: [
       'LED wall backdrop (2048×1280) as the event\'s main visual anchor',
       'Entrance TV signage in 1920×1080 and 3840×2106 — legible at distance',
@@ -656,7 +659,7 @@ export const projects: Project[] = [
     thumbnail: '/images/projects/innoex-2025-booth/cover.jpg',
     heroImage: '/images/projects/innoex-2025-booth/cover.jpg',
     summary:
-      'Designed AIFT\'s InnoEX 2025 exhibition presence — the booth, FinSightsAI and TOLO A4 leaflets, and 850×2000 pull-up banners — giving two products a unified on-booth story across print and signage.',
+      'Designed AIFT\'s InnoEX 2025 exhibition presence — the booth, FinSightsAI and TOLO A4 leaflets, and 850×2000 pull-up banners. Gave two products a unified on-booth story with consistent type, colour, and hierarchy across print and signage.',
     highlights: [
       'Booth design unifying FinSightsAI and TOLO under one AIFT visual language',
       'A4 leaflets for each product, paired with 850×2000 pull-up banners',
@@ -678,7 +681,7 @@ export const projects: Project[] = [
     thumbnail: '/images/projects/innoex-2026-backdrop/cover.jpg',
     heroImage: '/images/projects/innoex-2026-backdrop/cover.jpg',
     summary:
-      'Designed the AIFT booth backdrop for InnoEX 2026 — a large-format visual built around a cool blue base with a warm coral accent, carrying the AIFT product line forward into the new event year (V1 in progress).',
+      'Designed the AIFT booth backdrop for InnoEX 2026 — a large-format visual with a cool blue base and warm coral accent, carrying the AIFT product line forward into the new event year. V1 in progress.',
     highlights: [
       'Large-format backdrop for the 2026 exhibition booth',
       'Cool blue base with a coral accent — a fresh direction from 2025',
@@ -700,7 +703,7 @@ export const projects: Project[] = [
     thumbnail: '/images/projects/aift-corporate-motion/cover.jpg',
     heroImage: '/images/projects/aift-corporate-motion/cover.jpg',
     summary:
-      'Produced AIFT\'s corporate and seasonal motion graphics — the 2026 corporate brand video plus Christmas 2024/2025 and Lunar New Year 2026 campaigns — keeping a consistent motion language across a company film and festive greetings.',
+      'Produced AIFT\'s corporate and seasonal motion graphics — the 2026 corporate brand video plus Christmas 2024/2025 and Lunar New Year 2026 campaigns. One consistent motion language across a company film and festive greetings.',
     highlights: [
       '2026 corporate brand video — the company story in motion',
       'Christmas 2024 & 2025, Lunar New Year 2026 seasonal GIF campaigns',

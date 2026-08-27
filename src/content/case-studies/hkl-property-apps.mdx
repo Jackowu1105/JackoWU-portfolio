@@ -5,7 +5,62 @@
   team="1 UX Designer (me, solo) + developers"
   duration="2020"
   tools={["Sketch", "Figma"]}
-/>
+  />
+
+  ## UX Research
+
+  Three estates, three brands, one design problem. The research question was how far each estate’s identity could flex before the shared system broke — and the answer shaped every screen in all three apps.
+
+  <ResearchProcess
+    stages={[
+      {
+        phase: 1,
+        title: 'Audit the three estates and their shared needs',
+        summary: 'The Horizon, Eden Manor and Mount Verdant each have their own identity and resident community, yet the services underneath are the same: facility booking, community notices, service requests and visitor access.',
+        artifact: 'Estate identity + service inventory',
+      },
+      {
+        phase: 2,
+        title: 'Frame the build-versus-theme decision',
+        summary: 'Three separate apps meant triple the maintenance, inconsistent quality and no economies of scale; full visual differentiation would break the shared system and make residents who move between estates relearn the app.',
+        artifact: 'Design tension map',
+      },
+      {
+        phase: 3,
+        title: 'Define the shared core, flexible skin',
+        summary: 'One system, three themes: identical core flows with per-estate colour, imagery and typography layered on top, and content loaded dynamically per estate — The Horizon’s events, Eden Manor’s facilities, Mount Verdant’s notices.',
+        artifact: 'Multi-estate IA model',
+
+
+      },
+      {
+        phase: 4,
+        title: 'Spec the theming layer',
+        summary: 'A light, premium base system — white and soft neutral surfaces, blue-grey accents, dark slate type — that lets each estate’s photography and identity colours take the lead, with the pattern carried forward into later property-app work.',
+        artifact: 'Design system + estate theme spec',
+      },
+    ]}
+  />
+
+  <ResearchIA
+    label="Multi-estate IA · shared core, flexible skin"
+    root="Shared core"
+    children={[
+      { title: 'The Horizon', desc: 'events and lifestyle content lead the experience', badge: 'events' },
+      { title: 'Eden Manor', desc: 'facility booking as the signature flow', badge: 'facilities' },
+      { title: 'Mount Verdant', desc: 'community notices take the stage', badge: 'notices' },
+    ]}
+  />
+
+  ## Problem Definition
+
+Hong Kong Land's residential estates each have their own identity — The Horizon, Eden Manor, and Mount Verdant — but building three completely separate apps would be expensive to maintain and inconsistent in quality. The challenge was to give each estate a distinct digital presence while keeping the underlying system shared and maintainable.
+
+### Design Goals
+
+- **Estate identity over generic branding** — residents don't think of themselves as "Hong Kong Land users"; they live in The Horizon, or Eden Manor, or Mount Verdant
+- **Shared core, flexible skin** — identical core flows (facilities, notices, service requests) with per-estate theming
+- **Premium feel** — each app should match the quality of the physical property
 
 ## Design Process
 
@@ -15,9 +70,27 @@ Rather than designing three unrelated apps, I built a shared structure — the s
 
 ### Key Design Decisions
 
-**Estate identity over generic branding.** Residents don't think of themselves as "Hong Kong Land users" — they live in The Horizon, or Eden Manor, or Mount Verdant. The app should say the estate's name, not the developer's.
+**Decision 1 — Shared core vs. separate apps.**
 
-**Shared core, flexible skin.** Identical core flows (facilities, notices, service requests) with per-estate theming — the same approach as the MTR property system, refined for a premium segment.
+<DecisionCards
+  items={[
+    { tag: 'A', title: 'Three separate apps', summary: 'Design and build each estate\'s app independently.', outcome: 'Triple the maintenance effort, inconsistent quality across estates, and no economies of scale.', status: 'rejected' },
+    { tag: 'B', title: 'One shared system, three estate themes', summary: 'Identical core flows with per-estate colour, imagery, and typography layered on top.', outcome: 'Each estate reads as its own product; the shared system keeps it consistent and efficient to maintain — the same approach as the MTR property system, refined for a premium segment.', status: 'final' },
+  ]}
+/>
+
+**Decision 2 — How far to differentiate.**
+
+<DecisionCards
+  items={[
+    { tag: 'A', title: 'Full visual differentiation', summary: 'Different layouts, navigation patterns, and component styles per estate.', outcome: 'Broke the shared system — maintenance doubled, and residents who moved between estates had to relearn the app.', status: 'rejected' },
+    { tag: 'B', title: 'Theming within a shared structure', summary: 'Same layout and navigation; estate identity expressed through colour, imagery, and typography only.', outcome: 'Each estate feels distinct without breaking the system. Residents recognise their estate instantly, and the shared codebase stays maintainable.', status: 'final' },
+  ]}
+/>
+
+### Resident Services
+
+The core flows are shared across all three estates: facility booking, community notices, service requests, and visitor access. Each estate's content loads dynamically based on the resident's estate, so the app always shows relevant information — The Horizon's events, Eden Manor's facilities, Mount Verdant's notices.
 
 ## Visual Design
 
@@ -29,6 +102,8 @@ A light, premium system: white and soft neutral surfaces (`#FFFFFF` / `#EDF0F5`)
   colors={["#FFFFFF", "#EDF0F5", "#D6DFE8", "#454549"]}
   labels={["Base", "Surface", "Blue-Grey", "Slate"]}
 />
+
+**Typography:** A system sans-serif with a clear hierarchy, adaptable to each estate's brand voice while maintaining consistent structure.
 
 ## Design Gallery
 

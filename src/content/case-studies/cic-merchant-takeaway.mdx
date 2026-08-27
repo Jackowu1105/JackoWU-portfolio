@@ -1,23 +1,77 @@
 <ProjectHeader
-  overview="CardApp, a residential community app, identified an opportunity to enhance their service by enabling residents to order food directly from local restaurants through the app. The goal was to create a seamless ordering experience for users while providing restaurants with an efficient tool to manage orders."
+  overview="CardApp, a residential community app, identified an opportunity to enhance their service by enabling residents to order food directly from local restaurants through the app. The goal was to create a seamless ordering experience for users while providing restaurants with an efficient tool to manage orders. I designed a dual-sided system — a user app for residents, a merchant app for restaurant owners, and a registration website — all sharing one component library."
   challenge="Residents had to call restaurants during busy hours with no way to browse menus or track order status. Phone orders interrupted kitchen workflow and were prone to errors. Missed calls during peak hours meant lost revenue for restaurants, and there was no standardised way to notify users when orders were ready."
-  role="UI/UX Designer (solo) — end-to-end design for both the user and merchant apps, plus the registration website."
-  team="1 UX Designer (me, solo) + developers"
+  role="Lead UI/UX Designer — end-to-end design for both the user and merchant apps, plus the registration website."
+  team="1 UX Designer (me, solo) + 1 PM + 3 developers"
   duration="2021"
   tools={["Figma", "Miro"]}
-/>
+  />
 
-## Research & Discovery
+  ## UX Research
 
-Due to a tight timeline, research focused on **stakeholder interviews** to understand business goals, **competitive analysis** of major food-delivery apps (Uber Eats, Deliveroo, foodpanda), and proto-personas based on stakeholder insights.
+  A residential food-ordering system is two products sharing one transaction: residents want to order without picking up the phone, and restaurants want orders that don’t interrupt the kitchen. The research had to hold both sides of the counter in view at once.
 
-### Key Insights
+  <ResearchProcess
+    stages={[
+      {
+        phase: 1,
+        title: 'Understand both sides of the counter',
+        summary: 'A tight timeline compressed the research: stakeholder interviews for business goals and technical constraints, a competitive analysis of Uber Eats, Deliveroo and foodpanda for best practices, and proto-personas built on stakeholder insights (validated post-launch).',
+        artifact: 'Stakeholder interviews + competitor analysis',
+      },
+      {
+        phase: 2,
+        title: 'Name the friction on each side',
+        summary: 'Residents could not browse menus or track orders, so they called during busy hours; phone orders interrupted kitchen workflow, were prone to errors, and missed calls meant lost revenue. There was no standard way to tell users an order was ready.',
+        artifact: 'Dual-sided pain-point map',
+      },
+      {
+        phase: 3,
+        title: 'Design the shared transaction',
+        summary: 'User app: browse restaurants → view menu → customise → place order → receive notification → pick up. Merchant app: receive order → one-tap status (Preparing → Ready) → notify. A 3-stage progress indicator and a lightweight registration website completed the loop.',
+        artifact: 'Dual-sided flow diagram',
 
-- Users prioritise speed and transparency — they want to browse menus quickly and know exactly when to pick up orders
-- Restaurants need simplicity — owners want a straightforward interface without technical complexity
-- Real-time communication is critical for both sides
+
+      },
+      {
+        phase: 4,
+        title: 'Test with real users after launch',
+        summary: 'Low-fi wireframes for both apps went through internal review with the PM and developers, then a small beta group tested after launch: most residents completed checkout unaided, users wanted more detailed ETAs, and merchants asked for bulk order management.',
+        artifact: 'Beta usability notes',
+      },
+    ]}
+  />
+
+  <JourneyFlow
+    label="Dual-sided order flow · one transaction, two apps"
+    steps={[
+      { title: 'Order placed', desc: 'Browse restaurants, view the menu, customise and check out in-app — no more calling during busy hours.', tag: 'resident' },
+      { title: 'Merchant receives', desc: 'The order lands in the merchant app without ringing the kitchen — missed calls and lost revenue gone.', tag: 'merchant' },
+      { title: 'Preparing', desc: 'Large one-tap status buttons update the order in under 3 seconds — non-tech owners manage mid-rush.', tag: 'merchant' },
+      { title: 'Ready for pickup', desc: 'A push notification fires at each stage of the 3-stage progress — residents know exactly when to leave the apartment.', tag: 'resident' },
+    ]}
+  />
+
+  ## Problem Definition
+
+A food-ordering system for residential communities is a dual-sided design problem: the resident's experience must be effortless, and the restaurant owner's experience must be simple enough for a non-tech-savvy user to operate during a kitchen rush.
+
+### User Pain Points
+
+- **Residents:** calling restaurants was inconvenient during busy hours, with no way to browse menus or track order status — leading to uncertainty about pickup times
+- **Restaurants:** phone orders interrupted kitchen workflow, were prone to errors, and missed calls during peak hours meant lost revenue. There was no standardised way to notify users when orders were ready
+
+### Design Goals
+
+- **Speed and transparency for users** — browse menus quickly, know exactly when to pick up
+- **Simplicity for merchants** — a straightforward interface to receive and update orders without technical complexity
+- **Real-time communication** — both sides need instant notifications to reduce friction
 
 ## Design Process
+
+### Research & Discovery
+
+Due to a tight timeline, research focused on **stakeholder interviews** to understand business goals and technical constraints, **competitive analysis** of major food-delivery apps (Uber Eats, Deliveroo, foodpanda) to identify best practices, and **proto-personas** based on stakeholder insights (validated post-launch).
 
 ### Information Architecture
 
@@ -29,11 +83,40 @@ Mapped dual-sided user flows:
 
 ### Key Design Decisions
 
-**Real-time status updates** — A 3-stage progress indicator ("Order Received" → "Preparing" → "Ready for Pickup") with push notifications at each stage, borrowing from package-tracking UX to set clear expectations.
+**Decision 1 — Real-time status updates.**
 
-**Merchant-friendly interface** — Large, tappable buttons ("Mark as Preparing", "Mark as Ready") with single-tap status updates, so owners can update orders in seconds.
+<DecisionCards
+  items={[
+    { tag: 'A', title: 'Simple "confirmed" message', summary: 'A single status change when the order is received.', outcome: 'Users had no visibility into when their food would be ready — uncertainty led to calls to the restaurant.', status: 'rejected' },
+    { tag: 'B', title: '3-stage progress indicator', summary: '"Order Received" → "Preparing" → "Ready for Pickup" with push notifications at each stage.', outcome: 'Borrowed from package-tracking UX (Shopee, Amazon) to set clear expectations. Users knew exactly when to leave their apartment.', status: 'final' },
+  ]}
+/>
 
-**Simplified checkout** — Kept registration lightweight with minimal fields to reduce friction and encourage sign-ups.
+**Decision 2 — Merchant order management.**
+
+<DecisionCards
+  items={[
+    { tag: 'A', title: 'Full dashboard with detailed controls', summary: 'A comprehensive order management panel with all options visible.', outcome: 'Too complex for restaurant owners during a kitchen rush — owners needed speed, not flexibility.', status: 'rejected' },
+    { tag: 'B', title: 'Large single-tap status buttons', summary: 'One-tap buttons: "Mark as Preparing", "Mark as Ready" — owners update orders in under 3 seconds.', outcome: 'Prioritised speed over flexibility. Even non-tech-savvy owners could manage orders while cooking.', status: 'final' },
+  ]}
+/>
+
+**Decision 3 — Registration and onboarding.**
+
+<DecisionCards
+  items={[
+    { tag: 'A', title: 'Full registration within the merchant app', summary: 'Restaurants sign up inside the app itself.', outcome: 'Added complexity to the app and created a barrier for restaurants who just wanted to try the system.', status: 'rejected' },
+    { tag: 'B', title: 'Lightweight registration website', summary: 'A simple responsive web form collects basic info (name, menu, hours) — kept lightweight to reduce friction and encourage sign-ups.', outcome: 'Restaurants could sign up quickly without installing an app; the merchant app was for daily use, not onboarding.', status: 'final' },
+  ]}
+/>
+
+### Wireframes & Iteration
+
+I created low-fidelity wireframes for both apps, focusing on simplicity (minimising steps to complete core tasks), clarity (clear status indicators for both users and merchants), and consistency (shared design patterns across both apps). After internal review with the PM and developers, I refined the menu browsing (added category filters for faster navigation), order status (introduced a progress bar instead of a simple "confirmed" message), and merchant dashboard (simplified order cards to show only essential info).
+
+### Usability Testing
+
+Due to timeline constraints, formal usability testing was conducted after the initial launch with a small group of beta users. Most users completed checkout without assistance, appreciated the progress bar but wanted more detailed ETAs, and merchants requested bulk order management for peak hours.
 
 ## Visual Design
 
@@ -50,9 +133,9 @@ Mapped dual-sided user flows:
 
 A shared Figma component library ensured consistency across the user app, merchant app, and registration website.
 
-## Outcomes & Feedback
+### Accessibility
 
-Several restaurants were onboarded within the first couple of months. Ordering moved from a phone call to a quick in-app flow, and in usability testing most users completed orders independently.
+WCAG AA color contrast, large tap targets (min 44×44px) for mobile, and descriptive labels for screen readers.
 
 ## Design Gallery
 
@@ -80,6 +163,10 @@ Several restaurants were onboarded within the first couple of months. Ordering m
   caption="Registration website"
 />
 
+## Outcomes & Feedback
+
+Several restaurants were onboarded within the first couple of months. Ordering moved from a phone call to a quick in-app flow, and in usability testing most users completed orders independently. The 3-stage progress indicator proved critical for user trust — residents knew exactly when to leave their apartment.
+
 ## Reflections
 
-This project taught me how to design for two distinct user groups while maintaining a cohesive experience. Balancing simplicity for consumers with sufficient control for merchants required prioritising core features first and planning for power-user features later. Real-time communication proved critical for user trust.
+This project taught me how to design for two distinct user groups while maintaining a cohesive experience. Balancing simplicity for consumers with sufficient control for merchants required prioritising core features first and planning for power-user features later. Real-time communication proved critical for user trust — the progress bar was a small UX decision that significantly reduced user anxiety.

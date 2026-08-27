@@ -7,6 +7,51 @@
   tools={["Figma"]}
 />
 
+## UX Research
+
+There was no formal research programme on this phase, so the Double Diamond ran the way the domain allowed: observe controllers on the live apron-operations floor to learn their mental model, name the real decision needs, explore information structures against the scan rhythm, and converge on a dashboard that fits how controllers already work.
+
+<ResearchProcess
+  stages={[
+    {
+      phase: 1,
+      title: 'Learn the controller’s mental model',
+      summary: 'Direct observation of controllers managing apron operations — how they scan the board every 2–3 minutes, what they look for first, and when they expand a flight versus when they only need to glance.',
+      artifact: 'Observation notes + workflow model',
+    },
+    {
+      phase: 2,
+      title: 'Name the cost of hidden information',
+      summary: 'Body type drives resource allocation (PTS events, ground crew), bay type drives logistics (buses vs jet bridges) — yet both sat behind an expand click. In peak hours that click broke the scanning rhythm and piled cognitive load onto a high-frequency task.',
+      artifact: 'Research insight summary',
+    },
+    {
+      phase: 3,
+      title: 'Explore structures against the scan rhythm',
+      summary: 'Three structures compared: Bay → Body matched the physical apron but conflicted with size-first thinking; a flat view defeated scanning with clutter; Body → Bay kept body type always visible with bay type one click away — the controller’s own thinking order.',
+      artifact: 'IA comparison',
+
+
+    },
+    {
+      phase: 4,
+      title: 'Make the board scannable, not readable',
+      summary: 'Distinct wide-body / narrow-body icons for pre-attentive recognition, bay types as color dots paired with icon + label so the distinction survives colour-blindness, and tabbed baselines that keep settings in the same mental order.',
+      artifact: 'Phase 3 dashboard revamp',
+    },
+  ]}
+/>
+
+<InsightGrid
+  label="Task priority · what a controller needs at a glance vs on demand"
+  items={[
+    { title: 'Body type at a glance', desc: 'Wide- vs narrow-body drives PTS events and ground crew — recognised by icon, no text read.', tone: 'good', badge: 'always visible' },
+    { title: 'Bay type on demand', desc: 'Remote vs frontal stand revealed on expansion — exactly when the controller is about to act.', tone: 'neutral', badge: '1 click' },
+    { title: 'Hidden behind a click', desc: 'The old collapsed view buried both details — the extra click broke the 2–3 min scan rhythm during peak hours.', tone: 'bad', badge: 'phase 2' },
+    { title: 'Scanning beats diving', desc: 'Controllers take in the whole board and only expand to act — the board must be scannable, not readable.', tone: 'good', badge: 'principle' },
+  ]}
+/>
+
 ## Problem Definition
 
 Controllers mentally categorize flights by aircraft size first, as it determines resource allocation — how many PTS (Passenger Transport Services) events a flight needs, and what ground crew and equipment to mobilise. Bay type (Remote Stand vs. Frontal Stand) then determines the logistics: remote stands need bus services, frontal stands have jet bridges.
@@ -96,7 +141,7 @@ Wide-body and Narrow-body each get a distinct icon, so controllers recognise air
 
 A high-density information board with row spacing kept tight but a scannable rhythm preserved. Collapsed view shows only the body-type icon and essential fields; expanded view reveals bay type and PTS details.
 
-## Final Design
+## Design Gallery
 
 ### Before / After — Phase 2 vs Phase 3
 

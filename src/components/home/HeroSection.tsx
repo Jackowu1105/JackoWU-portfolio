@@ -72,11 +72,24 @@ export function HeroSection() {
             >
               <span className="w-2 h-2 rounded-full bg-badge-dot inline-block" />
               <span className="text-xs font-semibold text-badge-text tracking-[1.2px] uppercase">
-                Available for new opportunities
+                Design-Engineer Hybrid · Available for new opportunities
               </span>
             </motion.div>
 
           </div>
+
+          {/* Role tagline — instantly communicates what Jacko does */}
+          <motion.p
+            initial={{ opacity: 0, y: 8, filter: 'blur(3px)' }}
+            animate={{ opacity: 1, y: 0, filter: 'blur(0px)' }}
+            transition={{ delay: 0.1, duration: 0.5, ease: [0.25, 0.1, 0.25, 1] }}
+            className="text-sm sm:text-base text-teal font-semibold tracking-wide"
+            style={{ fontFamily: 'var(--font-sans)' }}
+          >
+            UX/UI Designer
+            <span className="text-text-tertiary mx-2">·</span>
+            Design-Engineer Hybrid
+          </motion.p>
 
           {/* Layer 2 — main heading */}
           <div data-depth={2} className="will-change-transform" style={{ transition: 'transform 0.15s ease-out' }}>
@@ -87,9 +100,9 @@ export function HeroSection() {
               className="text-2xl sm:text-3xl md:text-4xl lg:text-[48px] font-bold tracking-[-0.8px] leading-[1.2] text-heading"
               style={{ fontFamily: 'var(--font-heading)' }}
             >
-              I design it.
+              Jacko Wu — Designing
               <br />
-              I build it.
+              & Shipping Products with
             </motion.h1>
           </div>
 
@@ -101,9 +114,9 @@ export function HeroSection() {
             className="text-sm sm:text-base md:text-lg text-body max-w-[672px] mx-auto leading-relaxed mt-4"
             style={{ fontFamily: 'var(--font-sans)' }}
           >
-            I&apos;m Jacko Wu — a UX/UI designer who ships his own front-end code with AI.
-            8+ years across fintech, IoT and aviation logistics; now turning ideas into
-            running products instead of handing off mockups.
+            Design-engineer hybrid with 8+ years across fintech, IoT, aviation, and property tech.
+            I turn complex business problems into intuitive products — from user research and
+            IA to visual design and front-end delivery, accelerated by AI-assisted workflows.
           </motion.p>
 
           {/* Layer 4 — CTAs */}
