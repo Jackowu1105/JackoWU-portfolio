@@ -3,6 +3,8 @@
 import { motion } from 'framer-motion'
 
 interface PersonaCardProps {
+  /** Small caption above the card, e.g. "UX RESEARCH · USER PERSONA" */
+  label?: string
   name: string
   initials: string
   subtitle: string
@@ -13,6 +15,7 @@ interface PersonaCardProps {
 
 /** Figma-style persona card — goals / pains as labeled chips. */
 export function PersonaCard({
+  label = 'UX RESEARCH · USER PERSONA',
   name,
   initials,
   subtitle,
@@ -26,12 +29,20 @@ export function PersonaCard({
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, margin: '-60px' }}
       transition={{ duration: 0.5 }}
-      className="max-w-2xl mx-auto my-10 overflow-hidden rounded-2xl bg-white"
-      style={{
-        border: '1px solid rgba(0,0,0,0.06)',
-        boxShadow: '0 16px 40px rgba(0,0,0,0.08), 0 2px 8px rgba(0,0,0,0.04)',
-      }}
+      className="max-w-2xl mx-auto my-10"
     >
+      {label && (
+        <p className="text-center text-[10px] font-bold tracking-[0.16em] uppercase text-[#b8b2ae] mb-3">
+          {label}
+        </p>
+      )}
+      <div
+        className="overflow-hidden rounded-2xl bg-white"
+        style={{
+          border: '1px solid rgba(0,0,0,0.06)',
+          boxShadow: '0 16px 40px rgba(0,0,0,0.08), 0 2px 8px rgba(0,0,0,0.04)',
+        }}
+      >
       {/* Top: avatar + identity + quote */}
       <div
         className="flex gap-5 p-6 sm:p-7"
@@ -124,6 +135,7 @@ export function PersonaCard({
             ))}
           </div>
         </div>
+      </div>
       </div>
     </motion.div>
   )

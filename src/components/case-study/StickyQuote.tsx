@@ -3,12 +3,14 @@
 import { motion } from 'framer-motion'
 
 interface StickyQuoteProps {
+  /** Small caption above the note, e.g. "UX RESEARCH · VERBATIM USER VOICE" */
+  label?: string
   quote: string
   source: string
 }
 
 /** Yellow sticky-note research quote — verbatim user voice. */
-export function StickyQuote({ quote, source }: StickyQuoteProps) {
+export function StickyQuote({ label = 'UX RESEARCH · VERBATIM USER VOICE', quote, source }: StickyQuoteProps) {
   return (
     <motion.div
       initial={{ opacity: 0, y: 14, rotate: -2 }}
@@ -16,8 +18,13 @@ export function StickyQuote({ quote, source }: StickyQuoteProps) {
       viewport={{ once: true, margin: '-60px' }}
       transition={{ duration: 0.5 }}
       whileHover={{ rotate: 0, y: -3, scale: 1.01 }}
-      className="relative max-w-xl mx-auto my-10"
+      className="max-w-xl mx-auto my-10"
     >
+      {label && (
+        <p className="text-center text-[10px] font-bold tracking-[0.16em] uppercase text-[#b8b2ae] mb-4">
+          {label}
+        </p>
+      )}
       {/* tape */}
       <div
         className="absolute -top-3.5 left-1/2 -translate-x-1/2 rotate-2 w-24 h-6"
