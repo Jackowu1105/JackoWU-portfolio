@@ -13,8 +13,10 @@ export interface Project {
   highlights: string[]
   // 專案主色板（由真實截圖提取：surface / primary / accent / dark）
   palette: string[]
-  /** 分類：ux（預設）／ graphic（graphic/poster 設計）／ motion（motion graphic/影片） */
+  /** 主分類：ux（預設）／ graphic（graphic/poster 設計）／ motion（motion graphic/影片） */
   category?: 'ux' | 'graphic' | 'video'
+  /** 額外分類：project 可同時屬於多個分類（e.g. TOLO Analytics 同時屬 ux + video），篩選時按呢個陣列匹配 */
+  categories?: Array<'ux' | 'graphic' | 'video'>
   order: number
 }
 
@@ -432,8 +434,8 @@ export const projects: Project[] = [
     tools: ['Sketch', 'Adobe Illustrator'],
     tags: ['Web Design', 'Responsive', 'Corporate'],
     featured: false,
-    thumbnail: '/images/projects/bright-way-website/cover.png',
-    heroImage: '/images/projects/bright-way-website/cover.png',
+    thumbnail: '/images/projects/bright-way-website/cover.jpg',
+    heroImage: '/images/projects/bright-way-website/cover.jpg',
     summary:
       'Designed a responsive corporate website for Bright Way — owned the full process from site structure and wireframes through final visual design, presenting the company and its services clearly to prospective clients.',
     highlights: [
@@ -443,49 +445,6 @@ export const projects: Project[] = [
     ],
     palette: ['#FFFFFF', '#767679', '#A5A6A8', '#F3F1F1'],
     order: 27,
-  },
-  {
-    slug: 'hkl-property-apps',
-    title: 'Hong Kong Land Property Apps',
-    client: 'Hong Kong Land',
-    role: 'UI/UX Designer',
-    timeline: '2020',
-    tools: ['Sketch', 'Figma'],
-    tags: ['Property', 'Mobile App', 'Luxury Brand'],
-    featured: false,
-    thumbnail: '/images/projects/hkl-property-apps/cover.png',
-    heroImage: '/images/projects/hkl-property-apps/cover.png',
-    summary:
-      'Designed resident app experiences for three Hong Kong Land estates — The Horizon, Eden Manor, and Mount Verdant — each with a distinct visual identity within a consistent framework, matching the premium positioning of each property.',
-    highlights: [
-      'App designs for three estates: The Horizon, Eden Manor, Mount Verdant',
-      'Each estate gets a distinct visual identity within a consistent framework',
-      'Premium, resident-focused interface design',
-    ],
-    palette: ['#FFFFFF', '#EDF0F5', '#D6DFE8', '#454549'],
-    order: 24,
-  },
-  {
-    slug: 'momax-marketing-campaign',
-    title: 'MOMAX Marketing Campaign',
-    client: 'MOMAX',
-    role: 'Graphic Designer',
-    timeline: '2020',
-    tools: ['Adobe Illustrator', 'Photoshop'],
-    tags: ['Graphic Design', 'Marketing', 'Campaign', 'Print'],
-    featured: false,
-    thumbnail: '/images/projects/momax-marketing-campaign/cover.jpeg',
-    heroImage: '/images/projects/momax-marketing-campaign/cover.jpeg',
-    summary:
-      'Produced the full marketing campaign suite for MOMAX — Facebook posts, campaign posters, tokens, app banners, an EV charger backdrop, A5 leaflets, and A4 posters — one consistent visual language across every digital and print touchpoint.',
-    highlights: [
-      'Full campaign suite: social posts, posters, tokens, app banners',
-      'Large-format EV charger backdrop plus A5 leaflet and A4 posters',
-      'One consistent visual language across digital and print',
-    ],
-    palette: ['#FFFFFF', '#0195E2', '#02A4DF', '#1A2F47'],
-    category: 'graphic',
-    order: 25,
   },
   {
     slug: 'momax-product-videos',
@@ -623,6 +582,7 @@ export const projects: Project[] = [
     ],
     palette: ['#FFFFFF', '#1078C0', '#C2DCEE', '#313233'],
     category: 'ux',
+    categories: ['ux', 'video'],
     order: 12,
   },
   {
@@ -693,25 +653,114 @@ export const projects: Project[] = [
   },
   {
     slug: 'aift-corporate-motion',
-    title: 'AIFT Corporate & Holiday Motion Graphics',
+    title: 'AIFT Company Promotional Video',
     client: 'AIFT (人工智能金融科技實驗室)',
     role: 'Motion Graphic Designer',
-    timeline: '2024–2026',
+    timeline: '2026',
     tools: ['Adobe After Effects', 'Premiere Pro'],
-    tags: ['Motion Graphic', 'Corporate Video', 'Holiday Campaign', 'Brand'],
+    tags: ['Corporate Video', 'Brand', 'Motion Graphic'],
     featured: false,
     thumbnail: '/images/projects/aift-corporate-motion/cover.jpg',
     heroImage: '/images/projects/aift-corporate-motion/cover.jpg',
     summary:
-      'Produced AIFT\'s corporate and seasonal motion graphics — the 2026 corporate brand video plus Christmas 2024/2025 and Lunar New Year 2026 campaigns. One consistent motion language across a company film and festive greetings.',
+      'Produced AIFT\'s 2026 corporate brand video — a company promotional film that tells the AIFT story in motion with one consistent motion language across the full cut.',
     highlights: [
       '2026 corporate brand video — the company story in motion',
-      'Christmas 2024 & 2025, Lunar New Year 2026 seasonal GIF campaigns',
-      'One motion language across corporate film and festive greetings',
+      'One consistent motion language across the full film',
+      'Calm, credible palette designed for a company film',
     ],
     palette: ['#E0E1D3', '#667077', '#A2A599', '#213058'],
     category: 'video',
     order: 10,
+  },
+  {
+    slug: 'cardapp-brochure',
+    title: 'CardApp Brochure',
+    client: 'CardApp',
+    role: 'Graphic Designer',
+    timeline: '2020',
+    tools: ['Adobe Illustrator', 'InDesign'],
+    tags: ['Print', 'Brochure', 'Brand'],
+    featured: false,
+    thumbnail: '/images/projects/cardapp-brochure/cover.jpg',
+    heroImage: '/images/projects/cardapp-brochure/cover.jpg',
+    summary:
+      'Designed a printed product brochure for CardApp — a residential community card app. A clean, service-led document that explains the product to partners and merchants, with a visual system that carries across all 27 pages.',
+    highlights: [
+      '27-page printed brochure for the CardApp product',
+      'Service-led copy and layout — leads with what CardApp does for a community',
+      'One consistent visual system across every spread',
+    ],
+    palette: ['#FFFFFF', '#1078C0', '#C2DCEE', '#313233'],
+    category: 'graphic',
+    order: 30,
+  },
+  {
+    slug: 'cardapp-one-dollar-shop',
+    title: 'CardApp 一元購 $1 SHOP',
+    client: 'CardApp',
+    role: 'Graphic Designer',
+    timeline: '2020',
+    tools: ['Adobe Photoshop', 'Adobe Illustrator'],
+    tags: ['Marketing', 'Poster', 'Campaign', 'Print'],
+    featured: false,
+    thumbnail: '/images/projects/cardapp-one-dollar-shop/cover.jpg',
+    heroImage: '/images/projects/cardapp-one-dollar-shop/cover.jpg',
+    summary:
+      'Designed the A4 posters for 一元購 $1 SHOP — CardApp\'s recurring in-community campaign where residents buy one featured item for $1. Each poster pairs the product with a clear single-offer layout, tuned to the estate and edition.',
+    highlights: [
+      'A4 posters for CardApp\'s recurring 一元購 $1 SHOP campaign',
+      'Single-offer clarity — one product, one price, one call to action per poster',
+      'Estate-localised editions across La Marina, Savannah, The Parkside, 桂濤苑, 海傲灣, 海日灣 and 華潤大廈',
+    ],
+    palette: ['#FFFFFF', '#1078C0', '#C2DCEE', '#313233'],
+    category: 'graphic',
+    order: 31,
+  },
+  {
+    slug: 'la-marina-mid-autumn-festival',
+    title: '海上居 LA MARINA 中秋嘉年華 2019',
+    client: 'CardApp',
+    role: 'Graphic Designer',
+    timeline: '2019',
+    tools: ['Adobe Photoshop', 'Adobe Illustrator'],
+    tags: ['Marketing', 'Festival', 'Poster', 'Print', 'In-App'],
+    featured: false,
+    thumbnail: '/images/projects/la-marina-mid-autumn-festival/cover.jpg',
+    heroImage: '/images/projects/la-marina-mid-autumn-festival/cover.jpg',
+    summary:
+      'Designed the full campaign for 海上居 LA MARINA Mid-Autumn Festival Carnival 2019 — a Macau estate community event under the CardApp programme. Main festival posters, redemption-booth signage, game rules, a top banner, and the in-app information all read as one 中秋嘉年華 system across print and the app.',
+    highlights: [
+      'Full campaign collateral — main poster, redemption booth, rules, top banner, and in-app screens',
+      'One 中秋嘉年華 visual system carried from notice board to phone screen',
+      'Community event designed under the CardApp programme for a Macau estate',
+    ],
+    palette: ['#FFFFFF', '#1078C0', '#C2DCEE', '#313233'],
+    category: 'graphic',
+    order: 32,
+  },
+  {
+    slug: 'cardapp-estate-ui-leaflets',
+    title: 'CardApp — Estate App UI & A5 Leaflets',
+    client: 'CardApp',
+    role: 'UI/UX + Graphic Designer',
+    timeline: '2020',
+    tools: ['Figma', 'Adobe Photoshop', 'Adobe Illustrator'],
+    tags: ['Mobile App', 'Print', 'Leaflet', 'Marketing', 'Estate'],
+    featured: false,
+    thumbnail: '/images/projects/cardapp-estate-ui-leaflets/cover.jpg',
+    heroImage: '/images/projects/cardapp-estate-ui-leaflets/cover.jpg',
+    summary:
+      'Designed the app UI for many different estates at CardApp, plus the A5 leaflet promotions that encouraged residents to use their estate app. Each A5 leaflet carries the estate UI screens inside, so print and product are one and the same.',
+    highlights: [
+      'Estate app UI design plus the A5 leaflet promotions that drove adoption',
+      'Each leaflet carries the real estate UI inside — print and product as one',
+      'A system of estate-localised leaflets across 15+ estates, recognisably CardApp',
+    ],
+    palette: ['#FFFFFF', '#1078C0', '#C2DCEE', '#313233'],
+    category: 'graphic',
+    categories: ['graphic', 'ux'],
+    order: 33,
   },
 ]
 

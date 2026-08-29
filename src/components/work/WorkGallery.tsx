@@ -12,6 +12,11 @@ const CAT_LABELS: Record<Exclude<Category, 'all'>, string> = {
   video: 'Video',
 }
 
+// 返回 project 所屬嘅全部分類：用 `categories` 陣列（multi-category）如果定義咗，
+// 否則 fallback 去單一 `category`（預設 ux）
+const catsOf = (p: Project): Exclude<Category, 'all'>[] =>
+  p.categories && p.categories.length > 0 ? p.categories : [(p.category ?? 'ux') as Exclude<Category, 'all'>]
+
 interface WorkGalleryProps {
   projects: Project[]
 }
@@ -32,7 +37,7 @@ export function WorkGallery({ projects }: WorkGalleryProps) {
 
   const filtered = useMemo(() => {
     if (category === 'all') return sorted
-    return sorted.filter((p) => (p.category ?? 'ux') === category)
+    return sorted.filter((p) => catsOf(p).includes(category as Exclude<Category, 'all'>))
   }, [sorted, category])
 
   const featured = filtered.filter((p) => p.featured)
@@ -40,9 +45,9 @@ export function WorkGallery({ projects }: WorkGalleryProps) {
 
   const tabs: { key: Category; label: string; count: number }[] = [
     { key: 'all', label: 'All', count: sorted.length },
-    { key: 'ux', label: CAT_LABELS.ux, count: sorted.filter((p) => (p.category ?? 'ux') === 'ux').length },
-    { key: 'graphic', label: CAT_LABELS.graphic, count: sorted.filter((p) => p.category === 'graphic').length },
-    { key: 'video', label: CAT_LABELS.video, count: sorted.filter((p) => p.category === 'video').length },
+    { key: 'ux', label: CAT_LABELS.ux, count: sorted.filter((p) => catsOf(p).includes('ux')).length },
+    { key: 'graphic', label: CAT_LABELS.graphic, count: sorted.filter((p) => catsOf(p).includes('graphic')).length },
+    { key: 'video', label: CAT_LABELS.video, count: sorted.filter((p) => catsOf(p).includes('video')).length },
   ]
 
   // All view: 將 non-featured 按 category 分組；單一 tab: 得一個 group
@@ -61,7 +66,10 @@ export function WorkGallery({ projects }: WorkGalleryProps) {
     let running = featured.length
     return defs
       .map((def) => {
-        const items = rest.filter((p) => (p.category ?? 'ux') === def.cat)
+        // All view 用 primary category（每個 project 只出現一次，避免重複）；單一 tab 用 categories（該類別全部成員都顯示）
+        const items = rest.filter((p) =>
+          category === 'all' ? (p.category ?? 'ux') === def.cat : catsOf(p).includes(def.cat)
+        )
         const reveal = Math.min(items.length, remaining)
         remaining -= reveal
         const offset = running

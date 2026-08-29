@@ -11,6 +11,7 @@ import { ResearchIA } from '@/components/case-study/ResearchIA'
 import { JourneyFlow } from '@/components/case-study/JourneyFlow'
 import { InsightGrid } from '@/components/case-study/InsightGrid'
 import { GalleryGrid } from '@/components/case-study/GalleryGrid'
+import { LiveDemo } from '@/components/case-study/LiveDemo'
 
 const components: MDXComponents = {
   h1: ({ children }) => (
@@ -80,6 +81,7 @@ const components: MDXComponents = {
   JourneyFlow,
   InsightGrid,
   GalleryGrid,
+  LiveDemo,
 }
 
 export function useMDXComponents(): MDXComponents {
