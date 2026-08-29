@@ -86,7 +86,7 @@ export function HeroSection() {
             className="text-sm sm:text-base text-teal font-semibold tracking-wide"
             style={{ fontFamily: 'var(--font-sans)' }}
           >
-            UX/UI Designer
+            Product Designer
             <span className="text-text-tertiary mx-2">·</span>
             Design-Engineer Hybrid
           </motion.p>

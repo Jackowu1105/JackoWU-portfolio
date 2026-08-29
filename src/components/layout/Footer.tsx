@@ -14,7 +14,7 @@ export function Footer() {
               Jacko
             </Link>
             <span className="text-text-tertiary text-sm">
-              UX/UI Designer
+              Product Designer
             </span>
           </div>
 

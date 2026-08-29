@@ -31,15 +31,15 @@ const jetbrainsMono = JetBrains_Mono({
 
 export const metadata: Metadata = {
   title: {
-    default: 'Jacko Wu — Design-Engineer Hybrid | UX/UI Designer & Front-End',
+    default: 'Jacko Wu — Design-Engineer Hybrid | Product Designer',
     template: '%s — Jacko Wu',
   },
   description:
-    'Hong Kong-based UX/UI Designer with 8+ years across fintech, IoT, aviation, and property tech. Design-engineer hybrid shipping real products — from user research and design systems to AI-assisted front-end delivery.',
+    'Hong Kong-based Product Designer with 8+ years across fintech, IoT, aviation, and property tech. Design-engineer hybrid shipping real products — from user research and design systems to AI-assisted front-end delivery.',
   openGraph: {
-    title: 'Jacko Wu — Design-Engineer Hybrid | UX/UI Designer & Front-End',
+    title: 'Jacko Wu — Design-Engineer Hybrid | Product Designer',
     description:
-      'Hong Kong UX/UI Designer with 8+ years across fintech, IoT, aviation, and property tech. Ships real products — design to front-end, accelerated by AI.',
+      'Hong Kong Product Designer with 8+ years across fintech, IoT, aviation, and property tech. Ships real products — design to front-end, accelerated by AI.',
     type: 'website',
   },
 }

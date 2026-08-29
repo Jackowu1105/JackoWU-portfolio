@@ -106,29 +106,20 @@ export default function AboutPage() {
       <section className="mb-20">
         <GlassCard hover={false} className="p-8 md:p-10">
           <div className="flex flex-col md:flex-row gap-8 items-start">
-            {/* Portrait placeholder */}
-            <div
-              className="shrink-0 w-32 h-32 rounded-2xl flex items-center justify-center relative overflow-hidden"
-              style={{
-                background: 'linear-gradient(135deg, rgba(55,132,138,0.15) 0%, rgba(196,168,130,0.15) 100%)',
-                border: '1px solid rgba(255,255,255,0.3)',
-                backdropFilter: 'blur(10px)',
-              }}
-            >
-              <span
-                className="text-4xl font-bold text-text-tertiary/60"
-                style={{ fontFamily: 'var(--font-heading)' }}
-              >
-                JW
-              </span>
-            </div>
+            {/* Portrait */}
+            <img
+              src="/images/about/jacko-portrait.jpg"
+              alt="Jacko Wu"
+              className="shrink-0 w-40 md:w-48 aspect-[4/5] rounded-2xl object-cover"
+              style={{ border: '1px solid rgba(255,255,255,0.3)' }}
+            />
             <div>
               <h2 className="text-2xl font-bold text-text-primary mb-4">
                 Hi, I&apos;m Jacko Wu
               </h2>
               <div className="space-y-3 text-text-secondary leading-relaxed">
                 <p>
-                  I&apos;m a UX/UI Designer with 8+ years across fintech, IoT, aviation, property tech,
+                  I&apos;m a Product Designer with 8+ years across fintech, IoT, aviation, property tech,
                   and logistics — based in Hong Kong. I&apos;ve shipped 30+ real products with clients
                   ranging from the Hong Kong International Airport and MTR Corporation to AIFT
                   (an InnoHK AI fintech lab backed by the Hong Kong government) and MOMAX.
