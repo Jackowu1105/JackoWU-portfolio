@@ -1,6 +1,6 @@
 'use client'
 
-import { useEffect, useRef } from 'react'
+import { useEffect, useRef, useState } from 'react'
 
 interface Blob {
   baseX: number
@@ -30,10 +30,19 @@ const BLOBS: Blob[] = [
   { baseX: 0.5, baseY: 0.25, baseRadius: 240, color: [180, 150, 85], speed: 0.32, driftX: 0.19, driftY: 0.16, phaseX: 2.8, phaseY: 3.9, phaseR: 0.3, opacityBase: 0.22, opacityOsc: 0.07 },
 ]
 
+/** 手機用較少 blob，減低 CPU/GPU 負荷 */
+const MOBILE_BLOB_COUNT = 4
+
 export function CanvasBackground() {
   const canvasRef = useRef<HTMLCanvasElement>(null)
   const timeRef = useRef(0)
   const rafRef = useRef<number>(0)
+  const [isMobile, setIsMobile] = useState(false)
+
+  useEffect(() => {
+    // 偵測小屏（手機）
+    setIsMobile(window.matchMedia('(max-width: 768px)').matches)
+  }, [])
 
   useEffect(() => {
     const canvas = canvasRef.current
@@ -42,9 +51,16 @@ export function CanvasBackground() {
     const ctx = canvas.getContext('2d')
     if (!ctx) return
 
+    const blobs = isMobile ? BLOBS.slice(0, MOBILE_BLOB_COUNT) : BLOBS
+    // 手機 cap 解像度至 1x（desktop 1.5x），大幅減少像素 fill 成本
+    const dpr = isMobile ? 1 : 1.5
+
     const resize = () => {
-      canvas.width = window.innerWidth
-      canvas.height = window.innerHeight
+      const w = window.innerWidth
+      const h = window.innerHeight
+      canvas.width = Math.round(w * dpr)
+      canvas.height = Math.round(h * dpr)
+      ctx.setTransform(dpr, 0, 0, dpr, 0, 0)
     }
     resize()
     window.addEventListener('resize', resize)
@@ -52,14 +68,13 @@ export function CanvasBackground() {
     const animate = () => {
       timeRef.current += 0.005
       const t = timeRef.current
-      const w = canvas.width
-      const h = canvas.height
+      const w = canvas.width / dpr
+      const h = canvas.height / dpr
 
       ctx.clearRect(0, 0, w, h)
       ctx.globalCompositeOperation = 'screen'
 
-      for (const blob of BLOBS) {
-        // Organic Lissajous-like movement
+      for (const blob of blobs) {
         const dx =
           Math.sin(t * blob.speed + blob.phaseX) * blob.driftX * w +
           Math.sin(t * blob.speed * 0.53 + blob.phaseX * 1.7) * blob.driftX * w * 0.4
@@ -70,11 +85,9 @@ export function CanvasBackground() {
         const x = blob.baseX * w + dx
         const y = blob.baseY * h + dy
 
-        // Pulsing radius
         const pulse = 0.85 + 0.15 * Math.sin(t * 0.18 + blob.phaseR)
         const radius = blob.baseRadius * pulse
 
-        // Soft opacity oscillation
         const opacity = Math.max(
           0.05,
           Math.min(0.5,
@@ -102,12 +115,13 @@ export function CanvasBackground() {
       cancelAnimationFrame(rafRef.current)
       window.removeEventListener('resize', resize)
     }
-  }, [])
+  }, [isMobile])
 
   return (
     <div
       className="fixed inset-0 pointer-events-none"
-      style={{ filter: 'blur(100px)', zIndex: -10 }}
+      // 手機用較細 blur（blur(100px) 喺 mobile GPU 好重）
+      style={{ filter: isMobile ? 'blur(35px)' : 'blur(100px)', zIndex: -10 }}
       aria-hidden="true"
     >
       <canvas ref={canvasRef} className="w-full h-full" />

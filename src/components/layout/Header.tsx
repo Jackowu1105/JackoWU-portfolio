@@ -123,7 +123,15 @@ export function Header() {
             transition={{ duration: 0.2 }}
             className="md:hidden mx-6"
           >
-            <div className="glass-card p-4 flex flex-col gap-1">
+            <div
+              className="p-4 flex flex-col gap-1 rounded-2xl border border-white/20"
+              style={{
+                background: 'rgba(250,247,245,0.9)',
+                backdropFilter: 'blur(28px)',
+                WebkitBackdropFilter: 'blur(28px)',
+                boxShadow: '0 8px 32px rgba(0,0,0,0.08)',
+              }}
+            >
               {links.map((link) => (
                 <Link
                   key={link.href}

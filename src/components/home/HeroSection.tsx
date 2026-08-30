@@ -15,6 +15,11 @@ export function HeroSection() {
     const el = sectionRef.current
     if (!el) return
 
+    // 手機/touch 冇 mouse parallax，唔好開 rAF loop（慳 CPU/電）
+    const isFinePointer =
+      typeof window !== 'undefined' && window.matchMedia('(pointer: fine)').matches
+    if (!isFinePointer) return
+
     // Populate depth layers
     layersRef.current = Array.from(el.querySelectorAll('[data-depth]')) as HTMLElement[]
 

@@ -1,6 +1,6 @@
 'use client'
 
-import { useRef } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import { motion } from 'framer-motion'
 
 const logos: { src: string; alt: string }[] = [
@@ -31,19 +31,31 @@ const doubled = [...logos, ...logos]
 
 export function LogoCarousel() {
   const trackRef = useRef<HTMLDivElement>(null)
+  // 實測「一套」寬度（track 一半）作無縫滾動距離，responsive 尺寸都啱數
+  const [offset, setOffset] = useState(0)
+
+  useEffect(() => {
+    const measure = () => {
+      if (!trackRef.current) return
+      setOffset(trackRef.current.offsetWidth / 2)
+    }
+    measure()
+    window.addEventListener('resize', measure)
+    return () => window.removeEventListener('resize', measure)
+  }, [])
 
   return (
     <section className="w-full pb-0 overflow-hidden">
       {/* 左右漸層遮罩 */}
       <div className="relative">
-        <div className="pointer-events-none absolute left-0 top-0 bottom-0 w-24 z-10 bg-gradient-to-r from-bg-elevated to-transparent" />
-        <div className="pointer-events-none absolute right-0 top-0 bottom-0 w-24 z-10 bg-gradient-to-l from-bg-elevated to-transparent" />
+        <div className="pointer-events-none absolute left-0 top-0 bottom-0 w-8 sm:w-16 lg:w-24 z-10 bg-gradient-to-r from-bg-elevated to-transparent" />
+        <div className="pointer-events-none absolute right-0 top-0 bottom-0 w-8 sm:w-16 lg:w-24 z-10 bg-gradient-to-l from-bg-elevated to-transparent" />
 
         {/* 滾動 track */}
         <motion.div
           ref={trackRef}
-          className="flex gap-[60px] items-center w-max"
-          animate={{ x: [0, -(64 + 60) * logos.length] }}
+          className="flex gap-4 sm:gap-8 lg:gap-[60px] items-center w-max"
+          animate={{ x: [0, -offset] }}
           transition={{
             duration: logos.length * 3,
             ease: 'linear',
@@ -53,7 +65,7 @@ export function LogoCarousel() {
           {doubled.map((logo, i) => (
             <div
               key={i}
-              className="rounded-xl flex items-center justify-center"
+              className="rounded-xl sm:rounded-2xl flex items-center justify-center"
               style={{
                 background:
                   'var(--glass-gradient-light)',
@@ -62,13 +74,16 @@ export function LogoCarousel() {
                 border: '1px solid rgba(255,255,255,0.3)',
               }}
             >
-              {/* 36x36 內容器，logo 等比例填滿 */}
-              <div style={{ width: 96, height: 96, borderRadius: '36px', flexShrink: 0, display: 'flex', alignItems: 'center', justifyContent: 'center', overflow: 'hidden' }}>
+              {/* 手機細啲，桌面大啲 */}
+              <div
+                className="w-12 h-12 sm:w-16 sm:h-16 lg:w-24 lg:h-24 rounded-2xl sm:rounded-[20px] lg:rounded-[36px] flex items-center justify-center overflow-hidden"
+                style={{ flexShrink: 0 }}
+              >
                 {logo.src ? (
                   <img
                     src={logo.src}
                     alt={logo.alt}
-                    style={{ display: 'block', maxWidth: 64, maxHeight: 64, width: 'auto', height: 'auto', objectFit: 'contain' }}
+                    className="block w-auto h-auto object-contain max-w-[32px] max-h-[32px] sm:max-w-[40px] sm:max-h-[40px] lg:max-w-[64px] lg:max-h-[64px]"
                   />
                 ) : (
                   <span className="text-[#b8b2ae] text-xs">Logo</span>

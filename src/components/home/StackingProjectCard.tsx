@@ -3,7 +3,6 @@
 import Link from 'next/link'
 import { useEffect, useRef, useState } from 'react'
 import { ProjectPlaceholder } from '@/components/shared/ProjectPlaceholder'
-import { RippleEffect } from '@/components/shared/RippleEffect'
 import type { Project } from '@/data/projects'
 
 interface StackingProjectCardProps {
@@ -47,13 +46,16 @@ export function StackingProjectCard({ project, index }: StackingProjectCardProps
         zIndex: index + 1,
       }}
     >
-      <div
-        className="w-full rounded-[32px] border border-white/30 overflow-hidden"
+      {/* 成張卡片撳得入 case study */}
+      <Link
+        href={`/work/${project.slug}`}
+        className="group block w-full rounded-[32px] border border-white/30 overflow-hidden"
         style={{
           background: isOverlapping ? bgOverlap : bgNormal,
           backdropFilter: isOverlapping ? 'blur(48px)' : 'blur(10px)',
           WebkitBackdropFilter: isOverlapping ? 'blur(48px)' : 'blur(10px)',
-          transition: 'background 0.6s cubic-bezier(0.25, 0.1, 0.25, 1), backdrop-filter 0.6s cubic-bezier(0.25, 0.1, 0.25, 1)',
+          transition:
+            'background 0.6s cubic-bezier(0.25, 0.1, 0.25, 1), backdrop-filter 0.6s cubic-bezier(0.25, 0.1, 0.25, 1)',
         }}
       >
         <div className="p-5 sm:p-8">
@@ -69,14 +71,14 @@ export function StackingProjectCard({ project, index }: StackingProjectCardProps
 
                 {/* Title */}
                 <h3
-                  className="text-[22px] lg:text-[28px] font-semibold text-heading leading-[1.5]"
+                  className="text-[22px] lg:text-[28px] font-semibold text-heading leading-[1.5] group-hover:text-accent-deep transition-colors"
                   style={{ fontFamily: 'var(--font-heading)' }}
                 >
                   {project.title}
                 </h3>
 
                 {/* Description */}
-                <p className="text-sm lg:text-base text-body leading-relaxed line-clamp-4">
+                <p className="text-sm lg:text-base text-body leading-relaxed line-clamp-2 lg:line-clamp-4">
                   {project.summary}
                 </p>
 
@@ -92,22 +94,9 @@ export function StackingProjectCard({ project, index }: StackingProjectCardProps
                   ))}
                 </div>
               </div>
-
-              {/* Desktop CTA button */}
-              <Link
-                href={`/work/${project.slug}`}
-                className="hidden lg:inline-flex items-center gap-1.5 px-[15px] py-[12px] rounded-xl bg-dark-bg text-white text-sm font-medium w-fit shadow-sm hover:opacity-80 transition-opacity relative overflow-hidden"
-                style={{ fontFamily: 'var(--font-heading)' }}
-              >
-                <RippleEffect />
-                View Case Study
-                <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth="2">
-                  <path d="M3 8h10M9 4l4 4-4 4" />
-                </svg>
-              </Link>
             </div>
 
-            {/* Right column — image + stats */}
+            {/* Right column — image + highlights */}
             <div className="flex-1 flex flex-col gap-6 min-w-0">
               {/* Project image */}
               <div className="aspect-video rounded-2xl overflow-hidden">
@@ -115,7 +104,7 @@ export function StackingProjectCard({ project, index }: StackingProjectCardProps
                   <img
                     src={project.thumbnail}
                     alt={project.title}
-                    className="w-full h-full object-cover"
+                    className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-[1.02]"
                   />
                 ) : (
                   <ProjectPlaceholder
@@ -126,9 +115,9 @@ export function StackingProjectCard({ project, index }: StackingProjectCardProps
                 )}
               </div>
 
-              {/* Highlights — 誠實質化重點（取代假數字） */}
+              {/* Highlights — 誠實質化重點（取代假數字）；手機版收起，慳高度 */}
               {project.highlights.length > 0 && (
-                <ul className="flex flex-col gap-3">
+                <ul className="hidden lg:flex flex-col gap-3">
                   {project.highlights.map((highlight) => (
                     <li key={highlight} className="flex items-start gap-2.5">
                       <span
@@ -142,24 +131,29 @@ export function StackingProjectCard({ project, index }: StackingProjectCardProps
                   ))}
                 </ul>
               )}
-
-              {/* Mobile CTA */}
-              <Link
-                href={`/work/${project.slug}`}
-                className="lg:hidden inline-flex items-center justify-center gap-1.5 px-[15px] py-[12px] rounded-xl bg-dark-bg text-white text-sm font-medium shadow-sm hover:opacity-80 transition-opacity relative overflow-hidden"
-                style={{ fontFamily: 'var(--font-heading)' }}
-              >
-                <RippleEffect />
-                View Case Study
-                <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth="2">
-                  <path d="M3 8h10M9 4l4 4-4 4" />
-                </svg>
-              </Link>
             </div>
 
           </div>
+
+          {/* Bottom CTA affordance — 成張卡 clickable */}
+          <div className="flex items-center justify-between mt-6 pt-5 border-t border-black/5">
+            <span className="text-sm font-semibold text-text-secondary group-hover:text-heading transition-colors">
+              View Case Study
+            </span>
+            <svg
+              width="18"
+              height="18"
+              viewBox="0 0 18 18"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="2"
+              className="text-text-tertiary group-hover:text-accent-deep group-hover:translate-x-1 transition-all duration-300"
+            >
+              <path d="M3 9h11M10 5l4 4-4 4" />
+            </svg>
+          </div>
         </div>
-      </div>
+      </Link>
     </div>
   )
 }
